@@ -38,6 +38,7 @@ const NAV_LINKS = [
   { label: "Awards", href: "/awards" },
   { label: "Meet our Team", href: "/meet-the-team" },
   { label: "Investors", href: "/investors" },
+  { label: "Flagship", href: "/flagship-project" },
   { label: "Contact", href: "/contact" },
 ];
 
