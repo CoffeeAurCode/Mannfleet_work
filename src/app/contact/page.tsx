@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import IndiaMap from "@/components/IndiaMap";
 
 function ArrowUpRight({ size = 14 }: { size?: number }) {
   return (
@@ -284,6 +285,75 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+
+        {/* ── India Office Map ── */}
+        <div style={{ marginTop: "clamp(3rem, 6vw, 5rem)" }}>
+
+          {/* section header row */}
+          <div style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "flex-end",
+            justifyContent: "space-between",
+            gap: "1.25rem",
+            marginBottom: "1.75rem",
+          }}>
+            <div>
+              <span className="glass-badge" style={{ marginBottom: "1rem", display: "inline-block" }}>Our Presence</span>
+              <h2 className="font-serif" style={{
+                fontSize: "clamp(2rem, 4.5vw, 3.4rem)",
+                fontWeight: 400,
+                color: "var(--text-primary)",
+                lineHeight: 1.05,
+                margin: "0 0 0.6rem",
+                letterSpacing: "0.01em",
+              }}>
+                Offices Across<br />
+                <span className="italic" style={{ color: "var(--text-secondary)" }}>India</span>
+              </h2>
+              <p className="font-sans" style={{
+                fontSize: "0.85rem",
+                color: "var(--text-muted)",
+                margin: 0,
+                letterSpacing: "0.04em",
+              }}>
+                8 offices &nbsp;·&nbsp; 7 cities
+              </p>
+            </div>
+
+            {/* city chips */}
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", maxWidth: 380 }}>
+              {["New Delhi", "Noida", "Gurgaon", "Mumbai", "Ahmedabad", "Chennai", "Kolkata"].map((c) => (
+                <span key={c} className="font-sans" style={{
+                  display: "inline-block",
+                  padding: "0.25rem 0.8rem",
+                  borderRadius: "9999px",
+                  fontSize: "0.7rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  color: "var(--text-secondary)",
+                  background: "var(--glass-ultra)",
+                  border: "1px solid var(--border-subtle)",
+                }}>
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* map card — accent border for prominence */}
+          <div style={{
+            borderRadius: "1.5rem",
+            overflow: "hidden",
+            padding: 0,
+            border: "1px solid rgba(200,40,42,0.22)",
+            boxShadow: "0 0 0 1px rgba(200,40,42,0.08), 0 20px 60px rgba(0,0,0,0.22), 0 4px 16px rgba(0,0,0,0.14)",
+          }}>
+            <IndiaMap />
+          </div>
+        </div>
+
       </main>
 
       <Footer />
