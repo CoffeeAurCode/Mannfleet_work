@@ -199,10 +199,10 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
             <img
               src="/mannlogo.webp"
               alt="MANN"
-              width={140}
-              height={50}
+              width={90}
+              height={32}
               className="select-none"
-              style={{ objectFit: "contain", height: "50px", width: "auto" }}
+              style={{ objectFit: "contain", height: "32px", width: "auto" }}
               ref={logoImgRef}
             />
           </span>
