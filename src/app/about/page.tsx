@@ -2467,14 +2467,7 @@ export default function AboutPage() {
 
 
 
-          <button ref={ctaBtnRef} className="btn-primary" style={{
-            fontSize: "0.8rem",
-            padding: "0.9rem 2.25rem",
-            opacity: 0,
-          }}>
-            Get in Touch
-            <ArrowUpRight size={14} />
-          </button>
+
         </div>
       </section>
 
