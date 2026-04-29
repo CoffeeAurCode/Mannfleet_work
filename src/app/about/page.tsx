@@ -118,7 +118,7 @@ interface CertEntry { title: string; issuer: string; year?: string; pdf: string 
 
 function CertModal({ entry, onClose }: { entry: CertEntry; onClose: () => void }) {
   const overlayRef = useRef<HTMLDivElement>(null);
-  const panelRef   = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
@@ -133,7 +133,7 @@ function CertModal({ entry, onClose }: { entry: CertEntry; onClose: () => void }
   }, [mounted]);
 
   const handleClose = useCallback(() => {
-    gsap.to(panelRef.current,   { opacity: 0, scale: 0.94, y: 16, duration: 0.2, ease: "power2.in" });
+    gsap.to(panelRef.current, { opacity: 0, scale: 0.94, y: 16, duration: 0.2, ease: "power2.in" });
     gsap.to(overlayRef.current, { opacity: 0, duration: 0.26, ease: "power2.in", onComplete: onClose });
   }, [onClose]);
 
@@ -221,7 +221,7 @@ function CertModal({ entry, onClose }: { entry: CertEntry; onClose: () => void }
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
               </svg>
               Download
             </a>
@@ -238,7 +238,7 @@ function CertModal({ entry, onClose }: { entry: CertEntry; onClose: () => void }
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </button>
           </div>
@@ -247,16 +247,16 @@ function CertModal({ entry, onClose }: { entry: CertEntry; onClose: () => void }
         {/* PDF iframe */}
         <div style={{ flex: 1, minHeight: 0, position: "relative", background: "#1a1714" }}>
           {/* Decorative corner marks */}
-          {["topLeft","topRight","bottomLeft","bottomRight"].map((pos) => (
+          {["topLeft", "topRight", "bottomLeft", "bottomRight"].map((pos) => (
             <div key={pos} style={{
               position: "absolute", zIndex: 2,
               width: 20, height: 20,
-              ...(pos.includes("top")    ? { top: 10 }    : { bottom: 10 }),
-              ...(pos.includes("Left")   ? { left: 10 }   : { right: 10 }),
-              borderTop:    pos.includes("top")   ? "2px solid rgba(200,40,40,0.35)" : "none",
-              borderBottom: pos.includes("bottom")? "2px solid rgba(200,40,40,0.35)" : "none",
-              borderLeft:   pos.includes("Left")  ? "2px solid rgba(200,40,40,0.35)" : "none",
-              borderRight:  pos.includes("Right") ? "2px solid rgba(200,40,40,0.35)" : "none",
+              ...(pos.includes("top") ? { top: 10 } : { bottom: 10 }),
+              ...(pos.includes("Left") ? { left: 10 } : { right: 10 }),
+              borderTop: pos.includes("top") ? "2px solid rgba(200,40,40,0.35)" : "none",
+              borderBottom: pos.includes("bottom") ? "2px solid rgba(200,40,40,0.35)" : "none",
+              borderLeft: pos.includes("Left") ? "2px solid rgba(200,40,40,0.35)" : "none",
+              borderRight: pos.includes("Right") ? "2px solid rgba(200,40,40,0.35)" : "none",
               pointerEvents: "none",
             }} />
           ))}
@@ -280,90 +280,90 @@ export default function AboutPage() {
   const [openCert, setOpenCert] = useState<CertEntry | null>(null);
 
   /* ── Hero refs ── */
-  const heroBadgeRef    = useRef<HTMLDivElement>(null);
-  const heroLine1Ref    = useRef<HTMLSpanElement>(null);
-  const heroLine2Ref    = useRef<HTMLSpanElement>(null);
-  const heroLine3Ref    = useRef<HTMLSpanElement>(null);
-  const heroYearRef     = useRef<HTMLDivElement>(null);
-  const heroSublineRef  = useRef<HTMLParagraphElement>(null);
-  const heroScrollRef   = useRef<HTMLDivElement>(null);
+  const heroBadgeRef = useRef<HTMLDivElement>(null);
+  const heroLine1Ref = useRef<HTMLSpanElement>(null);
+  const heroLine2Ref = useRef<HTMLSpanElement>(null);
+  const heroLine3Ref = useRef<HTMLSpanElement>(null);
+  const heroYearRef = useRef<HTMLDivElement>(null);
+  const heroSublineRef = useRef<HTMLParagraphElement>(null);
+  const heroScrollRef = useRef<HTMLDivElement>(null);
 
   /* ── OUR USPs refs ── */
-  const uspSectionRef  = useRef<HTMLElement>(null);
-  const uspHeadRef     = useRef<HTMLDivElement>(null);
-  const uspCardsRef    = useRef<HTMLDivElement>(null);
+  const uspSectionRef = useRef<HTMLElement>(null);
+  const uspHeadRef = useRef<HTMLDivElement>(null);
+  const uspCardsRef = useRef<HTMLDivElement>(null);
 
   /* ── What We Are refs ── */
-  const wareSectionRef  = useRef<HTMLElement>(null);
-  const wareLabelRef    = useRef<HTMLDivElement>(null);
-  const wareLeftRef     = useRef<HTMLDivElement>(null);
-  const wareRightRef    = useRef<HTMLDivElement>(null);
-  const warePillsRef    = useRef<HTMLDivElement>(null);
-  const wareRingRef     = useRef<HTMLDivElement>(null);
+  const wareSectionRef = useRef<HTMLElement>(null);
+  const wareLabelRef = useRef<HTMLDivElement>(null);
+  const wareLeftRef = useRef<HTMLDivElement>(null);
+  const wareRightRef = useRef<HTMLDivElement>(null);
+  const warePillsRef = useRef<HTMLDivElement>(null);
+  const wareRingRef = useRef<HTMLDivElement>(null);
 
   /* ── Timeline refs ── */
   const timelineSectionRef = useRef<HTMLElement>(null);
-  const timelineLineRef    = useRef<HTMLDivElement>(null);
-  const timelineCarRef     = useRef<HTMLDivElement>(null);
-  const timelineInnerRef   = useRef<HTMLDivElement>(null);
-  const timelineCard1Ref   = useRef<HTMLDivElement>(null);
-  const timelineCard2Ref   = useRef<HTMLDivElement>(null);
-  const timelineCard3Ref   = useRef<HTMLDivElement>(null);
-  const timelineCard4Ref   = useRef<HTMLDivElement>(null);
-  const timelineCard5Ref   = useRef<HTMLDivElement>(null);
-  const timelineCard6Ref   = useRef<HTMLDivElement>(null);
-  const timelineCard7Ref   = useRef<HTMLDivElement>(null);
-  const dot1Ref            = useRef<HTMLDivElement>(null);
-  const dot2Ref            = useRef<HTMLDivElement>(null);
-  const dot3Ref            = useRef<HTMLDivElement>(null);
-  const dot4Ref            = useRef<HTMLDivElement>(null);
-  const dot5Ref            = useRef<HTMLDivElement>(null);
-  const dot6Ref            = useRef<HTMLDivElement>(null);
-  const dot7Ref            = useRef<HTMLDivElement>(null);
+  const timelineLineRef = useRef<HTMLDivElement>(null);
+  const timelineCarRef = useRef<HTMLDivElement>(null);
+  const timelineInnerRef = useRef<HTMLDivElement>(null);
+  const timelineCard1Ref = useRef<HTMLDivElement>(null);
+  const timelineCard2Ref = useRef<HTMLDivElement>(null);
+  const timelineCard3Ref = useRef<HTMLDivElement>(null);
+  const timelineCard4Ref = useRef<HTMLDivElement>(null);
+  const timelineCard5Ref = useRef<HTMLDivElement>(null);
+  const timelineCard6Ref = useRef<HTMLDivElement>(null);
+  const timelineCard7Ref = useRef<HTMLDivElement>(null);
+  const dot1Ref = useRef<HTMLDivElement>(null);
+  const dot2Ref = useRef<HTMLDivElement>(null);
+  const dot3Ref = useRef<HTMLDivElement>(null);
+  const dot4Ref = useRef<HTMLDivElement>(null);
+  const dot5Ref = useRef<HTMLDivElement>(null);
+  const dot6Ref = useRef<HTMLDivElement>(null);
+  const dot7Ref = useRef<HTMLDivElement>(null);
 
   /* ── What We Do refs ── */
-  const wdoSectionRef  = useRef<HTMLElement>(null);
-  const wdoHeadRef     = useRef<HTMLHeadingElement>(null);
-  const wdoParaRef     = useRef<HTMLParagraphElement>(null);
-  const wdoCardsRef    = useRef<HTMLDivElement>(null);
+  const wdoSectionRef = useRef<HTMLElement>(null);
+  const wdoHeadRef = useRef<HTMLHeadingElement>(null);
+  const wdoParaRef = useRef<HTMLParagraphElement>(null);
+  const wdoCardsRef = useRef<HTMLDivElement>(null);
 
   /* ── Track Record refs ── */
-  const trackSectionRef    = useRef<HTMLElement>(null);
-  const trackWatermarkRef  = useRef<HTMLDivElement>(null);
-  const trackLabelRef      = useRef<HTMLDivElement>(null);
-  const trackCard1Ref      = useRef<HTMLDivElement>(null);
-  const trackCard2Ref      = useRef<HTMLDivElement>(null);
-  const trackCard3Ref      = useRef<HTMLDivElement>(null);
-  const trackCard4Ref      = useRef<HTMLDivElement>(null);
-  const trackCard5Ref      = useRef<HTMLDivElement>(null);
-  const stat1Ref           = useRef<HTMLSpanElement>(null);
-  const stat2Ref           = useRef<HTMLSpanElement>(null);
-  const stat3Ref           = useRef<HTMLSpanElement>(null);
+  const trackSectionRef = useRef<HTMLElement>(null);
+  const trackWatermarkRef = useRef<HTMLDivElement>(null);
+  const trackLabelRef = useRef<HTMLDivElement>(null);
+  const trackCard1Ref = useRef<HTMLDivElement>(null);
+  const trackCard2Ref = useRef<HTMLDivElement>(null);
+  const trackCard3Ref = useRef<HTMLDivElement>(null);
+  const trackCard4Ref = useRef<HTMLDivElement>(null);
+  const trackCard5Ref = useRef<HTMLDivElement>(null);
+  const stat1Ref = useRef<HTMLSpanElement>(null);
+  const stat2Ref = useRef<HTMLSpanElement>(null);
+  const stat3Ref = useRef<HTMLSpanElement>(null);
 
   /* ── Stats bar refs ── */
-  const statsBarRef    = useRef<HTMLElement>(null);
-  const statsNum1Ref   = useRef<HTMLSpanElement>(null);
-  const statsNum3Ref   = useRef<HTMLSpanElement>(null);
-  const statsNum4Ref   = useRef<HTMLSpanElement>(null);
+  const statsBarRef = useRef<HTMLElement>(null);
+  const statsNum1Ref = useRef<HTMLSpanElement>(null);
+  const statsNum3Ref = useRef<HTMLSpanElement>(null);
+  const statsNum4Ref = useRef<HTMLSpanElement>(null);
 
   /* ── Global presence refs ── */
   const globalSectionRef = useRef<HTMLElement>(null);
-  const globalHeadRef    = useRef<HTMLHeadingElement>(null);
-  const globalBadgesRef  = useRef<HTMLDivElement>(null);
+  const globalHeadRef = useRef<HTMLHeadingElement>(null);
+  const globalBadgesRef = useRef<HTMLDivElement>(null);
 
   /* ── CTA refs ── */
-  const ctaSectionRef   = useRef<HTMLElement>(null);
-  const ctaWrapRef      = useRef<HTMLDivElement>(null);
-  const ctaLine1Ref     = useRef<HTMLParagraphElement>(null);
-  const ctaLine2Ref     = useRef<HTMLParagraphElement>(null);
-  const ctaBtnRef       = useRef<HTMLButtonElement>(null);
-  const ctaLineLeftRef  = useRef<HTMLDivElement>(null);
+  const ctaSectionRef = useRef<HTMLElement>(null);
+  const ctaWrapRef = useRef<HTMLDivElement>(null);
+  const ctaLine1Ref = useRef<HTMLParagraphElement>(null);
+  const ctaLine2Ref = useRef<HTMLParagraphElement>(null);
+  const ctaBtnRef = useRef<HTMLButtonElement>(null);
+  const ctaLineLeftRef = useRef<HTMLDivElement>(null);
   const ctaLineRightRef = useRef<HTMLDivElement>(null);
 
   /* ── Cinematic reel refs ── */
-  const reelSectionRef  = useRef<HTMLElement>(null);
-  const reelOverlayRef  = useRef<HTMLDivElement>(null);
-  const reelQuoteRef    = useRef<HTMLDivElement>(null);
+  const reelSectionRef = useRef<HTMLElement>(null);
+  const reelOverlayRef = useRef<HTMLDivElement>(null);
+  const reelQuoteRef = useRef<HTMLDivElement>(null);
 
 
 
@@ -568,10 +568,10 @@ export default function AboutPage() {
 
       const trackCards = [
         { el: trackCard1Ref.current, x: -100, rotate: -2 },
-        { el: trackCard2Ref.current, x: 100,  rotate: 2 },
-        { el: trackCard3Ref.current, x: 0,    y: 80, rotate: 0 },
+        { el: trackCard2Ref.current, x: 100, rotate: 2 },
+        { el: trackCard3Ref.current, x: 0, y: 80, rotate: 0 },
         { el: trackCard4Ref.current, x: -100, rotate: -1 },
-        { el: trackCard5Ref.current, x: 100,  rotate: 1 },
+        { el: trackCard5Ref.current, x: 100, rotate: 1 },
       ];
       trackCards.forEach(({ el, x, rotate, y }) => {
         gsap.fromTo(el,
@@ -1469,10 +1469,10 @@ export default function AboutPage() {
               {/* Stat pills */}
               <div ref={warePillsRef} style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 {[
-                  { val: "40+",  label: "Years of industry leadership" },
+                  { val: "40+", label: "Years of industry leadership" },
                   { val: "F500", label: "Fortune 500 clientele" },
-                  { val: "85+",  label: "Cities across India & 4 global hubs — UAE, KSA, England" },
-                  { val: "3×",   label: "Consecutive National Tourism Award winners (2016–2019)" },
+                  { val: "85+", label: "Cities across India & 4 global hubs — UAE, KSA, England" },
+                  { val: "3×", label: "Consecutive National Tourism Award winners (2016–2019)" },
                 ].map(({ val, label }) => (
                   <div key={label} className="glass-panel" style={{
                     display: "flex",
@@ -1634,18 +1634,18 @@ export default function AboutPage() {
               pointerEvents: "none",
             }}>
               <svg width="28" height="52" viewBox="0 0 28 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="8" width="22" height="36" rx="5" fill="var(--accent)" opacity="0.95"/>
-                <rect x="7" y="14" width="14" height="18" rx="3" fill="rgba(255,255,255,0.15)"/>
-                <rect x="8" y="10" width="12" height="6" rx="2" fill="rgba(255,255,255,0.25)"/>
-                <rect x="8" y="36" width="12" height="5" rx="2" fill="rgba(255,255,255,0.18)"/>
-                <rect x="0" y="10" width="5" height="9" rx="2.5" fill="#1a1a1a"/>
-                <rect x="23" y="10" width="5" height="9" rx="2.5" fill="#1a1a1a"/>
-                <rect x="0" y="33" width="5" height="9" rx="2.5" fill="#1a1a1a"/>
-                <rect x="23" y="33" width="5" height="9" rx="2.5" fill="#1a1a1a"/>
-                <rect x="8" y="7" width="5" height="3" rx="1" fill="rgba(255,240,180,0.9)"/>
-                <rect x="15" y="7" width="5" height="3" rx="1" fill="rgba(255,240,180,0.9)"/>
-                <rect x="8" y="42" width="5" height="3" rx="1" fill="rgba(255,60,60,0.8)"/>
-                <rect x="15" y="42" width="5" height="3" rx="1" fill="rgba(255,60,60,0.8)"/>
+                <rect x="3" y="8" width="22" height="36" rx="5" fill="var(--accent)" opacity="0.95" />
+                <rect x="7" y="14" width="14" height="18" rx="3" fill="rgba(255,255,255,0.15)" />
+                <rect x="8" y="10" width="12" height="6" rx="2" fill="rgba(255,255,255,0.25)" />
+                <rect x="8" y="36" width="12" height="5" rx="2" fill="rgba(255,255,255,0.18)" />
+                <rect x="0" y="10" width="5" height="9" rx="2.5" fill="#1a1a1a" />
+                <rect x="23" y="10" width="5" height="9" rx="2.5" fill="#1a1a1a" />
+                <rect x="0" y="33" width="5" height="9" rx="2.5" fill="#1a1a1a" />
+                <rect x="23" y="33" width="5" height="9" rx="2.5" fill="#1a1a1a" />
+                <rect x="8" y="7" width="5" height="3" rx="1" fill="rgba(255,240,180,0.9)" />
+                <rect x="15" y="7" width="5" height="3" rx="1" fill="rgba(255,240,180,0.9)" />
+                <rect x="8" y="42" width="5" height="3" rx="1" fill="rgba(255,60,60,0.8)" />
+                <rect x="15" y="42" width="5" height="3" rx="1" fill="rgba(255,60,60,0.8)" />
               </svg>
             </div>
 
@@ -2476,7 +2476,7 @@ export default function AboutPage() {
             marginRight: "auto",
             opacity: 0,
           }}>
-            &ldquo;Because when perfection is the only option, we are the only choice.&rdquo;
+            &ldquo;Safety is our Utmost MOTTO&rdquo;
           </p>
 
           <button ref={ctaBtnRef} className="btn-primary" style={{
