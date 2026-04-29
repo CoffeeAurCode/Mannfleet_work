@@ -2462,22 +2462,10 @@ export default function AboutPage() {
             letterSpacing: "0.01em",
             opacity: 0,
           }}>
-            Choose Mann Fleet Partners.
+            "Safety is our Utmost MOTTO"
           </p>
 
-          <p ref={ctaLine2Ref} className="font-serif italic" style={{
-            fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)",
-            fontWeight: 400,
-            lineHeight: 1.5,
-            color: "rgba(255,255,255,0.42)",
-            margin: "0 0 3rem",
-            maxWidth: 640,
-            marginLeft: "auto",
-            marginRight: "auto",
-            opacity: 0,
-          }}>
-            &ldquo;Safety is our Utmost MOTTO&rdquo;
-          </p>
+
 
           <button ref={ctaBtnRef} className="btn-primary" style={{
             fontSize: "0.8rem",
