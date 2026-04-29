@@ -95,6 +95,7 @@ function FooterLink({ label, href, icon }: { label: string; href: string; icon?:
 /* ── Link columns data ──────────────────────────────────────── */
 const QUICK_LINKS = [
   { label: "Fleet", href: "/fleet" },
+  { label: "Reserve", href: "/reservation" },
   { label: "Investors", href: "/investors" },
   { label: "About us", href: "/about" },
   { label: "Awards", href: "/awards" },

@@ -40,6 +40,7 @@ const NAV_LINKS = [
   { label: "Investors", href: "/investors" },
   { label: "Flagship", href: "/flagship-project" },
   { label: "Contact", href: "/contact" },
+  { label: "Reserve", href: "/reservation" },
 ];
 
 interface NavbarProps {
@@ -243,7 +244,7 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
           >
             {theme === "dark" ? <SunIcon size={14} /> : <MoonIcon size={14} />}
           </button>
-          <Link href="/contact" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</Link>
+          <Link href="/reservation" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</Link>
         </div>
 
         {/* Hamburger (mobile) */}
