@@ -22,7 +22,7 @@ const VEHICLE_TYPES: VehicleType[] = ["Sedans", "SUVs", "Vans", "Coaches", "Self
 interface Vehicle {
   id: string;
   name: string;
-  image: string;
+  image: string | string[];
   seating: string;
   luggage: string;
   category: Category;
@@ -43,7 +43,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "hyundai-aura", name: "Hyundai Aura", type: "Sedans", category: "ECONOMY",
     seating: "5 Seater Including Pilot", luggage: "402 Litres",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=700&q=80",
+    image: ["/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_15_47%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_19_35%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_21_57%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_23_33%20PM.png"],
   },
   {
     id: "maruti-dzire", name: "Maruti Suzuki Dzire", type: "Sedans", category: "ECONOMY",
@@ -54,7 +54,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "honda-city", name: "Honda City", type: "Sedans", category: "ECONOMY PLUS",
     seating: "5 Seater Including Pilot", luggage: "506 Litres",
-    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=700&q=80",
+    image: ["/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_24_20%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_26_03%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_27_55%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_28_55%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_29_57%20PM.png","/Mann car pictures/Honda%20City/DSC02040.JPG","/Mann car pictures/Honda%20City/DSC02045.JPG","/Mann car pictures/Honda%20City/DSC02047.JPG","/Mann car pictures/Honda%20City/DSC02050.JPG","/Mann car pictures/Honda%20City/DSC02057.JPG"],
   },
   {
     id: "hyundai-verna", name: "Hyundai Verna", type: "Sedans", category: "ECONOMY PLUS",
@@ -65,13 +65,13 @@ const VEHICLES: Vehicle[] = [
   {
     id: "camry-hybrid", name: "Toyota Camry Hybrid", type: "Sedans", category: "PREMIUM",
     seating: "5 Seater Including Pilot", luggage: "524 Litres",
-    image: "/Mann%20car%20pictures/Camry.png",
+    image: ["/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png"],
   },
   // Premium Plus
   {
     id: "invicto-sedan", name: "Maruti Suzuki Invicto", type: "Sedans", category: "PREMIUM PLUS",
     seating: "7–8 Seater Including Pilot", luggage: "690 Litres",
-    image: "/Mann%20car%20pictures/HYCROSS.png",
+    image: ["/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_25_56%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_28_37%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_33_03%20PM%20(2).png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_43_30%20PM.png"],
   },
   {
     id: "hycross-sedan", name: "Toyota Innova Hycross", type: "Sedans", category: "PREMIUM PLUS",
@@ -144,7 +144,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "invicto-suv", name: "Maruti Suzuki Invicto", type: "SUVs", category: "PREMIUM",
     seating: "7–8 Seater Including Pilot", luggage: "239 Litres (all rows up)",
-    image: "/Mann%20car%20pictures/HYCROSS.png",
+    image: ["/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_25_56%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_28_37%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_33_03%20PM%20(2).png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_43_30%20PM.png"],
   },
   {
     id: "hycross-suv", name: "Toyota Innova Hycross (Hybrid)", type: "SUVs", category: "PREMIUM",
@@ -166,7 +166,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "audi-q7", name: "Audi Q7", type: "SUVs", category: "LUXURY",
     seating: "7 Seater Including Pilot", luggage: "295L (all rows) / 770L (3rd row folded)",
-    image: "/Mann%20car%20pictures/Q7.png",
+    image: ["/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_38_55%20AM.png","/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_40_26%20AM.png","/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_41_50%20AM.png","/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_42_43%20AM.png","/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_45_24%20AM.png","/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_45_30%20AM.png","/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2007_31_08%20PM.png","/Mann car pictures/Audi%20Q7%20copy/DSC01994.JPG","/Mann car pictures/Audi%20Q7%20copy/DSC02001.JPG","/Mann car pictures/Audi%20Q7%20copy/DSC02005.JPG","/Mann car pictures/Audi%20Q7%20copy/DSC02013.JPG","/Mann car pictures/Audi%20Q7%20copy/DSC02017.JPG","/Mann car pictures/Audi%20Q7%20copy/DSC02026.JPG","/Mann car pictures/Audi%20Q7%20copy/DSC02035.JPG"],
   },
   {
     id: "bmw-x5", name: "BMW X5", type: "SUVs", category: "LUXURY",
@@ -181,18 +181,18 @@ const VEHICLES: Vehicle[] = [
   {
     id: "mercedes-gle", name: "Mercedes-Benz GLE", type: "SUVs", category: "LUXURY",
     seating: "7 Seater Including Pilot", luggage: "320 Litres",
-    image: "/Mann%20car%20pictures/GLS.png",
+    image: ["/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_14_30%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_17_16%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_51_13%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_52_46%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_54_04%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_58_20%20PM.png","/Mann car pictures/GLS%3F/DSC01806.JPG","/Mann car pictures/GLS%3F/DSC01812.JPG","/Mann car pictures/GLS%3F/DSC01815.JPG","/Mann car pictures/GLS%3F/DSC01819.JPG","/Mann car pictures/GLS%3F/DSC01821.JPG","/Mann car pictures/GLS%3F/DSC01823.JPG"],
   },
   // Super Luxury
   {
     id: "gls-450", name: "Mercedes-Benz GLS 400 / 450", type: "SUVs", category: "SUPER LUXURY",
     seating: "7 Seater Including Pilot", luggage: "355L (all rows) / 890L (3rd row folded)",
-    image: "/Mann%20car%20pictures/GLS.png",
+    image: ["/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_14_30%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_17_16%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_51_13%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_52_46%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_54_04%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_58_20%20PM.png","/Mann car pictures/GLS%3F/DSC01806.JPG","/Mann car pictures/GLS%3F/DSC01812.JPG","/Mann car pictures/GLS%3F/DSC01815.JPG","/Mann car pictures/GLS%3F/DSC01819.JPG","/Mann car pictures/GLS%3F/DSC01821.JPG","/Mann car pictures/GLS%3F/DSC01823.JPG"],
   },
   {
     id: "bmw-x7", name: "BMW X7", type: "SUVs", category: "SUPER LUXURY",
     seating: "7 Seater Including Pilot", luggage: "326 Litres (all rows up)",
-    image: "/Mann%20car%20pictures/X7.jpeg",
+    image: ["/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_57_55%20PM.png","/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_59_28%20PM.png","/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2007_01_42%20PM.png","/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_23_47%20PM.png","/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_24_44%20PM.png","/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_26_21%20PM.png","/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_29_34%20PM.png","/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_34_27%20PM.png","/Mann car pictures/BMW%20X7/DSC08412.JPG","/Mann car pictures/BMW%20X7/DSC08418.JPG","/Mann car pictures/BMW%20X7/DSC08424.JPG","/Mann car pictures/BMW%20X7/DSC08434.JPG","/Mann car pictures/BMW%20X7/DSC08445.JPG","/Mann car pictures/BMW%20X7/DSC08451.JPG","/Mann car pictures/BMW%20X7/DSC08461.JPG","/Mann car pictures/BMW%20X7/DSC08479.JPG"],
   },
   // Range Rover
   {
@@ -217,12 +217,12 @@ const VEHICLES: Vehicle[] = [
   {
     id: "urbania-mod", name: "Force Urbania (Modified)", type: "Vans", category: "PREMIUM",
     seating: "9 / 12 Seater Including Pilot", luggage: "Very limited boot; last row removable for bags",
-    image: "/Mann%20car%20pictures/Force%20Urbania.jpeg",
+    image: ["/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_18_13%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_22_35%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_24_25%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_28_40%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_29_12%20AM.png","/Mann car pictures/Force%20Urbania/DSC02153.JPG","/Mann car pictures/Force%20Urbania/DSC02158.JPG","/Mann car pictures/Force%20Urbania/DSC02163.JPG","/Mann car pictures/Force%20Urbania/DSC02168.JPG","/Mann car pictures/Force%20Urbania/DSC02171.JPG"],
   },
   {
     id: "urbania-std", name: "Force Urbania", type: "Vans", category: "PREMIUM",
     seating: "13 / 17 Seater Including Pilot", luggage: "Dedicated compartment — fits 8–12 medium suitcases",
-    image: "/Mann%20car%20pictures/Force%20Urbania.jpeg",
+    image: ["/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_18_13%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_22_35%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_24_25%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_28_40%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_29_12%20AM.png","/Mann car pictures/Force%20Urbania/DSC02153.JPG","/Mann car pictures/Force%20Urbania/DSC02158.JPG","/Mann car pictures/Force%20Urbania/DSC02163.JPG","/Mann car pictures/Force%20Urbania/DSC02168.JPG","/Mann car pictures/Force%20Urbania/DSC02171.JPG"],
   },
   // Premium Plus
   {
@@ -239,12 +239,12 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sprinter", name: "Mercedes-Benz Sprinter", type: "Vans", category: "LUXURY",
     seating: "11 / 14 Seater Including Pilot", luggage: "Fits 8–10 large suitcases comfortably",
-    image: "/Mann%20car%20pictures/mercedes%20sprinter.jpeg",
+    image: ["/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_37_46%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_43_57%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_56_51%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_01_19%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_05_12%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_10_58%20PM.png"],
   },
   {
     id: "sprinter-exec", name: "Mercedes-Benz Sprinter Executive Lounge", type: "Vans", category: "LUXURY",
     seating: "7–9 Seater Including Pilot", luggage: "Fits 10–15 large suitcases",
-    image: "/Mann%20car%20pictures/mercedes%20sprinter.jpeg",
+    image: ["/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_37_46%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_43_57%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_56_51%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_01_19%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_05_12%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_10_58%20PM.png"],
   },
   {
     id: "v-class", name: "Mercedes-Benz V-Class", type: "Vans", category: "LUXURY",
@@ -255,7 +255,14 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sprinter-washroom", name: "Mercedes Sprinter with Washroom", type: "Vans", category: "SUPER LUXURY",
     seating: "8 Seater Including Pilot", luggage: "Dedicated luggage partition + overhead cabinets",
-    image: "/Mann%20car%20pictures/mercedes%20sprinter.jpeg",
+    image: ["/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_37_46%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_43_57%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_56_51%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_01_19%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_05_12%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_10_58%20PM.png"],
+  },
+
+  
+  {
+    id: "vellfire", name: "Toyota Vellfire", type: "Vans", category: "LUXURY",
+    seating: "4-6 Seater Including Pilot", luggage: "Premium Luggage Space",
+    image: ["/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_39_48%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_41_13%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_43_16%20PM%20(1).png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_44_53%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_46_22%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_48_16%20PM.png"],
   },
 
   /* ── COACHES ─────────────────────────────────────────────── */
@@ -269,12 +276,12 @@ const VEHICLES: Vehicle[] = [
   {
     id: "volvo-luxury", name: "Volvo Coach (Luxury)", type: "Coaches", category: "LUXURY",
     seating: "41/45 Seater (12m) & 49/53 Seater (13.5m) Including Pilot", luggage: "Fits 35–40 and 50–55 large suitcases resp.",
-    image: "/Mann%20car%20pictures/volvo%2039%2C%2043%20seater.jpeg",
+    image: ["/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_29_00%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_35_35%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_38_30%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_50_51%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_55_20%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_16_06%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_45_09%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_59_59%20PM.png","/Mann car pictures/Volvo%2039%20seater/DSC02101.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02104.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02107.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02111.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02113.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02115.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02117.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02123.JPG"],
   },
   {
     id: "volvo-washroom", name: "Volvo Coach with Washroom", type: "Coaches", category: "LUXURY",
     seating: "41 / 45 Seater Including Pilot", luggage: "Fits 40–50 large suitcases",
-    image: "/Mann%20car%20pictures/volvo%2039%2C%2043%20seater.jpeg",
+    image: ["/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_29_00%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_35_35%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_38_30%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_50_51%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_55_20%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_16_06%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_45_09%20PM.png","/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_59_59%20PM.png","/Mann car pictures/Volvo%2039%20seater/DSC02101.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02104.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02107.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02111.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02113.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02115.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02117.JPG","/Mann car pictures/Volvo%2039%20seater/DSC02123.JPG"],
   },
   // Super Luxury
   {
@@ -297,7 +304,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sd-city", name: "Honda City (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "5 Seater Excluding Pilot", luggage: "506 Litres",
-    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=700&q=80",
+    image: ["/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_24_20%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_26_03%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_27_55%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_28_55%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_29_57%20PM.png","/Mann car pictures/Honda%20City/DSC02040.JPG","/Mann car pictures/Honda%20City/DSC02045.JPG","/Mann car pictures/Honda%20City/DSC02047.JPG","/Mann car pictures/Honda%20City/DSC02050.JPG","/Mann car pictures/Honda%20City/DSC02057.JPG"],
   },
   {
     id: "sd-creta", name: "Hyundai Creta (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
@@ -317,7 +324,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sd-camry", name: "Toyota Camry Hybrid (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "5 Seater Excluding Pilot", luggage: "524 Litres",
-    image: "/Mann%20car%20pictures/Camry.png",
+    image: ["/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png"],
   },
   {
     id: "sd-fortuner", name: "Toyota Fortuner (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
@@ -437,6 +444,74 @@ function IconCheck({ size = 13 }: { size?: number }) {
   );
 }
 
+
+/* ─────────────────────────────────────────────────────────────
+   CAROUSEL
+───────────────────────────────────────────────────────────── */
+function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  return (
+    <div style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden" }}>
+      <Image
+        src={images[currentIndex]}
+        alt={`${alt} - Image ${currentIndex + 1}`}
+        fill
+        style={{ objectFit: "cover", transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1)" }}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+        className="card-image"
+      />
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={prevSlide}
+            style={{
+              position: "absolute", left: "0.5rem", top: "50%", transform: "translateY(-50%)",
+              background: "rgba(0,0,0,0.5)", color: "white", border: "none", borderRadius: "50%",
+              width: "28px", height: "28px", display: "flex", alignItems: "center", justifyContent: "center",
+              cursor: "pointer", zIndex: 10
+            }}
+          >
+            &#10094;
+          </button>
+          <button
+            onClick={nextSlide}
+            style={{
+              position: "absolute", right: "0.5rem", top: "50%", transform: "translateY(-50%)",
+              background: "rgba(0,0,0,0.5)", color: "white", border: "none", borderRadius: "50%",
+              width: "28px", height: "28px", display: "flex", alignItems: "center", justifyContent: "center",
+              cursor: "pointer", zIndex: 10
+            }}
+          >
+            &#10095;
+          </button>
+          <div style={{
+            position: "absolute", bottom: "0.5rem", left: "50%", transform: "translateX(-50%)",
+            display: "flex", gap: "4px", zIndex: 10
+          }}>
+            {images.map((_, i) => (
+              <div key={i} style={{
+                width: "6px", height: "6px", borderRadius: "50%",
+                background: i === currentIndex ? "white" : "rgba(255,255,255,0.5)"
+              }} />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 /* ─────────────────────────────────────────────────────────────
    VEHICLE MODAL
 ───────────────────────────────────────────────────────────── */
@@ -515,144 +590,24 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
 
         {/* Car image */}
         <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
+          
+          {Array.isArray(vehicle.image) ? (
+            <ImageCarousel images={vehicle.image} alt={vehicle.name} />
+          ) : (
+            
+        {Array.isArray(vehicle.image) ? (
+          <ImageCarousel images={vehicle.image} alt={vehicle.name} />
+        ) : (
           <Image
             src={vehicle.image}
             alt={vehicle.name}
             fill
-            style={{ objectFit: "cover" }}
-            sizes="520px"
+            style={{ objectFit: "cover", transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1)" }}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="card-image"
           />
-          <div style={{
-            position: "absolute", inset: 0,
-            background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.55) 100%)",
-          }} />
-          {/* Category badge overlaid on image */}
-          <div style={{ position: "absolute", bottom: "1rem", left: "1.25rem" }}>
-            <span style={{
-              display: "inline-block",
-              padding: "0.22rem 0.85rem",
-              borderRadius: 9999,
-              fontSize: "0.65rem",
-              fontWeight: 700,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: cfg.color,
-              background: cfg.bg,
-              border: `1px solid ${cfg.border}`,
-              backdropFilter: "blur(8px)",
-            }}>
-              {vehicle.category}
-            </span>
-          </div>
-        </div>
+        )}
 
-        {/* Content */}
-        <div style={{ padding: "1.5rem 1.5rem 1.75rem" }}>
-          {/* Vehicle type pill */}
-          <span className="glass-badge font-sans" style={{ marginBottom: "0.75rem", display: "inline-block" }}>
-            {vehicle.type}
-          </span>
-
-          {/* Name */}
-          <h2 className="font-serif text-emboss" style={{
-            fontSize: "clamp(1.5rem, 4vw, 2rem)",
-            fontWeight: 400,
-            color: "var(--text-primary)",
-            lineHeight: 1.1,
-            letterSpacing: "0.01em",
-            margin: "0 0 1.25rem",
-          }}>
-            {vehicle.name}
-          </h2>
-
-          {/* Stats */}
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "0.75rem",
-            marginBottom: "1.5rem",
-          }}>
-            {[
-              { icon: <IconUsers size={16} />, label: "Seating", value: vehicle.seating },
-              { icon: <IconBriefcase size={16} />, label: "Luggage", value: vehicle.luggage },
-            ].map(({ icon, label, value }) => (
-              <div key={label} style={{
-                padding: "0.9rem 1rem",
-                borderRadius: "0.85rem",
-                background: "var(--glass-ultra)",
-                border: "1px solid var(--border-subtle)",
-                backdropFilter: "blur(12px)",
-              }}>
-                <div style={{ color: "var(--text-50)", marginBottom: "0.4rem", display: "flex", alignItems: "center", gap: "0.35rem" }}>
-                  {icon}
-                  <span className="font-sans" style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                    {label}
-                  </span>
-                </div>
-                <p className="font-sans" style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--text-primary)", margin: 0 }}>
-                  {value}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Features row */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.45rem", marginBottom: "1.5rem" }}>
-            {["Chauffeur-driven", "Professionally maintained", "24/7 Support"].map((f) => (
-              <span key={f} className="font-sans" style={{
-                display: "flex", alignItems: "center", gap: "0.3rem",
-                padding: "0.25rem 0.7rem",
-                borderRadius: 9999,
-                fontSize: "0.65rem", fontWeight: 600,
-                color: "#4ade80",
-                background: "rgba(74,222,128,0.10)",
-                border: "1px solid rgba(74,222,128,0.25)",
-              }}>
-                <IconCheck size={11} /> {f}
-              </span>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <a
-            href={`https://wa.me/919990222999?text=I'm%20interested%20in%20booking%20the%20${encodeURIComponent(vehicle.name)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary font-sans"
-            style={{ width: "100%", justifyContent: "center", fontSize: "0.8rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}
-          >
-            Book This Vehicle
-            <IconArrow size={13} />
-          </a>
-        </div>
-      </div>
-    </div>,
-    document.body
-  );
-}
-
-/* ─────────────────────────────────────────────────────────────
-   VEHICLE CARD
-───────────────────────────────────────────────────────────── */
-function VehicleCard({ vehicle, onSelect }: { vehicle: Vehicle; onSelect: (v: Vehicle) => void }) {
-  const cfg = CATEGORY_CONFIG[vehicle.category];
-
-  return (
-    <div
-      className="glass-card vehicle-card"
-      style={{ borderRadius: "1.2rem", overflow: "hidden", cursor: "pointer" }}
-      onClick={() => onSelect(vehicle)}
-    >
-      {/* Image */}
-      <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
-        <Image
-          src={vehicle.image}
-          alt={vehicle.name}
-          fill
-          style={{ objectFit: "cover", transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1)" }}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="card-image"
-        />
         <div style={{
           position: "absolute", inset: 0,
           background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.42) 100%)",
