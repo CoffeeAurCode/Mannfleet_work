@@ -287,7 +287,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "jet-on-wheels", name: '"Jet on Wheels" (Volvo 13.5m)', type: "Coaches", category: "SUPER LUXURY",
     seating: "23 Full Recliners Including Pilot", luggage: "Fits 40–50 large suitcases",
-    image: "/Mann%20car%20pictures/Volvo%20jet%20on%20wheels.jpeg",
+    image: ["/Mann car pictures/Volvo/ChatGPT Image Apr 29, 2026, 10_24_50 PM.png","/Mann car pictures/Volvo/ChatGPT Image Apr 29, 2026, 10_27_10 PM.png","/Mann car pictures/Volvo/ChatGPT Image Apr 29, 2026, 10_29_22 PM.png","/Mann car pictures/Volvo/ChatGPT Image Apr 29, 2026, 10_31_42 PM.png","/Mann car pictures/Volvo/ChatGPT Image Apr 29, 2026, 10_33_26 PM.png","/Mann car pictures/Volvo/ChatGPT Image Apr 29, 2026, 10_34_19 PM.png","/Mann car pictures/Volvo/ChatGPT Image Apr 29, 2026, 10_37_47 PM.png","/Mann car pictures/Volvo/ChatGPT Image Apr 29, 2026, 10_37_58 PM.png","/Mann car pictures/Volvo/ChatGPT Image Apr 29, 2026, 10_43_10 PM.png","/Mann car pictures/Volvo/DSC01678.JPG","/Mann car pictures/Volvo/DSC01682.JPG","/Mann car pictures/Volvo/DSC01689.JPG","/Mann car pictures/Volvo/DSC01695.JPG","/Mann car pictures/Volvo/DSC01702.JPG","/Mann car pictures/Volvo/DSC01704 (1).JPG","/Mann car pictures/Volvo/DSC01706.JPG","/Mann car pictures/Volvo/DSC01711.JPG","/Mann car pictures/Volvo/DSC01715.JPG"],
   },
   {
     id: "vanity-coach", name: "Vanity Coaches", type: "Coaches", category: "SUPER LUXURY",
@@ -590,50 +590,117 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
 
         {/* Car image */}
         <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
-          
           {Array.isArray(vehicle.image) ? (
             <ImageCarousel images={vehicle.image} alt={vehicle.name} />
           ) : (
-            
-        {Array.isArray(vehicle.image) ? (
-          <ImageCarousel images={vehicle.image} alt={vehicle.name} />
-        ) : (
-          <Image
-            src={vehicle.image}
-            alt={vehicle.name}
-            fill
-            style={{ objectFit: "cover", transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1)" }}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="card-image"
-          />
-        )}
+            <Image
+              src={vehicle.image}
+              alt={vehicle.name}
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="(max-width: 640px) 100vw, 520px"
+            />
+          )}
+          <div style={{
+            position: "absolute", inset: 0,
+            background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.42) 100%)",
+            pointerEvents: "none",
+          }} />
+          <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem" }}>
+            <span style={{
+              display: "inline-block",
+              padding: "0.25rem 0.85rem",
+              borderRadius: 9999,
+              fontSize: "0.70rem",
+              fontWeight: 700,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: cfg.color,
+              background: cfg.bg,
+              border: `1px solid ${cfg.border}`,
+              backdropFilter: "blur(8px)",
+            }}>
+              {vehicle.category}
+            </span>
+          </div>
+        </div>
 
+        {/* Body */}
+        <div style={{
+          padding: "0.9rem 1rem 1rem",
+          background: "var(--glass-surface-86)",
+          backdropFilter: "blur(20px) saturate(140%)",
+          WebkitBackdropFilter: "blur(20px) saturate(140%)",
+        }}>
+          <p className="font-sans" style={{
+            fontSize: "0.875rem", fontWeight: 600,
+            color: "var(--text-primary)",
+            margin: "0 0 0.5rem",
+            letterSpacing: "-0.01em",
+            whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
+          }}>
+            {vehicle.name}
+          </p>
+
+          {/* Quick specs */}
+          <div style={{ display: "flex", gap: "1rem", marginBottom: "0.8rem" }}>
+            {[
+              { icon: <IconUsers size={11} />, val: vehicle.seating },
+              { icon: <IconBriefcase size={11} />, val: vehicle.luggage.split(" / ")[0] },
+            ].map(({ icon, val }) => (
+              <span key={val} className="font-sans" style={{
+                display: "flex", alignItems: "center", gap: "0.28rem",
+                fontSize: "0.68rem", color: "var(--text-50)",
+              }}>
+                {icon} {val}
+              </span>
+            ))}
+          </div>
+
+          <a
+            href="/reservation"
+            className="btn-ghost font-sans"
+            style={{ fontSize: "0.68rem", padding: "0.42rem 0.9rem", width: "100%", justifyContent: "center", display: "flex", alignItems: "center", gap: "0.4rem", textDecoration: "none" }}
+          >
+            Book Now
+            <IconArrow size={11} />
+          </a>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   VEHICLE CARD
+───────────────────────────────────────────────────────────── */
+function VehicleCard({ vehicle, onSelect }: { vehicle: Vehicle; onSelect: (v: Vehicle) => void }) {
+  const cfg = CATEGORY_CONFIG[vehicle.category];
+  const images = Array.isArray(vehicle.image) ? vehicle.image : [vehicle.image];
+
+  return (
+    <div
+      className="vehicle-card glass-panel"
+      onClick={() => onSelect(vehicle)}
+      style={{ borderRadius: "1rem", overflow: "hidden", cursor: "pointer", position: "relative" }}
+    >
+      <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
+        <ImageCarousel images={images} alt={vehicle.name} />
         <div style={{
           position: "absolute", inset: 0,
           background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.42) 100%)",
           pointerEvents: "none",
         }} />
-        {/* Category badge */}
         <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem" }}>
           <span style={{
-            display: "inline-block",
-            padding: "0.25rem 0.85rem",
-            borderRadius: 9999,
-            fontSize: "0.70rem",
-            fontWeight: 700,
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: cfg.color,
-            background: cfg.bg,
-            border: `1px solid ${cfg.border}`,
+            padding: "0.25rem 0.85rem", borderRadius: 9999, fontSize: "0.70rem",
+            fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase",
+            color: cfg.color, background: cfg.bg, border: `1px solid ${cfg.border}`,
             backdropFilter: "blur(8px)",
-          }}>
-            {vehicle.category}
-          </span>
+          }}>{vehicle.category}</span>
         </div>
       </div>
-
-      {/* Body */}
       <div style={{
         padding: "0.9rem 1rem 1rem",
         background: "var(--glass-surface-86)",
@@ -641,38 +708,17 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
         WebkitBackdropFilter: "blur(20px) saturate(140%)",
       }}>
         <p className="font-sans" style={{
-          fontSize: "0.875rem", fontWeight: 600,
-          color: "var(--text-primary)",
-          margin: "0 0 0.5rem",
-          letterSpacing: "-0.01em",
-          whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
-        }}>
-          {vehicle.name}
-        </p>
-
-        {/* Quick specs */}
-        <div style={{ display: "flex", gap: "1rem", marginBottom: "0.8rem" }}>
-          {[
-            { icon: <IconUsers size={11} />, val: vehicle.seating },
-            { icon: <IconBriefcase size={11} />, val: vehicle.luggage.split(" / ")[0] },
-          ].map(({ icon, val }) => (
-            <span key={val} className="font-sans" style={{
-              display: "flex", alignItems: "center", gap: "0.28rem",
-              fontSize: "0.68rem", color: "var(--text-50)",
-            }}>
-              {icon} {val}
-            </span>
-          ))}
+          fontSize: "0.875rem", fontWeight: 600, color: "var(--text-primary)",
+          margin: "0 0 0.5rem", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
+        }}>{vehicle.name}</p>
+        <div style={{ display: "flex", gap: "1rem" }}>
+          <span className="font-sans" style={{ display: "flex", alignItems: "center", gap: "0.28rem", fontSize: "0.68rem", color: "var(--text-50)" }}>
+            <IconUsers size={11} /> {vehicle.seating}
+          </span>
+          <span className="font-sans" style={{ display: "flex", alignItems: "center", gap: "0.28rem", fontSize: "0.68rem", color: "var(--text-50)" }}>
+            <IconBriefcase size={11} /> {vehicle.luggage.split(" / ")[0]}
+          </span>
         </div>
-
-        <button
-          className="btn-ghost font-sans"
-          style={{ fontSize: "0.68rem", padding: "0.42rem 0.9rem", width: "100%", justifyContent: "center" }}
-          onClick={(e) => { e.stopPropagation(); onSelect(vehicle); }}
-        >
-          View Details
-          <IconArrow size={11} />
-        </button>
       </div>
     </div>
   );
