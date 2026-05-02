@@ -150,6 +150,7 @@ export default function PartnersMarquee() {
 
       {/* ── Edge fade masks ── */}
       <div
+        className="partners-fade-left"
         aria-hidden="true"
         style={{
           position: "absolute",
@@ -161,6 +162,7 @@ export default function PartnersMarquee() {
         }}
       />
       <div
+        className="partners-fade-right"
         aria-hidden="true"
         style={{
           position: "absolute",

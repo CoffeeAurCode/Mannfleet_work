@@ -6,7 +6,7 @@ const IndiaMapLeaflet = dynamic(() => import("./IndiaMapLeaflet"), {
   ssr: false,
   loading: () => (
     <div style={{
-      height: 480,
+      height: "clamp(280px, 50vw, 480px)",
       background: "var(--glass-ultra)",
       borderRadius: "1.25rem",
       border: "1px solid var(--border-subtle)",
@@ -23,7 +23,7 @@ const IndiaMapLeaflet = dynamic(() => import("./IndiaMapLeaflet"), {
 
 export default function IndiaMap() {
   return (
-    <div style={{ height: 560, borderRadius: "1.25rem", overflow: "hidden" }}>
+    <div style={{ height: "clamp(280px, 50vw, 560px)", borderRadius: "1.25rem", overflow: "hidden" }}>
       <IndiaMapLeaflet />
     </div>
   );

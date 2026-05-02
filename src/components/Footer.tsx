@@ -301,7 +301,7 @@ export default function Footer() {
         }}>
 
           {/* ── LEFT — Logo + address + contact ── */}
-          <div style={{ flex: "0 0 auto", minWidth: "200px", maxWidth: "280px" }}>
+          <div className="footer-info-block" style={{ flex: "0 0 auto", minWidth: "200px", maxWidth: "280px" }}>
             <Image
               src="/mannlogo.webp"
               alt="MANN"
@@ -360,7 +360,7 @@ export default function Footer() {
           </div>
 
           {/* ── RIGHT — Three link columns ── */}
-          <div style={{
+          <div className="footer-links-right" style={{
             display: "flex",
             gap: "clamp(2rem, 5vw, 5rem)",
             flexWrap: "wrap",

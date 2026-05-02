@@ -273,6 +273,19 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
               </li>
             ))}
           </ul>
+          {/* Theme toggle row */}
+          <div className="pill-mobile-theme-row">
+            <button
+              className="pill-theme-btn"
+              onClick={toggle}
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === "dark" ? <SunIcon size={14} /> : <MoonIcon size={14} />}
+            </button>
+            <span style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.06em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase" }}>
+              {theme === "dark" ? "Light mode" : "Dark mode"}
+            </span>
+          </div>
         </div>
 
       </div>

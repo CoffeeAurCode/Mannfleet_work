@@ -757,17 +757,7 @@ export default function BentoSection() {
           </h2>
         </div>
 
-        <div style={{
-          display:"grid",
-          gap:12,
-          gridTemplateColumns:"1.3fr 1fr 1.8fr 1fr",
-          gridTemplateRows:"270px 210px 240px",
-          gridTemplateAreas:`
-            "chauffeur  quality   quality   tracking"
-            "chauffeur  brand     support   support"
-            "essentials essentials pickup   pills"
-          `,
-        }}>
+        <div className="bento-grid">
           <ChauffeurCard />
           <QualityCard />
           <TrackingCard />

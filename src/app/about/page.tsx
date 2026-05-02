@@ -263,7 +263,7 @@ function CertModal({ entry, onClose }: { entry: CertEntry; onClose: () => void }
           <iframe
             src={`${entry.pdf}#toolbar=0&view=FitH`}
             title={entry.title}
-            style={{ width: "100%", height: "100%", minHeight: 480, border: "none", display: "block" }}
+            style={{ width: "100%", height: "100%", minHeight: "min(480px, 60vh)", border: "none", display: "block" }}
           />
         </div>
       </div>
@@ -481,14 +481,15 @@ export default function AboutPage() {
         },
       });
 
+      const isMobile = window.innerWidth <= 768;
       const timelineItems = [
-        { card: timelineCard1Ref.current, dot: dot1Ref.current, x: -90 },
-        { card: timelineCard2Ref.current, dot: dot2Ref.current, x: 90 },
-        { card: timelineCard3Ref.current, dot: dot3Ref.current, x: -90 },
-        { card: timelineCard4Ref.current, dot: dot4Ref.current, x: 90 },
-        { card: timelineCard5Ref.current, dot: dot5Ref.current, x: -90 },
-        { card: timelineCard6Ref.current, dot: dot6Ref.current, x: 90 },
-        { card: timelineCard7Ref.current, dot: dot7Ref.current, x: -90 },
+        { card: timelineCard1Ref.current, dot: dot1Ref.current, x: isMobile ? -24 : -90 },
+        { card: timelineCard2Ref.current, dot: dot2Ref.current, x: isMobile ? -24 : 90 },
+        { card: timelineCard3Ref.current, dot: dot3Ref.current, x: isMobile ? -24 : -90 },
+        { card: timelineCard4Ref.current, dot: dot4Ref.current, x: isMobile ? -24 : 90 },
+        { card: timelineCard5Ref.current, dot: dot5Ref.current, x: isMobile ? -24 : -90 },
+        { card: timelineCard6Ref.current, dot: dot6Ref.current, x: isMobile ? -24 : 90 },
+        { card: timelineCard7Ref.current, dot: dot7Ref.current, x: isMobile ? -24 : -90 },
       ];
       timelineItems.forEach(({ card, dot, x }) => {
         gsap.fromTo(card,
@@ -1293,9 +1294,9 @@ export default function AboutPage() {
           </div>
 
           {/* Timeline */}
-          <div ref={timelineInnerRef} style={{ position: "relative" }}>
+          <div ref={timelineInnerRef} className="about-timeline-inner" style={{ position: "relative" }}>
             {/* Vertical line */}
-            <div ref={timelineLineRef} style={{
+            <div ref={timelineLineRef} className="timeline-line" style={{
               position: "absolute",
               left: "50%",
               top: 0,
@@ -1307,7 +1308,7 @@ export default function AboutPage() {
             }} />
 
             {/* Scrolling car */}
-            <div ref={timelineCarRef} style={{
+            <div ref={timelineCarRef} className="timeline-car" style={{
               position: "absolute",
               left: "50%",
               top: 0,
@@ -1332,14 +1333,14 @@ export default function AboutPage() {
             </div>
 
             {/* Milestone 1 — LEFT */}
-            <div style={{
+            <div className="timeline-card-left" style={{
               display: "flex",
               justifyContent: "flex-end",
               paddingRight: "calc(50% + 2.5rem)",
               marginBottom: "3.5rem",
               position: "relative",
             }}>
-              <div ref={dot1Ref} style={{
+              <div ref={dot1Ref} className="timeline-dot" style={{
                 position: "absolute",
                 right: "calc(50% - 7px)",
                 top: "1.2rem",
@@ -1371,14 +1372,14 @@ export default function AboutPage() {
             </div>
 
             {/* Milestone 2 — RIGHT */}
-            <div style={{
+            <div className="timeline-card-right" style={{
               display: "flex",
               justifyContent: "flex-start",
               paddingLeft: "calc(50% + 2.5rem)",
               marginBottom: "3.5rem",
               position: "relative",
             }}>
-              <div ref={dot2Ref} style={{
+              <div ref={dot2Ref} className="timeline-dot" style={{
                 position: "absolute",
                 left: "calc(50% - 7px)",
                 top: "1.2rem",
@@ -1409,14 +1410,14 @@ export default function AboutPage() {
             </div>
 
             {/* Milestone 3 — LEFT */}
-            <div style={{
+            <div className="timeline-card-left" style={{
               display: "flex",
               justifyContent: "flex-end",
               paddingRight: "calc(50% + 2.5rem)",
               marginBottom: "3.5rem",
               position: "relative",
             }}>
-              <div ref={dot3Ref} style={{
+              <div ref={dot3Ref} className="timeline-dot" style={{
                 position: "absolute",
                 right: "calc(50% - 7px)",
                 top: "1.2rem",
@@ -1447,14 +1448,14 @@ export default function AboutPage() {
             </div>
 
             {/* Milestone 4 — RIGHT */}
-            <div style={{
+            <div className="timeline-card-right" style={{
               display: "flex",
               justifyContent: "flex-start",
               paddingLeft: "calc(50% + 2.5rem)",
               marginBottom: "3.5rem",
               position: "relative",
             }}>
-              <div ref={dot4Ref} style={{
+              <div ref={dot4Ref} className="timeline-dot" style={{
                 position: "absolute",
                 left: "calc(50% - 7px)",
                 top: "1.2rem",
@@ -1486,14 +1487,14 @@ export default function AboutPage() {
             </div>
 
             {/* Milestone 5 — LEFT */}
-            <div style={{
+            <div className="timeline-card-left" style={{
               display: "flex",
               justifyContent: "flex-end",
               paddingRight: "calc(50% + 2.5rem)",
               marginBottom: "3.5rem",
               position: "relative",
             }}>
-              <div ref={dot5Ref} style={{
+              <div ref={dot5Ref} className="timeline-dot" style={{
                 position: "absolute",
                 right: "calc(50% - 7px)",
                 top: "1.2rem",
@@ -1525,14 +1526,14 @@ export default function AboutPage() {
             </div>
 
             {/* Milestone 6 — RIGHT */}
-            <div style={{
+            <div className="timeline-card-right" style={{
               display: "flex",
               justifyContent: "flex-start",
               paddingLeft: "calc(50% + 2.5rem)",
               marginBottom: "3.5rem",
               position: "relative",
             }}>
-              <div ref={dot6Ref} style={{
+              <div ref={dot6Ref} className="timeline-dot" style={{
                 position: "absolute",
                 left: "calc(50% - 7px)",
                 top: "1.2rem",
@@ -1563,13 +1564,13 @@ export default function AboutPage() {
             </div>
 
             {/* Milestone 7 — LEFT */}
-            <div style={{
+            <div className="timeline-card-left" style={{
               display: "flex",
               justifyContent: "flex-end",
               paddingRight: "calc(50% + 2.5rem)",
               position: "relative",
             }}>
-              <div ref={dot7Ref} style={{
+              <div ref={dot7Ref} className="timeline-dot" style={{
                 position: "absolute",
                 right: "calc(50% - 7px)",
                 top: "1.2rem",

@@ -583,3 +583,162 @@ body {
   92%  { opacity:0.9; }
   100% { top:100%; opacity:0; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE OVERRIDES
+═══════════════════════════════════════════════════════════ */
+
+/* ── BentoSection responsive grid ── */
+.bento-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1.3fr 1fr 1.8fr 1fr;
+  grid-template-rows: 270px 210px 240px;
+  grid-template-areas:
+    "chauffeur  quality   quality   tracking"
+    "chauffeur  brand     support   support"
+    "essentials essentials pickup   pills";
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    grid-template-areas:
+      "chauffeur chauffeur"
+      "quality   tracking"
+      "brand     support"
+      "essentials essentials"
+      "pickup    pills" !important;
+  }
+  .bento-grid > div {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "chauffeur"
+      "quality"
+      "tracking"
+      "brand"
+      "support"
+      "essentials"
+      "pickup"
+      "pills" !important;
+  }
+  .bento-grid > div {
+    min-height: 200px;
+  }
+}
+
+/* ── Hero stats strip ── */
+.hero-stats-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 1.5rem 1.75rem;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .hero-stats-strip {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    padding: 0 1rem 1.5rem;
+  }
+  .hero-stats-row {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+    gap: 0.6rem !important;
+  }
+  .hero-stats-row::-webkit-scrollbar {
+    display: none;
+  }
+  .hero-stats-row > div {
+    min-width: 140px !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+/* ── ServicesSection — mobile row simplification ── */
+@media (max-width: 640px) {
+  .svc-right-stat {
+    display: none !important;
+  }
+  .svc-description {
+    opacity: 1 !important;
+    transform: none !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── About page timeline — single column on mobile ── */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 1rem !important;
+  }
+  .timeline-car {
+    display: none !important;
+  }
+  .timeline-card-left,
+  .timeline-card-right {
+    justify-content: flex-start !important;
+    padding-left: 2.5rem !important;
+    padding-right: 0 !important;
+  }
+  .timeline-card-left .timeline-dot,
+  .timeline-card-right .timeline-dot {
+    right: auto !important;
+    left: calc(1rem - 7px) !important;
+  }
+  .glass-panel[style*="maxWidth: 380"],
+  .glass-panel[style*="max-width: 380"] {
+    max-width: 100% !important;
+  }
+}
+
+/* ── Partners marquee — narrow edge fades on mobile ── */
+@media (max-width: 640px) {
+  .partners-fade-left,
+  .partners-fade-right {
+    width: 48px !important;
+  }
+}
+
+/* ── Footer — mobile layout ── */
+@media (max-width: 640px) {
+  .footer-info-block {
+    max-width: 100% !important;
+    width: 100%;
+    min-width: unset !important;
+  }
+  .footer-links-right {
+    width: 100%;
+  }
+  .footer-contact-row {
+    gap: 1.5rem !important;
+  }
+}
+
+/* ── General touch targets — minimum 44px tap area ── */
+@media (max-width: 768px) {
+  .btn-primary, .btn-ghost {
+    min-height: 44px;
+  }
+}
+
+/* ── Prevent horizontal overflow globally on mobile ── */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}

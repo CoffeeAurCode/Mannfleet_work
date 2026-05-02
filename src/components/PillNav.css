@@ -257,6 +257,17 @@
   color: #ffffff;
 }
 
+/* Mobile theme toggle row inside mobile menu */
+.pill-mobile-theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 18px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 4px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .pill-nav-items,

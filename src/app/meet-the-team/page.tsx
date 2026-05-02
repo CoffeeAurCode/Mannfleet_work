@@ -317,7 +317,7 @@ function TeamModal({
           background: "var(--bg-surface)",
           border: "1px solid var(--border-mid)",
           borderRadius: 20,
-          padding: "40px 44px",
+          padding: "clamp(1.25rem, 5vw, 40px) clamp(1.25rem, 6vw, 44px)",
           maxWidth: 700,
           width: "100%",
           maxHeight: "88vh",

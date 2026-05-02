@@ -179,7 +179,7 @@ export default function HeroSection() {
       <Navbar overlay wrapperRef={navRef} initialOpacity={0} />
 
       {/* ── Hero Content ── */}
-      <div className="relative flex-1 flex flex-col justify-center px-6 lg:px-20 pb-52 lg:pb-56 pt-4 lg:pt-6" style={{ zIndex: 10 }}>
+      <div className="relative flex-1 flex flex-col justify-center px-6 lg:px-20 pb-4 lg:pb-56 pt-4 lg:pt-6" style={{ zIndex: 10 }}>
         <div className="max-w-3xl">
 
           {/* Label badge — font-sans, uppercase */}
@@ -331,8 +331,8 @@ export default function HeroSection() {
       {/* ── Bottom Stats Strip ── */}
       <div
         ref={statsRef}
-        className="absolute bottom-0 left-0 right-0"
-        style={{ zIndex: 10, padding: "0 1.5rem 1.75rem", opacity: 0 }}
+        className="hero-stats-strip"
+        style={{ opacity: 0 }}
       >
         {/* Divider */}
         <div style={{
@@ -343,7 +343,7 @@ export default function HeroSection() {
           marginRight: 4,
         }} />
 
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.85rem", alignItems: "stretch" }}>
+        <div className="hero-stats-row" style={{ display: "flex", flexWrap: "wrap", gap: "0.85rem", alignItems: "stretch" }}>
           <StatCard value="200+" label="Premium Vehicles" sub="SUVs, sedans, sports & luxury" />
           <StatCard value="IATA" label="Approved & Accredited" sub="Globally recognised standard" />
           <StatCard value="500+" label="Trusted Clients" sub="Corporates, embassies & VIPs" />

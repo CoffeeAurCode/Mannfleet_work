@@ -211,6 +211,7 @@ function ServiceRow({ service, isFirst, index, inView, speed, repetitions }: Ite
             </span>
 
             <p
+              className="svc-description"
               style={{
                 fontSize: "0.82rem",
                 color: "var(--text-45)",
@@ -231,7 +232,7 @@ function ServiceRow({ service, isFirst, index, inView, speed, repetitions }: Ite
         <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", flexShrink: 0 }}>
           <span className="glass-badge" style={{ display: "none" }} aria-hidden />
           {/* stat block */}
-          <div style={{ textAlign: "right" }}>
+          <div className="svc-right-stat" style={{ textAlign: "right" }}>
             <p
               className="text-emboss"
               style={{
