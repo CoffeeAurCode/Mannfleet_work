@@ -103,11 +103,11 @@ const QUICK_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "#", icon: <IgIcon /> },
+  { label: "Instagram", href: "https://www.instagram.com/manntours/", icon: <IgIcon /> },
   { label: "WhatsApp", href: "https://wa.me/919990222999", icon: <WhatsAppIcon /> },
   { label: "LinkedIn", href: "#", icon: <LinkedInIcon /> },
-  { label: "Twitter / X", href: "#", icon: <TwitterIcon /> },
-  { label: "Facebook", href: "#", icon: <FacebookIcon /> },
+  { label: "Twitter / X", href: "https://x.com/manntours1", icon: <TwitterIcon /> },
+  { label: "Facebook", href: "https://www.facebook.com/manntours/", icon: <FacebookIcon /> },
   { label: "YouTube", href: "#", icon: <YouTubeIcon /> },
 ];
 
