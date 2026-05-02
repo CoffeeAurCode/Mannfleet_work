@@ -1604,6 +1604,104 @@ export default function AboutPage() {
       </section>
 
       {/* ══════════════════════════════════════════════
+          MOTTO BANNER
+      ══════════════════════════════════════════════ */}
+      <section style={{
+        position: "relative",
+        background: "var(--bg-surface)",
+        padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 6rem)",
+        overflow: "hidden",
+        borderTop: "1px solid var(--border-subtle)",
+        borderBottom: "1px solid var(--border-subtle)",
+      }}>
+        {/* Background glow */}
+        <div style={{
+          position: "absolute",
+          top: "50%", left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "70vw", height: "70vw",
+          maxWidth: 800, maxHeight: 800,
+          borderRadius: "50%",
+          background: "radial-gradient(ellipse, rgba(200,40,40,0.055) 0%, transparent 70%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }} />
+
+        <div style={{
+          position: "relative", zIndex: 1,
+          maxWidth: 860, margin: "0 auto",
+          textAlign: "center",
+        }}>
+          {/* Decorative top rule */}
+          <div style={{
+            display: "flex", alignItems: "center",
+            justifyContent: "center", gap: "1.25rem",
+            marginBottom: "2.5rem",
+          }}>
+            <div style={{ flex: 1, maxWidth: 80, height: 1, background: "var(--accent)", opacity: 0.7 }} />
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="var(--accent)" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <div style={{ flex: 1, maxWidth: 80, height: 1, background: "var(--accent)", opacity: 0.7 }} />
+          </div>
+
+          {/* Opening quotation mark */}
+          <div style={{
+            fontFamily: "Georgia, serif",
+            fontSize: "clamp(5rem, 14vw, 10rem)",
+            lineHeight: 0.7,
+            color: "var(--accent)",
+            opacity: 0.18,
+            marginBottom: "0.5rem",
+            userSelect: "none",
+          }}>
+            &ldquo;
+          </div>
+
+          {/* Motto text */}
+          <blockquote style={{ margin: 0 }}>
+            <p className="font-serif" style={{
+              fontSize: "clamp(1.35rem, 3.2vw, 2.15rem)",
+              fontWeight: 400,
+              lineHeight: 1.55,
+              color: "var(--text-primary)",
+              letterSpacing: "0.01em",
+              margin: "0 0 2rem",
+            }}>
+              Quality is never an accident — it is always the result of{" "}
+              <em style={{ color: "var(--text-secondary)" }}>high intention</em>,{" "}
+              <em style={{ color: "var(--text-secondary)" }}>sincere efforts</em>,{" "}
+              <em style={{ color: "var(--text-secondary)" }}>intelligent direction</em>{" "}
+              and{" "}
+              <em style={{ color: "var(--accent)", opacity: 0.9 }}>skilful execution</em>.
+            </p>
+
+            {/* Attribution line */}
+            <footer style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "1rem",
+            }}>
+              <div style={{ width: 32, height: 1, background: "var(--border-mid)" }} />
+              <cite className="font-sans" style={{
+                fontSize: "0.7rem",
+                fontWeight: 700,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "var(--text-muted)",
+                fontStyle: "normal",
+              }}>
+                Our Motto
+              </cite>
+              <div style={{ width: 32, height: 1, background: "var(--border-mid)" }} />
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
           4a. WHY MANN FLEET — USP STICKY CARDS
       ══════════════════════════════════════════════ */}
       <section ref={uspSectionRef} style={{
