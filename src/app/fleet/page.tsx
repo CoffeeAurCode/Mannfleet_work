@@ -114,7 +114,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "rolls-ghost", name: "Rolls-Royce Ghost", type: "Sedans", category: "ROLLS ROYCE",
     seating: "5 Seater Including Pilot", luggage: "507 Litres",
-    image: "/Mann%20car%20pictures/Rolls%20royce%20ghost.jpeg",
+    image: ["/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2012_53_40%20PM.png","/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2012_55_48%20PM.png","/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2001_01_06%20PM.png","/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2001_03_33%20PM.png","/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2001_10_24%20PM.png","/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2001_14_32%20PM.png","/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2001_16_21%20PM.png","/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2001_19_33%20PM.png","/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2001_20_48%20PM.png","/Mann%20car%20pictures/Rolls%20royce/ChatGPT%20Image%20May%201%2C%202026%2C%2001_22_23%20PM.png"],
   },
 
   /* ── SUVs ────────────────────────────────────────────────── */
