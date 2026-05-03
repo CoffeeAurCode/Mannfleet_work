@@ -14,10 +14,10 @@ gsap.registerPlugin(ScrollTrigger);
    TYPES
 ───────────────────────────────────────────────────────────── */
 type Category = "ECONOMY" | "ECONOMY PLUS" | "PREMIUM" | "PREMIUM PLUS" | "LUXURY" | "SUPER LUXURY" | "ROLLS ROYCE" | "RANGE ROVER" | "SELF DRIVING" | "LONG TERM LEASING";
-type VehicleType = "Sedans" | "SUVs" | "Vans" | "Coaches" | "Self Driving" | "Long Term Leasing";
+type VehicleType = "Sedans" | "SUVs" | "Vanity van" | "Coaches" | "Self Driving" | "Long Term Leasing";
 
 const CATEGORY_ORDER: Category[] = ["ECONOMY", "ECONOMY PLUS", "PREMIUM", "PREMIUM PLUS", "LUXURY", "SUPER LUXURY", "ROLLS ROYCE", "RANGE ROVER", "SELF DRIVING", "LONG TERM LEASING"];
-const VEHICLE_TYPES: VehicleType[] = ["Sedans", "SUVs", "Vans", "Coaches", "Self Driving", "Long Term Leasing"];
+const VEHICLE_TYPES: VehicleType[] = ["Sedans", "SUVs", "Vanity van", "Coaches", "Self Driving", "Long Term Leasing"];
 
 interface Vehicle {
   id: string;
@@ -186,61 +186,61 @@ const VEHICLES: Vehicle[] = [
     image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=700&q=80",
   },
 
-  /* ── VANs ────────────────────────────────────────────────── */
+  /* ── Vanity van ────────────────────────────────────────── */
   // Economy
   {
-    id: "tempo-traveller", name: "Tempo Traveller", type: "Vans", category: "ECONOMY",
+    id: "tempo-traveller", name: "Tempo Traveller", type: "Vanity van", category: "ECONOMY",
     seating: "9 / 12 / 16 Seater Including Pilot", luggage: "Limited rear boot + Roof Carrier for bulk",
     image: "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=700&q=80",
   },
   // Premium
   {
-    id: "urbania-mod", name: "Force Urbania (Modified)", type: "Vans", category: "PREMIUM",
+    id: "urbania-mod", name: "Force Urbania (Modified)", type: "Vanity van", category: "PREMIUM",
     seating: "9 / 12 Seater Including Pilot", luggage: "Very limited boot; last row removable for bags",
     image: ["/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_18_13%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_22_35%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_24_25%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_28_40%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_29_12%20AM.png"],
   },
   {
-    id: "urbania-std", name: "Force Urbania", type: "Vans", category: "PREMIUM",
+    id: "urbania-std", name: "Force Urbania", type: "Vanity van", category: "PREMIUM",
     seating: "13 / 17 Seater Including Pilot", luggage: "Dedicated compartment — fits 8–12 medium suitcases",
     image: ["/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_18_13%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_22_35%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_24_25%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_28_40%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_29_12%20AM.png"],
   },
   // Premium Plus
   {
-    id: "toyota-coaster", name: "Toyota Coaster", type: "Vans", category: "PREMIUM PLUS",
+    id: "toyota-coaster", name: "Toyota Coaster", type: "Vanity van", category: "PREMIUM PLUS",
     seating: "18 Seater Including Pilot", luggage: "410 Litres",
     image: "/Mann%20car%20pictures/toyota%20commuter.jpeg",
   },
   {
-    id: "toyota-hiace", name: "Toyota Hiace", type: "Vans", category: "PREMIUM PLUS",
+    id: "toyota-hiace", name: "Toyota Hiace", type: "Vanity van", category: "PREMIUM PLUS",
     seating: "9 Seater Including Pilot", luggage: "Fits 10–12 large check-in suitcases",
     image: "/Mann%20car%20pictures/14%20seater%20toyota%20commuter.jpeg",
   },
   // Luxury
   {
-    id: "sprinter", name: "Mercedes-Benz Sprinter", type: "Vans", category: "LUXURY",
+    id: "sprinter", name: "Mercedes-Benz Sprinter", type: "Vanity van", category: "LUXURY",
     seating: "11 / 14 Seater Including Pilot", luggage: "Fits 8–10 large suitcases comfortably",
     image: ["/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_55_17%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_03_01%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_03_31%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_10_11%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_30_46%20AM.png"],
   },
   {
-    id: "sprinter-exec", name: "Mercedes-Benz Sprinter Executive Lounge", type: "Vans", category: "LUXURY",
+    id: "sprinter-exec", name: "Mercedes-Benz Sprinter Executive Lounge", type: "Vanity van", category: "LUXURY",
     seating: "7–9 Seater Including Pilot", luggage: "Fits 10–15 large suitcases",
     image: ["/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_37_46%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_43_57%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_56_51%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_01_19%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_05_12%20PM.png","/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_10_58%20PM.png"],
   },
   {
-    id: "v-class", name: "Mercedes-Benz V-Class", type: "Vans", category: "LUXURY",
+    id: "v-class", name: "Mercedes-Benz V-Class", type: "Vanity van", category: "LUXURY",
     seating: "6 / 7 Seater Including Pilot", luggage: "610 Litres",
     image: ["/Mann%20car%20pictures/Mercedes-Benz%20V-Class/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_00_35%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20V-Class/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_04_00%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20V-Class/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_04_27%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20V-Class/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_50_34%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20V-Class/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_53_49%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20V-Class/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_54_56%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20V-Class/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_59_46%20AM.png"],
   },
   // Super Luxury
   {
-    id: "sprinter-washroom", name: "Mercedes Sprinter with Washroom", type: "Vans", category: "SUPER LUXURY",
+    id: "sprinter-washroom", name: "Mercedes Sprinter with Washroom", type: "Vanity van", category: "SUPER LUXURY",
     seating: "8 Seater Including Pilot", luggage: "Dedicated luggage partition + overhead cabinets",
     image: ["/Mann%20car%20pictures/Mercedes-Benz%20Sprinter/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_24_42%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20Sprinter/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_27_41%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20Sprinter/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_31_19%20AM.png","/Mann%20car%20pictures/Mercedes-Benz%20Sprinter/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_47_18%20PM.png"],
   },
 
   
   {
-    id: "vellfire", name: "Toyota Vellfire", type: "Vans", category: "LUXURY",
+    id: "vellfire", name: "Toyota Vellfire", type: "Vanity van", category: "LUXURY",
     seating: "4-6 Seater Including Pilot", luggage: "Premium Luggage Space",
     image: ["/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_39_48%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_41_13%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_43_16%20PM%20(1).png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_44_53%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_46_22%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_48_16%20PM.png"],
   },
