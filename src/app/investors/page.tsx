@@ -91,7 +91,6 @@ const PDF_CATEGORIES: PdfCategory[] = [
     icon: "📋",
     docs: [
       { label: "Board Diversity Policy", file: "Board-Diversity-Policy_Mann.pdf" },
-      { label: "CSR Policy", file: "CSR-Policy_Mann.pdf" },
       { label: "Whistle-Blower Policy", file: "Whistle-Blower-Policy_Mann.pdf" },
       { label: "Nomination & Remuneration Policy", file: "Nomination-Remuneration-Policy_Mann.pdf" },
       { label: "Documents Preservation & Archival Policy", file: "Documents-Preservation-and-Archival-Policy_Mann.pdf" },

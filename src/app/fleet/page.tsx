@@ -35,32 +35,20 @@ interface Vehicle {
 const VEHICLES: Vehicle[] = [
   /* ── SEDANS ─────────────────────────────────────────────── */
   // Economy
-  {
-    id: "honda-amaze", name: "Honda Amaze", type: "Sedans", category: "ECONOMY",
-    seating: "5 Seater Including Pilot", luggage: "416 Litres",
-    image: "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=700&q=80",
-  },
+
   {
     id: "hyundai-aura", name: "Hyundai Aura", type: "Sedans", category: "ECONOMY",
     seating: "5 Seater Including Pilot", luggage: "402 Litres",
     image: ["/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_15_47%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_19_35%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_21_57%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_23_33%20PM.png"],
   },
-  {
-    id: "maruti-dzire", name: "Maruti Suzuki Dzire", type: "Sedans", category: "ECONOMY",
-    seating: "5 Seater Including Pilot", luggage: "382 Litres",
-    image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=700&q=80",
-  },
+
   // Economy Plus
   {
     id: "honda-city", name: "Honda City", type: "Sedans", category: "ECONOMY PLUS",
     seating: "5 Seater Including Pilot", luggage: "506 Litres",
     image: ["/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_24_20%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_26_03%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_27_55%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_28_55%20PM.png","/Mann car pictures/Honda%20City/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_29_57%20PM.png"],
   },
-  {
-    id: "hyundai-verna", name: "Hyundai Verna", type: "Sedans", category: "ECONOMY PLUS",
-    seating: "5 Seater Including Pilot", luggage: "528 Litres",
-    image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=700&q=80",
-  },
+
   // Premium
   {
     id: "camry-hybrid", name: "Toyota Camry Hybrid", type: "Sedans", category: "PREMIUM",
@@ -84,11 +72,7 @@ const VEHICLES: Vehicle[] = [
     seating: "5 Seater Including Pilot", luggage: "540 Litres",
     image: ["/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_31_52%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_32_23%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_32_56%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_36_12%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_39_28%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_41_21%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_41_47%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_42_37%20PM.png"],
   },
-  {
-    id: "audi-a6", name: "Audi A6", type: "Sedans", category: "LUXURY",
-    seating: "5 Seater Including Pilot", luggage: "530 Litres",
-    image: "/Mann%20car%20pictures/a6.png",
-  },
+
   {
     id: "bmw-5-series", name: "BMW 5 Series", type: "Sedans", category: "LUXURY",
     seating: "5 Seater Including Pilot", luggage: "500 Litres",
@@ -105,11 +89,7 @@ const VEHICLES: Vehicle[] = [
     seating: "4–5 Seater Including Pilot", luggage: "540 Litres",
     image: ["/Mann%20car%20pictures/BMW%207%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_33_02%20PM.png","/Mann%20car%20pictures/BMW%207%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_35_37%20PM.png","/Mann%20car%20pictures/BMW%207%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_38_59%20PM.png","/Mann%20car%20pictures/BMW%207%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_41_11%20PM.png","/Mann%20car%20pictures/BMW%207%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_43_29%20PM.png","/Mann%20car%20pictures/BMW%207%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_44_07%20PM.png","/Mann%20car%20pictures/BMW%207%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_46_17%20PM.png","/Mann%20car%20pictures/BMW%207%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_48_57%20PM.png","/Mann%20car%20pictures/BMW%207%20Series/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2007_26_12%20PM.png"],
   },
-  {
-    id: "maybach-s", name: "Mercedes-Maybach S-Class", type: "Sedans", category: "SUPER LUXURY",
-    seating: "4 Seater Including Pilot", luggage: "495 Litres",
-    image: ["/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_07_15%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_09_09%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_10_15%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_10_31%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_11_02%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_11_23%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_12_17%20PM.png"],
-  },
+
   // Rolls Royce
   {
     id: "rolls-ghost", name: "Rolls-Royce Ghost", type: "Sedans", category: "ROLLS ROYCE",
@@ -296,11 +276,7 @@ const VEHICLES: Vehicle[] = [
   },
 
   /* ── SELF DRIVING ────────────────────────────────────────── */
-  {
-    id: "sd-dzire", name: "Maruti Suzuki Dzire (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
-    seating: "5 Seater Excluding Pilot", luggage: "382 Litres",
-    image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=700&q=80",
-  },
+
   {
     id: "sd-city", name: "Honda City (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "5 Seater Excluding Pilot", luggage: "506 Litres",
@@ -333,11 +309,7 @@ const VEHICLES: Vehicle[] = [
   },
 
   /* ── LONG TERM LEASING ───────────────────────────────────── */
-  {
-    id: "lt-dzire", name: "Maruti Suzuki Dzire (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
-    seating: "5 Seater Including Pilot", luggage: "382 Litres",
-    image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=700&q=80",
-  },
+
   {
     id: "lt-hycross-7", name: "Toyota Innova Hycross (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
     seating: "7 Seater Including Pilot", luggage: "300L / 991L (3rd row folded)",

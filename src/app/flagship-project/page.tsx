@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/Navbar";
@@ -92,6 +93,7 @@ export default function FlagshipProjectPage() {
   const advantageRef = useRef<HTMLElement>(null);
   const connectRef = useRef<HTMLElement>(null);
   const quoteRef = useRef<HTMLElement>(null);
+  const visualRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ease = "power3.out";
@@ -107,7 +109,7 @@ export default function FlagshipProjectPage() {
     });
 
     /* Scroll-triggered sections */
-    const sections = [overviewRef, statsRef, mandateRef, advantageRef, connectRef, quoteRef];
+    const sections = [overviewRef, visualRef, statsRef, mandateRef, advantageRef, connectRef, quoteRef];
     const triggers: ScrollTrigger[] = [];
     sections.forEach((ref) => {
       if (!ref.current) return;
@@ -330,6 +332,64 @@ export default function FlagshipProjectPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          2.5 VISUAL BREAK: THE INFRASTRUCTURE
+      ═══════════════════════════════════════════════════════ */}
+      <section ref={visualRef} style={{
+        background: "var(--bg-base)",
+        padding: "0 clamp(1.5rem, 7vw, 8rem)",
+        marginBottom: "clamp(4rem, 8vw, 7rem)",
+      }}>
+        <div style={{
+          maxWidth: 1200,
+          margin: "0 auto",
+          position: "relative",
+          borderRadius: 24,
+          overflow: "hidden",
+          aspectRatio: "21 / 9",
+          border: "1px solid var(--border-subtle)",
+          boxShadow: "0 20px 40px -10px rgba(0,0,0,0.15)",
+        }}>
+          <Image
+            src="/jewar_airport.jpg"
+            alt="Noida International Airport"
+            fill
+            style={{
+              objectFit: "cover",
+            }}
+            priority
+          />
+          {/* Subtle gradient overlay for text readability */}
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.5))",
+            pointerEvents: "none"
+          }} />
+          <div style={{
+            position: "absolute",
+            bottom: "clamp(1.5rem, 3vw, 2.5rem)",
+            left: "clamp(1.5rem, 3vw, 2.5rem)",
+          }}>
+            <p style={{
+              fontSize: "0.7rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "var(--accent)",
+              fontWeight: 600,
+              marginBottom: "0.4rem"
+            }}>Project Vision</p>
+            <h3 className="font-serif" style={{
+              fontFamily: "'Instrument Serif', serif",
+              fontSize: "clamp(1.5rem, 4vw, 2.8rem)",
+              color: "#fff",
+              margin: 0,
+              lineHeight: 1.1
+            }}>Jewar Airport</h3>
           </div>
         </div>
       </section>
