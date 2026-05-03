@@ -162,10 +162,10 @@ export default function AwardsPage() {
                 borderRadius: "1.5rem",
                 overflow: "hidden",
                 border: "1px solid var(--border-mid)",
-                height: 300,
                 boxShadow: "0 12px 40px rgba(0,0,0,0.22)",
               }}>
-                <Image src={src} alt={caption} fill unoptimized style={{ objectFit: "cover" }} />
+                <Image src={src} alt={caption} width={0} height={0} sizes="100vw" unoptimized
+                  style={{ width: "100%", height: "auto", display: "block" }} />
                 <div style={{
                   position: "absolute", bottom: 0, left: 0, right: 0,
                   padding: "2rem 1.5rem 1.25rem",
@@ -294,27 +294,42 @@ export default function AwardsPage() {
           }}>
             {APPRECIATIONS.map(({ label, file, isImage }) =>
               isImage ? (
-                <div key={label} style={{
-                  position: "relative",
-                  borderRadius: "1.25rem",
-                  overflow: "hidden",
-                  border: "1px solid var(--border-mid)",
-                  height: 200,
-                  cursor: "pointer",
-                }}
-                  onClick={() => window.open(file, "_blank")}
+                <a
+                  key={label}
+                  href={file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-card"
+                  style={{
+                    padding: "1.25rem",
+                    borderRadius: "1.25rem",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.75rem",
+                    textDecoration: "none",
+                    transition: "border-color 0.18s ease",
+                    minHeight: 80,
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(200,40,40,0.30)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
                 >
-                  <Image src={file} alt={label} fill unoptimized style={{ objectFit: "cover" }} />
                   <div style={{
-                    position: "absolute", bottom: 0, left: 0, right: 0,
-                    padding: "1.5rem 1rem 0.75rem",
-                    background: "linear-gradient(to top, rgba(0,0,0,0.68) 0%, transparent 100%)",
+                    width: 36, height: 36, borderRadius: "9px", flexShrink: 0,
+                    background: "var(--glass-mid)", border: "1px solid var(--border-subtle)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "var(--text-secondary)",
                   }}>
-                    <span className="font-sans" style={{ fontSize: "0.75rem", fontWeight: 600, color: "rgba(255,255,255,0.90)" }}>
-                      {label}
-                    </span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
                   </div>
-                </div>
+                  <span className="font-sans" style={{ fontSize: "0.80rem", fontWeight: 600, color: "var(--text-primary)", lineHeight: 1.4, flex: 1 }}>
+                    {label}
+                  </span>
+                  <span style={{ color: "var(--text-40)", flexShrink: 0 }}><ArrowUpRight size={12} /></span>
+                </a>
               ) : (
                 <a
                   key={label}
