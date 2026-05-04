@@ -32,13 +32,6 @@ function WhatsAppIcon() {
   );
 }
 
-function LinkedInIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
-    </svg>
-  );
-}
 
 function TwitterIcon() {
   return (
@@ -56,13 +49,6 @@ function FacebookIcon() {
   );
 }
 
-function YouTubeIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-    </svg>
-  );
-}
 
 /* ── Hover link ─────────────────────────────────────────────── */
 function FooterLink({ label, href, icon }: { label: string; href: string; icon?: React.ReactNode }) {
@@ -103,12 +89,10 @@ const QUICK_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://www.instagram.com/manntours/", icon: <IgIcon /> },
+  { label: "Instagram", href: "https://www.instagram.com/mannfleetpartners?igsh=MWFzNGdwcGQ4MmZwOQ==", icon: <IgIcon /> },
   { label: "WhatsApp", href: "https://wa.me/919990222999", icon: <WhatsAppIcon /> },
-  { label: "LinkedIn", href: "#", icon: <LinkedInIcon /> },
-  { label: "Twitter / X", href: "https://x.com/manntours1", icon: <TwitterIcon /> },
+  { label: "Twitter / X", href: "https://share.google/3Ly9Pl00vaDYBs7ly", icon: <TwitterIcon /> },
   { label: "Facebook", href: "https://www.facebook.com/manntours/", icon: <FacebookIcon /> },
-  { label: "YouTube", href: "#", icon: <YouTubeIcon /> },
 ];
 
 const LEGAL_LINKS = [

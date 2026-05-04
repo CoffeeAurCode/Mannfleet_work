@@ -11,8 +11,7 @@ const SERVICES = [
     text: "Long-Term Rentals",
     badge: "institutional",
     description: "End-to-end vehicle rental solutions for institutional fleets and retail customers.",
-    image:
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80",
+    image: "/Mann car pictures/7 series.png",
     stat: "12+ months",
     statLabel: "min. contract",
   },
@@ -21,8 +20,7 @@ const SERVICES = [
     text: "Spot Rentals",
     badge: "on-demand",
     description: "On-demand chauffeur-driven services for corporates, airport transfers, and travel.",
-    image:
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80",
+    image: "/Mann car pictures/S class.png",
     stat: "< 30 min",
     statLabel: "avg. response",
   },
@@ -31,8 +29,7 @@ const SERVICES = [
     text: "Self-Drive Leasing",
     badge: "flexible",
     description: "Flexible self-drive vehicle leasing options for individuals and professionals.",
-    image:
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80",
+    image: "/Mann car pictures/Fortuner.png",
     stat: "200+",
     statLabel: "vehicles available",
   },
@@ -41,8 +38,7 @@ const SERVICES = [
     text: "Event Transportation",
     badge: "bespoke",
     description: "Customised transport for weddings, conferences, delegations, and large-scale events.",
-    image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80",
+    image: "/Mann car pictures/volvo 39, 43 seater.jpeg",
     stat: "500+",
     statLabel: "events handled",
   },
