@@ -28,7 +28,7 @@ interface Leader {
 const LEADERS: Leader[] = [
   {
     id: "amrit",
-    name: "Mr. Amrit Pal Singh Mann",
+    name: "Amrit Pal Singh Mann",
     title: "Managing Director",
     email: "amrit@manntours.com",
     photo: "/teams/amrit%20pal.jpeg",
@@ -842,39 +842,39 @@ export default function MeetTheTeamPage() {
   const [activeLeader, setActiveLeader] = useState<Leader | null>(null);
 
   /* ── Refs ── */
-  const heroRef       = useRef<HTMLElement>(null);
-  const heroBadgeRef  = useRef<HTMLDivElement>(null);
-  const heroWordsRef  = useRef<HTMLDivElement>(null);
-  const heroSubRef    = useRef<HTMLParagraphElement>(null);
-  const heroLineRef   = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const heroBadgeRef = useRef<HTMLDivElement>(null);
+  const heroWordsRef = useRef<HTMLDivElement>(null);
+  const heroSubRef = useRef<HTMLParagraphElement>(null);
+  const heroLineRef = useRef<HTMLDivElement>(null);
   const heroScrollRef = useRef<HTMLDivElement>(null);
 
-  const leadSecRef   = useRef<HTMLElement>(null);
+  const leadSecRef = useRef<HTMLElement>(null);
   const leadLabelRef = useRef<HTMLDivElement>(null);
-  const leadDivRef   = useRef<HTMLDivElement>(null);
-  const card0Ref     = useRef<HTMLDivElement>(null);
-  const card1Ref     = useRef<HTMLDivElement>(null);
-  const card2Ref     = useRef<HTMLDivElement>(null);
+  const leadDivRef = useRef<HTMLDivElement>(null);
+  const card0Ref = useRef<HTMLDivElement>(null);
+  const card1Ref = useRef<HTMLDivElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
 
-  const dirSecRef   = useRef<HTMLElement>(null);
+  const dirSecRef = useRef<HTMLElement>(null);
   const dirLabelRef = useRef<HTMLDivElement>(null);
-  const dirDivRef   = useRef<HTMLDivElement>(null);
-  const dir0Ref     = useRef<HTMLDivElement>(null);
-  const dir1Ref     = useRef<HTMLDivElement>(null);
-  const dir2Ref     = useRef<HTMLDivElement>(null);
+  const dirDivRef = useRef<HTMLDivElement>(null);
+  const dir0Ref = useRef<HTMLDivElement>(null);
+  const dir1Ref = useRef<HTMLDivElement>(null);
+  const dir2Ref = useRef<HTMLDivElement>(null);
 
-  const salesSecRef   = useRef<HTMLElement>(null);
+  const salesSecRef = useRef<HTMLElement>(null);
   const salesLabelRef = useRef<HTMLDivElement>(null);
-  const salesDivRef   = useRef<HTMLDivElement>(null);
-  const sales0Ref     = useRef<HTMLDivElement>(null);
-  const sales1Ref     = useRef<HTMLDivElement>(null);
-  const sales2Ref     = useRef<HTMLDivElement>(null);
+  const salesDivRef = useRef<HTMLDivElement>(null);
+  const sales0Ref = useRef<HTMLDivElement>(null);
+  const sales1Ref = useRef<HTMLDivElement>(null);
+  const sales2Ref = useRef<HTMLDivElement>(null);
 
-  const ctaSecRef  = useRef<HTMLElement>(null);
+  const ctaSecRef = useRef<HTMLElement>(null);
   const ctaTextRef = useRef<HTMLDivElement>(null);
 
-  const cardRefs  = [card0Ref, card1Ref, card2Ref];
-  const dirRefs   = [dir0Ref, dir1Ref, dir2Ref];
+  const cardRefs = [card0Ref, card1Ref, card2Ref];
+  const dirRefs = [dir0Ref, dir1Ref, dir2Ref];
   const salesRefs = [sales0Ref, sales1Ref, sales2Ref];
 
   useEffect(() => {
