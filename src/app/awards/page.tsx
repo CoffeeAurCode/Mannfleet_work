@@ -59,7 +59,7 @@ const AWARDS = [
     title: "Zee Business Award – Best Private Transport Service Provider",
     year: "2019",
     issuer: "Zee TV",
-    pdf: "/awards/Award_Maruti Suzuki.pdf",
+    pdf: "/awards/Award_Zee Business.pdf",
     highlight: false,
   },
   {
