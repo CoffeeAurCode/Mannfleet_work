@@ -95,12 +95,6 @@ const SOCIAL_LINKS = [
   { label: "Facebook", href: "https://www.facebook.com/manntours/", icon: <FacebookIcon /> },
 ];
 
-const LEGAL_LINKS = [
-  { label: "Terms of service", href: "/terms" },
-  { label: "Privacy policy", href: "/privacy" },
-  { label: "Cookie policy", href: "#" },
-];
-
 /* ── Main Footer ───────────────────────────────────────────── */
 export default function Footer() {
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -382,23 +376,6 @@ export default function Footer() {
               <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
                 {SOCIAL_LINKS.map((l) => (
                   <li key={l.label}><FooterLink label={l.label} href={l.href} icon={l.icon} /></li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <p style={{
-                fontSize: "0.78rem", fontWeight: 600,
-                color: "var(--text-55)",
-                margin: "0 0 1.25rem",
-                letterSpacing: "0.01em",
-              }}>
-                Legal
-              </p>
-              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
-                {LEGAL_LINKS.map((l) => (
-                  <li key={l.label}><FooterLink label={l.label} href={l.href} /></li>
                 ))}
               </ul>
             </div>

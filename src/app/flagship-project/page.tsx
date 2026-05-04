@@ -864,6 +864,22 @@ export default function FlagshipProjectPage() {
             Get in Touch <IconArrow />
           </Link>
         </div>
+
+        {/* Legal Links */}
+        <div style={{
+          maxWidth: 1200, margin: "2rem auto 0",
+          display: "flex", gap: "1.5rem",
+          justifyContent: "flex-start",
+          borderTop: "1px solid var(--border-subtle)",
+          paddingTop: "1.5rem",
+        }}>
+          <Link href="/terms" style={{ fontSize: "0.75rem", color: "var(--text-secondary)", textDecoration: "none", opacity: 0.7 }}>
+            Terms of Service
+          </Link>
+          <Link href="/privacy" style={{ fontSize: "0.75rem", color: "var(--text-secondary)", textDecoration: "none", opacity: 0.7 }}>
+            Privacy Policy
+          </Link>
+        </div>
       </section>
 
       <Footer />
