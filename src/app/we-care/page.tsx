@@ -463,9 +463,7 @@ export default function WeCarePage() {
             social responsibility. Our CSR initiatives are guided by the Companies Act, 2013, and
             focused on creating meaningful, long-term impact in the communities we serve.
           </p>
-          <div className="anim-hero" style={{ marginTop: "2.5rem", width: "100%", height: "clamp(250px, 40vw, 500px)", borderRadius: 24, overflow: "hidden", position: "relative" }}>
-            <Image src="/We care/WhatsApp Image 2026-05-04 at 10.07.13.jpeg" alt="CSR Initiative" fill style={{ objectFit: "cover" }} />
-          </div>
+
         </section>
 
         {/* ── Commitment Stats ── */}
@@ -827,7 +825,7 @@ export default function WeCarePage() {
                 Corporate Social Responsibility Policy
               </h2>
               <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: 0 }}>
-                This document outlines our commitment to social responsibility, the framework for our initiatives, 
+                This document outlines our commitment to social responsibility, the framework for our initiatives,
                 and the governance structure that ensures transparent and impactful delivery of our CSR goals.
               </p>
             </div>
@@ -954,10 +952,10 @@ export default function WeCarePage() {
       <Footer />
 
       {showPdf && (
-        <PdfModal 
-          file="CSR-Policy_Mann.pdf" 
-          label="CSR Policy — Mann Fleet Partners Ltd." 
-          onClose={() => setShowPdf(false)} 
+        <PdfModal
+          file="CSR-Policy_Mann.pdf"
+          label="CSR Policy — Mann Fleet Partners Ltd."
+          onClose={() => setShowPdf(false)}
         />
       )}
     </div>
