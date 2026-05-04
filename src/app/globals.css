@@ -742,3 +742,20 @@ body {
     overflow-x: hidden;
   }
 }
+
+/* ── Testimonials Masonry ── */
+.testimonials-masonry {
+  column-count: 3;
+}
+
+@media (max-width: 1024px) {
+  .testimonials-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonials-masonry {
+    column-count: 1;
+  }
+}

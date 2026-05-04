@@ -100,6 +100,45 @@ const APPRECIATIONS = [
   { label: "JCB Appreciation", file: "/Appreciation/Appreciation_JCB.pdf", isImage: false },
 ];
 
+const TESTIMONIALS = [
+  {
+    quote: "Thank you for the excellent support during our recent corporate event at Coca-Cola. The logistics were handled seamlessly, and the team’s professionalism, flexibility, and approachable attitude made the entire experience very smooth. We truly appreciate how everything was managed, including last-minute changes, ensuring everything went as planned.",
+    author: "Coke Logistics Team",
+  },
+  {
+    quote: "We sincerely appreciate the excellent service and outstanding support provided by your entire team for our recent vehicle requirements from Delhi to Agra. We are particularly grateful for the promptness and efficiency with which our requests were handled, from the initial quotation to the final invoice and vehicle details. The vehicles were well-maintained, and the drivers were professional and punctual.",
+    author: "Rahul Tyagi",
+  },
+  {
+    quote: "I just wanted to send a delayed thank you to you and your team for all your hard work on the performer transfers in Jaipur last week. Everything went really smoothly – all the performers were grateful for the efficiency. We look forward to working with you again in the future.",
+    author: "Caroline, Just Add Water",
+  },
+  {
+    quote: "I would like to extend my appreciation for the last booking handled by Mann and for the support in accommodating changes effortlessly, while also keeping cost-effectiveness in mind. The efforts have not gone unnoticed — very positive feedback and appreciation has been shared for the vendor relationship. We are truly glad to have you on board.",
+    author: "Ashima, Five Below",
+  },
+  {
+    quote: "I would like to appreciate the entire Mann team for their well-coordinated management on the event day. All vehicles reported timely, and everything went seamless. The team was available on time throughout. Please extend our congratulations to everyone involved, from bookings to operations.",
+    author: "Jaspreet Singh, IndiGo",
+  },
+  {
+    quote: "My group had a fantastic time on our ‘Discover India Experience’ and the team was exceptional. Everyone enjoyed the ‘Jet on Wheels’ experience and was extremely impressed with the driving skills and overall service. We are looking forward to our return with our next group and to working together again.",
+    author: "Nico & Belinda Moretti",
+  },
+  {
+    quote: "Mann’s prompt service, well-maintained vehicles, and professional drivers contributed significantly to the smooth and successful execution of the visit. We greatly appreciate Mann’s commitment to excellence and reliability, and the hard work and dedication of the entire team did not go unnoticed.",
+    author: "Jorgan Andrews, Chargé d’Affaires, a.i.",
+  },
+  {
+    quote: "We would like to express our sincere appreciation for the warm hospitality extended to our Guests, Participating Teams, Match Officials and Delegation during the recently concluded competition. The team’s commitment in ensuring discipline within the bubble module, along with the significant and undivided efforts rendered across cities, is highly commendable.",
+    author: "Datuk Seri Windsor John, General Secretary AFC WOMENS' ASIAN CUP",
+  },
+  {
+    quote: "A huge thank you for all your support for the JCB Top 80 event. The entire operation has been flawless — the team was highly professional, supportive, and responsive to all requests. The coaches and drivers were exceptional, and everything ran smoothly for our delegates. Special mention to the airport transfer team — having personnel ready to receive guests was really reassuring.",
+    author: "Alice Taylor, Senior Event Manager, JCB Worldwide Events",
+  },
+];
+
 export default function AwardsPage() {
   return (
     <div style={{ fontFamily: "'Poppins', sans-serif", minHeight: "100vh", background: "var(--bg-base)" }}>
@@ -286,7 +325,6 @@ export default function AwardsPage() {
             }}>Letters of Appreciation</span>
           </div>
 
-          {/* IATA image card */}
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 240px), 1fr))",
@@ -368,6 +406,73 @@ export default function AwardsPage() {
                 </a>
               )
             )}
+          </div>
+        </section>
+
+        {/* ── Testimonials ── */}
+        <section style={{
+          padding: "0 clamp(1.25rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem)",
+          maxWidth: 1240,
+          margin: "0 auto",
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
+            <div style={{ width: 28, height: 2, background: "var(--accent)", borderRadius: 2 }} />
+            <span className="font-sans" style={{
+              fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.16em",
+              textTransform: "uppercase", color: "var(--text-muted)",
+            }}>Client Testimonials</span>
+          </div>
+
+          <div style={{
+            columnCount: "3",
+            columnGap: "1.5rem",
+            maxWidth: 1240,
+            margin: "0 auto",
+          }} className="testimonials-masonry">
+            {TESTIMONIALS.map(({ quote, author }, idx) => (
+              <div
+                key={idx}
+                className="glass-card"
+                style={{
+                  breakInside: "avoid",
+                  marginBottom: "1.5rem",
+                  padding: "2rem",
+                  borderRadius: "1.75rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1.25rem",
+                  background: "var(--glass-base)",
+                  border: "1px solid var(--border-subtle)",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
+                <div style={{ position: "absolute", top: "1rem", right: "1.5rem", opacity: 0.05, pointerEvents: "none" }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p className="font-sans" style={{
+                  fontSize: "0.9rem",
+                  lineHeight: 1.7,
+                  color: "var(--text-secondary)",
+                  margin: 0,
+                  position: "relative",
+                }}>
+                  {quote}
+                </p>
+                <div style={{ borderTop: "1px solid var(--border-subtle)", paddingTop: "1rem" }}>
+                  <p className="font-sans" style={{
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    color: "var(--accent)",
+                    margin: 0,
+                  }}>
+                    {author}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </main>
