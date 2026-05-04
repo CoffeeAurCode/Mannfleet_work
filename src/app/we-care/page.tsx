@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -462,6 +463,9 @@ export default function WeCarePage() {
             social responsibility. Our CSR initiatives are guided by the Companies Act, 2013, and
             focused on creating meaningful, long-term impact in the communities we serve.
           </p>
+          <div className="anim-hero" style={{ marginTop: "2.5rem", width: "100%", height: "clamp(250px, 40vw, 500px)", borderRadius: 24, overflow: "hidden", position: "relative" }}>
+            <Image src="/We care/WhatsApp Image 2026-05-04 at 10.07.13.jpeg" alt="CSR Initiative" fill style={{ objectFit: "cover" }} />
+          </div>
         </section>
 
         {/* ── Commitment Stats ── */}
@@ -545,6 +549,11 @@ export default function WeCarePage() {
                 Maharaja Agrasen Hospital Charitable Trust
               </div>
             </div>
+
+            {/* Impact Image Card */}
+            <div className="stat-card" style={{ ...glassCard, padding: 0, overflow: "hidden", position: "relative", minHeight: 240 }}>
+              <Image src="/We care/WhatsApp Image 2026-05-04 at 10.07.14.jpeg" alt="Community Support" fill style={{ objectFit: "cover" }} />
+            </div>
           </div>
         </section>
 
@@ -573,32 +582,38 @@ export default function WeCarePage() {
               gap: "1.25rem",
             }}>
               {[
-                { icon: <IconHeart />, title: "Healthcare", desc: "Improving access to medical care and supporting community health institutions." },
-                { icon: <IconUsers />, title: "Community Well-being", desc: "Strengthening social fabric and uplifting underserved populations." },
-                { icon: <IconLeaf />, title: "Sustainable Development", desc: "Investing in initiatives that create lasting, positive environmental and social outcomes." },
+                { icon: <IconHeart />, title: "Healthcare", desc: "Improving access to medical care and supporting community health institutions.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.13.jpeg" },
+                { icon: <IconUsers />, title: "Community Well-being", desc: "Strengthening social fabric and uplifting underserved populations.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14 (1).jpeg" },
+                { icon: <IconLeaf />, title: "Sustainable Development", desc: "Investing in initiatives that create lasting, positive environmental and social outcomes.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.15.jpeg" },
               ].map((item) => (
                 <div key={item.title} className="anim-item" style={{
                   ...glassCard,
+                  padding: 0,
+                  overflow: "hidden",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "1rem",
                 }}>
-                  <span style={{
-                    width: 52, height: 52,
-                    borderRadius: 12,
-                    background: "var(--bg-deep)",
-                    border: "1px solid var(--border-subtle)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "var(--accent)",
-                    flexShrink: 0,
-                  }}>{item.icon}</span>
-                  <div>
-                    <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-primary)", margin: "0 0 0.4rem" }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
-                      {item.desc}
-                    </p>
+                  <div style={{ position: "relative", height: 180, width: "100%" }}>
+                    <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover" }} />
+                  </div>
+                  <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+                    <span style={{
+                      width: 52, height: 52,
+                      borderRadius: 12,
+                      background: "var(--bg-deep)",
+                      border: "1px solid var(--border-subtle)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "var(--accent)",
+                      flexShrink: 0,
+                    }}>{item.icon}</span>
+                    <div>
+                      <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-primary)", margin: "0 0 0.4rem" }}>
+                        {item.title}
+                      </h3>
+                      <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -654,6 +669,9 @@ export default function WeCarePage() {
                 </div>
               ))}
             </div>
+            <div style={{ marginTop: "1.5rem", position: "relative", height: "clamp(200px, 25vw, 300px)", borderRadius: 12, overflow: "hidden" }}>
+              <Image src="/We care/WhatsApp Image 2026-05-04 at 10.07.14 (1).jpeg" alt="Healthcare CSR" fill style={{ objectFit: "cover" }} />
+            </div>
           </AccordionItem>
 
           <AccordionItem title="Community Development" icon={<IconUsers />}>
@@ -675,6 +693,9 @@ export default function WeCarePage() {
                 </div>
               ))}
             </div>
+            <div style={{ marginTop: "1.5rem", position: "relative", height: "clamp(200px, 25vw, 300px)", borderRadius: 12, overflow: "hidden" }}>
+              <Image src="/We care/WhatsApp Image 2026-05-04 at 10.07.14 (2).jpeg" alt="Community Development" fill style={{ objectFit: "cover" }} />
+            </div>
           </AccordionItem>
 
           <AccordionItem title="Sustainable Impact" icon={<IconLeaf />}>
@@ -684,6 +705,9 @@ export default function WeCarePage() {
               long-term programmes, and measuring impact to ensure our contributions create
               lasting value for the communities we serve.
             </p>
+            <div style={{ marginTop: "1.5rem", position: "relative", height: "clamp(200px, 25vw, 300px)", borderRadius: 12, overflow: "hidden" }}>
+              <Image src="/We care/WhatsApp Image 2026-05-04 at 10.07.15.jpeg" alt="Sustainable Impact" fill style={{ objectFit: "cover" }} />
+            </div>
           </AccordionItem>
         </section>
 
@@ -859,31 +883,37 @@ export default function WeCarePage() {
             marginBottom: "3rem",
           }}>
             {[
-              { icon: <IconTarget />, title: "Sustainable Social Impact", desc: "Programmes designed for lasting, measurable change rather than short-term relief." },
-              { icon: <IconUsers />, title: "Stronger Communities", desc: "Building resilient communities through healthcare, education, and skill development." },
-              { icon: <IconStar />, title: "Responsibility · Integrity · Excellence", desc: "Our three core values guide every CSR decision and partnership we make." },
+              { icon: <IconTarget />, title: "Sustainable Social Impact", desc: "Programmes designed for lasting, measurable change rather than short-term relief.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14 (2).jpeg" },
+              { icon: <IconUsers />, title: "Stronger Communities", desc: "Building resilient communities through healthcare, education, and skill development.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14.jpeg" },
+              { icon: <IconStar />, title: "Responsibility · Integrity · Excellence", desc: "Our three core values guide every CSR decision and partnership we make.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.13.jpeg" },
             ].map((item) => (
               <div key={item.title} className="vision-card" style={{
                 ...glassCard,
+                padding: 0,
+                overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
-                gap: "1rem",
               }}>
-                <span style={{
-                  width: 52, height: 52,
-                  borderRadius: 12,
-                  background: "var(--bg-deep)",
-                  border: "1px solid var(--border-subtle)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--accent)",
-                }}>{item.icon}</span>
-                <div>
-                  <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-primary)", margin: "0 0 0.4rem" }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
-                    {item.desc}
-                  </p>
+                <div style={{ position: "relative", height: 180, width: "100%" }}>
+                  <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover" }} />
+                </div>
+                <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+                  <span style={{
+                    width: 52, height: 52,
+                    borderRadius: 12,
+                    background: "var(--bg-deep)",
+                    border: "1px solid var(--border-subtle)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "var(--accent)",
+                  }}>{item.icon}</span>
+                  <div>
+                    <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-primary)", margin: "0 0 0.4rem" }}>
+                      {item.title}
+                    </h3>
+                    <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
