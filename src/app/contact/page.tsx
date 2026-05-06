@@ -59,8 +59,8 @@ const CONTACT_ITEMS = [
   {
     icon: <IconMail size={22} />,
     label: "Email",
-    lines: ["info@manntours.com"],
-    href: "mailto:info@manntours.com",
+    lines: ["info@mannfleetpartners.com"],
+    href: "mailto:info@mannfleetpartners.com",
   },
 ];
 

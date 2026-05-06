@@ -424,8 +424,8 @@ export default function AwardsPage() {
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem" }}>
             <div style={{ width: 28, height: 2, background: "var(--accent)", borderRadius: 2 }} />
             <span className="font-sans" style={{
-              fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.16em",
-              textTransform: "uppercase", color: "var(--text-muted)",
+              fontSize: "1.1rem", fontWeight: 800, letterSpacing: "0.04em",
+              textTransform: "uppercase", color: "var(--text-primary)",
             }}>Client Testimonials</span>
           </div>
 

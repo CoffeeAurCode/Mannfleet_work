@@ -235,7 +235,7 @@ export default function HeroSection() {
               fontSize: "0.78em",
               opacity: 0,
             }}>
-              every journey with MANN.
+              every journey with Mann Fleet Partners.
             </span>
           </h1>
 
@@ -252,7 +252,7 @@ export default function HeroSection() {
               opacity: 0,
             }}
           >
-            From city commutes to cross-country road trips, MANN delivers an exceptional
+            From city commutes to cross-country road trips, Mann Fleet Partners delivers an exceptional
             fleet with seamless booking and world-class service.
           </p>
 

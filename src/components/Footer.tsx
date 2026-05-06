@@ -89,7 +89,7 @@ function FooterLink({ label, href, icon }: { label: string; href: string; icon?:
 /* ── Link columns data ──────────────────────────────────────── */
 const QUICK_LINKS = [
   { label: "Fleet", href: "/fleet" },
-  { label: "Reserve", href: "/reservation" },
+  { label: "Book Now", href: "/reservation" },
   { label: "Investors", href: "/investors" },
   { label: "About us", href: "/about" },
   { label: "Awards", href: "/awards" },
@@ -291,7 +291,7 @@ export default function Footer() {
           <div className="footer-info-block" style={{ flex: "0 0 auto", minWidth: "200px", maxWidth: "280px" }}>
             <Image
               src="/mannlogo.webp"
-              alt="MANN"
+              alt="Mann Fleet Partners"
               width={104}
               height={38}
               className="footer-logo"
@@ -332,7 +332,7 @@ export default function Footer() {
                 <p style={{ fontSize: "0.72rem", color: "var(--text-35)", margin: "0 0 0.3rem", fontWeight: 500 }}>
                   Email
                 </p>
-                <a href="mailto:info@manntours.com" style={{
+                <a href="mailto:info@mannfleetpartners.com" style={{
                   fontSize: "0.85rem", fontWeight: 600,
                   color: "var(--text-80)", textDecoration: "none",
                   transition: "color 0.2s ease",
@@ -340,7 +340,7 @@ export default function Footer() {
                   onMouseEnter={(e) => { e.currentTarget.style.color = "var(--text-primary)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-80)"; }}
                 >
-                  info@manntours.com
+                  info@mannfleetpartners.com
                 </a>
               </div>
             </div>
@@ -389,6 +389,44 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* Download App */}
+            <div>
+              <p style={{
+                fontSize: "0.78rem", fontWeight: 600,
+                color: "var(--text-55)",
+                margin: "0 0 1.25rem",
+                letterSpacing: "0.01em",
+              }}>
+                Download App
+              </p>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.user.mannfleet"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  padding: "0.6rem 1rem",
+                  background: "var(--glass-light)",
+                  border: "1px solid var(--border-subtle)",
+                  borderRadius: 10,
+                  textDecoration: "none",
+                  transition: "border-color 0.2s ease",
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--text-50)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--border-subtle)"; }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ color: "var(--text-55)" }}>
+                  <path d="M3.18 23.76A1.5 1.5 0 0 1 2 22.29V1.71A1.5 1.5 0 0 1 3.18.24L14.45 12 3.18 23.76zm2.3-1.1L16.3 12 5.48 1.34 4.5 2.54v18.92l.98 1.2zm8.35-5.42L8.24 21l7.38 1.38c.8.15 1.38-.38 1.38-1.18v-.44l-3.17-3.52zm0-10.48L17.23 4 9.65 1.08 8.64 2.7 13.83 7V6.76zm3.88 10.86L22 14.94v-5.88L17.71 6.3l-3.88 5.7 3.88 5.62z" />
+                </svg>
+                <div>
+                  <p style={{ fontSize: "0.6rem", color: "var(--text-35)", margin: 0, lineHeight: 1 }}>GET IT ON</p>
+                  <p style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--text-80)", margin: 0, lineHeight: 1.3 }}>Google Play</p>
+                </div>
+              </a>
+            </div>
+
           </div>
         </div>
 
@@ -406,7 +444,7 @@ export default function Footer() {
           color: "var(--text-35)",
           margin: 0,
         }}>
-          © {new Date().getFullYear()} MANN Fleet Services. All rights reserved.
+          © {new Date().getFullYear()} Mann Fleet Partners. All rights reserved.
         </p>
       </div>
     </footer>

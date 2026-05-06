@@ -204,7 +204,7 @@ export default function FlagshipProjectPage() {
             marginBottom: "1.5rem",
             fontWeight: 600,
           }}>
-            Flagship Project — Mann Fleet Partners Limited
+            Experience Mann Fleet Partners at Noida International Airport
           </span>
 
           {/* Main heading */}
@@ -220,13 +220,6 @@ export default function FlagshipProjectPage() {
             Noida International
             <br />
             Airport
-            <span style={{
-              display: "inline-block",
-              fontSize: "clamp(1.4rem, 3.5vw, 2.8rem)",
-              color: "var(--accent)",
-              marginLeft: "0.5rem",
-              fontStyle: "italic",
-            }}>(NIA)</span>
           </h1>
 
           {/* Subtitle */}
@@ -237,7 +230,7 @@ export default function FlagshipProjectPage() {
             lineHeight: 1.65,
             marginBottom: "2.5rem",
           }}>
-            Redefining ground mobility at India&apos;s newest and most ambitious aviation hub — driven by 38+ years of mobility excellence.
+            Redefining ground mobility at India&apos;s newest and most ambitious aviation hub — driven by 40+ years of mobility excellence.
           </p>
 
           {/* Divider line + meta */}
@@ -389,109 +382,108 @@ export default function FlagshipProjectPage() {
               color: "#fff",
               margin: 0,
               lineHeight: 1.1
-            }}>Jewar Airport</h3>
+            }}>Noida International Airport</h3>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          3. SCALE AT A GLANCE
+          2.7 MANN TAJ EXPRESS
       ═══════════════════════════════════════════════════════ */}
-      <section ref={statsRef} style={{
-        background: "var(--bg-deep)",
+      <section style={{
+        background: "var(--bg-base)",
         padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 7vw, 8rem)",
-        position: "relative",
-        overflow: "hidden",
+        borderTop: "1px solid var(--border-subtle)",
       }}>
-        <div style={{
-          position: "absolute", inset: 0,
-          background: "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(220,38,38,0.06) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 6rem)", alignItems: "center" }}>
+            <div>
+              <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
+                Exclusive Service
+              </span>
+              <h2 className="font-serif" style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                fontWeight: 400,
+                color: "var(--text-primary)",
+                lineHeight: 1.15,
+                marginBottom: "1.25rem",
+              }}>
+                Mann Taj Express
+              </h2>
+              <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.25rem" }}>
+                From Noida International Airport to the Taj Mahal, in complete luxury. The Taj Mahal is not just India&apos;s most iconic monument — it is a UNESCO World Heritage Site and one of the New Seven Wonders of the World.
+              </p>
+              <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.25rem" }}>
+                With Noida International Airport emerging as a major new gateway near the Yamuna Expressway corridor, travellers now have a smoother, faster, and more premium way to experience Agra.
+              </p>
+              <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
+                Mann Taj Express by Mann Fleet Partners offers luxury airport-to-Taj Mahal transfers for tourists, business travellers, international guests, and premium delegations. From the moment you land at Noida International Airport, our chauffeur-driven vehicles ensure a comfortable, private, and refined journey to one of the world&apos;s greatest landmarks.
+              </p>
+              <div style={{
+                background: "rgba(220,38,38,0.06)",
+                border: "1px solid rgba(220,38,38,0.18)",
+                borderLeft: "4px solid var(--accent)",
+                borderRadius: 12,
+                padding: "1rem 1.25rem",
+                fontFamily: "'Instrument Serif', serif",
+                fontSize: "1.05rem",
+                fontStyle: "italic",
+                color: "var(--text-primary)",
+              }}>
+                You land in Noida. We take care of the road to Agra.
+              </div>
+            </div>
 
-          <div style={{ textAlign: "center", marginBottom: "clamp(2.5rem, 5vw, 4rem)" }}>
-            <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
-              Built for Scale
-            </span>
-            <h2 className="font-serif" style={{
-              fontFamily: "'Instrument Serif', serif",
-              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-              fontWeight: 400,
-              color: "var(--text-primary)",
-            }}>
-              The Scale of Opportunity
-            </h2>
-          </div>
-
-          {/* Stat cards */}
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "clamp(1rem, 2vw, 1.5rem)",
-            marginBottom: "clamp(2rem, 4vw, 3rem)",
-          }}>
-            {[
-              { val: "12", suffix: "M", label: "Initial annual passenger capacity", note: "Phase 1 launch" },
-              { val: "70", suffix: "M+", label: "Long-term annual capacity", note: "Full buildout" },
-              { val: "40", suffix: " Yrs", label: "Concession term", note: "Long-horizon partnership" },
-            ].map(({ val, suffix, label, note }, i) => (
-              <div key={i} style={{
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {/* Taj Mahal card */}
+              <div style={{
+                borderRadius: 20,
+                overflow: "hidden",
+                border: "1px solid var(--border-subtle)",
+                boxShadow: "0 12px 32px rgba(0,0,0,0.18)",
+                height: 220,
+                background: "var(--bg-surface)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
+              }}>
+                <div style={{ textAlign: "center", padding: "2rem" }}>
+                  <div style={{ fontSize: "3rem", marginBottom: "0.5rem" }}>🕌</div>
+                  <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "1.2rem", color: "var(--text-primary)", margin: "0 0 0.25rem" }}>Taj Mahal, Agra</p>
+                  <p style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: "0.08em", textTransform: "uppercase" }}>One of the New Seven Wonders of the World</p>
+                </div>
+              </div>
+              {/* Chauffeur card */}
+              <div style={{
+                borderRadius: 20,
                 background: "var(--bg-surface)",
                 border: "1px solid var(--border-subtle)",
-                borderRadius: 20,
-                padding: "clamp(1.5rem, 3vw, 2.5rem)",
-                textAlign: "center",
-                position: "relative",
-                overflow: "hidden",
+                padding: "1.5rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "1rem",
               }}>
                 <div style={{
-                  position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
-                  width: 60, height: 2, background: "var(--accent)", borderRadius: 999,
-                }} />
-                <div style={{ marginTop: "0.75rem" }}>
-                  <span className="nia-stat-val font-serif" data-target={val} style={{
-                    fontFamily: "'Instrument Serif', serif",
-                    fontSize: "clamp(3rem, 7vw, 5.5rem)",
-                    color: "var(--accent)",
-                    lineHeight: 1,
-                    display: "inline",
-                  }}>0</span>
-                  <span className="font-serif" style={{
-                    fontFamily: "'Instrument Serif', serif",
-                    fontSize: "clamp(1.8rem, 4vw, 3rem)",
-                    color: "var(--accent)",
-                    lineHeight: 1,
-                  }}>{suffix}</span>
+                  width: 52, height: 52, borderRadius: "50%",
+                  background: "rgba(220,38,38,0.10)",
+                  border: "1px solid rgba(220,38,38,0.22)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: "1.5rem", flexShrink: 0,
+                }}>🎩</div>
+                <div>
+                  <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "1rem", color: "var(--text-primary)", margin: "0 0 0.25rem", fontWeight: 400 }}>Uniformed Chauffeur Service</p>
+                  <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", lineHeight: 1.5 }}>Professional, white-gloved chauffeurs trained for VIP and luxury transport standards.</p>
                 </div>
-                <p style={{ fontSize: "0.9rem", color: "var(--text-primary)", marginTop: "0.75rem", marginBottom: "0.25rem", fontWeight: 500 }}>{label}</p>
-                <p style={{ fontSize: "0.72rem", color: "var(--text-muted)", letterSpacing: "0.08em", textTransform: "uppercase" }}>{note}</p>
               </div>
-            ))}
-          </div>
-
-          {/* Developer attribution */}
-          <div style={{
-            background: "var(--bg-surface)",
-            border: "1px solid var(--border-subtle)",
-            borderRadius: 14,
-            padding: "1.25rem 2rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "1.5rem",
-          }}>
-            <div style={{ width: 3, height: 36, background: "var(--accent)", borderRadius: 999, flexShrink: 0 }} />
-            <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
-              <strong style={{ color: "var(--text-primary)" }}>Developed by Yamuna International Airport Private Limited (YIAPL)</strong>,
-              a subsidiary of Zurich Airport International AG — one of the world&apos;s most respected airport operators.
-              Our mobility systems are engineered to scale in parallel with this landmark growth trajectory.
-            </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          4. OUR MANDATE
+          3. THREE PILLARS OF MOBILITY
       ═══════════════════════════════════════════════════════ */}
       <section ref={mandateRef} style={{
         background: "var(--bg-base)",
@@ -589,6 +581,101 @@ export default function FlagshipProjectPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
+          4. SCALE AT A GLANCE
+      ═══════════════════════════════════════════════════════ */}
+      <section ref={statsRef} style={{
+        background: "var(--bg-deep)",
+        padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 7vw, 8rem)",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <div style={{
+          position: "absolute", inset: 0,
+          background: "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(220,38,38,0.06) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }} />
+        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
+
+          <div style={{ textAlign: "center", marginBottom: "clamp(2.5rem, 5vw, 4rem)" }}>
+            <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
+              Built for Scale
+            </span>
+            <h2 className="font-serif" style={{
+              fontFamily: "'Instrument Serif', serif",
+              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+              fontWeight: 400,
+              color: "var(--text-primary)",
+            }}>
+              The Scale of Opportunity
+            </h2>
+          </div>
+
+          {/* Stat cards */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "clamp(1rem, 2vw, 1.5rem)",
+            marginBottom: "clamp(2rem, 4vw, 3rem)",
+          }}>
+            {[
+              { val: "6.5", suffix: "M", label: "Expected number of flyers in the first year", note: "Phase 1 launch" },
+              { val: "20", suffix: "–25%", label: "Compound Annual Growth Rate annually", note: "Projected growth trajectory" },
+            ].map(({ val, suffix, label, note }, i) => (
+              <div key={i} style={{
+                background: "var(--bg-surface)",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: 20,
+                padding: "clamp(1.5rem, 3vw, 2.5rem)",
+                textAlign: "center",
+                position: "relative",
+                overflow: "hidden",
+              }}>
+                <div style={{
+                  position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
+                  width: 60, height: 2, background: "var(--accent)", borderRadius: 999,
+                }} />
+                <div style={{ marginTop: "0.75rem" }}>
+                  <span className="nia-stat-val font-serif" data-target={val} style={{
+                    fontFamily: "'Instrument Serif', serif",
+                    fontSize: "clamp(3rem, 7vw, 5.5rem)",
+                    color: "var(--accent)",
+                    lineHeight: 1,
+                    display: "inline",
+                  }}>0</span>
+                  <span className="font-serif" style={{
+                    fontFamily: "'Instrument Serif', serif",
+                    fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                    color: "var(--accent)",
+                    lineHeight: 1,
+                  }}>{suffix}</span>
+                </div>
+                <p style={{ fontSize: "0.9rem", color: "var(--text-primary)", marginTop: "0.75rem", marginBottom: "0.25rem", fontWeight: 500 }}>{label}</p>
+                <p style={{ fontSize: "0.72rem", color: "var(--text-muted)", letterSpacing: "0.08em", textTransform: "uppercase" }}>{note}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Developer attribution */}
+          <div style={{
+            background: "var(--bg-surface)",
+            border: "1px solid var(--border-subtle)",
+            borderRadius: 14,
+            padding: "1.25rem 2rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "1.5rem",
+          }}>
+            <div style={{ width: 3, height: 36, background: "var(--accent)", borderRadius: 999, flexShrink: 0 }} />
+            <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
+              <strong style={{ color: "var(--text-primary)" }}>Developed by Yamuna International Airport Private Limited (YIAPL)</strong>,
+              a subsidiary of Zurich Airport International AG — one of the world&apos;s most respected airport operators.
+              Our mobility systems are engineered to scale in parallel with this landmark growth trajectory.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
           5. MANN FLEET ADVANTAGE
       ═══════════════════════════════════════════════════════ */}
       <section ref={advantageRef} style={{
@@ -627,7 +714,7 @@ export default function FlagshipProjectPage() {
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{ width: 3, height: 36, background: "var(--accent)", borderRadius: 999 }} />
                 <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1rem, 2vw, 1.2rem)", color: "var(--text-secondary)", fontStyle: "italic" }}>
-                  Est. 1986 — 38+ years of industry leadership
+                  Est. 1986 — 40+ years of industry leadership
                 </span>
               </div>
             </div>
@@ -635,7 +722,7 @@ export default function FlagshipProjectPage() {
             {/* Right: feature tiles */}
             <div style={{ display: "flex", flexDirection: "column", gap: "clamp(0.75rem, 1.5vw, 1rem)" }}>
               {[
-                { icon: <IconStar />, title: "38+ Years of Industry Leadership", body: "Unmatched depth of experience in premium ground transportation across India." },
+                { icon: <IconStar />, title: "40+ Years of Industry Leadership", body: "Unmatched depth of experience in premium ground transportation across India." },
                 { icon: <IconPlane />, title: "Large-Scale, High-Stakes Operations", body: "Proven expertise managing complex, time-critical mobility at the highest level." },
                 { icon: <IconCheck />, title: "Trusted by Global Institutions", body: "Serving corporations, foreign embassies, G20 delegations, and government bodies." },
                 { icon: <IconRoute />, title: "High-Security Transport Track Record", body: "Certified processes for managing sensitive and security-critical transport requirements." },
@@ -691,7 +778,7 @@ export default function FlagshipProjectPage() {
               Routes Connecting the Region
             </h2>
             <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", maxWidth: 520, margin: "0 auto" }}>
-              Four key corridors linking Noida International Airport to the greater NCR region.
+              Key corridors linking Noida International Airport to the greater NCR region and beyond — including Agra & the Taj Mahal.
             </p>
           </div>
 
@@ -719,28 +806,29 @@ export default function FlagshipProjectPage() {
               }}>
                 <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 4 }}>Hub</div>
                 <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1rem, 2.5vw, 1.5rem)", fontWeight: 400 }}>Noida International Airport</div>
-                <div style={{ fontSize: "0.72rem", opacity: 0.75, marginTop: 2 }}>NIA — Jewar, Gautam Budh Nagar</div>
+                <div style={{ fontSize: "0.72rem", opacity: 0.75, marginTop: 2 }}>Jewar, Gautam Budh Nagar</div>
               </div>
 
               {/* Connecting lines visual — horizontal spoke pattern */}
               <div style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: "0.1em", textTransform: "uppercase" }}>↕ Direct Routes ↕</div>
             </div>
 
-            {/* Four nodes */}
+            {/* Route nodes */}
             <div style={{
               display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
               gap: "clamp(0.75rem, 2vw, 1.5rem)",
             }}>
               {[
-                { name: "Pari Chowk", desc: "Greater Noida central hub, major transit interchange", dist: "~12 km" },
-                { name: "Botanical Garden", desc: "Noida Metro interchange, connecting Delhi NCR", dist: "~35 km" },
-                { name: "Greater Noida West", desc: "Emerging residential & commercial corridor", dist: "~18 km" },
-                { name: "GBU Campus", desc: "Gautam Buddha University, student & faculty mobility", dist: "~8 km" },
-              ].map(({ name, desc, dist }) => (
+                { name: "Agra — Taj Mahal", desc: "UNESCO World Heritage Site & one of the New Seven Wonders of the World — via Mann Taj Express", dist: "~180 km", featured: true },
+                { name: "Pari Chowk", desc: "Greater Noida central hub, major transit interchange", dist: "~12 km", featured: false },
+                { name: "Botanical Garden", desc: "Noida Metro interchange, connecting Delhi NCR", dist: "~35 km", featured: false },
+                { name: "Greater Noida West", desc: "Emerging residential & commercial corridor", dist: "~18 km", featured: false },
+                { name: "GBU Campus", desc: "Gautam Buddha University, student & faculty mobility", dist: "~8 km", featured: false },
+              ].map(({ name, desc, dist, featured }) => (
                 <div key={name} style={{
-                  background: "var(--bg-base)",
-                  border: "1px solid var(--border-subtle)",
+                  background: featured ? "rgba(220,38,38,0.06)" : "var(--bg-base)",
+                  border: featured ? "1px solid rgba(220,38,38,0.28)" : "1px solid var(--border-subtle)",
                   borderRadius: 16,
                   padding: "1.25rem",
                   textAlign: "center",
@@ -748,11 +836,11 @@ export default function FlagshipProjectPage() {
                 }}>
                   <div style={{
                     position: "absolute", top: -1, left: "50%", transform: "translateX(-50%)",
-                    width: 2, height: 20, background: "var(--border-mid)",
+                    width: 2, height: 20, background: featured ? "var(--accent)" : "var(--border-mid)",
                   }} />
                   <div style={{
                     width: 36, height: 36, borderRadius: "50%",
-                    background: "rgba(220,38,38,0.08)",
+                    background: featured ? "rgba(220,38,38,0.14)" : "rgba(220,38,38,0.08)",
                     border: "1px solid rgba(220,38,38,0.2)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     margin: "0.75rem auto 0.75rem",
@@ -760,12 +848,12 @@ export default function FlagshipProjectPage() {
                   }}>
                     <IconRoute />
                   </div>
-                  <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "1rem", color: "var(--text-primary)", marginBottom: "0.3rem", fontWeight: 400 }}>{name}</p>
+                  <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: featured ? "1.05rem" : "1rem", color: "var(--text-primary)", marginBottom: "0.3rem", fontWeight: featured ? 600 : 400 }}>{name}</p>
                   <p style={{ fontSize: "0.73rem", color: "var(--text-muted)", lineHeight: 1.5, marginBottom: "0.5rem" }}>{desc}</p>
                   <span style={{
                     display: "inline-block",
-                    background: "var(--bg-surface)",
-                    border: "1px solid var(--border-subtle)",
+                    background: featured ? "rgba(220,38,38,0.10)" : "var(--bg-surface)",
+                    border: featured ? "1px solid rgba(220,38,38,0.22)" : "1px solid var(--border-subtle)",
                     borderRadius: 999,
                     padding: "2px 10px",
                     fontSize: "0.68rem",
@@ -846,7 +934,7 @@ export default function FlagshipProjectPage() {
               color: "var(--text-primary)",
               lineHeight: 1.2,
             }}>
-              Partner with Mann Fleet at NIA
+              Experience Mann Fleet Partners at Noida International Airport
             </h3>
           </div>
           <Link href="/contact" style={{

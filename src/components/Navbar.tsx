@@ -38,10 +38,9 @@ const NAV_LINKS = [
   { label: "Awards", href: "/awards" },
   { label: "Meet our Team", href: "/meet-the-team" },
   { label: "Investors", href: "/investors" },
-  { label: "Flagship projects", href: "/flagship-project" },
+  { label: "Noida International Airport", href: "/flagship-project" },
   { label: "We Care", href: "/we-care" },
   { label: "Contact", href: "/contact" },
-  { label: "Reserve", href: "/reservation" },
 ];
 
 interface NavbarProps {
@@ -199,7 +198,7 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/mannlogo.webp"
-              alt="MANN"
+              alt="Mann Fleet Partners"
               width={90}
               height={32}
               className="select-none"
@@ -245,7 +244,7 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
           >
             {theme === "dark" ? <SunIcon size={14} /> : <MoonIcon size={14} />}
           </button>
-          <Link href="/reservation" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</Link>
+          <a href="https://play.google.com/store/apps/details?id=com.user.mannfleet" target="_blank" rel="noopener noreferrer" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</a>
         </div>
 
         {/* Hamburger (mobile) */}

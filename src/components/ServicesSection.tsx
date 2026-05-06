@@ -21,8 +21,17 @@ const SERVICES = [
     badge: "on-demand",
     description: "On-demand chauffeur-driven services for corporates, airport transfers, and travel.",
     image: "/Mann car pictures/S class.png",
-    stat: "< 30 min",
-    statLabel: "avg. response",
+    stat: "24/7",
+    statLabel: "availability",
+  },
+  {
+    id: "shuttle",
+    text: "Shuttle Service",
+    badge: "scheduled",
+    description: "Scheduled, high-frequency shuttle operations connecting offices, campuses, and key city nodes.",
+    image: "/Mann car pictures/volvo 39, 43 seater.jpeg",
+    stat: "80+",
+    statLabel: "cities covered",
   },
   {
     id: "self-drive",
@@ -439,7 +448,7 @@ export default function ServicesSection() {
             <span style={{ color: "var(--text-72)" }}>wherever you go.</span>
           </h2>
           <p style={{ fontSize: "0.88rem", color: "var(--text-65)", maxWidth: "340px", lineHeight: 1.6, margin: 0 }}>
-            Hover each service to explore. MANN delivers a full spectrum of
+            Hover each service to explore. Mann Fleet Partners delivers a full spectrum of
             mobility solutions — enterprise to bespoke.
           </p>
         </div>
