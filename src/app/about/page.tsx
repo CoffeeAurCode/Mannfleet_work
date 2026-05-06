@@ -807,7 +807,7 @@ export default function AboutPage() {
             letterSpacing: "0.08em",
             lineHeight: 1,
           }}>
-            MANN
+            Mann Fleet Partners
           </span>
         </div>
 
@@ -1154,8 +1154,8 @@ export default function AboutPage() {
                 {[
                   { val: "40+", label: "Years of industry leadership" },
                   { val: "F500", label: "Fortune 500 clientele" },
-                  { val: "85+", label: "Cities across India & 4 global hubs — UAE, KSA, England" },
-                  { val: "3×", label: "Consecutive National Tourism Award winners (2016–2019)" },
+                  { val: "85+", label: "Cities across India & 4 global hubs — UAE, USA, England" },
+                  { val: "3×", label: "National Tourism Award winners (2016–2019). Official transport for G20 & last 4 US Presidential Visits." },
                 ].map(({ val, label }) => (
                   <div key={label} className="glass-panel" style={{
                     display: "flex",
@@ -1191,7 +1191,7 @@ export default function AboutPage() {
                 color: "var(--text-secondary)",
                 marginBottom: "1.5rem",
               }}>
-                Mann Fleet Partners Limited stands as the <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>dominant force in the luxury rental market</strong> and the premier provider of global ground transportation solutions.
+                Mann Fleet Partners Limited is <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>more than just a transport management company</strong> — we are the <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>dominant force in the luxury rental market</strong>, trusted to handle the world&apos;s most high-profile clients, celebrities, world leaders, and large-scale events with flawless precision.
               </p>
               <p className="font-sans" style={{
                 fontSize: "1rem",
@@ -1199,7 +1199,7 @@ export default function AboutPage() {
                 color: "var(--text-secondary)",
                 marginBottom: "1.5rem",
               }}>
-                We serve an elite, sophisticated clientele — including Fortune 500 giants, diplomatic embassies, and high-net-worth individuals — across India and key international hubs such as the <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>UAE, Saudi Arabia, and England</strong>.
+                We serve an elite, sophisticated clientele — including Fortune 500 giants, diplomatic embassies, world leaders, celebrities, and high-net-worth individuals — across India and key international hubs such as the <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>UAE, USA, Saudi Arabia, and England</strong>.
               </p>
               <p className="font-sans" style={{
                 fontSize: "1rem",
@@ -1433,7 +1433,7 @@ export default function AboutPage() {
                 maxWidth: 380,
                 opacity: 0,
               }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2000s</span>
+                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2005 onwards</span>
                 <h3 className="font-serif" style={{
                   fontSize: "1.4rem", fontWeight: 400,
                   color: "var(--text-primary)", margin: "0 0 0.6rem",
@@ -1472,7 +1472,7 @@ export default function AboutPage() {
                 maxWidth: 380,
                 opacity: 0,
               }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2008–2015</span>
+                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2002 onwards</span>
                 <h3 className="font-serif" style={{
                   fontSize: "1.4rem", fontWeight: 400,
                   color: "var(--text-primary)", margin: "0 0 0.6rem",
@@ -1481,7 +1481,7 @@ export default function AboutPage() {
                   fontSize: "0.875rem", lineHeight: 1.7,
                   color: "var(--text-secondary)", margin: 0,
                 }}>
-                  Appointed as the preferred ground transport provider for foreign embassies including the United States Mission in India. Served the Kabaddi World Cup, AFC Women&apos;s Cup, and major national sporting events.
+                  Appointed as the preferred ground transport provider for foreign embassies including the United States Mission in India. Served sports leagues, cricket leagues, the Kabaddi World Cup, AFC Women&apos;s Cup, and major national sporting events.
                 </p>
               </div>
             </div>
@@ -1511,7 +1511,7 @@ export default function AboutPage() {
                 maxWidth: 380,
                 opacity: 0,
               }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2016–2019</span>
+                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2016 onwards</span>
                 <h3 className="font-serif" style={{
                   fontSize: "1.4rem", fontWeight: 400,
                   color: "var(--text-primary)", margin: "0 0 0.6rem",
@@ -1549,7 +1549,7 @@ export default function AboutPage() {
                 maxWidth: 380,
                 opacity: 0,
               }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2019–2022</span>
+                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2019 onwards</span>
                 <h3 className="font-serif" style={{
                   fontSize: "1.4rem", fontWeight: 400,
                   color: "var(--text-primary)", margin: "0 0 0.6rem",
@@ -1558,7 +1558,7 @@ export default function AboutPage() {
                   fontSize: "0.875rem", lineHeight: 1.7,
                   color: "var(--text-secondary)", margin: 0,
                 }}>
-                  Received the Zee Business Award for Best Private Transport Service Provider (2019) and was named &apos;Leaders of Road Transport&apos; by TV9 Network (2022). Expanded global footprint to UAE, Saudi Arabia, and England.
+                  Received the Zee Business Award for Best Private Transport Service Provider (2019) and was named &apos;Leaders of Road Transport&apos; by TV9 Network (2022). Expanded global footprint to UAE, USA, Saudi Arabia, and England.
                 </p>
               </div>
             </div>
@@ -1596,7 +1596,7 @@ export default function AboutPage() {
                   fontSize: "0.875rem", lineHeight: 1.7,
                   color: "var(--text-secondary)", margin: 0,
                 }}>
-                  Mann Fleet Partners Limited — an award-winning, globally recognised mobility powerhouse. Serving the G20 Presidency, VVIP events, and Fortune 500 clients across India, UAE, Saudi Arabia, and England.
+                  Mann Fleet Partners Limited — an award-winning, globally recognised mobility powerhouse. Serving the G20 Presidency, VVIP events, and Fortune 500 clients across India, UAE, USA, Saudi Arabia, and England. Handled transportation for the biggest-ever event in India at Jamnagar.
                 </p>
               </div>
             </div>
@@ -1675,7 +1675,7 @@ export default function AboutPage() {
               <em style={{ color: "var(--text-secondary)" }}>sincere efforts</em>,{" "}
               <em style={{ color: "var(--text-secondary)" }}>intelligent direction</em>{" "}
               and{" "}
-              <em style={{ color: "var(--accent)", opacity: 0.9 }}>skilful execution</em>.
+              <em style={{ color: "var(--text-secondary)" }}>skilful execution</em>.
             </p>
 
             {/* Attribution line */}
@@ -1703,17 +1703,17 @@ export default function AboutPage() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          4a. WHY MANN FLEET — USP STICKY CARDS
+          4a. WHY MANN FLEET — USP STICKY CARDS + OUR VALUES
       ══════════════════════════════════════════════ */}
       <section ref={uspSectionRef} style={{
         background: "var(--bg-base)",
         padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 6rem) clamp(6rem, 12vw, 10rem)",
         overflow: "visible",
       }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           {/* Label */}
           <div ref={uspLabelRef} style={{ textAlign: "center", marginBottom: "1.5rem", opacity: 0 }}>
-            <span className="glass-badge">Why Mann Fleet</span>
+            <span className="glass-badge">Why Mann Fleet Partners</span>
           </div>
           {/* Heading */}
           <h2 ref={uspHeadRef} className="font-serif" style={{
@@ -1739,8 +1739,15 @@ export default function AboutPage() {
             Five pillars that make Mann Fleet Partners the undisputed leader in India&apos;s premium ground transportation.
           </p>
 
-          {/* Sticky card stack */}
-          <div>
+          {/* Split-screen: USP cards + Our Values */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(2rem, 4vw, 4rem)",
+            alignItems: "start",
+          }}>
+            {/* LEFT: Sticky card stack */}
+            <div>
             {/* Card 1 — Four Decades */}
             <div ref={uspCard1Ref} style={{
               position: "sticky",
@@ -1870,7 +1877,7 @@ export default function AboutPage() {
                     fontSize: "0.875rem", lineHeight: 1.7,
                     color: "var(--text-secondary)", margin: 0,
                   }}>
-                    Seamless operations across 85+ Indian cities, with international presence in UAE, Saudi Arabia, and England. One partner, one standard, everywhere your journey takes you.
+                    Seamless operations across 85+ Indian cities, with international presence in UAE, USA, Saudi Arabia, and England. One partner, one standard, everywhere your journey takes you.
                   </p>
                 </div>
               </div>
@@ -1966,6 +1973,48 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+          {/* RIGHT: Our Values */}
+          <div style={{ position: "sticky", top: 80 }}>
+            <div style={{ marginBottom: "2rem" }}>
+              <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block" }}>Our Values</span>
+              <h3 className="font-sans" style={{
+                fontSize: "1.5rem", fontWeight: 700,
+                color: "var(--text-primary)", margin: "0 0 0.6rem",
+              }}>The Principles<br /><span style={{ color: "var(--text-secondary)", fontWeight: 400 }}>We Live By</span></h3>
+              <p className="font-sans" style={{ fontSize: "0.875rem", color: "var(--text-muted)", lineHeight: 1.6 }}>
+                At Mann Fleet Partners, every decision is guided by a set of core values that define who we are.
+              </p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+              {[
+                { title: "Integrity", desc: "We choose honesty and fairness in every situation, ensuring our actions are guided by strong principles and a clear sense of what is right." },
+                { title: "Reliability", desc: "We build trust by consistently doing what we say, delivering on our commitments with precision and dependability every single time." },
+                { title: "Discipline", desc: "Strong habits and clear structure define how we operate, allowing us to maintain focus, efficiency, and high standards in everything we do." },
+                { title: "Accountability", desc: "We take full ownership of our actions and outcomes, holding ourselves responsible and learning from every situation to continuously improve." },
+                { title: "Consistency", desc: "We show up with the same intent, focus, and standard in every situation, creating a level of reliability that people can depend on without question." },
+                { title: "Willpower", desc: "Through hard work, we stay committed to excellence, pushing through challenges and maintaining our standards even under pressure." },
+              ].map(({ title, desc }) => (
+                <div key={title} className="glass-panel" style={{
+                  padding: "1.1rem 1.4rem",
+                  borderRadius: "1rem",
+                  display: "flex",
+                  gap: "1rem",
+                  alignItems: "flex-start",
+                }}>
+                  <div style={{
+                    width: 8, height: 8, borderRadius: "50%",
+                    background: "var(--accent)",
+                    flexShrink: 0, marginTop: "0.35rem",
+                  }} />
+                  <div>
+                    <div className="font-sans" style={{ fontSize: "0.88rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.25rem" }}>{title}</div>
+                    <div className="font-sans" style={{ fontSize: "0.78rem", color: "var(--text-secondary)", lineHeight: 1.55 }}>{desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
         </div>
       </section>
 
@@ -2410,6 +2459,9 @@ export default function AboutPage() {
           }}>
             {[
               { region: "India", sub: "85+ cities · Pan-India Operations", primary: true },
+              { region: "USA", sub: "United States of America", primary: false },
+              { region: "Nepal", sub: "Kathmandu & surrounds", primary: false },
+              { region: "Sri Lanka", sub: "Colombo & surrounds", primary: false },
               { region: "UAE", sub: "Dubai & Abu Dhabi", primary: false },
               { region: "Saudi Arabia", sub: "Riyadh & Jeddah", primary: false },
               { region: "England", sub: "London & surrounds", primary: false },

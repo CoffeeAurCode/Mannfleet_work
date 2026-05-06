@@ -707,6 +707,89 @@ export default function WeCarePage() {
               <Image src="/We care/WhatsApp Image 2026-05-04 at 10.07.15.jpeg" alt="Sustainable Impact" fill style={{ objectFit: "cover" }} />
             </div>
           </AccordionItem>
+
+          <AccordionItem title="COVID-19 Community Response" icon={<IconShield />}>
+            <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: "0 0 1.25rem", fontSize: "0.95rem" }}>
+              During the COVID-19 pandemic, Mann Fleet Partners stepped forward to support communities
+              and essential workers at a time of unprecedented need. Our response was swift, coordinated,
+              and deeply human — reflecting our belief that a company's character is revealed in a crisis.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {[
+                "Provided free transportation for healthcare workers and essential service staff",
+                "Supplied PPE kits and sanitisation materials to frontline responders",
+                "Supported food distribution drives for daily-wage workers and vulnerable families",
+                "Maintained sanitised fleet operations to ensure safe mobility throughout lockdown phases",
+              ].map((item) => (
+                <div key={item} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start", color: "var(--text-secondary)", fontSize: "0.9rem" }}>
+                  <span style={{ color: "var(--accent)", marginTop: 2, flexShrink: 0 }}><IconCheck /></span>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </AccordionItem>
+
+          <AccordionItem title="Sustainable Mobility & EV Initiative" icon={<IconLeaf />}>
+            <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: "0 0 1.25rem", fontSize: "0.95rem" }}>
+              Mann Fleet Partners is committed to a greener future for mobility. We are actively
+              expanding our electric vehicle fleet as part of a wider sustainability mission —
+              reducing emissions, lowering our carbon footprint, and offering clients a cleaner,
+              quieter, and more responsible way to travel.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.5rem" }}>
+              {[
+                "Progressive introduction of EV models across corporate and chauffeur fleets",
+                "Charging infrastructure partnerships to support long-range EV operations",
+                "Driver training programmes for responsible and efficient EV operation",
+                "Commitment to carbon-neutral fleet milestones aligned with India's net-zero goals",
+              ].map((item) => (
+                <div key={item} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start", color: "var(--text-secondary)", fontSize: "0.9rem" }}>
+                  <span style={{ color: "var(--accent)", marginTop: 2, flexShrink: 0 }}><IconCheck /></span>
+                  {item}
+                </div>
+              ))}
+            </div>
+            <div style={{
+              background: "var(--bg-surface)",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: 12,
+              padding: "1rem 1.25rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem",
+              flexWrap: "wrap",
+            }}>
+              <div style={{ flex: 1, minWidth: 200 }}>
+                <p style={{ fontSize: "0.95rem", fontWeight: 600, color: "var(--text-primary)", margin: "0 0 0.25rem" }}>
+                  Faze.in — Our Sustainable Mobility Subsidiary
+                </p>
+                <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", margin: 0, lineHeight: 1.6 }}>
+                  Dedicated platform for sustainable, electric, and eco-friendly vehicle solutions.
+                </p>
+              </div>
+              <a
+                href="https://faze.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
+                  fontSize: "0.9rem",
+                  fontWeight: 600,
+                  color: "var(--accent)",
+                  textDecoration: "none",
+                  padding: "0.5rem 1.25rem",
+                  border: "1px solid var(--accent)",
+                  borderRadius: 8,
+                  whiteSpace: "nowrap",
+                  flexShrink: 0,
+                }}
+              >
+                Visit Faze.in <IconExternalLink />
+              </a>
+            </div>
+          </AccordionItem>
         </section>
 
         {/* ── Governance & Oversight ── */}

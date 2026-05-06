@@ -344,7 +344,7 @@ function TrackingCard() {
         <div style={{
           display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 3,
         }}>
-          <span style={{ fontWeight: 700, fontSize: "0.86rem", color: "var(--text-primary)" }}>MANN</span>
+          <span style={{ fontWeight: 700, fontSize: "0.86rem", color: "var(--text-primary)" }}>Mann Fleet Partners</span>
           <span style={{
             fontSize: "0.68rem", color: "var(--text-muted)",
             transition: "all 0.4s ease",
@@ -560,7 +560,7 @@ function PickupCard() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const target = 28;
+    const target = 80;
     const duration = 1400;
     const step = target / (duration / 16);
     let current = 0;
@@ -594,7 +594,7 @@ function PickupCard() {
             {count}+
           </div>
           <div style={{ fontWeight: 600, fontSize: "0.82rem", color: "var(--text-secondary)", marginTop: 3 }}>
-            Pickup Points
+            Cities in India
           </div>
         </div>
 
@@ -738,7 +738,7 @@ export default function BentoSection() {
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.60)",
             marginBottom: 12,
           }}>
-            Why MANN
+            Why Mann Fleet Partners
           </span>
           <h2 style={{
             fontSize: "clamp(1.9rem, 3.5vw, 2.8rem)",
