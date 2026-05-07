@@ -39,6 +39,7 @@ const AWARDS = [
     year: "2016–2017",
     issuer: "Ministry of Tourism, Govt. of India",
     pdf: "/awards/National Tourism Award_2016-17.pdf",
+    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_26%20PM.png",
     highlight: true,
   },
   {
@@ -46,6 +47,7 @@ const AWARDS = [
     year: "2017–2018",
     issuer: "Ministry of Tourism, Govt. of India",
     pdf: "/awards/National Tourism Award_2017-18.pdf",
+    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_05%20PM.png",
     highlight: true,
   },
   {
@@ -53,6 +55,7 @@ const AWARDS = [
     year: "2018–2019",
     issuer: "Ministry of Tourism, Govt. of India",
     pdf: "/awards/National Tourism Award_2018-19.pdf",
+    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_22%20PM.png",
     highlight: true,
   },
   {
@@ -60,6 +63,7 @@ const AWARDS = [
     year: "2019",
     issuer: "Zee TV",
     pdf: "/awards/Award_Zee Business.pdf",
+    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_26%20PM.png",
     highlight: false,
   },
   {
@@ -67,6 +71,7 @@ const AWARDS = [
     year: "2022",
     issuer: "TV 9 Network",
     pdf: "/awards/Award_TV 9 Network.pdf",
+    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_09%20PM.png",
     highlight: false,
   },
   {
@@ -74,6 +79,7 @@ const AWARDS = [
     year: "—",
     issuer: "VFS Global Times Travel Awards",
     pdf: "/awards/Award_Times Travel.pdf",
+    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_32%20PM.png",
     highlight: false,
   },
   {
@@ -81,29 +87,31 @@ const AWARDS = [
     year: "—",
     issuer: "—",
     pdf: "/awards/Global Tourism Awards.pdf",
+    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_40%20PM.png",
     highlight: false,
   },
 ];
 
 const APPRECIATIONS = [
   { label: "IATA Accreditation", file: "/Appreciation/Appreciation Letter_IATA.jpg", isImage: true },
-  { label: "US Embassy Appreciation", file: "/awards/Appreciation_Embassy_USA.pdf", isImage: false },
-  { label: "Joe Biden — Vice President, USA", file: "/awards/Appreciation_Joe Biden_Vice President_USA.pdf", isImage: false },
-  { label: "US Mission Token of Appreciation", file: "/awards/Token_Appreciation_US Mission.pdf", isImage: false },
+  { label: "IATA AGM & World Air Transport Summit 2025", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_50%20PM.png", isImage: true },
+  { label: "US Embassy Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_48%20PM.png", isImage: true },
+  { label: "Joe Biden — Vice President, USA", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_53%20PM.png", isImage: true },
+  { label: "US Mission Token of Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_50_56%20PM.png", isImage: true },
   { label: "White House Token of Appreciation", file: "/Appreciation/Token_Appreciation_White House_USA.pdf", isImage: false },
-  { label: "G20 Event Appreciation", file: "/Appreciation/Appreciation_G20 Event.pdf", isImage: false },
-  { label: "GST Department Appreciation", file: "/Appreciation/Appreciation_GST Department.pdf", isImage: false },
-  { label: "Reliance Appreciation", file: "/Appreciation/Appreciation_Reliance.pdf", isImage: false },
-  { label: "Pernod Ricard Appreciation", file: "/Appreciation/Appreciation_Pernord Ricard.pdf", isImage: false },
+  { label: "G20 Event Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_18%20PM.png", isImage: true },
+  { label: "GST Department Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_37%20PM.png", isImage: true },
+  { label: "Reliance Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_40%20PM.png", isImage: true },
+  { label: "Pernod Ricard Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_53%20PM.png", isImage: true },
   { label: "Five Below Appreciation", file: "/Appreciation/Appreciation_Fivebelow.pdf", isImage: false },
-  { label: "Tamarind Global Appreciation", file: "/Appreciation/Appreciation_Tamarind Global.pdf", isImage: false },
+  { label: "Tamarind Global Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_59%20PM.png", isImage: true },
   { label: "Jet on Wheels Appreciation", file: "/Appreciation/Appreciation_Jet on Wheels_Urban Provider.pdf", isImage: false },
   { label: "CRC Group Appreciation", file: "/Appreciation/Appreciation Mail_CRC Group.pdf", isImage: false },
   { label: "Indigo Paints Appreciation", file: "/Appreciation/Appreciation_Indigo Paints.pdf", isImage: false },
   { label: "Just Add Water Appreciation", file: "/Appreciation/Appreciation Mail_Just Add Water.pdf", isImage: false },
-  { label: "AFC Women's Cup Appreciation", file: "/Appreciation/Appreciation_AFC_Women Cup.pdf", isImage: false },
+  { label: "AFC Women's Cup Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_56%20PM.png", isImage: true },
   { label: "Kabaddi World Cup Appreciation", file: "/Appreciation/Appreciation_World Cup_Kabaddi.pdf", isImage: false },
-  { label: "JCB Appreciation", file: "/Appreciation/Appreciation_JCB.pdf", isImage: false },
+  { label: "JCB Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_02%20PM.png", isImage: true },
 ];
 
 const TESTIMONIALS = [
@@ -244,7 +252,7 @@ export default function AwardsPage() {
             gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
             gap: "1.25rem",
           }}>
-            {AWARDS.map(({ title, year, issuer, pdf, highlight }) => (
+            {AWARDS.map(({ title, year, issuer, pdf, image, highlight }) => (
               <a
                 key={title + year}
                 href={pdf}
@@ -252,11 +260,11 @@ export default function AwardsPage() {
                 rel="noopener noreferrer"
                 className="glass-card"
                 style={{
-                  padding: "1.75rem",
+                  padding: 0,
                   borderRadius: "1.5rem",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "1rem",
+                  overflow: "hidden",
                   textDecoration: "none",
                   cursor: "pointer",
                   transition: "border-color 0.2s ease, box-shadow 0.2s ease",
@@ -270,47 +278,67 @@ export default function AwardsPage() {
                   e.currentTarget.style.boxShadow = "";
                 }}
               >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                  <div style={{
-                    width: 48, height: 48, borderRadius: "12px",
-                    background: highlight
-                      ? "linear-gradient(135deg, rgba(200,40,40,0.18) 0%, rgba(200,40,40,0.06) 100%)"
-                      : "var(--glass-mid)",
-                    border: `1px solid ${highlight ? "rgba(200,40,40,0.28)" : "var(--border-subtle)"}`,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    color: highlight ? "var(--accent)" : "var(--text-secondary)",
-                    flexShrink: 0,
-                  }}>
-                    {highlight ? <IconStar size={20} /> : <IconTrophy size={20} />}
-                  </div>
-                  <span className="font-sans" style={{
-                    fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.1em",
-                    textTransform: "uppercase", color: "var(--text-muted)",
-                    padding: "0.2rem 0.6rem", borderRadius: 9999,
-                    background: "var(--glass-mid)", border: "1px solid var(--border-subtle)",
-                  }}>
-                    View PDF
-                  </span>
+                {/* Award image */}
+                <div style={{
+                  height: 220,
+                  background: "var(--bg-deep)",
+                  overflow: "hidden",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={image}
+                    alt={title}
+                    style={{ width: "100%", height: "100%", objectFit: "contain", padding: "0.75rem" }}
+                  />
                 </div>
 
-                <div>
-                  <h3 className="font-sans" style={{
-                    fontSize: "0.92rem", fontWeight: 700,
-                    color: "var(--text-primary)", margin: "0 0 0.35rem",
-                    lineHeight: 1.4,
-                  }}>
-                    {title}
-                  </h3>
-                  {issuer !== "—" && (
-                    <p className="font-sans" style={{ fontSize: "0.75rem", color: "var(--text-muted)", margin: "0 0 0.2rem", lineHeight: 1.5 }}>
-                      {issuer}
-                    </p>
-                  )}
-                  {year !== "—" && (
-                    <p className="font-sans" style={{ fontSize: "0.72rem", fontWeight: 600, color: "var(--accent)", margin: 0 }}>
-                      {year}
-                    </p>
-                  )}
+                {/* Award details */}
+                <div style={{ padding: "1.25rem 1.5rem", display: "flex", flexDirection: "column", gap: "0.6rem", flex: 1 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div style={{
+                      width: 36, height: 36, borderRadius: "10px",
+                      background: highlight
+                        ? "linear-gradient(135deg, rgba(200,40,40,0.18) 0%, rgba(200,40,40,0.06) 100%)"
+                        : "var(--glass-mid)",
+                      border: `1px solid ${highlight ? "rgba(200,40,40,0.28)" : "var(--border-subtle)"}`,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: highlight ? "var(--accent)" : "var(--text-secondary)",
+                      flexShrink: 0,
+                    }}>
+                      {highlight ? <IconStar size={16} /> : <IconTrophy size={16} />}
+                    </div>
+                    <span className="font-sans" style={{
+                      fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.1em",
+                      textTransform: "uppercase", color: "var(--text-muted)",
+                      padding: "0.2rem 0.6rem", borderRadius: 9999,
+                      background: "var(--glass-mid)", border: "1px solid var(--border-subtle)",
+                    }}>
+                      View PDF
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-sans" style={{
+                      fontSize: "0.9rem", fontWeight: 700,
+                      color: "var(--text-primary)", margin: "0 0 0.3rem",
+                      lineHeight: 1.4,
+                    }}>
+                      {title}
+                    </h3>
+                    {issuer !== "—" && (
+                      <p className="font-sans" style={{ fontSize: "0.73rem", color: "var(--text-muted)", margin: "0 0 0.2rem", lineHeight: 1.5 }}>
+                        {issuer}
+                      </p>
+                    )}
+                    {year !== "—" && (
+                      <p className="font-sans" style={{ fontSize: "0.72rem", fontWeight: 600, color: "var(--accent)", margin: 0 }}>
+                        {year}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </a>
             ))}
@@ -345,34 +373,26 @@ export default function AwardsPage() {
                   rel="noopener noreferrer"
                   className="glass-card"
                   style={{
-                    padding: "1.25rem",
                     borderRadius: "1.25rem",
                     display: "flex",
-                    alignItems: "center",
-                    gap: "0.75rem",
+                    flexDirection: "column",
+                    overflow: "hidden",
                     textDecoration: "none",
                     transition: "border-color 0.18s ease",
-                    minHeight: 80,
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(200,40,40,0.30)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
                 >
-                  <div style={{
-                    width: 36, height: 36, borderRadius: "9px", flexShrink: 0,
-                    background: "var(--glass-mid)", border: "1px solid var(--border-subtle)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "var(--text-secondary)",
-                  }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21 15 16 10 5 21" />
-                    </svg>
+                  <div style={{ height: 130, overflow: "hidden", background: "var(--bg-deep)", flexShrink: 0 }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={file} alt={label} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </div>
-                  <span className="font-sans" style={{ fontSize: "0.80rem", fontWeight: 600, color: "var(--text-primary)", lineHeight: 1.4, flex: 1 }}>
-                    {label}
-                  </span>
-                  <span style={{ color: "var(--text-40)", flexShrink: 0 }}><ArrowUpRight size={12} /></span>
+                  <div style={{ padding: "0.75rem 1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <span className="font-sans" style={{ fontSize: "0.78rem", fontWeight: 600, color: "var(--text-primary)", lineHeight: 1.4, flex: 1 }}>
+                      {label}
+                    </span>
+                    <span style={{ color: "var(--text-40)", flexShrink: 0 }}><ArrowUpRight size={12} /></span>
+                  </div>
                 </a>
               ) : (
                 <a

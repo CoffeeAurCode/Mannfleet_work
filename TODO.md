@@ -70,15 +70,15 @@
 ## ⏳ PENDING — Waiting on Content / Assets
 
 ### Clients / Partners Marquee
-- [ ] **Add** GE, Porsche, LG, Parliament of India, Ministry of External Affairs, ASI (Archaeological Survey of India), ICL logos/photos — *need image files*
+- [x] **Add** GE, ASI (Archaeological Survey of India), LG, Bosch logos added to marquee *(Porsche, Parliament of India, Ministry of External Affairs, ICL still awaited)*
 - [ ] **Remove** French Embassy from clients marquee — *need to identify which photo is French Embassy*
 
 ### Awards
-- [ ] Replace award PDFs with award **pictures** — *awaiting images from photographer*
+- [x] Replace award PDFs with award **pictures** — award cards now show trophy/plaque images; 11 appreciation letters now show image thumbnails
 - [ ] Arrange awards in order of importance — *need priority list from client*
 
 ### Noida International Airport Page
-- [ ] Add **picture of Taj Mahal** to Mann Taj Express section — *awaiting image*
+- [x] Add **picture of Taj Mahal** to Mann Taj Express section
 - [ ] Add **image of chauffeur in uniform** — *awaiting image*
 
 ### Meet the Team
