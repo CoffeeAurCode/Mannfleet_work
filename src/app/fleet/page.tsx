@@ -102,12 +102,12 @@ const VEHICLES: Vehicle[] = [
   {
     id: "ertiga", name: "Maruti Suzuki Ertiga", type: "SUVs", category: "ECONOMY",
     seating: "7 Seater Including Pilot", luggage: "209L (all rows) / 550L (3rd row folded)",
-    image: "https://images.unsplash.com/photo-1621285853634-713b8dd6b5ee?w=700&q=80",
+    image: ["/Mann%20car%20pictures/Ertiga/ChatGPT%20Image%20May%204%2C%202026%2C%2009_51_52%20AM.png","/Mann%20car%20pictures/Ertiga/ChatGPT%20Image%20May%205%2C%202026%2C%2001_33_07%20PM.png","/Mann%20car%20pictures/Ertiga/ChatGPT%20Image%20May%205%2C%202026%2C%2001_37_10%20PM.png","/Mann%20car%20pictures/Ertiga/ChatGPT%20Image%20May%205%2C%202026%2C%2001_51_20%20PM.png","/Mann%20car%20pictures/Ertiga/ChatGPT%20Image%20May%205%2C%202026%2C%2001_56_20%20PM.png"],
   },
   {
     id: "kia-carens", name: "Kia Carens", type: "SUVs", category: "ECONOMY",
     seating: "7 Seater Including Pilot", luggage: "216L (all rows) / 645L (3rd row folded)",
-    image: "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=700&q=80",
+    image: ["/Mann%20car%20pictures/Kia%20Carens/ChatGPT%20Image%20May%205%2C%202026%2C%2009_23_09%20PM.png","/Mann%20car%20pictures/Kia%20Carens/ChatGPT%20Image%20May%205%2C%202026%2C%2009_28_23%20PM.png","/Mann%20car%20pictures/Kia%20Carens/ChatGPT%20Image%20May%205%2C%202026%2C%2009_28_33%20PM.png","/Mann%20car%20pictures/Kia%20Carens/ChatGPT%20Image%20May%205%2C%202026%2C%2009_28_55%20PM.png","/Mann%20car%20pictures/Kia%20Carens/ChatGPT%20Image%20May%205%2C%202026%2C%2009_30_43%20PM.png"],
   },
   // Economy Plus
   {
@@ -116,9 +116,14 @@ const VEHICLES: Vehicle[] = [
     image: "/Mann%20car%20pictures/CRYSTA.png",
   },
   {
+    id: "hyundai-creta", name: "Hyundai Creta", type: "SUVs", category: "ECONOMY PLUS",
+    seating: "5 Seater Including Pilot", luggage: "433 Litres",
+    image: ["/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_02_53%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_03_00%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_03_04%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_03_10%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_03_13%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_05_02%20PM.png"],
+  },
+  {
     id: "xuv700", name: "Mahindra XUV700", type: "SUVs", category: "ECONOMY PLUS",
     seating: "5–7 Seater Including Pilot", luggage: "240 Litres (7 seats up)",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=700&q=80",
+    image: ["/Mann%20car%20pictures/Mahindra%20XUV%207/ChatGPT%20Image%20May%206%2C%202026%2C%2002_37_02%20PM.png","/Mann%20car%20pictures/Mahindra%20XUV%207/ChatGPT%20Image%20May%206%2C%202026%2C%2002_37_11%20PM.png","/Mann%20car%20pictures/Mahindra%20XUV%207/ChatGPT%20Image%20May%206%2C%202026%2C%2002_37_14%20PM.png","/Mann%20car%20pictures/Mahindra%20XUV%207/ChatGPT%20Image%20May%206%2C%202026%2C%2002_37_22%20PM.png","/Mann%20car%20pictures/Mahindra%20XUV%207/ChatGPT%20Image%20May%206%2C%202026%2C%2002_37_26%20PM.png","/Mann%20car%20pictures/Mahindra%20XUV%207/ChatGPT%20Image%20May%206%2C%202026%2C%2002_37_30%20PM.png"],
   },
   // Premium
   {
@@ -140,7 +145,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "ford-endeavour", name: "Ford Endeavour", type: "SUVs", category: "PREMIUM PLUS",
     seating: "7 Seater Including Pilot", luggage: "259–296 Litres (all rows up)",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=700&q=80",
+    image: ["/Mann%20car%20pictures/Ford%20endeavor/ChatGPT%20Image%20May%206%2C%202026%2C%2002_47_28%20PM.png","/Mann%20car%20pictures/Ford%20endeavor/ChatGPT%20Image%20May%206%2C%202026%2C%2002_47_33%20PM.png","/Mann%20car%20pictures/Ford%20endeavor/ChatGPT%20Image%20May%206%2C%202026%2C%2002_47_50%20PM.png","/Mann%20car%20pictures/Ford%20endeavor/ChatGPT%20Image%20May%206%2C%202026%2C%2002_47_55%20PM.png","/Mann%20car%20pictures/Ford%20endeavor/ChatGPT%20Image%20May%206%2C%202026%2C%2002_48_01%20PM.png","/Mann%20car%20pictures/Ford%20endeavor/ChatGPT%20Image%20May%206%2C%202026%2C%2002_53_49%20PM.png"],
   },
   // Luxury
   {
@@ -151,12 +156,12 @@ const VEHICLES: Vehicle[] = [
   {
     id: "bmw-x5", name: "BMW X5", type: "SUVs", category: "LUXURY",
     seating: "5 Seater Including Pilot", luggage: "650 Litres",
-    image: "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?w=700&q=80",
+    image: ["/Mann%20car%20pictures/BMW%20X5/ChatGPT%20Image%20May%206%2C%202026%2C%2003_03_10%20PM.png","/Mann%20car%20pictures/BMW%20X5/ChatGPT%20Image%20May%206%2C%202026%2C%2003_03_14%20PM.png","/Mann%20car%20pictures/BMW%20X5/ChatGPT%20Image%20May%206%2C%202026%2C%2003_03_17%20PM.png","/Mann%20car%20pictures/BMW%20X5/ChatGPT%20Image%20May%206%2C%202026%2C%2003_03_21%20PM.png","/Mann%20car%20pictures/BMW%20X5/ChatGPT%20Image%20May%206%2C%202026%2C%2003_03_26%20PM.png","/Mann%20car%20pictures/BMW%20X5/ChatGPT%20Image%20May%206%2C%202026%2C%2003_03_32%20PM.png"],
   },
   {
     id: "volvo-xc90", name: "Volvo XC90", type: "SUVs", category: "LUXURY",
     seating: "7 Seater Including Pilot", luggage: "302L (all rows) / 680L (3rd row folded)",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=700&q=80",
+    image: ["/Mann%20car%20pictures/volvo%20xc90/ChatGPT%20Image%20May%206%2C%202026%2C%2003_34_02%20PM.png","/Mann%20car%20pictures/volvo%20xc90/ChatGPT%20Image%20May%206%2C%202026%2C%2003_34_06%20PM.png","/Mann%20car%20pictures/volvo%20xc90/ChatGPT%20Image%20May%206%2C%202026%2C%2003_34_10%20PM.png","/Mann%20car%20pictures/volvo%20xc90/ChatGPT%20Image%20May%206%2C%202026%2C%2003_34_18%20PM.png","/Mann%20car%20pictures/volvo%20xc90/ChatGPT%20Image%20May%206%2C%202026%2C%2003_34_22%20PM.png","/Mann%20car%20pictures/volvo%20xc90/ChatGPT%20Image%20May%206%2C%202026%2C%2003_34_26%20PM.png","/Mann%20car%20pictures/volvo%20xc90/ChatGPT%20Image%20May%206%2C%202026%2C%2003_34_31%20PM.png"],
   },
   {
     id: "mercedes-gle", name: "Mercedes-Benz GLE", type: "SUVs", category: "LUXURY",
@@ -183,7 +188,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "range-rover-sport", name: "Range Rover Sport", type: "SUVs", category: "RANGE ROVER",
     seating: "5 Seater Including Pilot", luggage: "647 Litres",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=700&q=80",
+    image: ["/Mann%20car%20pictures/range%20rover%20sport/ChatGPT%20Image%20May%206%2C%202026%2C%2003_38_23%20PM.png","/Mann%20car%20pictures/range%20rover%20sport/ChatGPT%20Image%20May%206%2C%202026%2C%2003_38_44%20PM.png","/Mann%20car%20pictures/range%20rover%20sport/ChatGPT%20Image%20May%206%2C%202026%2C%2003_38_48%20PM.png","/Mann%20car%20pictures/range%20rover%20sport/ChatGPT%20Image%20May%206%2C%202026%2C%2003_38_52%20PM.png","/Mann%20car%20pictures/range%20rover%20sport/ChatGPT%20Image%20May%206%2C%202026%2C%2003_38_56%20PM.png","/Mann%20car%20pictures/range%20rover%20sport/ChatGPT%20Image%20May%206%2C%202026%2C%2003_38_59%20PM.png"],
   },
 
   /* ── Vanity van ────────────────────────────────────────── */
@@ -285,7 +290,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sd-creta", name: "Hyundai Creta (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "5 Seater Excluding Pilot", luggage: "433 Litres",
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=700&q=80",
+    image: ["/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_02_53%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_03_00%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_03_04%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_03_10%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_03_13%20PM.png","/Mann%20car%20pictures/Hyundai%20Creta/ChatGPT%20Image%20May%206%2C%202026%2C%2004_05_02%20PM.png"],
   },
   {
     id: "sd-crysta-7", name: "Toyota Innova Crysta (Self Drive)", type: "Self Driving", category: "SELF DRIVING",

@@ -52,6 +52,17 @@
 - [x] EV vehicles / green mobility section added
 - [x] Hyperlink to Faze.in (sustainable cars subsidiary) added
 
+### Fleet Page — Local Image Migration
+- [x] Maruti Suzuki Ertiga — replaced Unsplash with local images (5 imgs)
+- [x] Kia Carens — replaced Unsplash with local images (5 imgs)
+- [x] Mahindra XUV700 — replaced Unsplash with local images (6 imgs)
+- [x] Ford Endeavour — replaced Unsplash with local images (6 imgs)
+- [x] BMW X5 — replaced Unsplash with local images (6 imgs)
+- [x] Volvo XC90 — replaced Unsplash with local images (7 imgs)
+- [x] Range Rover Sport — replaced Unsplash with local images (6 imgs)
+- [x] Hyundai Creta (Self Drive) — replaced Unsplash with local images (6 imgs)
+- [x] Added new Hyundai Creta chauffeur-driven entry (Economy Plus SUV)
+
 ### Services
 - [x] Shuttle Service added to services section
 
@@ -98,6 +109,10 @@
 
 ### Legal
 - [ ] **Refund and Cancellation Policy** page — *awaiting content from Shivani ma'am*
+
+### Fleet Page — Awaiting Local Images
+- [ ] Range Rover (Vogue / Autobiography / LWB) — still on Unsplash, no local images yet
+- [ ] Tempo Traveller — still on Unsplash, no local images yet
 
 ### Other
 - [ ] **Download App** link at bottom of website — *app link confirmed: `play.google.com/store/apps/details?id=com.user.mannfleet`* — add to footer CTA area
