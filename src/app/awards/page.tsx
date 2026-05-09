@@ -39,7 +39,7 @@ const AWARDS = [
     year: "2016–2017",
     issuer: "Ministry of Tourism, Govt. of India",
     pdf: "/awards/National Tourism Award_2016-17.pdf",
-    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_26%20PM.png",
+    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_26%20PM(govenment).png",
     highlight: true,
   },
   {
@@ -47,7 +47,7 @@ const AWARDS = [
     year: "2017–2018",
     issuer: "Ministry of Tourism, Govt. of India",
     pdf: "/awards/National Tourism Award_2017-18.pdf",
-    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_05%20PM.png",
+    image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_05%20PM(govenment).png",
     highlight: true,
   },
   {
@@ -93,14 +93,14 @@ const AWARDS = [
 ];
 
 const APPRECIATIONS = [
-  { label: "IATA Accreditation", file: "/Appreciation/Appreciation Letter_IATA.jpg", isImage: true },
-  { label: "IATA AGM & World Air Transport Summit 2025", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_50%20PM.png", isImage: true },
+  { label: "GST Department Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_37%20PM(govenment).png", isImage: true },
+  { label: "G20 Event Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_18%20PM.png", isImage: true },
   { label: "US Embassy Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_48%20PM.png", isImage: true },
   { label: "Joe Biden — Vice President, USA", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_53%20PM.png", isImage: true },
   { label: "US Mission Token of Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_50_56%20PM.png", isImage: true },
   { label: "White House Token of Appreciation", file: "/Appreciation/Token_Appreciation_White House_USA.pdf", isImage: false },
-  { label: "G20 Event Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_18%20PM.png", isImage: true },
-  { label: "GST Department Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_37%20PM.png", isImage: true },
+  { label: "IATA Accreditation", file: "/Appreciation/Appreciation Letter_IATA.jpg", isImage: true },
+  { label: "IATA AGM & World Air Transport Summit 2025", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_50%20PM.png", isImage: true },
   { label: "Reliance Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_40%20PM.png", isImage: true },
   { label: "Pernod Ricard Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_53%20PM.png", isImage: true },
   { label: "Five Below Appreciation", file: "/Appreciation/Appreciation_Fivebelow.pdf", isImage: false },

@@ -78,19 +78,20 @@
 
 ---
 
-## ⏳ PENDING — Waiting on Content / Assets
 
 ### Clients / Partners Marquee
 - [x] **Add** GE, ASI (Archaeological Survey of India), LG, Bosch logos added to marquee *(Porsche, Parliament of India, Ministry of External Affairs, ICL still awaited)*
-- [ ] **Remove** French Embassy from clients marquee — *need to identify which photo is French Embassy*
+- [x] **Remove** French Embassy from clients marquee — removed `WhatsApp Image 2026-04-18 at 17.59.29.jpeg` from PartnersMarquee.tsx
 
 ### Awards
 - [x] Replace award PDFs with award **pictures** — award cards now show trophy/plaque images; 11 appreciation letters now show image thumbnails
-- [ ] Arrange awards in order of importance — *need priority list from client*
+- [x] Arrange awards in order of importance — government-tagged images (`(govenment)` in filename) now referenced correctly; GST Dept & G20 moved to top of Appreciations; AWARDS grid already has National Tourism (govt) awards first
 
 ### Noida International Airport Page
 - [x] Add **picture of Taj Mahal** to Mann Taj Express section
-- [ ] Add **image of chauffeur in uniform** — *awaiting image*
+- [x] Add **image of chauffeur in uniform** — replaced emoji icon with actual image in Noida International Airport page chauffeur card
+
+## ⏳ PENDING — Waiting on Content / Assets
 
 ### Meet the Team
 - [ ] Add individual bio/story for each team member (from old website or new)
@@ -100,9 +101,9 @@
   - Mr. Ashok Kumar — *no bio, awaiting from Shivani ma'am*
   - Mr. Averjit Singh — *no bio, awaiting from Shivani ma'am*
   - Dr. Mohammad Sami — *no bio, awaiting from Shivani ma'am*
-  - Amarjeet Mann — *no bio, awaiting from Shivani ma'am*
-  - Jagdeep Singh Mann — *no bio, awaiting from Shivani ma'am*
-  - Ashwani Kumar — *no bio, awaiting from Shivani ma'am*
+  - Amarjeet Mann — bio added ✓ (from profiles docx; shows in card + "Read Full Profile" modal)
+  - Jagdeep Singh Mann — bio added ✓ (from profiles docx; shows in card + "Read Full Profile" modal)
+  - Ashwani Kumar — bio added ✓ (from profiles docx; shows in card + "Read Full Profile" modal)
 
 ### We Care / CSR
 - [ ] **Ganga Ram Hospital pay letter** — add to CSR section — *awaiting image from Shivani ma'am*
@@ -111,7 +112,7 @@
 - [ ] **Refund and Cancellation Policy** page — *awaiting content from Shivani ma'am*
 
 ### Fleet Page — Awaiting Local Images
-- [ ] Range Rover (Vogue / Autobiography / LWB) — still on Unsplash, no local images yet
+- [x] Range Rover (Vogue / Autobiography / LWB) — replaced Unsplash with 6 local images from `/Mann car pictures/range rover sport/`
 - [ ] Tempo Traveller — still on Unsplash, no local images yet
 
 ### Other

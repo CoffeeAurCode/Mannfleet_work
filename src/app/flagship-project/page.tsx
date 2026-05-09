@@ -467,19 +467,15 @@ export default function FlagshipProjectPage() {
                 borderRadius: 20,
                 background: "var(--bg-surface)",
                 border: "1px solid var(--border-subtle)",
-                padding: "1.5rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "1rem",
+                overflow: "hidden",
               }}>
-                <div style={{
-                  width: 52, height: 52, borderRadius: "50%",
-                  background: "rgba(220,38,38,0.10)",
-                  border: "1px solid rgba(220,38,38,0.22)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "1.5rem", flexShrink: 0,
-                }}>🎩</div>
-                <div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/ChatGPT%20Image%20May%209%2C%202026%2C%2003_12_32%20PM.png"
+                  alt="Uniformed Chauffeur"
+                  style={{ width: "100%", height: 200, objectFit: "cover", display: "block" }}
+                />
+                <div style={{ padding: "1.25rem 1.5rem" }}>
                   <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "1rem", color: "var(--text-primary)", margin: "0 0 0.25rem", fontWeight: 400 }}>Uniformed Chauffeur Service</p>
                   <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", lineHeight: 1.5 }}>Professional, white-gloved chauffeurs trained for VIP and luxury transport standards.</p>
                 </div>

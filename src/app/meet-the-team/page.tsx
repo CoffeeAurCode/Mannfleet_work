@@ -124,6 +124,7 @@ interface SalesMember {
   email: string;
   photo: string | null;
   objectPosition?: string;
+  bio?: string;
 }
 
 const SALES_TEAM: SalesMember[] = [
@@ -134,6 +135,7 @@ const SALES_TEAM: SalesMember[] = [
     email: "amarjeet@manntours.com",
     photo: "/teams/PHOTO-2026-04-20-18-02-49.jpg",
     objectPosition: "top",
+    bio: "Ms. Amarjeet Mann has an experience of more than 30 years in Sales & Marketing and is currently the President — Marketing at Mann Fleet Partners Limited since October 2022, focusing on revenue strategies and managing high-profile corporate events and international delegations. Previously, she was a Team Lead at Disney Star from January to September 2022, driving revenue for Star Maa in Delhi. Ms. Mann boasts over two decades at The Times of India Group, holding diverse roles including General Manager — Delhi Head for Consumer Durable Vertical & Telecom. A Luxury and Lifestyle Specialist, she launched India's first luxury summit and played a key role in organizing events like Femina Miss India. She holds a Post Graduate Diploma in Marketing from Apeejay School of Marketing and a Graduation from Lady Irwin College. Her continuous professional development includes certifications in Digital Marketing and Analytics from ISB. Ms. Mann's key skills encompass persuasive communication, key account management, and strategic thinking.",
   },
   {
     id: "jagdeep",
@@ -142,6 +144,7 @@ const SALES_TEAM: SalesMember[] = [
     email: "jagdeep@manntours.com",
     photo: "/teams/PHOTO-2026-04-20-18-02-49 2.jpg",
     objectPosition: "top",
+    bio: "Mr. Jagdeep Singh Mann, having approximately 12 years of robust experience in sales, marketing, and operations, currently serves as President — Sales at Mann Fleet Partners Limited. His journey with the company began as a dedicated Management Trainee in Marketing and Sales. Demonstrating exceptional aptitude and commitment during this initial period, he was deservedly retained as a permanent employee, progressively expanding his expertise across critical business functions. Academically, Mr. Mann is a distinguished alumnus of Maharshi Dayanand University, Rohtak, where he earned a Bachelor of Business Administration (Industry Integrated).",
   },
   {
     id: "ashwani",
@@ -150,6 +153,7 @@ const SALES_TEAM: SalesMember[] = [
     email: "ashwani@manntours.com",
     photo: "/teams/Mr.%20Ashwani%20Kumar%20Picture.png",
     objectPosition: "top",
+    bio: "Mr. Ashwani Kumar is a professional with over 11 years of diverse experience in sales, marketing, operations, MICE & management. He has been a key part of Mann Fleet Partners Limited since 2017, currently serving as Assistant Sales Manager. Known for his strong client handling, business development skills, and operational efficiency, he has consistently contributed to driving growth and delivering high-quality service experiences.",
   },
 ];
 
@@ -449,6 +453,144 @@ function TeamModal({
 }
 
 /* ══════════════════════════════════════════════════════════════
+   SALES MODAL
+══════════════════════════════════════════════════════════════ */
+function SalesModal({
+  member,
+  onClose,
+}: {
+  member: SalesMember;
+  onClose: () => void;
+}) {
+  const backdropRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const bd = backdropRef.current;
+    const card = cardRef.current;
+    if (!bd || !card) return;
+
+    gsap.fromTo(bd, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" });
+    gsap.fromTo(card, { opacity: 0, scale: 0.85, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" });
+
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") handleClose(); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleClose = useCallback(() => {
+    const bd = backdropRef.current;
+    const card = cardRef.current;
+    const tl = gsap.timeline({ onComplete: onClose });
+    if (card) tl.to(card, { opacity: 0, scale: 0.88, y: 30, duration: 0.25, ease: "power2.in" }, 0);
+    if (bd) tl.to(bd, { opacity: 0, duration: 0.25, ease: "power2.in" }, 0);
+  }, [onClose]);
+
+  return createPortal(
+    <div
+      ref={backdropRef}
+      onClick={handleClose}
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 1000,
+        background: "rgba(10,8,5,0.78)",
+        backdropFilter: "blur(6px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "24px 16px",
+      }}
+    >
+      <div
+        ref={cardRef}
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          background: "var(--bg-surface)",
+          border: "1px solid var(--border-mid)",
+          borderRadius: 20,
+          padding: "clamp(1.25rem, 5vw, 40px) clamp(1.25rem, 6vw, 44px)",
+          maxWidth: 620,
+          width: "100%",
+          maxHeight: "88vh",
+          overflowY: "auto",
+          position: "relative",
+        }}
+      >
+        <button
+          onClick={handleClose}
+          aria-label="Close"
+          style={{
+            position: "absolute",
+            top: 18,
+            right: 18,
+            background: "var(--glass-light)",
+            border: "1px solid var(--border-subtle)",
+            borderRadius: "50%",
+            width: 36,
+            height: 36,
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "var(--text-primary)",
+            fontSize: 18,
+            lineHeight: 1,
+          }}
+        >
+          ×
+        </button>
+
+        <div style={{ display: "flex", gap: 20, alignItems: "center", marginBottom: 24 }}>
+          {member.photo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={member.photo}
+              alt={member.name}
+              style={{
+                width: 100,
+                height: 100,
+                borderRadius: 16,
+                objectFit: "cover",
+                objectPosition: member.objectPosition || "top",
+                flexShrink: 0,
+                border: "2px solid var(--accent)",
+              }}
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+          ) : (
+            <AvatarPlaceholder name={member.name} size={100} />
+          )}
+          <div>
+            <p style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 4 }}>
+              {member.title}
+            </p>
+            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1.2rem, 3vw, 1.6rem)", color: "var(--text-primary)", margin: "0 0 6px", lineHeight: 1.2 }}>
+              {member.name}
+            </h2>
+            <a href={`mailto:${member.email}`} style={{ fontSize: 12, color: "var(--text-secondary)" }}>
+              {member.email}
+            </a>
+          </div>
+        </div>
+
+        <div style={{ height: 1, background: "var(--border-subtle)", marginBottom: 20 }} />
+
+        <p style={{ fontSize: "0.95rem", lineHeight: 1.78, color: "var(--text-secondary)", margin: 0 }}>
+          {member.bio}
+        </p>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
    LEADER CARD
 ══════════════════════════════════════════════════════════════ */
 function LeaderCard({
@@ -685,6 +827,7 @@ function SalesCard({
   const innerRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = innerRef.current;
@@ -776,11 +919,57 @@ function SalesCard({
             </svg>
             {member.email}
           </a>
+
+          {member.bio && (
+            <>
+              <p style={{ fontSize: "0.82rem", lineHeight: 1.65, color: "var(--text-secondary)", margin: 0, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden", textAlign: "left" }}>
+                {member.bio}
+              </p>
+              <button
+                onClick={() => setModalOpen(true)}
+                style={{
+                  width: "100%",
+                  padding: "10px 0",
+                  borderRadius: 10,
+                  background: "transparent",
+                  border: "1px solid var(--border-mid)",
+                  color: "var(--text-primary)",
+                  fontSize: "0.82rem",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 6,
+                  transition: "background 0.2s, border-color 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = "var(--accent)";
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--accent)";
+                  (e.currentTarget as HTMLButtonElement).style.color = "#fff";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = "transparent";
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--border-mid)";
+                  (e.currentTarget as HTMLButtonElement).style.color = "var(--text-primary)";
+                }}
+              >
+                Read Full Profile
+                <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+                </svg>
+              </button>
+            </>
+          )}
         </div>
       </div>
 
       {lightboxOpen && (
         <PhotoLightbox src={member.photo} name={member.name} onClose={() => setLightboxOpen(false)} />
+      )}
+      {modalOpen && (
+        <SalesModal member={member} onClose={() => setModalOpen(false)} />
       )}
     </div>
   );
