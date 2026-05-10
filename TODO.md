@@ -127,11 +127,11 @@
 | Task | Notes |
 |------|-------|
 | Typo: "KSA instead of USA" | Cannot locate this typo in the codebase — tell dev which page/section |
-| Contact page format — "change contact us fully" | Client said "follow this exactly" but no new format was provided — send screenshot/mockup |
+| ~~Contact page format~~ | ✅ Done — rebuilt to match Contact_us.md (GST/CIN, correct phone nos, branch office cards for Amarjeet/Jagdeep/Ashwani, Quick Links) |
 | Chatbot integration | Every query should go through chatbot first — requires developer to implement |
 | Map — 2 overlapping office dots | Layout fix needed — requires developer |
 | Remove phone numbers from Meet Our Team | Phone numbers are not currently displayed in meet-the-team page — confirm if resolved |
-| Make reservation form shorter | Client said "I'll tell you what to remove" — awaiting specifics |
+| ~~Make reservation form shorter~~ | ✅ Done — rebuilt to 6 sections from Reservation_form.md (Title/First/Last, Contact, Trip Duration, Pick-up Details, Drop-off, Requirements) |
 | Spot Rentals: remove "less than 30 mins" | This text is not currently in the code — may already be resolved |
 
 ---
