@@ -580,9 +580,9 @@ export default function WeCarePage() {
               gap: "1.25rem",
             }}>
               {[
-                { icon: <IconHeart />, title: "Healthcare", desc: "Improving access to medical care and supporting community health institutions.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.13.jpeg" },
-                { icon: <IconUsers />, title: "Community Well-being", desc: "Strengthening social fabric and uplifting underserved populations.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14 (1).jpeg" },
-                { icon: <IconLeaf />, title: "Sustainable Development", desc: "Investing in initiatives that create lasting, positive environmental and social outcomes.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.15.jpeg" },
+                { icon: <IconHeart />, title: "Healthcare", desc: "Improving access to medical care and supporting community health institutions.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.13.jpeg", imagePosition: "left center" },
+                { icon: <IconUsers />, title: "Community Well-being", desc: "Strengthening social fabric and uplifting underserved populations.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14 (1).jpeg", imagePosition: "center center" },
+                { icon: <IconLeaf />, title: "Sustainable Development", desc: "Investing in initiatives that create lasting, positive environmental and social outcomes.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.15.jpeg", imagePosition: "center center" },
               ].map((item) => (
                 <div key={item.title} className="anim-item" style={{
                   ...glassCard,
@@ -592,7 +592,7 @@ export default function WeCarePage() {
                   flexDirection: "column",
                 }}>
                   <div style={{ position: "relative", height: 180, width: "100%" }}>
-                    <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover" }} />
+                    <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover", objectPosition: (item as { imagePosition?: string }).imagePosition ?? "center center" }} />
                   </div>
                   <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
                     <span style={{
@@ -964,9 +964,9 @@ export default function WeCarePage() {
             marginBottom: "3rem",
           }}>
             {[
-              { icon: <IconTarget />, title: "Sustainable Social Impact", desc: "Programmes designed for lasting, measurable change rather than short-term relief.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14 (2).jpeg" },
-              { icon: <IconUsers />, title: "Stronger Communities", desc: "Building resilient communities through healthcare, education, and skill development.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14.jpeg" },
-              { icon: <IconStar />, title: "Responsibility · Integrity · Excellence", desc: "Our three core values guide every CSR decision and partnership we make.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.13.jpeg" },
+              { icon: <IconTarget />, title: "Sustainable Social Impact", desc: "Programmes designed for lasting, measurable change rather than short-term relief.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14 (2).jpeg", imagePosition: "center center" },
+              { icon: <IconUsers />, title: "Stronger Communities", desc: "Building resilient communities through healthcare, education, and skill development.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14.jpeg", imagePosition: "center center" },
+              { icon: <IconStar />, title: "Responsibility · Integrity · Excellence", desc: "Our three core values guide every CSR decision and partnership we make.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.13.jpeg", imagePosition: "left center" },
             ].map((item) => (
               <div key={item.title} className="vision-card" style={{
                 ...glassCard,
@@ -976,7 +976,7 @@ export default function WeCarePage() {
                 flexDirection: "column",
               }}>
                 <div style={{ position: "relative", height: 180, width: "100%" }}>
-                  <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover" }} />
+                  <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover", objectPosition: (item as { imagePosition?: string }).imagePosition ?? "center center" }} />
                 </div>
                 <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
                   <span style={{

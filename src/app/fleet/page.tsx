@@ -39,7 +39,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "hyundai-aura", name: "Hyundai Aura", type: "Sedans", category: "ECONOMY",
     seating: "5 Seater Including Pilot", luggage: "402 Litres",
-    image: ["/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_15_47%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_23_33%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_19_35%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_21_57%20PM.png"],
+    image: ["/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_15_47%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_23_33%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_19_35%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_21_57%20PM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_11%20AM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_16%20AM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_20%20AM.png"],
   },
 
   // Economy Plus
@@ -53,7 +53,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "camry-hybrid", name: "Toyota Camry Hybrid", type: "Sedans", category: "PREMIUM",
     seating: "5 Seater Including Pilot", luggage: "524 Litres",
-    image: ["/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png"],
+    image: ["/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png","/Mann car pictures/Toyota camry hybrid/WhatsApp Image 2026-05-10 at 13.55.06.jpeg"],
   },
   // Premium Plus
   {
@@ -167,6 +167,11 @@ const VEHICLES: Vehicle[] = [
     id: "mercedes-gle", name: "Mercedes-Benz GLE", type: "SUVs", category: "LUXURY",
     seating: "7 Seater Including Pilot", luggage: "320 Litres",
     image: ["/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_51_13%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_14_30%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_17_16%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_52_46%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_54_04%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_58_20%20PM.png"],
+  },
+  {
+    id: "kia-carnival-limousine", name: "Kia Carnival Limousine", type: "SUVs", category: "LUXURY",
+    seating: "7 Seater Including Pilot", luggage: "627 Litres",
+    image: "/Mann%20car%20pictures/Kia%20Carens/ChatGPT%20Image%20May%205%2C%202026%2C%2009_23_09%20PM.png",
   },
   // Super Luxury
   {
@@ -1030,7 +1035,7 @@ function FleetHero() {
           }}>
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#4ade80", boxShadow: "0 0 0 3px rgba(74,222,128,0.30)", flexShrink: 0 }} />
             <span className="font-sans uppercase" style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", color: "#fff" }}>
-              200+ Vehicles Available
+              335+ Vehicles Owned by Us
             </span>
           </div>
         </div>
@@ -1122,6 +1127,65 @@ export default function FleetPage() {
         <TabBar active={activeType} onChange={setActiveType} />
         <TypeSection key={activeType} vehicleType={activeType} />
         <div style={{ height: 1, background: "var(--border-mid)", margin: "1rem 0 0" }} />
+
+        {/* ── Our Amenities ── */}
+        <section style={{
+          background: "var(--bg-surface)",
+          padding: "clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 6rem)",
+        }}>
+          <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+            <div style={{ marginBottom: "2.5rem" }}>
+              <span style={{
+                fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase",
+                color: "var(--accent)", display: "block", marginBottom: 12, fontWeight: 700,
+              }}>Every Ride, Every Time</span>
+              <h2 style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+                fontWeight: 400,
+                color: "var(--text-primary)",
+                margin: "0 0 0.5rem",
+              }}>Our Amenities</h2>
+              <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.65, maxWidth: 520 }}>
+                Every Mann Fleet Partners vehicle is stocked and prepared to ensure a comfortable, premium experience from door to door.
+              </p>
+            </div>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: "1rem",
+            }}>
+              {[
+                "First aid kit",
+                "Fire extinguisher",
+                "Napkin",
+                "Organic fragrance",
+                "Cleaned & bacteria free interior",
+                "Mineral water in cars",
+                "Newspaper and Magazines",
+                "Hand sanitizers",
+                "Basket on demand: Cookies, Cashew nuts, almonds, wafer chips, soft beverages, fruit juices, cold towels",
+              ].map((item) => (
+                <div key={item} style={{
+                  background: "var(--bg-base)",
+                  border: "1px solid var(--border-subtle)",
+                  borderRadius: 14,
+                  padding: "1rem 1.25rem",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "0.75rem",
+                }}>
+                  <span style={{
+                    width: 8, height: 8, borderRadius: "50%",
+                    background: "var(--accent)", flexShrink: 0, marginTop: "0.35rem",
+                  }} />
+                  <span style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <Footer />
       </main>
     </>
