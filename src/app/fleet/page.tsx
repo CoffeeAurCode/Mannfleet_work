@@ -113,7 +113,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "crysta", name: "Toyota Innova Crysta", type: "SUVs", category: "ECONOMY PLUS",
     seating: "7–8 Seater Including Pilot", luggage: "300L (all rows) / 758L (3rd row folded)",
-    image: "/Mann%20car%20pictures/CRYSTA.png",
+    image: ["/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_19%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_23%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_36%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_28%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_58_07%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_41%20AM.png"],
   },
   {
     id: "hyundai-creta", name: "Hyundai Creta", type: "SUVs", category: "ECONOMY PLUS",
@@ -140,7 +140,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "fortuner", name: "Toyota Fortuner", type: "SUVs", category: "PREMIUM PLUS",
     seating: "7 Seater Including Pilot", luggage: "296 Litres (all rows up)",
-    image: "/Mann%20car%20pictures/Fortuner.png",
+    image: ["/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_47%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_20%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_51%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_29%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2001_03_01%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_35_18%20PM.png"],
   },
   {
     id: "ford-endeavour", name: "Ford Endeavour", type: "SUVs", category: "PREMIUM PLUS",
@@ -177,7 +177,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "gls-450", name: "Mercedes-Benz GLS 400 / 450", type: "SUVs", category: "SUPER LUXURY",
     seating: "7 Seater Including Pilot", luggage: "355L (all rows) / 890L (3rd row folded)",
-    image: ["/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_51_13%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_52_46%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_14_30%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_17_16%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_54_04%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_58_20%20PM.png"],
+    image: ["/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_43%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_47%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_38%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_31%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_52%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_21%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_57_18%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_17%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_27%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_35%20AM.png"],
   },
   {
     id: "bmw-x7", name: "BMW X7", type: "SUVs", category: "SUPER LUXURY",
@@ -218,12 +218,12 @@ const VEHICLES: Vehicle[] = [
   {
     id: "toyota-coaster", name: "Toyota Coaster", type: "Vanity van", category: "PREMIUM PLUS",
     seating: "18 Seater Including Pilot", luggage: "410 Litres",
-    image: "/Mann%20car%20pictures/toyota%20commuter.jpeg",
+    image: ["/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_05%20PM.png","/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_40%20PM.png","/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_46%20PM.png","/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_53%20PM.png","/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_26%20PM.png","/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_41_07%20PM.png"],
   },
   {
     id: "toyota-hiace", name: "Toyota Hiace", type: "Vanity van", category: "PREMIUM PLUS",
     seating: "9 Seater Including Pilot", luggage: "Fits 10–12 large check-in suitcases",
-    image: "/Mann%20car%20pictures/14%20seater%20toyota%20commuter.jpeg",
+    image: ["/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_28_04%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_27_07%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_27_03%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_33_44%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_28_09%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_27_57%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_28_13%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_27_12%20PM.png"],
   },
   // Luxury
   {
@@ -300,12 +300,12 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sd-crysta-7", name: "Toyota Innova Crysta (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "7 Seater Excluding Pilot", luggage: "300L (all rows) / 758L (3rd row folded)",
-    image: "/Mann%20car%20pictures/CRYSTA.png",
+    image: ["/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_19%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_23%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_36%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_28%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_58_07%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_41%20AM.png"],
   },
   {
     id: "sd-crysta-8", name: "Toyota Innova Crysta (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "8 Seater Excluding Pilot", luggage: "300L (all rows) / 758L (3rd row folded)",
-    image: "/Mann%20car%20pictures/CRYSTA.png",
+    image: ["/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_19%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_23%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_36%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_28%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_58_07%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_41%20AM.png"],
   },
   {
     id: "sd-camry", name: "Toyota Camry Hybrid (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
@@ -315,7 +315,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sd-fortuner", name: "Toyota Fortuner (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "7 Seater Excluding Pilot", luggage: "296L (all rows) / 716L (3rd row folded)",
-    image: "/Mann%20car%20pictures/Fortuner.png",
+    image: ["/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_47%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_20%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_51%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_29%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2001_03_01%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_35_18%20PM.png"],
   },
 
   /* ── LONG TERM LEASING ───────────────────────────────────── */
@@ -333,12 +333,12 @@ const VEHICLES: Vehicle[] = [
   {
     id: "lt-crysta-7", name: "Toyota Innova Crysta (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
     seating: "7 Seater Including Pilot", luggage: "300L / 758L (3rd row folded)",
-    image: "/Mann%20car%20pictures/CRYSTA.png",
+    image: ["/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_19%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_23%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_36%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_28%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_58_07%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_41%20AM.png"],
   },
   {
     id: "lt-crysta-8", name: "Toyota Innova Crysta (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
     seating: "8 Seater Including Pilot", luggage: "300L / 758L (3rd row folded)",
-    image: "/Mann%20car%20pictures/CRYSTA.png",
+    image: ["/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_19%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_23%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_36%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_28%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_58_07%20AM.png","/Mann%20car%20pictures/Innova%20Crysta/ChatGPT%20Image%20May%204%2C%202026%2C%2011_50_41%20AM.png"],
   },
   {
     id: "lt-e-class", name: "Mercedes-Benz E-Class (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
@@ -353,7 +353,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "lt-gls", name: "Mercedes-Benz GLS 400 (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
     seating: "7 Seater Including Pilot", luggage: "355L / 890L (3rd row folded)",
-    image: "/Mann%20car%20pictures/GLS.png",
+    image: ["/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_43%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_47%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_38%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_31%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_52%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_21%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_57_18%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_17%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_27%20AM.png","/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_35%20AM.png"],
   },
 ];
 

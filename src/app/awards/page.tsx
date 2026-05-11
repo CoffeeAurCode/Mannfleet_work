@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -186,51 +185,6 @@ export default function AwardsPage() {
           }}>
             Recognised by governments, global institutions, and industry leaders across four decades of excellence.
           </p>
-        </section>
-
-        {/* ── Award Ceremony Photos ── */}
-        <section style={{
-          padding: "0 clamp(1.25rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4rem)",
-          maxWidth: 1240,
-          margin: "0 auto",
-        }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
-            <div style={{ width: 28, height: 2, background: "var(--accent)", borderRadius: 2 }} />
-            <span className="font-sans" style={{
-              fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.16em",
-              textTransform: "uppercase", color: "var(--text-muted)",
-            }}>Award Ceremonies</span>
-          </div>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
-            gap: "1.25rem",
-          }}>
-            {[
-              { src: "/awards/PHOTO-2026-04-18-17-36-06.jpg", caption: "National Tourism Award Ceremony" },
-              { src: "/awards/PHOTO-2026-04-18-17-36-06 2.jpg", caption: "Recognition at Govt. of India" },
-            ].map(({ src, caption }) => (
-              <div key={caption} style={{
-                position: "relative",
-                borderRadius: "1.5rem",
-                overflow: "hidden",
-                border: "1px solid var(--border-mid)",
-                boxShadow: "0 12px 40px rgba(0,0,0,0.22)",
-              }}>
-                <Image src={src} alt={caption} width={0} height={0} sizes="100vw" unoptimized
-                  style={{ width: "100%", height: "auto", display: "block" }} />
-                <div style={{
-                  position: "absolute", bottom: 0, left: 0, right: 0,
-                  padding: "2rem 1.5rem 1.25rem",
-                  background: "linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%)",
-                }}>
-                  <span className="font-sans" style={{ fontSize: "0.82rem", fontWeight: 600, color: "rgba(255,255,255,0.92)" }}>
-                    {caption}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
         </section>
 
         {/* ── Awards Grid ── */}
