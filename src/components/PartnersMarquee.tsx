@@ -134,8 +134,8 @@ export default function PartnersMarquee() {
           Trusted by the best
         </p>
         <h2
-          className="text-2xl sm:text-3xl font-semibold text-emboss"
-          style={{ color: "var(--text-primary)" }}
+          className="text-2xl sm:text-3xl font-semibold"
+          style={{ color: "#ffffff" }}
         >
           Our Clients
         </h2>

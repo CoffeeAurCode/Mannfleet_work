@@ -2571,6 +2571,90 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── About Our Company ── */}
+      <section style={{
+        background: "var(--bg-surface)",
+        padding: "clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 6rem)",
+        borderTop: "1px solid var(--border-subtle)",
+      }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+          <div>
+            <span style={{
+              fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase",
+              color: "var(--accent)", display: "block", marginBottom: 14, fontWeight: 700,
+            }}>About Our Company</span>
+            <h2 style={{
+              fontFamily: "'Instrument Serif', serif",
+              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+              fontWeight: 400,
+              color: "var(--text-primary)",
+              lineHeight: 1.15,
+              margin: "0 0 1.5rem",
+            }}>Who We Are</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+              {[
+                "Established in 1986",
+                "Transport Management Company dedicated to tourism and corporates with a wide National Footprint.",
+                "Leading tourist transporter owning the largest no. of Premium Luxury Cars, Luxury Vans and High-end Coaches with high record of reliability, responsiveness, assurance and credibility.",
+                "All Chauffeurs are trained as per International Standards for safe and comfortable ride. Well Equipped Staff to provide best Travel Solutions \"round-the-clock\" to our clients.",
+                "A Name synonymous to Service Quality, Commitment and Integrity.",
+                "ISO 9001, 14001 and 18001 certified company — caring Quality Management, Health & Environment.",
+              ].map((point) => (
+                <div key={point} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
+                  <span style={{
+                    width: 8, height: 8, borderRadius: "50%",
+                    background: "var(--accent)", flexShrink: 0, marginTop: "0.45rem",
+                  }} />
+                  <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.65, margin: 0 }}>{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Leading Events */}
+          <div>
+            <span style={{
+              fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase",
+              color: "var(--accent)", display: "block", marginBottom: 14, fontWeight: 700,
+            }}>Our Track Record</span>
+            <h2 style={{
+              fontFamily: "'Instrument Serif', serif",
+              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+              fontWeight: 400,
+              color: "var(--text-primary)",
+              lineHeight: 1.15,
+              margin: "0 0 1.5rem",
+            }}>Leading Events Handled by Us</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              {[
+                "G20 North and East India",
+                "Nita Ambani Cultural Center launch",
+                "Global Investors Summit (Lucknow)",
+                "IPL since 2010 till date — Mumbai Indians, Kolkata Knight Riders, CSK, Gujarat Titans",
+                "All US Presidents visits to India since 2010 — Honorable Mr. Barack Obama & Mr. Donald Trump",
+                "AFC Women's Asian Cup 2022 India",
+                "ISL since the launch in 2013",
+                "Champions League in 2011–2013 through BCCI",
+                "Montblanc Luxury event",
+                "Bosch Global Board event",
+                "Nestle Global Chief Visit event",
+                "Indian Mobile Congress – 150 plus delegates",
+                "ONGC J&K and Leh event",
+                "India Mobile Congress 1st–4th Oct 2022",
+              ].map((event) => (
+                <div key={event} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
+                  <span style={{
+                    width: 6, height: 6, borderRadius: "50%",
+                    background: "var(--accent)", flexShrink: 0, marginTop: "0.5rem",
+                  }} />
+                  <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>{event}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

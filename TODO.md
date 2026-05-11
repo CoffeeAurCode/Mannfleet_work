@@ -91,6 +91,34 @@
 - [x] Add **picture of Taj Mahal** to Mann Taj Express section
 - [x] Add **image of chauffeur in uniform** — replaced emoji icon with actual image in Noida International Airport page chauffeur card
 
+## 🆕 NEW CLIENT REQUESTS (2026-05-10)
+
+### Noida International Airport Page (flagship-project)
+- [x] **Replace "Official Appointment" paragraph** — replaced the "Mann Fleet Partners has been appointed…" paragraph with the Christoph Schnellmann announcement text
+- [x] **Remove "WORK WITH US" CTA section** — removed the "Experience Mann Fleet Partners at Noida International Airport" + "Get in Touch" + legal links section from the bottom of the NIA page
+- [x] **Remove chauffeur image** from the "Uniformed Chauffeur Service" card in the Mann Taj Express section — removed the `<img>` element, text card remains
+
+### We Care Page
+- [x] **Reposition bus image** — added `objectPosition: "left center"` to the `10.07.13.jpeg` (Dekho Apna Desh bus) image in both the Focus Areas (Healthcare card) and Beyond Compliance (Responsibility card)
+
+### Home Page
+- [x] **Make "Our Clients" heading plain white** — removed `text-emboss` class, set `color: "#ffffff"` in PartnersMarquee.tsx
+- [x] **Add small images to each service row** — added a pill-shaped thumbnail image (visible in normal state, fades on hover) to the right side of each service row in ServicesSection.tsx
+- [x] **Fix service arrow buttons** — added `onClick={(e) => e.preventDefault()}` to the anchor to prevent home-page scroll/redirect
+
+### Fleet Page
+- [x] **Add Kia Carnival Limousine** to the Luxury SUV segment — added entry with placeholder image (needs actual Kia Carnival photo from client)
+- [x] **Add "335+ vehicles owned by us"** — changed fleet hero badge from "200+ Vehicles Available" to "335+ Vehicles Owned by Us"
+- [ ] **Add all fleet images sent to date** — upload and wire up any vehicle images received that are not yet showing on the fleet page
+- [x] **Add Toyota Camry Hybrid boot/trunk image** — added `WhatsApp Image 2026-05-10 at 13.55.06.jpeg` to the Camry Hybrid gallery array
+- [x] **Add "Our Amenities" section** — added section before Footer on fleet page with 9 bullet points (Napkin used instead of Tissue papers)
+
+### About Page
+- [x] **Add "About our company" content block** — added "Who We Are" section with 6 bullet points (Established 1986, ISO certs, etc.)
+- [x] **Add "Leading Events handled by us" section** — added alongside "Who We Are" in a 2-column grid with all 14 events listed
+
+---
+
 ## ⏳ PENDING — Waiting on Content / Assets
 
 ### Meet the Team

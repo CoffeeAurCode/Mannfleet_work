@@ -293,11 +293,8 @@ export default function FlagshipProjectPage() {
                 marginBottom: 24,
               }}>
                 <p style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)", lineHeight: 1.85, color: "var(--text-secondary)", margin: 0 }}>
-                  Mann Fleet Partners Limited has been appointed as the{" "}
-                  <strong style={{ color: "var(--text-primary)" }}>official mobility services partner for Noida International Airport</strong>{" "}
-                  — one of India&apos;s most ambitious infrastructure developments. As the airport prepares to commence operations,
-                  Mann Fleet is leading the design and execution of a fully integrated, premium ground transportation ecosystem,
-                  ensuring seamless connectivity for both passengers and airport personnel.
+                  Christoph Schnellmann, formerly the CEO of Noida International Airport (NIA), recently announced a partnership with Mann Fleet Partners Limited, led by{" "}
+                  <strong style={{ color: "var(--text-primary)" }}>Robin Singh Mann</strong>, to provide comprehensive ground mobility solutions, including rental cars, terminal shuttles, and city connectivity such as Pari Chowk. This initiative aims to ensure smooth and reliable passenger transport ahead of the airport&apos;s operational launch.
                 </p>
               </div>
 
@@ -469,12 +466,6 @@ export default function FlagshipProjectPage() {
                 border: "1px solid var(--border-subtle)",
                 overflow: "hidden",
               }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/ChatGPT%20Image%20May%209%2C%202026%2C%2003_12_32%20PM.png"
-                  alt="Uniformed Chauffeur"
-                  style={{ width: "100%", height: 200, objectFit: "cover", display: "block" }}
-                />
                 <div style={{ padding: "1.25rem 1.5rem" }}>
                   <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "1rem", color: "var(--text-primary)", margin: "0 0 0.25rem", fontWeight: 400 }}>Uniformed Chauffeur Service</p>
                   <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", lineHeight: 1.5 }}>Professional, white-gloved chauffeurs trained for VIP and luxury transport standards.</p>
@@ -910,66 +901,6 @@ export default function FlagshipProjectPage() {
             </span>
             <div style={{ width: 40, height: 1, background: "var(--border-mid)" }} />
           </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════
-          8. CTA STRIP
-      ═══════════════════════════════════════════════════════ */}
-      <section style={{
-        background: "var(--bg-base)",
-        padding: "clamp(3rem, 6vw, 5rem) clamp(1.5rem, 7vw, 8rem)",
-        borderTop: "1px solid var(--border-subtle)",
-      }}>
-        <div style={{
-          maxWidth: 1200, margin: "0 auto",
-          display: "flex", alignItems: "center", justifyContent: "space-between",
-          flexWrap: "wrap", gap: "2rem",
-        }}>
-          <div>
-            <p style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 10 }}>
-              Work with us
-            </p>
-            <h3 className="font-serif" style={{
-              fontFamily: "'Instrument Serif', serif",
-              fontSize: "clamp(1.4rem, 3vw, 2.2rem)",
-              fontWeight: 400,
-              color: "var(--text-primary)",
-              lineHeight: 1.2,
-            }}>
-              Experience Mann Fleet Partners at Noida International Airport
-            </h3>
-          </div>
-          <Link href="/contact" style={{
-            display: "inline-flex", alignItems: "center", gap: 10,
-            background: "var(--accent)",
-            color: "#fff",
-            borderRadius: 999,
-            padding: "0.85rem 2rem",
-            fontSize: "0.88rem",
-            fontWeight: 600,
-            letterSpacing: "0.04em",
-            textDecoration: "none",
-            transition: "opacity 0.2s",
-          }}>
-            Get in Touch <IconArrow />
-          </Link>
-        </div>
-
-        {/* Legal Links */}
-        <div style={{
-          maxWidth: 1200, margin: "2rem auto 0",
-          display: "flex", gap: "1.5rem",
-          justifyContent: "flex-start",
-          borderTop: "1px solid var(--border-subtle)",
-          paddingTop: "1.5rem",
-        }}>
-          <Link href="/terms" style={{ fontSize: "0.75rem", color: "var(--text-secondary)", textDecoration: "none", opacity: 0.7 }}>
-            Terms of Service
-          </Link>
-          <Link href="/privacy" style={{ fontSize: "0.75rem", color: "var(--text-secondary)", textDecoration: "none", opacity: 0.7 }}>
-            Privacy Policy
-          </Link>
         </div>
       </section>
 

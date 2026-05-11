@@ -171,6 +171,7 @@ function ServiceRow({ service, isFirst, index, inView, speed, repetitions }: Ite
       {/* ── Clickable row link ── */}
       <a
         href="#"
+        onClick={(e) => e.preventDefault()}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
         style={{
@@ -233,9 +234,23 @@ function ServiceRow({ service, isFirst, index, inView, speed, repetitions }: Ite
           </div>
         </div>
 
-        {/* Right: badge + stat + arrow */}
+        {/* Right: image pill + stat + arrow */}
         <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", flexShrink: 0 }}>
-          <span className="glass-badge" style={{ display: "none" }} aria-hidden />
+          {/* small image thumbnail */}
+          <div
+            style={{
+              width: "clamp(80px, 10vw, 140px)",
+              height: "clamp(2.2rem, 4vh, 3.2rem)",
+              borderRadius: 9999,
+              backgroundImage: `url(${service.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "50% 50%",
+              border: "1.5px solid var(--border-mid)",
+              flexShrink: 0,
+              opacity: hovered ? 0 : 1,
+              transition: "opacity 0.2s ease",
+            }}
+          />
           {/* stat block */}
           <div className="svc-right-stat" style={{ textAlign: "right" }}>
             <p
