@@ -5,7 +5,6 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-/* ── Icons ─────────────────────────────────────────────────── */
 function ArrowUpRight({ size = 14 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -33,7 +32,7 @@ function WhatsAppIcon({ size = 20 }: { size?: number }) {
   );
 }
 
-/* ── Shared input style ────────────────────────────────────── */
+/* ── Shared input style ─────────────────────────────────────── */
 const inputBase: React.CSSProperties = {
   width: "100%",
   padding: "0.75rem 1rem",
@@ -45,25 +44,15 @@ const inputBase: React.CSSProperties = {
   fontFamily: "'Poppins', sans-serif",
   outline: "none",
   transition: "border-color 0.18s ease",
+  boxSizing: "border-box",
 };
 
-function Field({
-  label,
-  required,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
+function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
       <label className="font-sans" style={{
-        fontSize: "0.78rem",
-        fontWeight: 600,
-        letterSpacing: "0.04em",
-        color: "var(--text-55)",
-        textTransform: "uppercase",
+        fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.04em",
+        color: "var(--text-55)", textTransform: "uppercase",
       }}>
         {label}{required && <span style={{ color: "var(--accent)", marginLeft: "0.2rem" }}>*</span>}
       </label>
@@ -72,30 +61,16 @@ function Field({
   );
 }
 
-function Input({
-  type = "text",
-  placeholder,
-  value,
-  onChange,
-  required,
-  readOnly,
-}: {
-  type?: string;
-  placeholder?: string;
-  value: string;
+function Input({ type = "text", placeholder, value, onChange, required, readOnly }: {
+  type?: string; placeholder?: string; value: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  required?: boolean;
-  readOnly?: boolean;
+  required?: boolean; readOnly?: boolean;
 }) {
   const [focused, setFocused] = useState(false);
   return (
     <input
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      required={required}
-      readOnly={readOnly}
+      type={type} placeholder={placeholder} value={value} onChange={onChange}
+      required={required} readOnly={readOnly}
       style={{
         ...inputBase,
         borderColor: focused ? "var(--accent)" : "var(--border-subtle)",
@@ -108,32 +83,21 @@ function Input({
   );
 }
 
-function Select({
-  value,
-  onChange,
-  required,
-  children,
-}: {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  required?: boolean;
-  children: React.ReactNode;
+function Select({ value, onChange, required, children }: {
+  value: string; onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  required?: boolean; children: React.ReactNode;
 }) {
   const [focused, setFocused] = useState(false);
   return (
-    <select
-      value={value}
-      onChange={onChange}
-      required={required}
-      style={{
-        ...inputBase,
-        borderColor: focused ? "var(--accent)" : "var(--border-subtle)",
-        appearance: "none",
-        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "right 1rem center",
-        paddingRight: "2.5rem",
-      }}
+    <select value={value} onChange={onChange} required={required} style={{
+      ...inputBase,
+      borderColor: focused ? "var(--accent)" : "var(--border-subtle)",
+      appearance: "none",
+      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "right 1rem center",
+      paddingRight: "2.5rem",
+    }}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
     >
@@ -142,113 +106,39 @@ function Select({
   );
 }
 
-function Textarea({
-  placeholder,
-  value,
-  onChange,
-  rows = 4,
-}: {
-  placeholder?: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  rows?: number;
+function Textarea({ placeholder, value, onChange, rows = 4 }: {
+  placeholder?: string; value: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void; rows?: number;
 }) {
   const [focused, setFocused] = useState(false);
   return (
-    <textarea
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      rows={rows}
-      style={{
-        ...inputBase,
-        borderColor: focused ? "var(--accent)" : "var(--border-subtle)",
-        resize: "vertical",
-        lineHeight: 1.6,
-      }}
+    <textarea placeholder={placeholder} value={value} onChange={onChange} rows={rows} style={{
+      ...inputBase,
+      borderColor: focused ? "var(--accent)" : "var(--border-subtle)",
+      resize: "vertical", lineHeight: 1.6,
+    }}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
     />
   );
 }
 
-function RadioGroup({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange: (v: string) => void;
-}) {
+function SectionCard({ badge, title, children }: { badge: string; title: string; children: React.ReactNode }) {
   return (
-    <div style={{ display: "flex", gap: "1rem" }}>
-      {["Yes", "No"].map((opt) => (
-        <button
-          key={opt}
-          type="button"
-          onClick={() => onChange(opt)}
-          style={{
-            flex: 1,
-            padding: "0.65rem 1rem",
-            borderRadius: "0.75rem",
-            border: `1px solid ${value === opt ? "var(--accent)" : "var(--border-subtle)"}`,
-            background: value === opt ? "rgba(200,40,42,0.08)" : "var(--glass-ultra)",
-            color: value === opt ? "var(--accent)" : "var(--text-secondary)",
-            fontSize: "0.88rem",
-            fontWeight: value === opt ? 600 : 400,
-            fontFamily: "'Poppins', sans-serif",
-            cursor: "pointer",
-            transition: "all 0.18s ease",
-          }}
-        >
-          {opt}
-        </button>
-      ))}
-    </div>
-  );
-}
-
-/* ── Section card wrapper ──────────────────────────────────── */
-function SectionCard({
-  badge,
-  title,
-  subtitle,
-  children,
-}: {
-  badge: string;
-  title: string;
-  subtitle?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="glass-panel" style={{
-      borderRadius: "1.5rem",
-      padding: "clamp(1.5rem, 4vw, 2.25rem)",
-    }}>
-      <div style={{ marginBottom: "1.75rem" }}>
-        <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block" }}>
-          {badge}
-        </span>
+    <div className="glass-panel" style={{ borderRadius: "1.5rem", padding: "clamp(1.5rem, 4vw, 2.25rem)" }}>
+      <div style={{ marginBottom: "1.5rem" }}>
+        <span className="glass-badge" style={{ marginBottom: "0.6rem", display: "inline-block" }}>{badge}</span>
         <h2 className="font-serif" style={{
-          fontSize: "clamp(1.25rem, 2.5vw, 1.7rem)",
-          fontWeight: 400,
-          color: "var(--text-primary)",
-          lineHeight: 1.2,
-          margin: 0,
+          fontSize: "clamp(1.15rem, 2.5vw, 1.55rem)", fontWeight: 400,
+          color: "var(--text-primary)", lineHeight: 1.2, margin: 0,
         }}>
           {title}
         </h2>
-        {subtitle && (
-          <p className="font-sans" style={{
-            fontSize: "0.82rem",
-            color: "var(--text-muted)",
-            margin: "0.4rem 0 0",
-          }}>{subtitle}</p>
-        )}
       </div>
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
-        gap: "1.25rem",
+        gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
+        gap: "1.1rem",
       }}>
         {children}
       </div>
@@ -256,64 +146,52 @@ function SectionCard({
   );
 }
 
-/* ── Main page ─────────────────────────────────────────────── */
+/* ── Main page ──────────────────────────────────────────────── */
 export default function ReservationPage() {
   const [submitted, setSubmitted] = useState(false);
 
-  // Personal
-  const [fullName, setFullName] = useState("");
+  // Guest Name
+  const [title, setTitle] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  // Contact
   const [contactNumber, setContactNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [country, setCountry] = useState("");
-  const [city, setCity] = useState("");
-  const [address, setAddress] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
 
-  // Professional
-  const [occupation, setOccupation] = useState("");
-  const [company, setCompany] = useState("");
-  const [workLocation, setWorkLocation] = useState("");
-
-  // Travel
-  const [startDate, setStartDate] = useState("");
+  // Trip Duration
+  const [dateOfTravel, setDateOfTravel] = useState("");
   const [endDate, setEndDate] = useState("");
   const [numberOfDays, setNumberOfDays] = useState("");
-  const [pickupLocation, setPickupLocation] = useState("");
+
+  // Pick-up Details
+  const [flightDetails, setFlightDetails] = useState("");
+  const [pickupTime, setPickupTime] = useState("");
+  const [cityName, setCityName] = useState("");
+  const [airportName, setAirportName] = useState("");
+  const [terminal, setTerminal] = useState("");
+  const [hotelName, setHotelName] = useState("");
+  const [residenceAddress, setResidenceAddress] = useState("");
+
+  // Drop-off
   const [dropoffLocation, setDropoffLocation] = useState("");
 
-  // Passengers
-  const [totalPassengers, setTotalPassengers] = useState("");
-  const [adults, setAdults] = useState("");
-  const [childrenOlder, setChildrenOlder] = useState("");
-  const [childrenYounger, setChildrenYounger] = useState("");
-
-  // Vehicle
-  const [vehicleCategory, setVehicleCategory] = useState("");
-  const [numberOfVehicles, setNumberOfVehicles] = useState("");
-  const [luggageCount, setLuggageCount] = useState("");
-  const [chauffeur, setChauffeur] = useState("");
-  const [tourGuide, setTourGuide] = useState("");
-
-  // Additional services
-  const [airportTransfer, setAirportTransfer] = useState("");
-  const [intraCityTravel, setIntraCityTravel] = useState("");
-  const [corporateBooking, setCorporateBooking] = useState("");
-  const [specialRequirements, setSpecialRequirements] = useState("");
-
-  // Additional info
-  const [otherServices, setOtherServices] = useState("");
-  const [specialInstructions, setSpecialInstructions] = useState("");
+  // Requirements
+  const [noOfPersons, setNoOfPersons] = useState("");
+  const [vehiclePreferences, setVehiclePreferences] = useState("");
+  const [servicesRequired, setServicesRequired] = useState("");
 
   // Auto-calculate days
   useEffect(() => {
-    if (startDate && endDate) {
-      const start = new Date(startDate);
+    if (dateOfTravel && endDate) {
+      const start = new Date(dateOfTravel);
       const end = new Date(endDate);
       const diff = Math.ceil((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
       setNumberOfDays(diff > 0 ? String(diff) : "");
     } else {
       setNumberOfDays("");
     }
-  }, [startDate, endDate]);
+  }, [dateOfTravel, endDate]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -327,65 +205,37 @@ export default function ReservationPage() {
         <Navbar />
         <main style={{
           padding: "clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem)",
-          maxWidth: 720,
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          gap: "2rem",
+          maxWidth: 720, margin: "0 auto",
+          display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "2rem",
         }}>
           <div className="glass-panel" style={{
-            borderRadius: "1.75rem",
-            padding: "clamp(2.5rem, 6vw, 4rem)",
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "1.5rem",
+            borderRadius: "1.75rem", padding: "clamp(2.5rem, 6vw, 4rem)", width: "100%",
+            display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5rem",
           }}>
-            <div style={{ color: "var(--accent)" }}>
-              <CheckCircleIcon size={56} />
-            </div>
+            <div style={{ color: "var(--accent)" }}><CheckCircleIcon size={56} /></div>
             <div>
               <h1 className="font-serif" style={{
-                fontSize: "clamp(2rem, 5vw, 3rem)",
-                fontWeight: 400,
-                color: "var(--text-primary)",
-                lineHeight: 1.1,
-                margin: "0 0 0.75rem",
+                fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 400,
+                color: "var(--text-primary)", lineHeight: 1.1, margin: "0 0 0.75rem",
               }}>
                 Reservation<br />
                 <span className="italic" style={{ color: "var(--text-secondary)" }}>Received</span>
               </h1>
               <p className="font-sans" style={{
-                fontSize: "0.95rem",
-                color: "var(--text-secondary)",
-                lineHeight: 1.7,
-                margin: 0,
-                maxWidth: 420,
+                fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.7, margin: 0, maxWidth: 420,
               }}>
-                Thank you, <strong style={{ color: "var(--text-primary)" }}>{fullName || "valued guest"}</strong>. Our team will review your booking request and get back to you within 2 hours. For urgent assistance, reach us on WhatsApp.
+                Thank you, <strong style={{ color: "var(--text-primary)" }}>{firstName || "valued guest"}</strong>. Our team will review your request and get back to you within 2 hours. For urgent assistance, reach us on WhatsApp.
               </p>
             </div>
-
             <a
-              href="https://wa.me/919990222999"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://wa.me/919810008008"
+              target="_blank" rel="noopener noreferrer"
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.6rem",
-                padding: "0.85rem 1.75rem",
-                borderRadius: "9999px",
-                background: "rgba(37,211,102,0.12)",
-                border: "1px solid rgba(37,211,102,0.35)",
-                color: "#25D366",
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                textDecoration: "none",
-                fontFamily: "'Poppins', sans-serif",
+                display: "inline-flex", alignItems: "center", gap: "0.6rem",
+                padding: "0.85rem 1.75rem", borderRadius: "9999px",
+                background: "rgba(37,211,102,0.12)", border: "1px solid rgba(37,211,102,0.35)",
+                color: "#25D366", fontSize: "0.9rem", fontWeight: 600,
+                textDecoration: "none", fontFamily: "'Poppins', sans-serif",
                 transition: "background 0.18s ease",
               }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(37,211,102,0.20)"; }}
@@ -394,13 +244,7 @@ export default function ReservationPage() {
               <WhatsAppIcon size={18} />
               Chat on WhatsApp
             </a>
-
-            <Link href="/" style={{
-              fontSize: "0.82rem",
-              color: "var(--text-muted)",
-              textDecoration: "none",
-              borderBottom: "1px solid var(--border-subtle)",
-            }}>
+            <Link href="/" style={{ fontSize: "0.82rem", color: "var(--text-muted)", textDecoration: "none", borderBottom: "1px solid var(--border-subtle)" }}>
               Back to home
             </Link>
           </div>
@@ -414,87 +258,58 @@ export default function ReservationPage() {
     <div style={{ fontFamily: "'Poppins', sans-serif", minHeight: "100vh", background: "var(--bg-base)" }}>
       <Navbar />
 
-      <main style={{
-        padding: "clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem)",
-        maxWidth: 1000,
-        margin: "0 auto",
-      }}>
+      <main style={{ padding: "clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem)", maxWidth: 900, margin: "0 auto" }}>
 
         {/* ── Page header ── */}
         <div style={{ marginBottom: "clamp(2.5rem, 5vw, 4rem)" }}>
-          <span className="glass-badge" style={{ marginBottom: "1rem", display: "inline-block" }}>
-            Book Your Vehicle
-          </span>
+          <span className="glass-badge" style={{ marginBottom: "1rem", display: "inline-block" }}>Book Your Vehicle</span>
           <h1 className="font-serif" style={{
-            fontSize: "clamp(2.4rem, 6vw, 4.5rem)",
-            fontWeight: 400,
-            lineHeight: 1.05,
-            color: "var(--text-primary)",
-            margin: "0 0 1rem",
-            letterSpacing: "0.01em",
+            fontSize: "clamp(2.4rem, 6vw, 4.5rem)", fontWeight: 400,
+            lineHeight: 1.05, color: "var(--text-primary)", margin: "0 0 1rem", letterSpacing: "0.01em",
           }}>
             Make a<br />
             <span className="italic" style={{ color: "var(--text-secondary)" }}>Reservation</span>
           </h1>
-          <p className="font-sans" style={{
-            fontSize: "1rem",
-            color: "var(--text-secondary)",
-            lineHeight: 1.7,
-            maxWidth: 480,
-            margin: 0,
-          }}>
+          <p className="font-sans" style={{ fontSize: "1rem", color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: 480, margin: 0 }}>
             Complete the form below and our team will confirm your booking within 2 hours. Fields marked <span style={{ color: "var(--accent)" }}>*</span> are required.
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
 
-          {/* ── 1. Personal Information ── */}
-          <SectionCard badge="01" title="Personal Information">
-            <Field label="Full Name" required>
-              <Input placeholder="e.g. Arjun Sharma" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+          {/* ── 1. Guest Name ── */}
+          <SectionCard badge="01" title="Guest Name">
+            <Field label="Title" required>
+              <Select value={title} onChange={(e) => setTitle(e.target.value)} required>
+                <option value="" disabled>Select</option>
+                <option value="Mr.">Mr. (Male)</option>
+                <option value="Ms.">Ms. (Female)</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Dr.">Dr.</option>
+              </Select>
             </Field>
+            <Field label="First Name" required>
+              <Input placeholder="e.g. Arjun" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+            </Field>
+            <Field label="Last Name" required>
+              <Input placeholder="e.g. Sharma" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+            </Field>
+          </SectionCard>
+
+          {/* ── 2. Contact Info ── */}
+          <SectionCard badge="02" title="Contact Info">
             <Field label="Contact Number" required>
               <Input type="tel" placeholder="+91 99902 22999" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} required />
             </Field>
             <Field label="Email Address" required>
-              <Input type="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            </Field>
-            <Field label="Country of Residence" required>
-              <Input placeholder="e.g. India" value={country} onChange={(e) => setCountry(e.target.value)} required />
-            </Field>
-            <Field label="City / Current Location">
-              <Input placeholder="e.g. New Delhi" value={city} onChange={(e) => setCity(e.target.value)} />
-            </Field>
-            <Field label="Address">
-              <Input placeholder="Street, Area" value={address} onChange={(e) => setAddress(e.target.value)} />
+              <Input type="email" placeholder="you@example.com" value={emailAddress} onChange={(e) => setEmailAddress(e.target.value)} required />
             </Field>
           </SectionCard>
 
-          {/* ── 2. Professional Information ── */}
-          <SectionCard
-            badge="02"
-            title="Professional Information"
-            subtitle="Optional — helps us serve premium and corporate clients better"
-          >
-            <Field label="Occupation / Job Title">
-              <Input placeholder="e.g. Managing Director" value={occupation} onChange={(e) => setOccupation(e.target.value)} />
-            </Field>
-            <Field label="Company / Organisation Name">
-              <Input placeholder="e.g. Acme Corporation" value={company} onChange={(e) => setCompany(e.target.value)} />
-            </Field>
-            <Field label="Work Location (City / Country)">
-              <Input placeholder="e.g. Mumbai, India" value={workLocation} onChange={(e) => setWorkLocation(e.target.value)} />
-            </Field>
-          </SectionCard>
-
-          {/* ── 3. Travel & Booking Details ── */}
-          <SectionCard badge="03" title="Travel & Booking Details">
-            <Field label="Start Date of Travel" required>
-              <Input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} required />
-            </Field>
-            <Field label="End Date of Travel" required>
-              <Input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} required />
+          {/* ── 3. Trip Duration ── */}
+          <SectionCard badge="03" title="Trip Duration">
+            <Field label="Date of Travel" required>
+              <Input type="date" value={dateOfTravel} onChange={(e) => setDateOfTravel(e.target.value)} required />
             </Field>
             <Field label="Number of Days">
               <Input
@@ -503,101 +318,72 @@ export default function ReservationPage() {
                 placeholder="Auto-calculated"
               />
             </Field>
-            <Field label="Pick-up Location" required>
-              <Input placeholder="e.g. Indira Gandhi International Airport, T3" value={pickupLocation} onChange={(e) => setPickupLocation(e.target.value)} required />
-            </Field>
-            <Field label="Drop-off Location" required>
-              <Input placeholder="e.g. The Leela Palace, New Delhi" value={dropoffLocation} onChange={(e) => setDropoffLocation(e.target.value)} required />
+            <Field label="End Date" required>
+              <Input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} required />
             </Field>
           </SectionCard>
 
-          {/* ── 4. Passenger Details ── */}
-          <SectionCard badge="04" title="Passenger Details">
-            <Field label="Total Number of Passengers" required>
-              <Input type="number" placeholder="e.g. 4" value={totalPassengers} onChange={(e) => setTotalPassengers(e.target.value)} required />
+          {/* ── 4. Pick-up Details ── */}
+          <SectionCard badge="04" title="Pick-up Details">
+            <Field label="Flight Details">
+              <Input placeholder="e.g. AI 202, IndiGo 6E-123" value={flightDetails} onChange={(e) => setFlightDetails(e.target.value)} />
             </Field>
-            <Field label="Number of Adults (18+)">
-              <Input type="number" placeholder="e.g. 2" value={adults} onChange={(e) => setAdults(e.target.value)} />
+            <Field label="Time" required>
+              <Input type="time" value={pickupTime} onChange={(e) => setPickupTime(e.target.value)} required />
             </Field>
-            <Field label="Number of Children (12–18)">
-              <Input type="number" placeholder="e.g. 1" value={childrenOlder} onChange={(e) => setChildrenOlder(e.target.value)} />
+            <Field label="City Name" required>
+              <Input placeholder="e.g. New Delhi" value={cityName} onChange={(e) => setCityName(e.target.value)} required />
             </Field>
-            <Field label="Number of Children (Below 12)">
-              <Input type="number" placeholder="e.g. 1" value={childrenYounger} onChange={(e) => setChildrenYounger(e.target.value)} />
+            <Field label="Airport Name">
+              <Input placeholder="e.g. Indira Gandhi International Airport" value={airportName} onChange={(e) => setAirportName(e.target.value)} />
             </Field>
+            <Field label="Terminal">
+              <Input placeholder="e.g. Terminal 3" value={terminal} onChange={(e) => setTerminal(e.target.value)} />
+            </Field>
+            <Field label="Hotel Name">
+              <Input placeholder="e.g. The Leela Palace" value={hotelName} onChange={(e) => setHotelName(e.target.value)} />
+            </Field>
+            <div style={{ gridColumn: "1 / -1" }}>
+              <Field label="Residence Address">
+                <Input placeholder="Street, Area, City" value={residenceAddress} onChange={(e) => setResidenceAddress(e.target.value)} />
+              </Field>
+            </div>
           </SectionCard>
 
-          {/* ── 5. Vehicle & Service Preferences ── */}
-          <SectionCard badge="05" title="Vehicle & Service Preferences">
-            <Field label="Vehicle Category" required>
-              <Select value={vehicleCategory} onChange={(e) => setVehicleCategory(e.target.value)} required>
-                <option value="" disabled>Select a category</option>
+          {/* ── 5. Drop-off ── */}
+          <SectionCard badge="05" title="Drop-off">
+            <div style={{ gridColumn: "1 / -1" }}>
+              <Field label="Drop-off Location" required>
+                <Input placeholder="e.g. Hotel name, address or airport" value={dropoffLocation} onChange={(e) => setDropoffLocation(e.target.value)} required />
+              </Field>
+            </div>
+          </SectionCard>
+
+          {/* ── 6. Requirements ── */}
+          <SectionCard badge="06" title="Requirements">
+            <Field label="No. of Persons (Including Kids)" required>
+              <Input type="number" placeholder="e.g. 4" value={noOfPersons} onChange={(e) => setNoOfPersons(e.target.value)} required />
+            </Field>
+            <Field label="Vehicle Preferences">
+              <Select value={vehiclePreferences} onChange={(e) => setVehiclePreferences(e.target.value)}>
+                <option value="">No preference</option>
                 <option value="Economy">Economy</option>
                 <option value="Economy Plus">Economy Plus</option>
                 <option value="Premium">Premium</option>
                 <option value="Premium Plus">Premium Plus</option>
                 <option value="Luxury">Luxury</option>
                 <option value="Super Luxury">Super Luxury</option>
-                <option value="Rolls Royce">Rolls Royce</option>
                 <option value="Range Rover">Range Rover</option>
-                <option value="Self Driving">Self Driving</option>
-                <option value="Long Term Leasing">Long Term Leasing</option>
+                <option value="Self Drive">Self Drive</option>
+                <option value="Tempo Traveller">Tempo Traveller</option>
               </Select>
             </Field>
-            <Field label="Number of Vehicles Required" required>
-              <Input type="number" placeholder="e.g. 2" value={numberOfVehicles} onChange={(e) => setNumberOfVehicles(e.target.value)} required />
-            </Field>
-            <Field label="Number of Luggage / Bags">
-              <Input type="number" placeholder="e.g. 3" value={luggageCount} onChange={(e) => setLuggageCount(e.target.value)} />
-            </Field>
-            <Field label="Require a Chauffeur?">
-              <RadioGroup value={chauffeur} onChange={setChauffeur} />
-            </Field>
-            <Field label="Require a Tour Guide?">
-              <RadioGroup value={tourGuide} onChange={setTourGuide} />
-            </Field>
-          </SectionCard>
-
-          {/* ── 6. Additional Services ── */}
-          <SectionCard badge="06" title="Additional Services">
-            <Field label="Airport Transfers Required?">
-              <RadioGroup value={airportTransfer} onChange={setAirportTransfer} />
-            </Field>
-            <Field label="Intra-city Travel Required?">
-              <RadioGroup value={intraCityTravel} onChange={setIntraCityTravel} />
-            </Field>
-            <Field label="Corporate / Event Booking?">
-              <RadioGroup value={corporateBooking} onChange={setCorporateBooking} />
-            </Field>
             <div style={{ gridColumn: "1 / -1" }}>
-              <Field label="Special Requirements">
-                <Input
-                  placeholder="VIP handling, security, language preference, accessibility needs…"
-                  value={specialRequirements}
-                  onChange={(e) => setSpecialRequirements(e.target.value)}
-                />
-              </Field>
-            </div>
-          </SectionCard>
-
-          {/* ── 7. Additional Information ── */}
-          <SectionCard badge="07" title="Additional Information">
-            <div style={{ gridColumn: "1 / -1" }}>
-              <Field label="Any Other Services You Are Looking For">
+              <Field label="Details of Services Required">
                 <Textarea
-                  placeholder="Describe any other services or requirements you have in mind…"
-                  value={otherServices}
-                  onChange={(e) => setOtherServices(e.target.value)}
-                  rows={3}
-                />
-              </Field>
-            </div>
-            <div style={{ gridColumn: "1 / -1" }}>
-              <Field label="Special Instructions / Notes">
-                <Textarea
-                  placeholder="Any specific instructions for our team…"
-                  value={specialInstructions}
-                  onChange={(e) => setSpecialInstructions(e.target.value)}
+                  placeholder="Describe the services you need — airport transfer, chauffeur, tour guide, corporate event, self-drive, etc."
+                  value={servicesRequired}
+                  onChange={(e) => setServicesRequired(e.target.value)}
                   rows={4}
                 />
               </Field>
@@ -606,46 +392,24 @@ export default function ReservationPage() {
 
           {/* ── Submit ── */}
           <div style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "1rem",
-            padding: "0.5rem 0",
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            flexWrap: "wrap", gap: "1rem", padding: "0.5rem 0",
           }}>
-            <p className="font-sans" style={{
-              fontSize: "0.78rem",
-              color: "var(--text-muted)",
-              margin: 0,
-            }}>
+            <p className="font-sans" style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0 }}>
               We&apos;ll confirm your booking within 2 hours of submission.
             </p>
             <button
               type="submit"
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                padding: "0.85rem 2rem",
-                borderRadius: "9999px",
-                background: "var(--accent)",
-                color: "#ffffff",
-                border: "none",
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                fontFamily: "'Poppins', sans-serif",
-                cursor: "pointer",
-                boxShadow: "0 4px 20px rgba(200,40,42,0.30)",
+                display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                padding: "0.85rem 2rem", borderRadius: "9999px",
+                background: "var(--accent)", color: "#ffffff", border: "none",
+                fontSize: "0.9rem", fontWeight: 600, fontFamily: "'Poppins', sans-serif",
+                cursor: "pointer", boxShadow: "0 4px 20px rgba(200,40,42,0.30)",
                 transition: "transform 0.15s ease, box-shadow 0.15s ease",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-1px)";
-                e.currentTarget.style.boxShadow = "0 8px 28px rgba(200,40,42,0.40)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 4px 20px rgba(200,40,42,0.30)";
-              }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(200,40,42,0.40)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(200,40,42,0.30)"; }}
             >
               Submit Reservation
               <ArrowUpRight size={14} />

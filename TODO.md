@@ -52,6 +52,17 @@
 - [x] EV vehicles / green mobility section added
 - [x] Hyperlink to Faze.in (sustainable cars subsidiary) added
 
+### Fleet Page — Local Image Migration
+- [x] Maruti Suzuki Ertiga — replaced Unsplash with local images (5 imgs)
+- [x] Kia Carens — replaced Unsplash with local images (5 imgs)
+- [x] Mahindra XUV700 — replaced Unsplash with local images (6 imgs)
+- [x] Ford Endeavour — replaced Unsplash with local images (6 imgs)
+- [x] BMW X5 — replaced Unsplash with local images (6 imgs)
+- [x] Volvo XC90 — replaced Unsplash with local images (7 imgs)
+- [x] Range Rover Sport — replaced Unsplash with local images (6 imgs)
+- [x] Hyundai Creta (Self Drive) — replaced Unsplash with local images (6 imgs)
+- [x] Added new Hyundai Creta chauffeur-driven entry (Economy Plus SUV)
+
 ### Services
 - [x] Shuttle Service added to services section
 
@@ -67,19 +78,20 @@
 
 ---
 
-## ⏳ PENDING — Waiting on Content / Assets
 
 ### Clients / Partners Marquee
-- [ ] **Add** GE, Porsche, LG, Parliament of India, Ministry of External Affairs, ASI (Archaeological Survey of India), ICL logos/photos — *need image files*
-- [ ] **Remove** French Embassy from clients marquee — *need to identify which photo is French Embassy*
+- [x] **Add** GE, ASI (Archaeological Survey of India), LG, Bosch logos added to marquee *(Porsche, Parliament of India, Ministry of External Affairs, ICL still awaited)*
+- [x] **Remove** French Embassy from clients marquee — removed `WhatsApp Image 2026-04-18 at 17.59.29.jpeg` from PartnersMarquee.tsx
 
 ### Awards
-- [ ] Replace award PDFs with award **pictures** — *awaiting images from photographer*
-- [ ] Arrange awards in order of importance — *need priority list from client*
+- [x] Replace award PDFs with award **pictures** — award cards now show trophy/plaque images; 11 appreciation letters now show image thumbnails
+- [x] Arrange awards in order of importance — government-tagged images (`(govenment)` in filename) now referenced correctly; GST Dept & G20 moved to top of Appreciations; AWARDS grid already has National Tourism (govt) awards first
 
 ### Noida International Airport Page
-- [ ] Add **picture of Taj Mahal** to Mann Taj Express section — *awaiting image*
-- [ ] Add **image of chauffeur in uniform** — *awaiting image*
+- [x] Add **picture of Taj Mahal** to Mann Taj Express section
+- [x] Add **image of chauffeur in uniform** — replaced emoji icon with actual image in Noida International Airport page chauffeur card
+
+## ⏳ PENDING — Waiting on Content / Assets
 
 ### Meet the Team
 - [ ] Add individual bio/story for each team member (from old website or new)
@@ -89,15 +101,19 @@
   - Mr. Ashok Kumar — *no bio, awaiting from Shivani ma'am*
   - Mr. Averjit Singh — *no bio, awaiting from Shivani ma'am*
   - Dr. Mohammad Sami — *no bio, awaiting from Shivani ma'am*
-  - Amarjeet Mann — *no bio, awaiting from Shivani ma'am*
-  - Jagdeep Singh Mann — *no bio, awaiting from Shivani ma'am*
-  - Ashwani Kumar — *no bio, awaiting from Shivani ma'am*
+  - Amarjeet Mann — bio added ✓ (from profiles docx; shows in card + "Read Full Profile" modal)
+  - Jagdeep Singh Mann — bio added ✓ (from profiles docx; shows in card + "Read Full Profile" modal)
+  - Ashwani Kumar — bio added ✓ (from profiles docx; shows in card + "Read Full Profile" modal)
 
 ### We Care / CSR
 - [ ] **Ganga Ram Hospital pay letter** — add to CSR section — *awaiting image from Shivani ma'am*
 
 ### Legal
 - [ ] **Refund and Cancellation Policy** page — *awaiting content from Shivani ma'am*
+
+### Fleet Page — Awaiting Local Images
+- [x] Range Rover (Vogue / Autobiography / LWB) — replaced Unsplash with 6 local images from `/Mann car pictures/range rover sport/`
+- [ ] Tempo Traveller — still on Unsplash, no local images yet
 
 ### Other
 - [ ] **Download App** link at bottom of website — *app link confirmed: `play.google.com/store/apps/details?id=com.user.mannfleet`* — add to footer CTA area
@@ -111,11 +127,11 @@
 | Task | Notes |
 |------|-------|
 | Typo: "KSA instead of USA" | Cannot locate this typo in the codebase — tell dev which page/section |
-| Contact page format — "change contact us fully" | Client said "follow this exactly" but no new format was provided — send screenshot/mockup |
+| ~~Contact page format~~ | ✅ Done — rebuilt to match Contact_us.md (GST/CIN, correct phone nos, branch office cards for Amarjeet/Jagdeep/Ashwani, Quick Links) |
 | Chatbot integration | Every query should go through chatbot first — requires developer to implement |
 | Map — 2 overlapping office dots | Layout fix needed — requires developer |
 | Remove phone numbers from Meet Our Team | Phone numbers are not currently displayed in meet-the-team page — confirm if resolved |
-| Make reservation form shorter | Client said "I'll tell you what to remove" — awaiting specifics |
+| ~~Make reservation form shorter~~ | ✅ Done — rebuilt to 6 sections from Reservation_form.md (Title/First/Last, Contact, Trip Duration, Pick-up Details, Drop-off, Requirements) |
 | Spot Rentals: remove "less than 30 mins" | This text is not currently in the code — may already be resolved |
 
 ---

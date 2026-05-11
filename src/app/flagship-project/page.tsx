@@ -443,16 +443,23 @@ export default function FlagshipProjectPage() {
                 border: "1px solid var(--border-subtle)",
                 boxShadow: "0 12px 32px rgba(0,0,0,0.18)",
                 height: 220,
-                background: "var(--bg-surface)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
                 position: "relative",
               }}>
-                <div style={{ textAlign: "center", padding: "2rem" }}>
-                  <div style={{ fontSize: "3rem", marginBottom: "0.5rem" }}>🕌</div>
-                  <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "1.2rem", color: "var(--text-primary)", margin: "0 0 0.25rem" }}>Taj Mahal, Agra</p>
-                  <p style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: "0.08em", textTransform: "uppercase" }}>One of the New Seven Wonders of the World</p>
+                <Image
+                  src="/Taj%20mahal.jpeg"
+                  alt="Taj Mahal, Agra"
+                  fill
+                  unoptimized
+                  style={{ objectFit: "cover" }}
+                />
+                <div style={{
+                  position: "absolute",
+                  bottom: 0, left: 0, right: 0,
+                  padding: "1.5rem 1.25rem 1rem",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%)",
+                }}>
+                  <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "1.1rem", color: "#fff", margin: "0 0 0.2rem" }}>Taj Mahal, Agra</p>
+                  <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.75)", letterSpacing: "0.08em", textTransform: "uppercase" }}>One of the New Seven Wonders of the World</p>
                 </div>
               </div>
               {/* Chauffeur card */}
@@ -460,19 +467,15 @@ export default function FlagshipProjectPage() {
                 borderRadius: 20,
                 background: "var(--bg-surface)",
                 border: "1px solid var(--border-subtle)",
-                padding: "1.5rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "1rem",
+                overflow: "hidden",
               }}>
-                <div style={{
-                  width: 52, height: 52, borderRadius: "50%",
-                  background: "rgba(220,38,38,0.10)",
-                  border: "1px solid rgba(220,38,38,0.22)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "1.5rem", flexShrink: 0,
-                }}>🎩</div>
-                <div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/ChatGPT%20Image%20May%209%2C%202026%2C%2003_12_32%20PM.png"
+                  alt="Uniformed Chauffeur"
+                  style={{ width: "100%", height: 200, objectFit: "cover", display: "block" }}
+                />
+                <div style={{ padding: "1.25rem 1.5rem" }}>
                   <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "1rem", color: "var(--text-primary)", margin: "0 0 0.25rem", fontWeight: 400 }}>Uniformed Chauffeur Service</p>
                   <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", lineHeight: 1.5 }}>Professional, white-gloved chauffeurs trained for VIP and luxury transport standards.</p>
                 </div>
