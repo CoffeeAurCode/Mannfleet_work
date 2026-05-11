@@ -59,7 +59,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "invicto-sedan", name: "Maruti Suzuki Invicto", type: "Sedans", category: "PREMIUM PLUS",
     seating: "7–8 Seater Including Pilot", luggage: "690 Litres",
-    image: ["/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_33_03%20PM%20(2).png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_28_37%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_25_56%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_43_30%20PM.png"],
+    image: ["/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_33_03%20PM%20(2).png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_28_37%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_25_56%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_43_30%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20May%208%2C%202026%2C%2011_42_35%20AM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20May%208%2C%202026%2C%2011_42_38%20AM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20May%208%2C%202026%2C%2011_42_41%20AM.png"],
   },
   {
     id: "hycross-sedan", name: "Toyota Innova Hycross", type: "Sedans", category: "PREMIUM PLUS",
@@ -129,7 +129,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "invicto-suv", name: "Maruti Suzuki Invicto", type: "SUVs", category: "PREMIUM",
     seating: "7–8 Seater Including Pilot", luggage: "239 Litres (all rows up)",
-    image: ["/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_25_56%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_28_37%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_33_03%20PM%20(2).png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_43_30%20PM.png"],
+    image: ["/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_25_56%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_28_37%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_33_03%20PM%20(2).png","/Mann car pictures/Invicto/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_43_30%20PM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20May%208%2C%202026%2C%2011_42_35%20AM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20May%208%2C%202026%2C%2011_42_38%20AM.png","/Mann car pictures/Invicto/ChatGPT%20Image%20May%208%2C%202026%2C%2011_42_41%20AM.png"],
   },
   {
     id: "hycross-suv", name: "Toyota Innova Hycross (Hybrid)", type: "SUVs", category: "PREMIUM",
