@@ -1,3 +1,5 @@
 ~~Whatever I didn't send you the updated image for appreciation, just delete(in here "C:\Users\BIT\Downloads\WhatsApp Image 2026-05-11 at 21.19.17.jpeg")~~ ✅ DONE — removed all 7 PDF-only appreciation entries (White House, Five Below, Jet on Wheels, CRC Group, Indigo Paints, Just Add Water, Kabaddi World Cup); only image-backed entries remain.
 
 ~~in here "C:\Users\BIT\Downloads\WhatsApp Image 2026-05-11 at 21.19.19.jpeg" i want that when you click on any  category it should take you to that specific catagory, like if you click long term rental, it takes you to long term rental page.~~ ✅ DONE — each service row in ServicesSection now links to `/services/[slug]` (long-term, spot, shuttle, self-drive, event). Created `src/app/services/[slug]/page.tsx` with hero, features grid, and CTA banner for each service.
+
+~~not needed here (refer to this pic "C:\Users\BIT\Downloads\WhatsApp Image 2026-05-11 at 21.19.18.jpeg")~~ ✅ DONE — removed the "Who We Are / About Our Company" left column from the About page. The "Leading Events Handled by Us" section remains and now spans full width in a responsive multi-column grid.
