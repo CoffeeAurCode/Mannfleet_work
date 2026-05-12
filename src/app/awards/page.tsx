@@ -92,25 +92,18 @@ const AWARDS = [
 ];
 
 const APPRECIATIONS = [
-  { label: "GST Department Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_37%20PM(govenment).png", isImage: true },
-  { label: "G20 Event Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_18%20PM.png", isImage: true },
-  { label: "US Embassy Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_48%20PM.png", isImage: true },
-  { label: "Joe Biden — Vice President, USA", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_53%20PM.png", isImage: true },
-  { label: "US Mission Token of Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_50_56%20PM.png", isImage: true },
-  { label: "White House Token of Appreciation", file: "/Appreciation/Token_Appreciation_White House_USA.pdf", isImage: false },
-  { label: "IATA Accreditation", file: "/Appreciation/Appreciation Letter_IATA.jpg", isImage: true },
-  { label: "IATA AGM & World Air Transport Summit 2025", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_50%20PM.png", isImage: true },
-  { label: "Reliance Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_40%20PM.png", isImage: true },
-  { label: "Pernod Ricard Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_53%20PM.png", isImage: true },
-  { label: "Five Below Appreciation", file: "/Appreciation/Appreciation_Fivebelow.pdf", isImage: false },
-  { label: "Tamarind Global Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_59%20PM.png", isImage: true },
-  { label: "Jet on Wheels Appreciation", file: "/Appreciation/Appreciation_Jet on Wheels_Urban Provider.pdf", isImage: false },
-  { label: "CRC Group Appreciation", file: "/Appreciation/Appreciation Mail_CRC Group.pdf", isImage: false },
-  { label: "Indigo Paints Appreciation", file: "/Appreciation/Appreciation_Indigo Paints.pdf", isImage: false },
-  { label: "Just Add Water Appreciation", file: "/Appreciation/Appreciation Mail_Just Add Water.pdf", isImage: false },
-  { label: "AFC Women's Cup Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_56%20PM.png", isImage: true },
-  { label: "Kabaddi World Cup Appreciation", file: "/Appreciation/Appreciation_World Cup_Kabaddi.pdf", isImage: false },
-  { label: "JCB Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_02%20PM.png", isImage: true },
+  { label: "GST Department Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_37%20PM(govenment).png" },
+  { label: "G20 Event Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_18%20PM.png" },
+  { label: "US Embassy Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_48%20PM.png" },
+  { label: "Joe Biden — Vice President, USA", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_53%20PM.png" },
+  { label: "US Mission Token of Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_50_56%20PM.png" },
+  { label: "IATA Accreditation", file: "/Appreciation/Appreciation Letter_IATA.jpg" },
+  { label: "IATA AGM & World Air Transport Summit 2025", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_50%20PM.png" },
+  { label: "Reliance Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_40%20PM.png" },
+  { label: "Pernod Ricard Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_53%20PM.png" },
+  { label: "Tamarind Global Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_59%20PM.png" },
+  { label: "AFC Women's Cup Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_56%20PM.png" },
+  { label: "JCB Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_02%20PM.png" },
 ];
 
 const TESTIMONIALS = [
@@ -318,74 +311,36 @@ export default function AwardsPage() {
             gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 240px), 1fr))",
             gap: "1rem",
           }}>
-            {APPRECIATIONS.map(({ label, file, isImage }) =>
-              isImage ? (
-                <a
-                  key={label}
-                  href={file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card"
-                  style={{
-                    borderRadius: "1.25rem",
-                    display: "flex",
-                    flexDirection: "column",
-                    overflow: "hidden",
-                    textDecoration: "none",
-                    transition: "border-color 0.18s ease",
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(200,40,40,0.30)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
-                >
-                  <div style={{ height: 130, overflow: "hidden", background: "var(--bg-deep)", flexShrink: 0 }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={file} alt={label} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                  </div>
-                  <div style={{ padding: "0.75rem 1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <span className="font-sans" style={{ fontSize: "0.78rem", fontWeight: 600, color: "var(--text-primary)", lineHeight: 1.4, flex: 1 }}>
-                      {label}
-                    </span>
-                    <span style={{ color: "var(--text-40)", flexShrink: 0 }}><ArrowUpRight size={12} /></span>
-                  </div>
-                </a>
-              ) : (
-                <a
-                  key={label}
-                  href={file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card"
-                  style={{
-                    padding: "1.25rem",
-                    borderRadius: "1.25rem",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.75rem",
-                    textDecoration: "none",
-                    transition: "border-color 0.18s ease",
-                    minHeight: 80,
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(200,40,40,0.30)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
-                >
-                  <div style={{
-                    width: 36, height: 36, borderRadius: "9px", flexShrink: 0,
-                    background: "var(--glass-mid)", border: "1px solid var(--border-subtle)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "var(--text-secondary)",
-                  }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                    </svg>
-                  </div>
-                  <span className="font-sans" style={{ fontSize: "0.80rem", fontWeight: 600, color: "var(--text-primary)", lineHeight: 1.4, flex: 1 }}>
+            {APPRECIATIONS.map(({ label, file }) => (
+              <a
+                key={label}
+                href={file}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card"
+                style={{
+                  borderRadius: "1.25rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  overflow: "hidden",
+                  textDecoration: "none",
+                  transition: "border-color 0.18s ease",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(200,40,40,0.30)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
+              >
+                <div style={{ height: 130, overflow: "hidden", background: "var(--bg-deep)", flexShrink: 0 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={file} alt={label} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </div>
+                <div style={{ padding: "0.75rem 1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <span className="font-sans" style={{ fontSize: "0.78rem", fontWeight: 600, color: "var(--text-primary)", lineHeight: 1.4, flex: 1 }}>
                     {label}
                   </span>
                   <span style={{ color: "var(--text-40)", flexShrink: 0 }}><ArrowUpRight size={12} /></span>
-                </a>
-              )
-            )}
+                </div>
+              </a>
+            ))}
           </div>
         </section>
 

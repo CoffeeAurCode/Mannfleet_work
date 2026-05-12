@@ -1,5 +1,3 @@
-I have added car pics: public\Mann car pictures\GLS 400,public\Mann car pictures\Innova Crysta,public\Mann car pictures\Toyota Coaster New Generation,public\Mann car pictures\Toyota fortuner,public\Mann car pictures\Toyota Hiace Luxury edition 7 seater. Put them in the fleet page, in their respective cars in their specific categories.
+~~Whatever I didn't send you the updated image for appreciation, just delete(in here "C:\Users\BIT\Downloads\WhatsApp Image 2026-05-11 at 21.19.17.jpeg")~~ ✅ DONE — removed all 7 PDF-only appreciation entries (White House, Five Below, Jet on Wheels, CRC Group, Indigo Paints, Just Add Water, Kabaddi World Cup); only image-backed entries remain.
 
-Remove the one on the right(look at this pic "C:\Users\BIT\Downloads\WhatsApp Image 2026-05-11 at 14.59.38.jpeg"), it's already there below. And the award on the left make it small and add to awards received section only.
-
-Basically remove this section:(refer to this pic "C:\Users\BIT\Downloads\WhatsApp Image 2026-05-11 at 14.59.38 (1).jpeg")
+~~in here "C:\Users\BIT\Downloads\WhatsApp Image 2026-05-11 at 21.19.19.jpeg" i want that when you click on any  category it should take you to that specific catagory, like if you click long term rental, it takes you to long term rental page.~~ ✅ DONE — each service row in ServicesSection now links to `/services/[slug]` (long-term, spot, shuttle, self-drive, event). Created `src/app/services/[slug]/page.tsx` with hero, features grid, and CTA banner for each service.
