@@ -165,8 +165,8 @@ const VEHICLES: Vehicle[] = [
   },
   {
     id: "mercedes-gle", name: "Mercedes-Benz GLE", type: "SUVs", category: "LUXURY",
-    seating: "7 Seater Including Pilot", luggage: "320 Litres",
-    image: ["/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_51_13%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_14_30%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_17_16%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_52_46%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_54_04%20PM.png","/Mann car pictures/GLS%3F/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_58_20%20PM.png"],
+    seating: "5 Seater Including Pilot", luggage: "570 Litres",
+    image: ["/Mann%20car%20pictures/GLE/ChatGPT%20Image%20May%2013%2C%202026%2C%2005_46_27%20PM.png","/Mann%20car%20pictures/GLE/ChatGPT%20Image%20May%2013%2C%202026%2C%2005_46_31%20PM.png","/Mann%20car%20pictures/GLE/ChatGPT%20Image%20May%2013%2C%202026%2C%2005_46_34%20PM.png","/Mann%20car%20pictures/GLE/ChatGPT%20Image%20May%2013%2C%202026%2C%2005_46_39%20PM.png","/Mann%20car%20pictures/GLE/ChatGPT%20Image%20May%2013%2C%202026%2C%2005_46_42%20PM.png","/Mann%20car%20pictures/GLE/ChatGPT%20Image%20May%2013%2C%202026%2C%2005_46_45%20PM.png"],
   },
   {
     id: "kia-carnival-limousine", name: "Kia Carnival Limousine", type: "SUVs", category: "LUXURY",
@@ -256,12 +256,6 @@ const VEHICLES: Vehicle[] = [
   },
 
   /* ── COACHES ─────────────────────────────────────────────── */
-  // Economy
-  {
-    id: "ac-coach", name: "Standard AC Coaches", type: "Coaches", category: "ECONOMY",
-    seating: "27 / 35 / 41 / 45 Seater Including Pilot", luggage: "Fits 20–30 large suitcases",
-    image: ["/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_49_03%20AM.png","/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_00_28%20AM.png","/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_03_17%20AM.png","/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_08_42%20AM.png","/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_20_30%20AM.png","/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_24_44%20AM.png","/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_46_26%20AM.png"],
-  },
   // Luxury
   {
     id: "volvo-luxury", name: "Volvo Coach (Luxury)", type: "Coaches", category: "LUXURY",
@@ -278,11 +272,6 @@ const VEHICLES: Vehicle[] = [
     id: "jet-on-wheels", name: '"Jet on Wheels" (Volvo 13.5m)', type: "Coaches", category: "SUPER LUXURY",
     seating: "23 Full Recliners Including Pilot", luggage: "Fits 40–50 large suitcases",
     image: ["/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_00_26%20PM.png","/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_13_32%20PM.png","/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_16_03%20PM.png","/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_17_48%20PM.png","/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_19_14%20PM.png","/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_21_13%20PM.png","/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_23_04%20PM.png","/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_24_34%20PM.png","/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_25_33%20PM.png","/Mann%20car%20pictures/Jet%20on%20wheels/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_26_51%20PM.png"],
-  },
-  {
-    id: "vanity-coach", name: "Vanity Coaches", type: "Coaches", category: "SUPER LUXURY",
-    seating: "10 Seater", luggage: "Mobile dressing room/office — makeup station, lounge, kitchenette & washroom",
-    image: "/Mann%20car%20pictures/vellfire.jpeg",
   },
 
   /* ── SELF DRIVING ────────────────────────────────────────── */

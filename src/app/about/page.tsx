@@ -1472,7 +1472,7 @@ export default function AboutPage() {
                 maxWidth: 380,
                 opacity: 0,
               }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2002 onwards</span>
+                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2008 onwards</span>
                 <h3 className="font-serif" style={{
                   fontSize: "1.4rem", fontWeight: 400,
                   color: "var(--text-primary)", margin: "0 0 0.6rem",

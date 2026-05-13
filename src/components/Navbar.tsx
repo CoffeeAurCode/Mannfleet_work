@@ -244,7 +244,7 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
           >
             {theme === "dark" ? <SunIcon size={14} /> : <MoonIcon size={14} />}
           </button>
-          <a href="https://play.google.com/store/apps/details?id=com.user.mannfleet" target="_blank" rel="noopener noreferrer" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</a>
+          <a href="/reservation" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</a>
         </div>
 
         {/* Hamburger (mobile) */}

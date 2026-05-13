@@ -670,6 +670,10 @@ export default function WeCarePage() {
             <div style={{ marginTop: "1.5rem", position: "relative", height: "clamp(200px, 25vw, 300px)", borderRadius: 12, overflow: "hidden" }}>
               <Image src="/We care/WhatsApp Image 2026-05-04 at 10.07.14 (1).jpeg" alt="Healthcare CSR" fill style={{ objectFit: "cover" }} />
             </div>
+            <div style={{ marginTop: "1.25rem", borderRadius: 12, overflow: "hidden", border: "1px solid var(--border-subtle)" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/We care/WhatsApp Image 2026-05-13 at 17.01.27.jpeg" alt="Hospital Donation Receipt" style={{ width: "100%", display: "block", objectFit: "contain" }} />
+            </div>
           </AccordionItem>
 
           <AccordionItem title="Community Development" icon={<IconUsers />}>
