@@ -40,6 +40,7 @@ const NAV_LINKS = [
   { label: "Investors", href: "/investors" },
   { label: "Noida International Airport", href: "/flagship-project" },
   { label: "We Care", href: "/we-care" },
+  { label: "FAQs", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 

@@ -105,3 +105,37 @@ Vanity Coaches
 
 remove these 2 from the fleet
 - i have added pics of GLE car in "C:\Users\BIT\Coding\Mannfleet_work\public\Mann car pictures\GLE"
+
+- All book now button should redirect to the reservation form
+Pls put FAQs as a new tab and a quick link
+Frequently Asked Questions
+1. What services does Mann Fleet Partners offer?
+We provide luxury chauffeur driven transportation across India, including airport transfers, corporate travel, wedding transportation, intercity journeys, group travel, luxury tours, and event transportation.
+2. How do I book a vehicle?
+You can book directly through our website, contact our team via phone or WhatsApp, or email us with your travel details. Once confirmed, our team handles the rest.
+3. Are chauffeurs included with every booking?
+Yes. All Mann Fleet Partners bookings include professionally trained chauffeurs known for punctuality, discretion, and service excellence, except self drive vehicle bookings.
+4. Do you offer airport pickup and drop services?
+Yes. We provide airport transfers across major Indian cities with real time flight tracking to ensure timely pickups, even in the event of delays.
+5. What types of vehicles are available?
+Our fleet includes luxury sedans, SUVs, Mercedes Benz V Class vehicles, tempo travellers, minibuses, and coaches for both individual and group transportation needs.
+6. What is the range of vehicles available at Mann Fleet Partners?
+We offer everything from compact sedans and executive SUVs to luxury vans, tempo travellers, minibuses, and full size coaches, depending on your travel requirements and group size.
+7. Can you arrange transportation for corporate events?
+Absolutely. We regularly manage transportation for conferences, executive travel, business delegations, employee movement, and corporate events.
+8. Do you provide wedding transportation?
+Yes. We offer luxury transportation for weddings, including guest shuttles, bridal vehicles, airport transfers, and complete event transportation coordination.
+9. Is intercity travel available?
+Yes. We provide premium intercity chauffeur services between major cities and tourist destinations across India, including Delhi, Agra, Jaipur, Chandigarh, and more.
+10. Do you provide tour guides?
+Yes. Upon request, we can arrange experienced local tour guides for destinations across India to make your travel experience more seamless and informative.
+11. Do you offer self drive vehicles, spot rentals, or long term leases?
+Yes. In addition to chauffeur driven services, Mann Fleet Partners also offers self drive vehicles, flexible spot rentals, and long term leasing solutions for personal, corporate, and operational requirements.
+12. What is included in the Mann Taj Express service?
+The Mann Taj Express is our premium transfer experience between Delhi and Agra, designed for travellers visiting the Taj Mahal in comfort, privacy, and convenience.
+13. Are your vehicles sanitized and well maintained?
+Yes. Every vehicle is regularly inspected, professionally maintained, and cleaned before each journey to ensure comfort, reliability, and safety.
+14. Can I book transportation for large groups?
+Yes. We specialise in group transportation and can arrange vehicles for everything from small private groups to large scale events and delegations.
+15. How far in advance should I make a booking?
+We recommend booking in advance, especially during peak travel seasons and major events. However, subject to availability, we also accommodate last minute requests whenever possible.

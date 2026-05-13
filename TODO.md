@@ -76,6 +76,16 @@
 - [x] Terms & Conditions of Service page added (full MFPL T&C)
 - [x] Privacy Policy page exists
 
+### FAQs Page
+- [x] **FAQs page created** — `/faq` route with all 15 FAQ items in accordion layout
+- [x] **FAQs added to Navbar** — "FAQs" link added between "We Care" and "Contact"
+- [x] **FAQs added to Footer quick links** — "FAQs" link added to footer quick links column
+
+### Meet the Team — Photos
+- [x] **Ashok Jha photo** — `Ashok jha.jpeg` copied to `public/teams/` and wired in meet-the-team page
+- [x] **Avarjit Singh photo** — `Avarjit Singh.jpeg` copied to `public/teams/` and wired in meet-the-team page
+- [x] **Mohammad Sami photo** — `Mohd Sami.jpeg` copied to `public/teams/` and wired in meet-the-team page
+
 ---
 
 
@@ -109,7 +119,7 @@
 ### Fleet Page
 - [x] **Add Kia Carnival Limousine** to the Luxury SUV segment — added entry with placeholder image (needs actual Kia Carnival photo from client)
 - [x] **Add "335+ vehicles owned by us"** — changed fleet hero badge from "200+ Vehicles Available" to "335+ Vehicles Owned by Us"
-- [ ] **Add all fleet images sent to date** — upload and wire up any vehicle images received that are not yet showing on the fleet page
+- [x] **Add all fleet images sent to date** — Mercedes-Benz GLE wired up with 6 local images from `/Mann car pictures/GLE/`
 - [x] **Add Toyota Camry Hybrid boot/trunk image** — added `WhatsApp Image 2026-05-10 at 13.55.06.jpeg` to the Camry Hybrid gallery array
 - [x] **Add "Our Amenities" section** — added section before Footer on fleet page with 9 bullet points (Napkin used instead of Tissue papers)
 
@@ -134,7 +144,7 @@
   - Ashwani Kumar — bio added ✓ (from profiles docx; shows in card + "Read Full Profile" modal)
 
 ### We Care / CSR
-- [ ] **Ganga Ram Hospital pay letter** — add to CSR section — *awaiting image from Shivani ma'am*
+- [x] **Ganga Ram Hospital pay letter** — image received (`WhatsApp Image 2026-05-13 at 17.01.27.jpeg`), copied to `public/We care/` and added to CSR section
 
 ### Legal
 - [ ] **Refund and Cancellation Policy** page — *awaiting content from Shivani ma'am*
