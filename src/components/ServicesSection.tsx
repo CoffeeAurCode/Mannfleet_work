@@ -169,9 +169,8 @@ function ServiceRow({ service, isFirst, index, inView, speed, repetitions }: Ite
       }}
     >
       {/* ── Clickable row link ── */}
-      <a
-        href="#"
-        onClick={(e) => e.preventDefault()}
+      <Link
+        href={`/services/${service.id}`}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
         style={{
@@ -285,7 +284,7 @@ function ServiceRow({ service, isFirst, index, inView, speed, repetitions }: Ite
             <ArrowUpRight size={14} />
           </div>
         </div>
-      </a>
+      </Link>
 
       {/* ── Marquee overlay (slides in on hover) ── */}
       <div
