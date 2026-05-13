@@ -114,8 +114,8 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
       gsap.to(logoRef.current, { scale: 1, duration: 0.6, ease });
     }
     if (navItemsRef.current) {
-      gsap.set(navItemsRef.current, { width: 0, overflow: "hidden" });
-      gsap.to(navItemsRef.current, { width: "auto", duration: 0.6, ease });
+      gsap.set(navItemsRef.current, { opacity: 0 });
+      gsap.to(navItemsRef.current, { opacity: 1, duration: 0.6, ease });
     }
 
     return () => window.removeEventListener("resize", layout);
