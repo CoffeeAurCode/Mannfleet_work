@@ -40,6 +40,7 @@ const NAV_LINKS = [
   { label: "Investors", href: "/investors" },
   { label: "Noida International Airport", href: "/flagship-project" },
   { label: "We Care", href: "/we-care" },
+  { label: "FAQs", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -113,8 +114,8 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
       gsap.to(logoRef.current, { scale: 1, duration: 0.6, ease });
     }
     if (navItemsRef.current) {
-      gsap.set(navItemsRef.current, { width: 0, overflow: "hidden" });
-      gsap.to(navItemsRef.current, { width: "auto", duration: 0.6, ease });
+      gsap.set(navItemsRef.current, { opacity: 0 });
+      gsap.to(navItemsRef.current, { opacity: 1, duration: 0.6, ease });
     }
 
     return () => window.removeEventListener("resize", layout);
@@ -244,7 +245,7 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
           >
             {theme === "dark" ? <SunIcon size={14} /> : <MoonIcon size={14} />}
           </button>
-          <a href="https://play.google.com/store/apps/details?id=com.user.mannfleet" target="_blank" rel="noopener noreferrer" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</a>
+          <a href="/reservation" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</a>
         </div>
 
         {/* Hamburger (mobile) */}

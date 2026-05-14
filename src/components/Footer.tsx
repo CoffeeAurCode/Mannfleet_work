@@ -93,6 +93,7 @@ const QUICK_LINKS = [
   { label: "Investors", href: "/investors" },
   { label: "About us", href: "/about" },
   { label: "Awards", href: "/awards" },
+  { label: "FAQs", href: "/faq" },
   { label: "Contact us", href: "/contact" },
 ];
 

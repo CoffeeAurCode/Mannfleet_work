@@ -25,19 +25,19 @@ const DIRECTORS: Director[] = [
     id: "ashok",
     name: "Mr. Ashok Kumar",
     title: "Independent Director",
-    photo: "/Mann%20Independent%20directors%20/Ashok-photo1-1000.jpg",
+    photo: "/teams/Ashok jha.jpeg",
   },
   {
     id: "averjit",
     name: "Mr. Averjit Singh",
     title: "Independent Director",
-    photo: "/Mann%20Independent%20directors%20/Averjit%20Singh_photograph.jpg",
+    photo: "/teams/Avarjit Singh.jpeg",
   },
   {
     id: "sami",
     name: "Dr. Mohammad Sami",
     title: "Independent Director",
-    photo: "/Mann%20Independent%20directors%20/Mohammad_Sami%2C_physicist.jpg",
+    photo: "/teams/Mohd Sami.jpeg",
   },
 ];
 
