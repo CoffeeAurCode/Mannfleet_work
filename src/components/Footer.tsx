@@ -326,7 +326,7 @@ export default function Footer() {
                   onMouseEnter={(e) => { e.currentTarget.style.color = "var(--text-primary)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-80)"; }}
                 >
-                  +971 4 000 0000
+                  +91-1147202122
                 </a>
               </div>
               <div>
