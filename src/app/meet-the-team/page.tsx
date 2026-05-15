@@ -91,29 +91,33 @@ interface IndependentDirector {
   title: string;
   photo: string;
   objectPosition?: string;
+  bio?: string;
 }
 
 const INDEPENDENT_DIRECTORS: IndependentDirector[] = [
   {
     id: "ashok",
-    name: "Mr. Ashok Kumar",
+    name: "Mr. Ashok Jha",
     title: "Independent Director",
     photo: "/teams/Ashok jha.jpeg",
     objectPosition: "top",
+    bio: "Ashok Jha is an Independent Director of our Company. He has completed his Senior Secondary Examination (Class XII) from the Central Board of Secondary Education, New Delhi in the year 1981. He also held a Certificate of Competency as Master of a Foreign-Going Ship, issued under the Merchant Shipping Act, 1958 which is required to be renewed every five years in accordance with applicable maritime regulations. He has approximately 11 years of experience in the marine and offshore industry, having served in senior roles such as, Master of FPSO/FSO facilities and currently, as Offshore Installation Manager (OIM). His expertise includes evaluation simultaneous operations on the facility, assistance in the preparation of budgets and in the planning and co-ordination of campaign maintenance, conversions or other major activities.",
   },
   {
     id: "averjit",
-    name: "Mr. Averjit Singh",
+    name: "Mr. Avarjit Singh Birghi",
     title: "Independent Director",
     photo: "/teams/Avarjit Singh.jpeg",
     objectPosition: "top",
+    bio: "Avarjit Singh Birghi is an Independent Director of our Company. He has completed his Senior Secondary Examination (Class XII) from the St. Columbas School, New Delhi in 1985 along with this he has completed his Bachelor of Commerce (Honours), University of Delhi in 1989 and he is a member of the Institute of Charted Accountants of India since 1991. He has also professional experience in Information Technology industry where he has worked with IBM India Private Limited and thereafter with Tata Consultancy Services.",
   },
   {
     id: "sami",
-    name: "Dr. Mohammad Sami",
+    name: "Dr. Mohd Sami",
     title: "Independent Director",
     photo: "/teams/Mohd Sami.jpeg",
     objectPosition: "top",
+    bio: "Mohd Sami is an Independent Director of our Company. He has completed his Doctor of Philosophy (PhD) in Physics and Mathematical Sciences from Moscow State University in 1983. He qualified as Physicist at Patrice Lumumba Peoples’ Friendship University, Moscow Russia in 1978. He served as the director of the Centre for Theoretical Physics, Jamia Millia Islamia (A Central University) from January 12, 2007 to January 31, 2020. Currently he is working as director of Centre for Cosmology and Science popularisation at Shree Guru Gobind Singh Tricentenary University.",
   },
 ];
 
@@ -591,6 +595,144 @@ function SalesModal({
 }
 
 /* ══════════════════════════════════════════════════════════════
+   INDEPENDENT DIRECTOR MODAL
+══════════════════════════════════════════════════════════════ */
+function IndependentDirectorModal({
+  director,
+  onClose,
+}: {
+  director: IndependentDirector;
+  onClose: () => void;
+}) {
+  const backdropRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const bd = backdropRef.current;
+    const card = cardRef.current;
+    if (!bd || !card) return;
+
+    gsap.fromTo(bd, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" });
+    gsap.fromTo(card, { opacity: 0, scale: 0.85, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" });
+
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") handleClose(); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleClose = useCallback(() => {
+    const bd = backdropRef.current;
+    const card = cardRef.current;
+    const tl = gsap.timeline({ onComplete: onClose });
+    if (card) tl.to(card, { opacity: 0, scale: 0.88, y: 30, duration: 0.25, ease: "power2.in" }, 0);
+    if (bd) tl.to(bd, { opacity: 0, duration: 0.25, ease: "power2.in" }, 0);
+  }, [onClose]);
+
+  return createPortal(
+    <div
+      ref={backdropRef}
+      onClick={handleClose}
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 1000,
+        background: "rgba(10,8,5,0.78)",
+        backdropFilter: "blur(6px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "24px 16px",
+      }}
+    >
+      <div
+        ref={cardRef}
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          background: "var(--bg-surface)",
+          border: "1px solid var(--border-mid)",
+          borderRadius: 20,
+          padding: "clamp(1.25rem, 5vw, 40px) clamp(1.25rem, 6vw, 44px)",
+          maxWidth: 620,
+          width: "100%",
+          maxHeight: "88vh",
+          overflowY: "auto",
+          position: "relative",
+        }}
+      >
+        <button
+          onClick={handleClose}
+          aria-label="Close"
+          style={{
+            position: "absolute",
+            top: 18,
+            right: 18,
+            background: "var(--glass-light)",
+            border: "1px solid var(--border-subtle)",
+            borderRadius: "50%",
+            width: 36,
+            height: 36,
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "var(--text-primary)",
+            fontSize: 18,
+            lineHeight: 1,
+          }}
+        >
+          ×
+        </button>
+
+        <div style={{ display: "flex", gap: 20, alignItems: "center", marginBottom: 24 }}>
+          {director.photo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={director.photo}
+              alt={director.name}
+              style={{
+                width: 100,
+                height: 100,
+                borderRadius: 16,
+                objectFit: "cover",
+                objectPosition: director.objectPosition || "top",
+                flexShrink: 0,
+                border: "2px solid var(--accent)",
+              }}
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+          ) : (
+            <AvatarPlaceholder name={director.name} size={100} />
+          )}
+          <div>
+            <p style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 4 }}>
+              {director.title}
+            </p>
+            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1.2rem, 3vw, 1.6rem)", color: "var(--text-primary)", margin: "0 0 6px", lineHeight: 1.2 }}>
+              {director.name}
+            </h2>
+          </div>
+        </div>
+
+        {director.bio && (
+          <>
+            <div style={{ height: 1, background: "var(--border-subtle)", marginBottom: 20 }} />
+            <p style={{ fontSize: "0.95rem", lineHeight: 1.78, color: "var(--text-secondary)", margin: 0 }}>
+              {director.bio}
+            </p>
+          </>
+        )}
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
    LEADER CARD
 ══════════════════════════════════════════════════════════════ */
 function LeaderCard({
@@ -742,6 +884,7 @@ function DirectorCard({
   const innerRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleMouseLeave = () => {
     const card = innerRef.current;
@@ -805,10 +948,57 @@ function DirectorCard({
         <h3 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)", color: "var(--text-primary)", lineHeight: 1.25, margin: 0 }}>
           {director.name}
         </h3>
+
+        {director.bio && (
+          <div style={{ marginTop: 20 }}>
+            <div style={{ height: 1, background: "var(--border-subtle)", marginBottom: 20 }} />
+            <p style={{ fontSize: "0.82rem", lineHeight: 1.65, color: "var(--text-secondary)", margin: "0 0 12px 0", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden", textAlign: "left" }}>
+              {director.bio}
+            </p>
+            <button
+              onClick={() => setModalOpen(true)}
+              style={{
+                width: "100%",
+                padding: "10px 0",
+                borderRadius: 10,
+                background: "transparent",
+                border: "1px solid var(--border-mid)",
+                color: "var(--text-primary)",
+                fontSize: "0.82rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 6,
+                transition: "background 0.2s, border-color 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = "var(--accent)";
+                (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--accent)";
+                (e.currentTarget as HTMLButtonElement).style.color = "#fff";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = "transparent";
+                (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--border-mid)";
+                (e.currentTarget as HTMLButtonElement).style.color = "var(--text-primary)";
+              }}
+            >
+              Read Full Profile
+              <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
 
       {lightboxOpen && (
         <PhotoLightbox src={director.photo} name={director.name} onClose={() => setLightboxOpen(false)} />
+      )}
+      {modalOpen && (
+        <IndependentDirectorModal director={director} onClose={() => setModalOpen(false)} />
       )}
     </div>
   );

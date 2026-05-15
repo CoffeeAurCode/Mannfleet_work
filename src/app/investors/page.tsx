@@ -18,26 +18,30 @@ interface Director {
   name: string;
   title: string;
   photo: string;
+  bio?: string;
 }
 
 const DIRECTORS: Director[] = [
   {
     id: "ashok",
-    name: "Mr. Ashok Kumar",
+    name: "Mr. Ashok Jha",
     title: "Independent Director",
     photo: "/teams/Ashok jha.jpeg",
+    bio: "Ashok Jha is an Independent Director of our Company. He has completed his Senior Secondary Examination (Class XII) from the Central Board of Secondary Education, New Delhi in the year 1981. He also held a Certificate of Competency as Master of a Foreign-Going Ship, issued under the Merchant Shipping Act, 1958 which is required to be renewed every five years in accordance with applicable maritime regulations. He has approximately 11 years of experience in the marine and offshore industry, having served in senior roles such as, Master of FPSO/FSO facilities and currently, as Offshore Installation Manager (OIM). His expertise includes evaluation simultaneous operations on the facility, assistance in the preparation of budgets and in the planning and co-ordination of campaign maintenance, conversions or other major activities.",
   },
   {
     id: "averjit",
-    name: "Mr. Averjit Singh",
+    name: "Mr. Avarjit Singh Birghi",
     title: "Independent Director",
     photo: "/teams/Avarjit Singh.jpeg",
+    bio: "Avarjit Singh Birghi is an Independent Director of our Company. He has completed his Senior Secondary Examination (Class XII) from the St. Columbas School, New Delhi in 1985 along with this he has completed his Bachelor of Commerce (Honours), University of Delhi in 1989 and he is a member of the Institute of Charted Accountants of India since 1991. He has also professional experience in Information Technology industry where he has worked with IBM India Private Limited and thereafter with Tata Consultancy Services.",
   },
   {
     id: "sami",
-    name: "Dr. Mohammad Sami",
+    name: "Dr. Mohd Sami",
     title: "Independent Director",
     photo: "/teams/Mohd Sami.jpeg",
+    bio: "Mohd Sami is an Independent Director of our Company. He has completed his Doctor of Philosophy (PhD) in Physics and Mathematical Sciences from Moscow State University in 1983. He qualified as Physicist at Patrice Lumumba Peoples’ Friendship University, Moscow Russia in 1978. He served as the director of the Centre for Theoretical Physics, Jamia Millia Islamia (A Central University) from January 12, 2007 to January 31, 2020. Currently he is working as director of Centre for Cosmology and Science popularisation at Shree Guru Gobind Singh Tricentenary University.",
   },
 ];
 
@@ -236,13 +240,21 @@ function DirectorModal({ director, onClose }: { director: Director; onClose: () 
           />
         </div>
 
-        <div style={{ padding: "20px 24px 24px" }}>
+        <div style={{ padding: "20px 24px 24px", maxHeight: "40vh", overflowY: "auto" }}>
           <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: 22, color: "var(--text-primary)", margin: 0 }}>
             {director.name}
           </p>
-          <p style={{ fontSize: 13, color: "var(--text-secondary)", marginTop: 4, marginBottom: 0 }}>
+          <p style={{ fontSize: 13, color: "var(--text-secondary)", marginTop: 4, marginBottom: 12 }}>
             {director.title}
           </p>
+          {director.bio && (
+            <div style={{ height: 1, background: "var(--border-subtle)", marginBottom: 12 }} />
+          )}
+          {director.bio && (
+            <p style={{ fontSize: "0.9rem", lineHeight: 1.6, color: "var(--text-secondary)", margin: 0 }}>
+              {director.bio}
+            </p>
+          )}
         </div>
       </div>
     </div>,
