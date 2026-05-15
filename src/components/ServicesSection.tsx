@@ -11,7 +11,7 @@ const SERVICES = [
     text: "Long-Term Rentals",
     badge: "institutional",
     description: "End-to-end vehicle rental solutions for institutional fleets and retail customers.",
-    image: "/Mann car pictures/7 series.png",
+    image: "/Mann car pictures/Mercedes-Benz S-Class/ChatGPT Image Apr 29, 2026, 11_09_09 PM.png",
     stat: "12+ months",
     statLabel: "min. contract",
   },

@@ -229,10 +229,8 @@ export default function HeroSection() {
             <span ref={line2Ref} style={{ display: "block", color: "rgba(255,255,255,0.72)", opacity: 0 }}>
               vehicles for
             </span>
-            <span ref={line3Ref} className="italic" style={{
+            <span ref={line3Ref} style={{
               display: "block",
-              color: "rgba(255,255,255,0.48)",
-              fontSize: "0.78em",
               opacity: 0,
             }}>
               every journey with Mann Fleet Partners.
