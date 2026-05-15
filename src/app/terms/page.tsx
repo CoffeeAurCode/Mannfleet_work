@@ -32,11 +32,11 @@ const SECTIONS: Section[] = [
     num: "2",
     title: "Tariff Structure, Billing & Taxation",
     clauses: [
-      { num: "2.1", text: "Time and mileage (kilometres) shall be calculated on a 'Garage-to-Garage' basis. Charges will originate from and terminate at the MFPL designated garage located within the specific city where the services are rendered. For multi-city or intercity services, the starting and ending points will be the service origin and destination, respectively." },
-      { num: "2.2", text: 'For Airport Transfers and Local Sightseeing, all ancillary costs — including parking fees, tolls, and state taxes — shall be billed as extras. Any service exceeding a four-hour duration shall be billed under the "80 km / 8 hours" tariff bracket.' },
+      { num: "2.1", text: "Time and mileage (kilometers) shall be calculated on a 'Garage-to-Garage' basis. Charges will originate from and terminate at the MFPL designated garage located within the specific city where the services are rendered. For multi-city or intercity services, the starting and ending points will be the service origin and destination, respectively" },
+      { num: "2.2", text: 'For Airport Transfers and Local Sightseeing, all ancillary costs—including parking fees, tolls, and state taxes—shall be billed as extras. Any service exceeding a four-hour duration shall be billed under the "80 km / 8 hours" tariff bracket.' },
       { num: "2.3", text: "For trips beyond city limits, all parking, tolls, and state taxes shall be charged at actuals based on original receipts. Prepaid taxes shall be billed as per the actual paid receipt value." },
       { num: "2.4", text: "Package tours are inclusive of parking, tolls, chauffeur allowances, and state taxes; however, parking charges for airport or railway station pickups remain an additional liability of the client." },
-      { num: "2.5", text: "GST will be applicable as per Government directive." },
+      { num: "2.5", text: "GST will be applicable, as per Govt. directive" },
       { num: "2.6", text: "Payments made via credit card shall be subject to a facilitation fee equivalent to the actual bank processing charges on the total transaction value. This fee will be added to the final invoice at the time of payment processing." },
       { num: "2.7", text: "All rates are subject to adjustment based on fuel price volatility or regulatory changes, following prior intimation to the client. Please note that a tariff increase will be mandatory if there is an impact of more than 5% on fuel prices relative to the rates at the time of contract execution." },
     ],
@@ -58,13 +58,13 @@ const SECTIONS: Section[] = [
     title: "Amenities, Usage & Conduct",
     clauses: [
       { num: "4.1", text: "Standard rates apply for mineral water, beverages, and garlands. Complimentary mineral water is provided only for local services within the Luxury and SUV segments." },
-      { num: "4.2", text: "Coaches and vans are provided with 3 GB of complimentary Wi-Fi on request; usage exceeding this threshold shall be billed at ₹500 per GB. Wi-Fi for cars/SUVs is available only upon specific request." },
+      { num: "4.2", text: "Coaches and vans are provided with 3GB of complimentary Wi-Fi on request; usage exceeding this threshold shall be billed at Rs. 500 per GB. Wi-Fi for cars/SUVs is available only upon specific request." },
       { num: "4.3", text: "No credits, refunds, or deductions shall be granted for the intermittent failure of secondary amenities, including LCD/DVD systems, music systems, or Wi-Fi, due to technical or unavoidable circumstances." },
       { num: "4.4", text: "The consumption of food, alcoholic beverages, or hot drinks (such as tea and coffee) is strictly prohibited while the vehicle is in motion. Any resulting damage to the vehicle interior will be invoiced to the client; this invoice will include the full cost of repairs plus compensation for the number of days the vehicle is grounded and unavailable for service." },
-      { num: "4.5", text: "MFPL maintains a zero-tolerance policy regarding the transport of illegal substances, unauthorised merchandise, or alcoholic containers. We reserve the right to cancel services instantly and forfeit all payments. Additionally, we will report all such activities to the relevant legal agencies for further statutory action." },
+      { num: "4.5", text: "The transportation of illicit drugs or sealed/unsealed/illegal alcoholic bottles/illegal merchandise are strictly prohibited and may result in immediate termination of service without refund. MFPL maintains a zero-tolerance policy regarding the transport of illegal substances, unauthorised merchandise, or alcoholic containers. We reserve the right to cancel services instantly and forfeit all payments. Additionally, we will report all such activities to the relevant legal agencies for further statutory action." },
       { num: "4.6", text: "Chauffeurs are instructed to follow the pre-agreed itinerary. Deviations without prior written approval from MFPL management will incur additional charges, and chauffeurs reserve the right to decline unscheduled routes." },
       { num: "4.7", text: "Airport and station transfers are strictly point-to-point, one-way services; any diversions, breaks, or continued vehicle usage following arrival in the city or at the hotel will terminate the transfer status and trigger additional charges as per the applicable tariff or local running rates." },
-      { num: "4.8", text: "The Client acknowledges that chauffeurs are employees/contractors of MFPL deployed strictly for driving purposes. Any misconduct, misbehaviour, or unlawful instructions issued by the Client to the chauffeur shall be at the Client's sole risk and responsibility." },
+      { num: "4.8", text: "The Client acknowledges that chauffeurs are employees/contractors of MFPL deployed strictly for driving purposes. Any misconduct, misbehaviour, or unlawful instructions issued by the Client to the chauffeur shall be at the Client’s sole risk and responsibility." },
     ],
   },
   {
@@ -73,12 +73,12 @@ const SECTIONS: Section[] = [
     clauses: [
       {
         num: "5.1",
-        text: "Cancellations for premium vehicles, coaches, and vans are subject to the following schedule:",
+        text: "Cancellations for premium vehicles, coaches, and vans are subject to the following:",
         subitems: [
-          "From the reservation date till 30 days before departure: 10% of the gross amount or a 1-day minimum charge.",
-          "29 to 15 days before departure: 25% of the gross amount or a 1-day minimum charge.",
-          "14 to 2 days prior to departure: 50% of the gross amount or a 1-day minimum charge.",
-          "Within 48 hours before departure, last-minute cancellation, or No-Show: 100% of the gross amount will be charged.",
+          "From the reservation date till 30 days before the day or time of departure: 10% of the gross amount or a 1-day minimum charge.",
+          "29 to 15 days before the day or time of departure: 25% of the gross amount or a 1-day minimum charge.",
+          "14 to 2 days prior to day or time of departure: 50% of the gross amount or a 1-day minimum charge.",
+          "Within 48 hours before departure and last-minute cancellation or No-Show: 100% of the gross amount will be charged.",
         ],
       },
       { num: "5.2", text: "Once a vehicle has exited the garage for a booking, full charges apply regardless of whether the service is utilised." },
@@ -101,7 +101,7 @@ const SECTIONS: Section[] = [
       { num: "6.7", text: "The hiring company agrees not to solicit, recruit, or employ any staff member of MFPL during the service term or for a period of one year thereafter. Breach of this clause shall trigger legal proceedings." },
       {
         num: "6.8",
-        text: "Notwithstanding anything contained herein, MFPL's total aggregate liability under this agreement, whether in contract, tort, or otherwise, shall not exceed the total amount paid by the Client for the specific service giving rise to the claim. Under no circumstances shall MFPL be liable for:",
+        text: "Notwithstanding anything contained herein, MFPL’s total aggregate liability under this agreement, whether in contract, tort, or otherwise, shall not exceed the total amount paid by the Client for the specific service giving rise to the claim. Under no circumstances shall MFPL be liable for:",
         subitems: [
           "(i) indirect, incidental, special, or consequential damages",
           "(ii) loss of profit, business, opportunity, or reputation",
@@ -111,7 +111,7 @@ const SECTIONS: Section[] = [
       },
       {
         num: "6.9",
-        text: "Service Disruptions — MFPL shall not be held liable for:",
+        text: "Service Disruptions MFPL shall not be held liable for:",
         subitems: [
           "(i) delay in arrival or completion of service",
           "(ii) non-availability of vehicle or chauffeur",
@@ -128,13 +128,23 @@ const SECTIONS: Section[] = [
     num: "7",
     title: "Grievances, Indemnity & Jurisdiction",
     clauses: [
-      { num: "7.1", text: "All service deficiencies or disputes must be reported immediately at the time of occurrence to allow for real-time resolution. MFPL shall not entertain any claims or complaints raised after the conclusion of the service. Formal written complaints must be filed within 24 hours via email to info@mannfleetpartners.com." },
+      { num: "7.1", text: "All service deficiencies or disputes must be reported immediately at the time of occurrence to allow for real-time resolution. MFPL shall not entertain any claims or complaints raised after the conclusion of the service. Formal written complaints must be filed within 24 hours via email to amrit@manntours.com." },
       {
         num: "7.2",
-        text: "The Client agrees to fully indemnify, defend, and hold harmless MFPL, its directors, employees, and agents from and against any and all claims, demands, damages, losses, legal proceedings, penalties, fines, or liabilities, including third-party claims (injury, death, property damage), arising out of:",
+        text: "The Client agrees to fully indemnify, defend, and hold harmless MFPL, its directors, employees, and agents from and against any and all:",
+        subitems: [
+          "claims, demands, damages, losses",
+          "legal proceedings",
+          "penalties, fines, or liabilities",
+          "third-party claims (including injury, death, property damage)",
+        ],
+      },
+      {
+        num: "7.2b",
+        text: "arising out of:",
         subitems: [
           "(i) misuse of vehicle",
-          "(ii) breach of these terms",
+          "(ii) breach of terms",
           "(iii) acts or omissions of the Client or passengers",
           "(iv) unlawful instructions given to the driver",
         ],
@@ -143,8 +153,9 @@ const SECTIONS: Section[] = [
       { num: "7.4", text: "Nothing contained herein shall be deemed to create any partnership, joint venture, or agency relationship between MFPL and the Client." },
       { num: "7.5", text: "MFPL reserves the right to refuse or terminate service without refund in case of unsafe conditions, unlawful activity, or misconduct by the Client or passengers." },
       { num: "7.6", text: "Clauses relating to liability, indemnity, jurisdiction, and dispute resolution shall survive termination." },
-      { num: "7.7", text: "These terms and all services rendered shall be governed by and construed in accordance with the laws of the Republic of India. The parties irrevocably submit to the exclusive jurisdiction of the competent courts located in Delhi for any legal proceedings." },
-      { num: "7.8", text: "Any disputes arising from this contract shall be resolved through arbitration under the Arbitration and Conciliation Act, 1996. The seat of arbitration shall be Delhi, and the language of proceedings shall be English." },
+      { num: "7.7", text: "These terms and all services rendered shall be governed by and construed in accordance with the laws of the Republic of India." },
+      { num: "7.8", text: "The parties irrevocably submit to the exclusive jurisdiction of the competent courts located in Delhi for any legal proceedings." },
+      { num: "7.9", text: "Any disputes arising from this contract shall be resolved through arbitration under the Arbitration and Conciliation Act, 1996. The seat of arbitration shall be Delhi, and the language of proceedings shall be English." },
     ],
   },
 ];

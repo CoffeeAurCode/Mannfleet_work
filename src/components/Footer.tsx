@@ -95,6 +95,7 @@ const QUICK_LINKS = [
   { label: "Awards", href: "/awards" },
   { label: "FAQs", href: "/faq" },
   { label: "Contact us", href: "/contact" },
+  { label: "Terms & Conditions", href: "/terms" },
 ];
 
 const SOCIAL_LINKS = [

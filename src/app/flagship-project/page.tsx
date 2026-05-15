@@ -92,6 +92,7 @@ export default function FlagshipProjectPage() {
   const mandateRef = useRef<HTMLElement>(null);
   const advantageRef = useRef<HTMLElement>(null);
   const connectRef = useRef<HTMLElement>(null);
+  const appRef = useRef<HTMLElement>(null);
   const quoteRef = useRef<HTMLElement>(null);
   const visualRef = useRef<HTMLElement>(null);
 
@@ -109,7 +110,7 @@ export default function FlagshipProjectPage() {
     });
 
     /* Scroll-triggered sections */
-    const sections = [overviewRef, visualRef, statsRef, mandateRef, advantageRef, connectRef, quoteRef];
+    const sections = [overviewRef, visualRef, statsRef, mandateRef, advantageRef, connectRef, appRef, quoteRef];
     const triggers: ScrollTrigger[] = [];
     sections.forEach((ref) => {
       if (!ref.current) return;
@@ -857,6 +858,91 @@ export default function FlagshipProjectPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          6.5. NIA APP
+      ═══════════════════════════════════════════════════════ */}
+      <section ref={appRef} style={{
+        background: "var(--bg-base)",
+        padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 7vw, 8rem)",
+        borderTop: "1px solid var(--border-subtle)",
+      }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "clamp(3rem, 6vw, 6rem)", alignItems: "center" }}>
+            
+            {/* Left: Content */}
+            <div style={{ flex: "1 1 400px" }}>
+              <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
+                Digital Mobility
+              </span>
+              <h2 className="font-serif" style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                fontWeight: 400,
+                color: "var(--text-primary)",
+                lineHeight: 1.15,
+                marginBottom: "1.25rem",
+              }}>
+                The NIA App
+              </h2>
+              <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
+                Experience seamless travel right from your smartphone. The official Noida International Airport (NIA) application brings your entire journey to your fingertips. 
+              </p>
+              <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
+                Book premium cabs, track terminal shuttles, access exclusive mobility services from Mann Fleet Partners, and stay updated with real-time flight statuses — all in one unified digital experience.
+              </p>
+              
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <div style={{ width: 3, height: 36, background: "var(--accent)", borderRadius: 999 }} />
+                <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1rem, 2vw, 1.2rem)", color: "var(--text-secondary)", fontStyle: "italic" }}>
+                  Scan the QR code to download the application.
+                </span>
+              </div>
+            </div>
+
+            {/* Right: QR Code */}
+            <div style={{ flex: "1 1 300px", display: "flex", justifyContent: "center" }}>
+              <div style={{
+                background: "var(--bg-surface)",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: 24,
+                padding: "clamp(2rem, 4vw, 3rem)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                boxShadow: "0 12px 32px rgba(0,0,0,0.1)",
+              }}>
+                <div style={{
+                  position: "relative",
+                  width: 220,
+                  height: 220,
+                  marginBottom: "1.5rem",
+                  borderRadius: 12,
+                  overflow: "hidden",
+                  border: "1px solid var(--border-mid)",
+                }}>
+                  <Image
+                    src="/nia-app-qr.jpg"
+                    alt="NIA App QR Code"
+                    fill
+                    style={{ objectFit: "contain", background: "#fff" }}
+                    unoptimized
+                  />
+                </div>
+                <h3 className="font-serif" style={{
+                  fontFamily: "'Instrument Serif', serif",
+                  fontSize: "1.3rem",
+                  color: "var(--text-primary)",
+                  marginBottom: "0.25rem",
+                  fontWeight: 400
+                }}>Download Now</h3>
+                <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", textAlign: "center", maxWidth: 200, margin: 0 }}>Available for iOS and Android devices</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

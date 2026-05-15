@@ -69,16 +69,16 @@ function StatCard({ value, label, sub }: { value: string; label: string; sub: st
 
 /* ── Main Component ──────────────────────────────────────── */
 export default function HeroSection() {
-  const sectionRef   = useRef<HTMLElement>(null);
-  const navRef       = useRef<HTMLDivElement>(null);
-  const badgeRef     = useRef<HTMLDivElement>(null);
-  const line1Ref     = useRef<HTMLSpanElement>(null);
-  const line2Ref     = useRef<HTMLSpanElement>(null);
-  const line3Ref     = useRef<HTMLSpanElement>(null);
-  const subtitleRef  = useRef<HTMLParagraphElement>(null);
-  const bulletsRef   = useRef<HTMLDivElement>(null);
-  const ctasRef      = useRef<HTMLDivElement>(null);
-  const statsRef     = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const line1Ref = useRef<HTMLSpanElement>(null);
+  const line2Ref = useRef<HTMLSpanElement>(null);
+  const line3Ref = useRef<HTMLSpanElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const bulletsRef = useRef<HTMLDivElement>(null);
+  const ctasRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ctx: ReturnType<typeof gsap.context>;
@@ -90,48 +90,48 @@ export default function HeroSection() {
         // Nav slides down from above
         tl.fromTo(navRef.current,
           { y: -28, opacity: 0, filter: "blur(8px)" },
-          { y: 0,   opacity: 1, filter: "blur(0px)", duration: 0.8 },
+          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.8 },
         );
 
         // Badge fades up
         tl.fromTo(badgeRef.current,
           { y: 20, opacity: 0, filter: "blur(6px)" },
-          { y: 0,  opacity: 1, filter: "blur(0px)", duration: 0.65 },
+          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.65 },
           "-=0.4",
         );
 
         // Headline lines stagger up
         tl.fromTo([line1Ref.current, line2Ref.current, line3Ref.current],
           { y: 36, opacity: 0, filter: "blur(10px)" },
-          { y: 0,  opacity: 1, filter: "blur(0px)", duration: 0.75, stagger: 0.13 },
+          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.75, stagger: 0.13 },
           "-=0.3",
         );
 
         // Subtitle
         tl.fromTo(subtitleRef.current,
           { y: 18, opacity: 0 },
-          { y: 0,  opacity: 1, duration: 0.55 },
+          { y: 0, opacity: 1, duration: 0.55 },
           "-=0.35",
         );
 
         // Bullets
         tl.fromTo(bulletsRef.current,
           { y: 14, opacity: 0 },
-          { y: 0,  opacity: 1, duration: 0.45 },
+          { y: 0, opacity: 1, duration: 0.45 },
           "-=0.3",
         );
 
         // CTAs
         tl.fromTo(ctasRef.current,
           { y: 18, opacity: 0 },
-          { y: 0,  opacity: 1, duration: 0.5 },
+          { y: 0, opacity: 1, duration: 0.5 },
           "-=0.25",
         );
 
         // Stats strip slides up from bottom
         tl.fromTo(statsRef.current,
           { y: 32, opacity: 0, filter: "blur(8px)" },
-          { y: 0,  opacity: 1, filter: "blur(0px)", duration: 0.65 },
+          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.65 },
           "-=0.4",
         );
       }, sectionRef);
@@ -291,39 +291,7 @@ export default function HeroSection() {
               <ArrowUpRight size={14} />
             </Link>
 
-            {/* Ghost white button — font-sans, uppercase */}
-            <button
-              className="font-sans uppercase"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                padding: "0.80rem 1.5rem",
-                borderRadius: "9999px",
-                fontSize: "0.75rem",
-                fontWeight: 700,
-                letterSpacing: "0.10em",
-                color: "#ffffff",
-                background: "rgba(255,255,255,0.10)",
-                backdropFilter: "blur(14px)",
-                WebkitBackdropFilter: "blur(14px)",
-                border: "1px solid rgba(255,255,255,0.26)",
-                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.20), 0 2px 12px rgba(0,0,0,0.20)",
-                cursor: "pointer",
-                transition: "all 0.15s ease",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.18)";
-                (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.42)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.10)";
-                (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.26)";
-              }}
-            >
-              <PlayIcon size={11} />
-              How it works
-            </button>
+
           </div>
         </div>
       </div>
