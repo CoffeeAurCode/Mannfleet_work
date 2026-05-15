@@ -37,7 +37,7 @@ const SERVICE_DATA: Record<string, {
     ],
     stat: "12+ months",
     statLabel: "minimum contract",
-    image: "/Mann car pictures/7 series.png",
+    image: "/Mann car pictures/Mercedes-Benz E-Class/ChatGPT Image Apr 28, 2026, 06_32_56 PM.png",
   },
   "spot": {
     title: "Spot Rentals",
