@@ -20,7 +20,7 @@ const SERVICES = [
     text: "Spot Rentals",
     badge: "on-demand",
     description: "On-demand chauffeur-driven services for corporates, airport transfers, and travel.",
-    image: "/Mann car pictures/S class.png",
+    image: "/Mann car pictures/Toyota fortuner/ChatGPT Image May 4, 2026, 12_35_18 PM.png",
     stat: "24/7",
     statLabel: "availability",
   },
