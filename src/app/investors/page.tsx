@@ -196,10 +196,10 @@ function DirectorModal({ director, onClose }: { director: Director; onClose: () 
       onClick={handleClose}
       style={{
         position: "fixed", inset: 0, zIndex: 1000,
-        background: "rgba(0,0,0,0.72)",
+        background: "rgba(10,8,5,0.78)",
         backdropFilter: "blur(6px)",
         display: "flex", alignItems: "center", justifyContent: "center",
-        padding: "24px",
+        padding: "24px 16px",
       }}
     >
       <div
@@ -209,53 +209,60 @@ function DirectorModal({ director, onClose }: { director: Director; onClose: () 
           background: "var(--bg-surface)",
           border: "1px solid var(--border-mid)",
           borderRadius: 20,
-          overflow: "hidden",
-          maxWidth: 420,
+          padding: "clamp(1.25rem, 5vw, 40px) clamp(1.25rem, 6vw, 44px)",
+          maxWidth: 620,
           width: "100%",
-          boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
+          maxHeight: "88vh",
+          overflowY: "auto",
           position: "relative",
+          boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
         }}
       >
         <button
           onClick={handleClose}
           style={{
-            position: "absolute", top: 12, right: 12, zIndex: 2,
-            background: "rgba(0,0,0,0.45)", border: "none", borderRadius: "50%",
+            position: "absolute", top: 18, right: 18, zIndex: 2,
+            background: "var(--glass-light)", border: "1px solid var(--border-subtle)", borderRadius: "50%",
             width: 36, height: 36, cursor: "pointer",
             display: "flex", alignItems: "center", justifyContent: "center",
-            color: "#fff",
+            color: "var(--text-primary)", fontSize: 18, lineHeight: 1,
           }}
           aria-label="Close"
         >
-          <IconClose />
+          ×
         </button>
 
-        <div style={{ position: "relative", width: "100%", aspectRatio: "4/5", background: "var(--bg-deep)" }}>
-          <Image
-            src={director.photo}
-            alt={director.name}
-            fill
-            style={{ objectFit: "cover", objectPosition: "top" }}
-            sizes="420px"
-          />
+        <div style={{ display: "flex", gap: 20, alignItems: "center", marginBottom: 24 }}>
+          {director.photo && (
+            <img
+              src={director.photo}
+              alt={director.name}
+              style={{
+                width: 100, height: 100, borderRadius: 16,
+                objectFit: "cover", objectPosition: "top",
+                flexShrink: 0, border: "2px solid var(--accent)",
+              }}
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+          )}
+          <div>
+            <p style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 4 }}>
+              {director.title}
+            </p>
+            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1.2rem, 3vw, 1.6rem)", color: "var(--text-primary)", margin: "0 0 6px", lineHeight: 1.2 }}>
+              {director.name}
+            </h2>
+          </div>
         </div>
 
-        <div style={{ padding: "20px 24px 24px", maxHeight: "40vh", overflowY: "auto" }}>
-          <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: 22, color: "var(--text-primary)", margin: 0 }}>
-            {director.name}
-          </p>
-          <p style={{ fontSize: 13, color: "var(--text-secondary)", marginTop: 4, marginBottom: 12 }}>
-            {director.title}
-          </p>
-          {director.bio && (
-            <div style={{ height: 1, background: "var(--border-subtle)", marginBottom: 12 }} />
-          )}
-          {director.bio && (
-            <p style={{ fontSize: "0.9rem", lineHeight: 1.6, color: "var(--text-secondary)", margin: 0 }}>
+        {director.bio && (
+          <>
+            <div style={{ height: 1, background: "var(--border-subtle)", marginBottom: 20 }} />
+            <p style={{ fontSize: "0.95rem", lineHeight: 1.78, color: "var(--text-secondary)", margin: 0 }}>
               {director.bio}
             </p>
-          )}
-        </div>
+          </>
+        )}
       </div>
     </div>,
     document.body
@@ -684,85 +691,107 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
    DIRECTOR CARD
 ══════════════════════════════════════════════════════════════ */
 function DirectorCard({ director, onClick }: { director: Director; onClick: () => void }) {
-  const cardRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
 
-  const handleEnter = () => {
-    gsap.to(cardRef.current, { y: -6, scale: 1.02, duration: 0.3, ease: "power2.out" });
-    const overlay = cardRef.current?.querySelector(".dir-overlay");
-    if (overlay) gsap.to(overlay, { opacity: 1, duration: 0.25 });
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = innerRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const rx = ((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * -6;
+    const ry = ((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 6;
+    gsap.to(card, { rotationX: rx, rotationY: ry, scale: 1.02, duration: 0.35, ease: "power2.out", transformPerspective: 800 });
+    if (glowRef.current) gsap.to(glowRef.current, { opacity: 1, duration: 0.3 });
   };
-  const handleLeave = () => {
-    gsap.to(cardRef.current, { y: 0, scale: 1, duration: 0.3, ease: "power2.out" });
-    const overlay = cardRef.current?.querySelector(".dir-overlay");
-    if (overlay) gsap.to(overlay, { opacity: 0, duration: 0.25 });
+
+  const handleMouseLeave = () => {
+    const card = innerRef.current;
+    if (!card) return;
+    gsap.to(card, { rotationX: 0, rotationY: 0, scale: 1, duration: 0.5, ease: "elastic.out(1,0.7)", transformPerspective: 800 });
+    if (glowRef.current) gsap.to(glowRef.current, { opacity: 0, duration: 0.3 });
   };
 
   return (
-    <div
-      ref={cardRef}
-      className="dir-card"
-      onClick={onClick}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-      style={{
-        background: "var(--glass-mid)",
-        border: "1px solid var(--border-subtle)",
-        borderRadius: 16,
-        overflow: "hidden",
-        cursor: "pointer",
-        boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-        opacity: 0,
-        position: "relative",
-      }}
-    >
-      {/* Photo */}
-      <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", background: "var(--bg-deep)" }}>
-        <Image
-          src={director.photo}
-          alt={director.name}
-          fill
-          style={{ objectFit: "cover", objectPosition: "top" }}
-          sizes="(max-width: 768px) 100vw, 320px"
-        />
-        {/* Hover overlay */}
-        <div
-          className="dir-overlay"
-          style={{
-            position: "absolute", inset: 0,
-            background: "rgba(0,0,0,0.3)",
-            opacity: 0,
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}
-        >
-          <span style={{
-            background: "rgba(255,255,255,0.15)",
-            backdropFilter: "blur(6px)",
-            border: "1px solid rgba(255,255,255,0.3)",
-            color: "#fff",
-            padding: "8px 18px",
-            borderRadius: 20,
-            fontSize: 13,
-            fontWeight: 600,
-          }}>
-            View Profile
-          </span>
-        </div>
-      </div>
+    <div style={{ perspective: 800 }} className="dir-card">
+      <div
+        ref={innerRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          background: "var(--bg-surface)",
+          border: "1px solid var(--border-subtle)",
+          borderRadius: 18,
+          padding: "36px 28px 32px",
+          position: "relative",
+          overflow: "hidden",
+          transformStyle: "preserve-3d",
+          willChange: "transform",
+          textAlign: "center",
+          cursor: "pointer",
+        }}
+      >
+        <div ref={glowRef} style={{ position: "absolute", inset: -1, borderRadius: 18, border: "1.5px solid var(--accent)", opacity: 0, pointerEvents: "none", boxShadow: "0 0 24px rgba(220,38,38,0.2)" }} />
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg, transparent, var(--accent), transparent)", borderRadius: "18px 18px 0 0" }} />
 
-      {/* Info */}
-      <div style={{ padding: "18px 20px 20px" }}>
-        <p style={{
-          fontFamily: "'Instrument Serif', serif",
-          fontSize: 20,
-          color: "var(--text-primary)",
-          margin: 0,
-          lineHeight: 1.25,
-        }}>
-          {director.name}
-        </p>
-        <p style={{ fontSize: 12.5, color: "var(--accent)", fontWeight: 600, marginTop: 5, marginBottom: 0, letterSpacing: "0.05em", textTransform: "uppercase" }}>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: 22 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={director.photo}
+            alt={director.name}
+            style={{ width: 160, height: 160, borderRadius: 20, objectFit: "cover", objectPosition: "top", border: "2px solid var(--border-mid)", filter: "grayscale(10%)", transition: "filter 0.4s ease" }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLImageElement).style.filter = "grayscale(0%)")}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLImageElement).style.filter = "grayscale(10%)")}
+            onError={(e) => {
+              const img = e.currentTarget as HTMLImageElement;
+              img.style.display = "none";
+            }}
+          />
+        </div>
+
+        <p style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 8 }}>
           {director.title}
         </p>
+        <h3 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)", color: "var(--text-primary)", lineHeight: 1.25, margin: 0 }}>
+          {director.name}
+        </h3>
+
+        <div style={{ marginTop: 24 }}>
+          <button
+            onClick={onClick}
+            style={{
+              width: "100%",
+              padding: "10px 0",
+              borderRadius: 10,
+              background: "transparent",
+              border: "1px solid var(--border-mid)",
+              color: "var(--text-primary)",
+              fontSize: "0.82rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 6,
+              transition: "background 0.2s, border-color 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.background = "var(--accent)";
+              (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--accent)";
+              (e.currentTarget as HTMLButtonElement).style.color = "#fff";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.background = "transparent";
+              (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--border-mid)";
+              (e.currentTarget as HTMLButtonElement).style.color = "var(--text-primary)";
+            }}
+          >
+            Read Full Profile
+            <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   );
