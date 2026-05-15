@@ -27,6 +27,7 @@ interface Vehicle {
   luggage: string;
   category: Category;
   type: VehicleType;
+  imageObjectFit?: "cover" | "contain";
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -39,6 +40,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "hyundai-aura", name: "Hyundai Aura", type: "Sedans", category: "ECONOMY",
     seating: "5 Seater Including Pilot", luggage: "402 Litres",
+    imageObjectFit: "cover",
     image: ["/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_15_47%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_23_33%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_19_35%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_21_57%20PM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_11%20AM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_16%20AM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_20%20AM.png"],
   },
 
@@ -53,6 +55,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "camry-hybrid", name: "Toyota Camry Hybrid", type: "Sedans", category: "PREMIUM",
     seating: "5 Seater Including Pilot", luggage: "524 Litres",
+    imageObjectFit: "cover",
     image: ["/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png","/Mann car pictures/Toyota camry hybrid/WhatsApp Image 2026-05-10 at 13.55.06.jpeg"],
   },
   // Premium Plus
@@ -76,12 +79,14 @@ const VEHICLES: Vehicle[] = [
   {
     id: "bmw-5-series", name: "BMW 5 Series", type: "Sedans", category: "LUXURY",
     seating: "5 Seater Including Pilot", luggage: "500 Litres",
+    imageObjectFit: "cover",
     image: ["/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_52_22%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_49_04%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_46_45%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_48_21%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2002_48_20%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2002_56_01%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_39_45%20AM.png"],
   },
   // Super Luxury
   {
     id: "mercedes-s-class", name: "Mercedes-Benz S-Class", type: "Sedans", category: "SUPER LUXURY",
     seating: "4–5 Seater Including Pilot", luggage: "550 Litres",
+    imageObjectFit: "cover",
     image: ["/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_07_15%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_10_31%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_09_09%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_10_15%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_11_02%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_11_23%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_12_17%20PM.png"],
   },
   {
@@ -140,6 +145,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "fortuner", name: "Toyota Fortuner", type: "SUVs", category: "PREMIUM PLUS",
     seating: "7 Seater Including Pilot", luggage: "296 Litres (all rows up)",
+    imageObjectFit: "cover",
     image: ["/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2001_03_01%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_47%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_20%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_51%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_29%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_35_18%20PM.png"],
   },
   {
@@ -207,11 +213,13 @@ const VEHICLES: Vehicle[] = [
   {
     id: "urbania-mod", name: "Force Urbania (Modified)", type: "Vanity van", category: "PREMIUM",
     seating: "9 / 12 Seater Including Pilot", luggage: "Very limited boot; last row removable for bags",
+    imageObjectFit: "cover",
     image: ["/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_24_25%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_18_13%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_22_35%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_28_40%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_29_12%20AM.png"],
   },
   {
     id: "urbania-std", name: "Force Urbania", type: "Vanity van", category: "PREMIUM",
     seating: "13 / 17 Seater Including Pilot", luggage: "Dedicated compartment — fits 8–12 medium suitcases",
+    imageObjectFit: "cover",
     image: ["/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_24_25%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_18_13%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_22_35%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_28_40%20AM.png","/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_29_12%20AM.png"],
   },
   // Premium Plus
@@ -223,6 +231,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "toyota-hiace", name: "Toyota Hiace", type: "Vanity van", category: "PREMIUM PLUS",
     seating: "9 Seater Including Pilot", luggage: "Fits 10–12 large check-in suitcases",
+    imageObjectFit: "cover",
     image: ["/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_27_07%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_28_04%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_27_03%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_33_44%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_28_09%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_27_57%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_28_13%20PM.png","/Mann%20car%20pictures/Toyota%20Hiace%20Luxury%20edition%207%20seater/ChatGPT%20Image%20May%204%2C%202026%2C%2001_27_12%20PM.png"],
   },
   // Luxury
@@ -252,6 +261,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "vellfire", name: "Toyota Vellfire", type: "Vanity van", category: "LUXURY",
     seating: "4-6 Seater Including Pilot", luggage: "Premium Luggage Space",
+    imageObjectFit: "cover",
     image: ["/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_41_13%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_39_48%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_43_16%20PM%20(1).png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_44_53%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_46_22%20PM.png","/Mann car pictures/Vellfire/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_48_16%20PM.png"],
   },
 
@@ -265,6 +275,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "volvo-washroom", name: "Volvo Coach with Washroom", type: "Coaches", category: "LUXURY",
     seating: "41 / 45 Seater Including Pilot", luggage: "Fits 40–50 large suitcases",
+    imageObjectFit: "cover",
     image: ["/Mann car pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_27_10%20PM.png","/Mann car pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_24_50%20PM.png","/Mann car pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_29_22%20PM.png","/Mann car pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_31_42%20PM.png","/Mann car pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_33_26%20PM.png","/Mann car pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_34_19%20PM.png","/Mann car pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_37_47%20PM.png","/Mann car pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_37_58%20PM.png","/Mann car pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_43_10%20PM.png"],
   },
   // Super Luxury
@@ -299,11 +310,13 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sd-camry", name: "Toyota Camry Hybrid (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "5 Seater Excluding Pilot", luggage: "524 Litres",
+    imageObjectFit: "cover",
     image: ["/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png"],
   },
   {
     id: "sd-fortuner", name: "Toyota Fortuner (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "7 Seater Excluding Pilot", luggage: "296L (all rows) / 716L (3rd row folded)",
+    imageObjectFit: "cover",
     image: ["/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2001_03_01%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_47%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_20%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_51%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_29%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_35_18%20PM.png"],
   },
 
@@ -337,6 +350,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "lt-s-class", name: "Mercedes-Benz S-Class (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
     seating: "4–5 Seater Including Pilot", luggage: "550 Litres",
+    imageObjectFit: "cover",
     image: ["/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_07_15%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_09_09%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_10_15%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_10_31%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_11_02%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_11_23%20PM.png","/Mann%20car%20pictures/Mercedes-Benz%20S-Class/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_12_17%20PM.png"],
   },
   {
@@ -419,7 +433,7 @@ function IconCheck({ size = 13 }: { size?: number }) {
 /* ─────────────────────────────────────────────────────────────
    CAROUSEL
 ───────────────────────────────────────────────────────────── */
-function ImageCarousel({ images, alt, externalHover }: { images: string[]; alt: string; externalHover?: boolean }) {
+function ImageCarousel({ images, alt, externalHover, objectFit = "cover" }: { images: string[]; alt: string; externalHover?: boolean; objectFit?: "cover" | "contain" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [internalHover, setInternalHover] = useState(false);
   const isHovered = externalHover ?? internalHover;
@@ -452,7 +466,7 @@ function ImageCarousel({ images, alt, externalHover }: { images: string[]; alt: 
         src={images[currentIndex]}
         alt={`${alt} - Image ${currentIndex + 1}`}
         fill
-        style={{ objectFit: "cover", transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1)" }}
+        style={{ objectFit: objectFit, transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1)" }}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
         className="card-image"
       />
@@ -673,8 +687,8 @@ function VehicleCard({ vehicle, onSelect }: { vehicle: Vehicle; onSelect: (v: Ve
       onMouseLeave={() => setIsHovered(false)}
       style={{ borderRadius: "1rem", overflow: "hidden", cursor: "pointer", position: "relative" }}
     >
-      <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
-        <ImageCarousel images={images} alt={vehicle.name} externalHover={isHovered} />
+      <div style={{ position: "relative", width: "100%", aspectRatio: "4/3" }}>
+        <ImageCarousel images={images} alt={vehicle.name} externalHover={isHovered} objectFit={vehicle.imageObjectFit} />
         <div style={{
           position: "absolute", inset: 0,
           background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.42) 100%)",

@@ -886,7 +886,7 @@ export default function FlagshipProjectPage() {
                 lineHeight: 1.15,
                 marginBottom: "1.25rem",
               }}>
-                The NIA App
+                The Noida International Airport App
               </h2>
               <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
                 Experience seamless travel right from your smartphone. The official Noida International Airport (NIA) application brings your entire journey to your fingertips. 
@@ -943,6 +943,30 @@ export default function FlagshipProjectPage() {
               </div>
             </div>
 
+          </div>
+
+          {/* NIA Inauguration Photos */}
+          <div style={{ marginTop: "clamp(3rem, 6vw, 5rem)" }}>
+            <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
+              NIA Inauguration
+            </span>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "clamp(1rem, 2vw, 1.5rem)" }}>
+              {[
+                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.46%20PM.jpeg",
+                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.43%20PM%20(4).jpeg",
+              ].map((src, i) => (
+                <div key={i} style={{ position: "relative", width: "100%", aspectRatio: "16/9", borderRadius: 16, overflow: "hidden", border: "1px solid var(--border-subtle)" }}>
+                  <Image
+                    src={src}
+                    alt={`NIA Inauguration ${i + 1}`}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    unoptimized
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
