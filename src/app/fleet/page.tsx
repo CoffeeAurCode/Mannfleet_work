@@ -197,7 +197,8 @@ const VEHICLES: Vehicle[] = [
   {
     id: "tempo-traveller", name: "Tempo Traveller", type: "Vanity van", category: "ECONOMY",
     seating: "9 / 12 / 16 Seater Including Pilot", luggage: "Limited rear boot + Roof Carrier for bulk",
-    image: "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=700&q=80",
+    imageObjectFit: "cover",
+    image: ["/Mann%20car%20pictures/Tempo%20traveller/ChatGPT%20Image%20May%2015%2C%202026%2C%2011_17_48%20PM.png", "/Mann%20car%20pictures/Tempo%20traveller/ChatGPT%20Image%20May%2015%2C%202026%2C%2011_17_56%20PM.png", "/Mann%20car%20pictures/Tempo%20traveller/ChatGPT%20Image%20May%2015%2C%202026%2C%2011_18_00%20PM.png", "/Mann%20car%20pictures/Tempo%20traveller/ChatGPT%20Image%20May%2015%2C%202026%2C%2011_18_08%20PM.png", "/Mann%20car%20pictures/Tempo%20traveller/ChatGPT%20Image%20May%2015%2C%202026%2C%2011_18_13%20PM.png"],
   },
   // Premium
   {
