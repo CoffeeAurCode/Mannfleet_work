@@ -65,7 +65,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     title: "IPO / DRHP",
     icon: "📄",
     docs: [
-      { label: "DRHP — Mann Fleet Partners Ltd.", file: "DRHP_Mann-Fleet-Partners-Ltd.pdf" },
+      { label: "DRHP — Mann Fleet Partners Limited", file: "DRHP_Mann-Fleet-Partners-Limitedpdf" },
       { label: "DRHP Newspaper — Financial Express", file: "DRHP-Newspaper-Publication_Financial-Express.pdf" },
       { label: "DRHP Newspaper — Jansatta", file: "DRHP-Newspaper-Publication_Jansatta.pdf" },
       { label: "DRHP Newspaper — Pratahkiran", file: "DRHP-Newspaper-Publication_Pratahkiran.pdf" },
@@ -574,7 +574,7 @@ export default function InvestorsPage() {
             opacity: 0,
           }}
         >
-          Corporate governance, regulatory disclosures, and board information for Mann Fleet Partners Ltd.
+          Corporate governance, regulatory disclosures, and board information for Mann Fleet Partners Limited
         </p>
       </section>
 

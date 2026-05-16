@@ -1041,7 +1041,7 @@ export default function WeCarePage() {
       {showPdf && (
         <PdfModal
           file="CSR-Policy_Mann.pdf"
-          label="CSR Policy — Mann Fleet Partners Ltd."
+          label="CSR Policy — Mann Fleet Partners Limited"
           onClose={() => setShowPdf(false)}
         />
       )}

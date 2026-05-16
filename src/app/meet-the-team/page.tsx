@@ -1416,19 +1416,16 @@ export default function MeetTheTeamPage() {
           <p style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 20 }}>
             Get in touch
           </p>
-          <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(2rem, 6vw, 4.5rem)", fontWeight: 400, color: "var(--text-primary)", marginBottom: 20, lineHeight: 1.1 }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(2rem, 6vw, 4.5rem)", fontWeight: 400, color: "var(--text-primary)", marginBottom: 40, lineHeight: 1.1 }}>
             Work with us.
           </h2>
-          <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.1rem)", color: "var(--text-secondary)", maxWidth: 480, margin: "0 auto 40px", lineHeight: 1.7 }}>
-            Whether you need a luxury fleet, embassy transfers, or corporate transport — our team is ready.
-          </p>
           <a
             href="mailto:info@mannfleetpartners.com"
             style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 32px", borderRadius: 50, background: "var(--accent)", color: "#fff", fontSize: "0.88rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", transition: "background 0.2s" }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "var(--accent-dark)")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "var(--accent)")}
           >
-            Work Inquiry
+            Job Enquiry
             <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
               <path d="M7 17L17 7" /><path d="M7 7h10v10" />
             </svg>
