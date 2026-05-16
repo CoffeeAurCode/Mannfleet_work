@@ -310,9 +310,9 @@ export default function HeroSection() {
         }} />
 
         <div className="hero-stats-row" style={{ display: "flex", flexWrap: "wrap", gap: "0.85rem", alignItems: "stretch" }}>
-          <StatCard value="200+" label="Premium Vehicles" sub="SUVs, sedans, sports & luxury" />
-          <StatCard value="IATA" label="Approved & Accredited" sub="Globally recognised standard" />
-          <StatCard value="500+" label="Trusted Clients" sub="Corporates, embassies & VIPs" />
+          <StatCard value="200+" label="Premium Vehicles" sub="SUVs, sedans, sports and luxury" />
+          <StatCard value="IATA" label="Approved and Accredited" sub="Globally recognised standard" />
+          <StatCard value="500+" label="Trusted Clients" sub="Corporates, embassies and VIPs" />
 
           {/* Brands panel — font-serif for brand names, uppercase */}
           <div style={{

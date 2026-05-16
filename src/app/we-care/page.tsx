@@ -622,7 +622,7 @@ export default function WeCarePage() {
         {/* ── Key Initiatives — Accordion ── */}
         <section style={sectionWrap}>
           <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block" }}>
-            Key Initiatives &amp; Partnerships
+            Key Initiatives and Partnerships
           </span>
           <h2 className="font-serif" style={{
             fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
@@ -800,7 +800,7 @@ export default function WeCarePage() {
         <section style={{ background: "var(--bg-surface)", padding: "1px 0" }}>
           <div style={sectionWrap} ref={govRef}>
             <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block" }}>
-              Governance &amp; Oversight
+              Governance and Oversight
             </span>
             <h2 className="font-serif" style={{
               fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
@@ -821,7 +821,7 @@ export default function WeCarePage() {
                   icon: <IconClipboard />,
                   step: "01",
                   title: "CSR Committee",
-                  action: "Review & Recommend",
+                  action: "Review and Recommend",
                   desc: "Dedicated CSR Committee reviews proposed activities, evaluates alignment with statutory requirements, and recommends initiatives to the Board.",
                 },
                 {

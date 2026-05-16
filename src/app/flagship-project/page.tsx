@@ -525,7 +525,7 @@ export default function FlagshipProjectPage() {
                 Icon: IconRoute,
                 title: "City Connectivity Solutions",
                 body: "Direct links to Pari Chowk · Botanical Garden · Greater Noida West · GBU Campus — designed for both passenger mobility and daily workforce commutes.",
-                tags: ["4 city nodes", "Passenger & workforce", "Scheduled routes"],
+                tags: ["4 city nodes", "Passenger and workforce", "Scheduled routes"],
               },
             ].map(({ Icon, title, body, tags }, i) => (
               <div key={i} style={{
@@ -773,7 +773,7 @@ export default function FlagshipProjectPage() {
               Routes Connecting the Region
             </h2>
             <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", maxWidth: 520, margin: "0 auto" }}>
-              Key corridors linking Noida International Airport to the greater NCR region and beyond — including Agra & the Taj Mahal.
+              Key corridors linking Noida International Airport to the greater NCR region and beyond — including Agra and the Taj Mahal.
             </p>
           </div>
 
@@ -815,11 +815,11 @@ export default function FlagshipProjectPage() {
               gap: "clamp(0.75rem, 2vw, 1.5rem)",
             }}>
               {[
-                { name: "Agra — Taj Mahal", desc: "UNESCO World Heritage Site & one of the New Seven Wonders of the World — via Mann Taj Express", dist: "~180 km", featured: true },
+                { name: "Agra — Taj Mahal", desc: "UNESCO World Heritage Site and one of the New Seven Wonders of the World — via Mann Taj Express", dist: "~180 km", featured: true },
                 { name: "Pari Chowk", desc: "Greater Noida central hub, major transit interchange", dist: "~12 km", featured: false },
                 { name: "Botanical Garden", desc: "Noida Metro interchange, connecting Delhi NCR", dist: "~35 km", featured: false },
-                { name: "Greater Noida West", desc: "Emerging residential & commercial corridor", dist: "~18 km", featured: false },
-                { name: "GBU Campus", desc: "Gautam Buddha University, student & faculty mobility", dist: "~8 km", featured: false },
+                { name: "Greater Noida West", desc: "Emerging residential and commercial corridor", dist: "~18 km", featured: false },
+                { name: "GBU Campus", desc: "Gautam Buddha University, student and faculty mobility", dist: "~8 km", featured: false },
               ].map(({ name, desc, dist, featured }) => (
                 <div key={name} style={{
                   background: featured ? "rgba(220,38,38,0.06)" : "var(--bg-base)",

@@ -1476,7 +1476,7 @@ export default function AboutPage() {
                 <h3 className="font-serif" style={{
                   fontSize: "1.4rem", fontWeight: 400,
                   color: "var(--text-primary)", margin: "0 0 0.6rem",
-                }}>Diplomatic &amp; Government Mandates</h3>
+                }}>Diplomatic and Government Mandates</h3>
                 <p className="font-sans" style={{
                   fontSize: "0.875rem", lineHeight: 1.7,
                   color: "var(--text-secondary)", margin: 0,
@@ -1553,7 +1553,7 @@ export default function AboutPage() {
                 <h3 className="font-serif" style={{
                   fontSize: "1.4rem", fontWeight: 400,
                   color: "var(--text-primary)", margin: "0 0 0.6rem",
-                }}>Industry &amp; Media Recognition</h3>
+                }}>Industry and Media Recognition</h3>
                 <p className="font-sans" style={{
                   fontSize: "0.875rem", lineHeight: 1.7,
                   color: "var(--text-secondary)", margin: 0,
@@ -1821,7 +1821,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
-                      Cleared &amp; Certified
+                      Cleared and Certified
                     </span>
                     <h3 className="font-sans" style={{
                       fontSize: "1.15rem", fontWeight: 700,
@@ -1872,7 +1872,7 @@ export default function AboutPage() {
                     <h3 className="font-sans" style={{
                       fontSize: "1.15rem", fontWeight: 700,
                       color: "var(--text-primary)", margin: "0 0 0.6rem",
-                    }}>Pan-India &amp; Global Reach</h3>
+                    }}>Pan-India and Global Reach</h3>
                     <p className="font-sans" style={{
                       fontSize: "0.875rem", lineHeight: 1.7,
                       color: "var(--text-secondary)", margin: 0,
@@ -2226,7 +2226,7 @@ export default function AboutPage() {
                 fontSize: "0.875rem", lineHeight: 1.7,
                 color: "var(--text-secondary)", margin: 0,
               }}>
-                Appointed Official Transport Management Company for the G20 Summit (North &amp; East India) by the Ministry of External Affairs.
+                Appointed Official Transport Management Company for the G20 Summit (North and East India) by the Ministry of External Affairs.
               </p>
             </div>
 
@@ -2328,7 +2328,7 @@ export default function AboutPage() {
               <h3 className="font-sans" style={{
                 fontSize: "1.15rem", fontWeight: 700,
                 color: "var(--text-primary)", margin: "0 0 0.6rem",
-              }}>Sports &amp; Entertainment</h3>
+              }}>Sports and Entertainment</h3>
               <p className="font-sans" style={{
                 fontSize: "0.875rem", lineHeight: 1.7,
                 color: "var(--text-secondary)", margin: 0,
@@ -2382,7 +2382,7 @@ export default function AboutPage() {
               initVal: "0+",
               suffix: "+ VVIPs",
               label: "Served at Landmark Events",
-              sub: "Heads of state & celebrities",
+              sub: "Heads of state and celebrities",
             },
           ].map(({ numRef, initVal, suffix, label, sub }, i) => (
             <div key={label} style={{
@@ -2600,7 +2600,7 @@ export default function AboutPage() {
               "Nita Ambani Cultural Center launch",
               "Global Investors Summit (Lucknow)",
               "IPL since 2010 till date — Mumbai Indians, Kolkata Knight Riders, CSK, Gujarat Titans",
-              "All US Presidents visits to India since 2010 — Honorable Mr. Barack Obama & Mr. Donald Trump",
+              "All US Presidents visits to India since 2010 — Honorable Mr. Barack Obama and Mr. Donald Trump",
               "AFC Women's Asian Cup 2022 India",
               "ISL since the launch in 2013",
               "Champions League in 2011–2013 through BCCI",

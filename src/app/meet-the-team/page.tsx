@@ -39,35 +39,35 @@ const LEADERS: Leader[] = [
     education: ["Bachelor of Commerce (First Year) — University of Delhi, 1985"],
     accolades: [
       "Pioneer in luxury vehicle transition since 1986",
-      "High-profile events & embassy delegations",
+      "High-profile events and embassy delegations",
       "Spearheads the entire premier fleet rollout",
     ],
   },
   {
     id: "parmjeet",
     name: "Parmjeet Mann",
-    title: "Executive Director & Head of HR",
+    title: "Executive Director and Head of HR",
     email: "parmjeet@manntours.com",
     photo: "/teams/parmjeet%20mann.jpeg",
     objectPosition: "top",
     teaser:
-      "Executive Director and Head of Human Resources, instrumental in securing high-value contracts with embassies, MNCs and prestigious events since 2005.",
+      "Executive Director and Head of Human Resources, instrumental in securing high-value contracts with embassies, MNCs, and prestigious events since 2005.",
     bio: "Parmjeet Mann is the Promoter, Executive Director and Head of Human Resources Department of our Company. She has completed diploma in Fashion Design from JD Institute of Fashion Technology in the year 2001–02 and also completed her PG Diploma in microbiology and food technology from Punjabi University in the year 1994. She has also done Bachelor of Science (Honors) in Botany from Panjab University in the year 1993. She has been associated with our Company from August 2005. She has played a crucial role in driving the Company's growth. She has been instrumental in securing high-value contracts with embassies, multinational corporations and prestigious events. She has also developed and trained a team of 15 sales professionals, ensuring consistent business growth and client retention. Additionally, as Head of Human Resources, she manages a workforce of our employees, including chauffeurs and office staffs, streamlining business functions and ensuring operational efficiency.",
     education: [
       "BSc (Hons) Botany — Panjab University, 1993",
-      "PG Diploma in Microbiology & Food Technology — Punjabi University, 1994",
+      "PG Diploma in Microbiology and Food Technology — Punjabi University, 1994",
       "Diploma in Fashion Design — JD Institute of Fashion Technology, 2001–02",
     ],
     accolades: [
       "Associated with the Company since August 2005",
-      "Secured high-value embassy & MNC contracts",
+      "Secured high-value embassy and MNC contracts",
       "Developed & trained 15 sales professionals",
     ],
   },
   {
     id: "robin",
     name: "Robin Singh Mann",
-    title: "Executive Director & Head of Marketing",
+    title: "Executive Director and Head of Marketing",
     email: "robin@faze.in",
     photo: "/teams/Robin%20Mann%20Sir%20photo.png",
     objectPosition: "top",
@@ -135,20 +135,20 @@ const SALES_TEAM: SalesMember[] = [
   {
     id: "amarjeet",
     name: "Amarjeet Mann",
-    title: "President Marketing",
+    title: "President-Marketing",
     email: "amarjeet@manntours.com",
     photo: "/teams/PHOTO-2026-04-20-18-02-49.jpg",
     objectPosition: "top",
-    bio: "Ms. Amarjeet Mann has an experience of more than 30 years in Sales & Marketing and is currently the President — Marketing at Mann Fleet Partners Limited since October 2022, focusing on revenue strategies and managing high-profile corporate events and international delegations. Previously, she was a Team Lead at Disney Star from January to September 2022, driving revenue for Star Maa in Delhi. Ms. Mann boasts over two decades at The Times of India Group, holding diverse roles including General Manager — Delhi Head for Consumer Durable Vertical & Telecom. A Luxury and Lifestyle Specialist, she launched India's first luxury summit and played a key role in organizing events like Femina Miss India. She holds a Post Graduate Diploma in Marketing from Apeejay School of Marketing and a Graduation from Lady Irwin College. Her continuous professional development includes certifications in Digital Marketing and Analytics from ISB. Ms. Mann's key skills encompass persuasive communication, key account management, and strategic thinking.",
+    bio: "Ms. Amarjeet Mann has more than 30 years of experiences in Sales and Marketing and is currently the President — Marketing at Mann Fleet Partners Limited since October 2022, focusing on revenue strategies and managing high-profile corporate events and international delegations. Previously, she was a Team Lead at Disney Star from January to September 2022, driving revenue for Star Maa in Delhi. Ms. Mann boasts over two decades at The Times of India Group, holding diverse roles including General Manager — Delhi Head for Consumer Durable Vertical & Telecom. A Luxury and Lifestyle Specialist, she launched India's first luxury summit and played a key role in organizing events like Femina Miss India. She holds a Post Graduate Diploma in Marketing from Apeejay School of Marketing and a Graduation from Lady Irwin College. Her continuous professional development includes certifications in Digital Marketing and Analytics from ISB. Ms. Mann's key skills encompass persuasive communication, key account management, and strategic thinking.",
   },
   {
     id: "jagdeep",
     name: "Jagdeep Singh Mann",
-    title: "President Sales",
+    title: "President-Sales",
     email: "jagdeep@manntours.com",
     photo: "/teams/PHOTO-2026-04-20-18-02-49 2.jpg",
     objectPosition: "top",
-    bio: "Mr. Jagdeep Singh Mann, having approximately 12 years of robust experience in sales, marketing, and operations, currently serves as President — Sales at Mann Fleet Partners Limited. His journey with the company began as a dedicated Management Trainee in Marketing and Sales. Demonstrating exceptional aptitude and commitment during this initial period, he was deservedly retained as a permanent employee, progressively expanding his expertise across critical business functions. Academically, Mr. Mann is a distinguished alumnus of Maharshi Dayanand University, Rohtak, where he earned a Bachelor of Business Administration (Industry Integrated).",
+    bio: "Mr. Jagdeep Singh Mann has approximately 12 years of experience in sales, marketing, and operations, currently serves as President — Sales at Mann Fleet Partners Limited. His journey with the company began as a dedicated Management Trainee in Marketing and Sales. Demonstrating exceptional aptitude and commitment during this initial period, he was deservedly retained as a permanent employee, progressively expanding his expertise across critical business functions. Academically, Mr. Mann is a distinguished alumnus of Maharshi Dayanand University, Rohtak, where he earned a Bachelor of Business Administration (Industry Integrated).",
   },
   {
     id: "ashwani",
@@ -157,7 +157,7 @@ const SALES_TEAM: SalesMember[] = [
     email: "ashwani@manntours.com",
     photo: "/teams/Mr.%20Ashwani%20Kumar%20Picture.png",
     objectPosition: "top",
-    bio: "Mr. Ashwani Kumar is a professional with over 11 years of diverse experience in sales, marketing, operations, MICE & management. He has been a key part of Mann Fleet Partners Limited since 2017, currently serving as Assistant Sales Manager. Known for his strong client handling, business development skills, and operational efficiency, he has consistently contributed to driving growth and delivering high-quality service experiences.",
+    bio: "Mr. Ashwani Kumar is a professional with over 11 years of diverse experience in sales, marketing, operations, MICE and management. He has been a key part of Mann Fleet Partners Limited since 2017, currently serving as Assistant Sales Manager. Known for his strong client handling, business development skills, and operational efficiency, he has consistently contributed to driving growth and delivering high-quality service experiences.",
   },
 ];
 
@@ -1388,7 +1388,7 @@ export default function MeetTheTeamPage() {
         </div>
       </section>
 
-      {/* ═══ SALES & MARKETING TEAM ═══ */}
+      {/* ═══ SALES and MARKETING TEAM ═══ */}
       <section
         ref={salesSecRef}
         style={{ padding: "0 24px 100px", maxWidth: 1200, margin: "0 auto" }}
@@ -1397,7 +1397,7 @@ export default function MeetTheTeamPage() {
           labelRef={salesLabelRef}
           divRef={salesDivRef}
           label="Our Team"
-          heading="Sales & Marketing"
+          heading="Sales and Marketing"
           sub="The driving force behind our client relationships, partnerships, and revenue growth."
         />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28, marginTop: 52 }}>

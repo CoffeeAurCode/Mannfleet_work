@@ -64,14 +64,14 @@ function IconLink({ size = 16 }: { size?: number }) {
 const BRANCH_CONTACTS = [
   {
     name: "Amarjeet Singh Mann",
-    designation: "President Marketing",
+    designation: "President-Marketing",
     phone: "+91-9990222888",
     email: "amarjeet@manntours.com",
     photo: "/teams/PHOTO-2026-04-20-18-02-49.jpg",
   },
   {
     name: "Jagdeep Singh Mann",
-    designation: "President Sales",
+    designation: "President-Sales",
     phone: "+91-9540222888",
     email: "jagdeep@manntours.com",
     photo: "/teams/PHOTO-2026-04-20-18-02-49 2.jpg",
@@ -371,7 +371,7 @@ export default function ContactPage() {
               onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(200,40,42,0.38)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(200,40,42,0.28)"; }}
             >
-              Bookings for Cabs &amp; Vehicles
+              Bookings for Cabs and Vehicles
               <ArrowUpRight size={14} />
             </Link>
 

@@ -30,8 +30,8 @@ const SERVICE_DATA: Record<string, {
     features: [
       "Dedicated fleet management team",
       "12+ month flexible contracts",
-      "Comprehensive maintenance & support",
-      "Corporate billing & reporting",
+      "Comprehensive maintenance and support",
+      "Corporate billing and reporting",
       "Nationwide coverage across 80+ cities",
       "GST-compliant invoicing",
     ],
@@ -45,7 +45,7 @@ const SERVICE_DATA: Record<string, {
     description: "On-demand chauffeur-driven services for corporates, airport transfers, and travel. Available 24/7 across 80+ cities with a fleet of premium, well-maintained vehicles and professional drivers.",
     features: [
       "Instant booking available",
-      "Airport & hotel transfers",
+      "Airport and hotel transfers",
       "Corporate travel management",
       "Pan-India coverage",
       "24/7 customer support",
@@ -63,7 +63,7 @@ const SERVICE_DATA: Record<string, {
       "Fixed-route scheduling",
       "Real-time GPS tracking",
       "Employee transport solutions",
-      "Campus & office connectivity",
+      "Campus and office connectivity",
       "80+ cities covered",
       "Safety-first operations",
     ],
@@ -78,7 +78,7 @@ const SERVICE_DATA: Record<string, {
     features: [
       "No driver required",
       "200+ vehicles available",
-      "Short & long-term lease options",
+      "Short and long-term lease options",
       "Zero maintenance hassle",
       "Comprehensive insurance coverage",
       "Doorstep delivery available",
@@ -94,7 +94,7 @@ const SERVICE_DATA: Record<string, {
     features: [
       "Dedicated event coordinators",
       "Multi-vehicle fleet management",
-      "VIP & delegation transfers",
+      "VIP and delegation transfers",
       "Pan-India event logistics",
       "500+ events handled",
       "On-site coordination teams",

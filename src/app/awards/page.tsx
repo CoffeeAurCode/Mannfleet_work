@@ -98,7 +98,7 @@ const APPRECIATIONS = [
   { label: "Joe Biden — Vice President, USA", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_53%20PM.png" },
   { label: "US Mission Token of Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_50_56%20PM.png" },
   { label: "IATA Accreditation", file: "/Appreciation/Appreciation Letter_IATA.jpg" },
-  { label: "IATA AGM & World Air Transport Summit 2025", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_50%20PM.png" },
+  { label: "IATA AGM and World Air Transport Summit 2025", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_50%20PM.png" },
   { label: "Reliance Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_40%20PM.png" },
   { label: "Pernod Ricard Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_53%20PM.png" },
   { label: "Tamarind Global Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_59%20PM.png" },
@@ -129,7 +129,7 @@ const TESTIMONIALS = [
   },
   {
     quote: "My group had a fantastic time on our ‘Discover India Experience’ and the team was exceptional. Everyone enjoyed the ‘Jet on Wheels’ experience and was extremely impressed with the driving skills and overall service. We are looking forward to our return with our next group and to working together again.",
-    author: "Nico & Belinda Moretti",
+    author: "Nico and Belinda Moretti",
   },
   {
     quote: "Mann’s prompt service, well-maintained vehicles, and professional drivers contributed significantly to the smooth and successful execution of the visit. We greatly appreciate Mann’s commitment to excellence and reliability, and the hard work and dedication of the entire team did not go unnoticed.",
@@ -166,7 +166,7 @@ export default function AwardsPage() {
             margin: "0 0 1.25rem",
             letterSpacing: "0.01em",
           }}>
-            Awards &amp;<br />
+            Awards and<br />
             <span className="italic" style={{ color: "var(--text-secondary)" }}>Accolades</span>
           </h1>
           <p className="font-sans" style={{

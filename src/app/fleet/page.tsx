@@ -259,7 +259,7 @@ const VEHICLES: Vehicle[] = [
   // Luxury
   {
     id: "volvo-luxury", name: "Volvo Coach (Luxury)", type: "Coaches", category: "LUXURY",
-    seating: "41/45 Seater (12m) & 49/53 Seater (13.5m) Including Pilot", luggage: "Fits 35–40 and 50–55 large suitcases resp.",
+    seating: "41/45 Seater (12m) and 49/53 Seater (13.5m) Including Pilot", luggage: "Fits 35–40 and 50–55 large suitcases resp.",
     image: ["/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_50_51%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_29_00%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_35_35%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_38_30%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_55_20%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_16_06%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_45_09%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_59_59%20PM.png"],
   },
   {
@@ -1072,7 +1072,7 @@ function FleetHero() {
             opacity: 0,
           }}
         >
-          {["IATA Accredited", "Chauffeur-driven", "24/7 Support", "Corporate & VIP Ready"].map((item) => (
+          {["IATA Accredited", "Chauffeur-driven", "24/7 Support", "Corporate and VIP Ready"].map((item) => (
             <span key={item} className="font-sans" style={{
               display: "flex", alignItems: "center", gap: "0.4rem",
               fontSize: "0.72rem", fontWeight: 600,
@@ -1148,7 +1148,7 @@ export default function FleetPage() {
                 "Fire extinguisher",
                 "Napkin",
                 "Organic fragrance",
-                "Cleaned & bacteria free interior",
+                "Cleaned and bacteria free interior",
                 "Mineral water in cars",
                 "Wifi Facility",
                 "Hand sanitizers",
