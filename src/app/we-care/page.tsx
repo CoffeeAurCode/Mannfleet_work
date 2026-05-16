@@ -460,7 +460,7 @@ export default function WeCarePage() {
             margin: 0,
           }}>
             At Mann Fleet Partners Limited, we believe that business growth must go hand in hand with
-            social responsibility. Our CSR initiatives are guided by the Companies Act, 2013, and
+            social responsibility. Our CSR initiatives are guided by the Companies Act, 2013, and are
             focused on creating meaningful, long-term impact in the communities we serve.
           </p>
 

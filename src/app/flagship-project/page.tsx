@@ -294,8 +294,8 @@ export default function FlagshipProjectPage() {
                 marginBottom: 24,
               }}>
                 <p style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)", lineHeight: 1.85, color: "var(--text-secondary)", margin: 0 }}>
-                  Christoph Schnellmann, formerly the CEO of Noida International Airport (NIA), recently announced a partnership with Mann Fleet Partners Limited, led by{" "}
-                  <strong style={{ color: "var(--text-primary)" }}>Robin Singh Mann</strong>, to provide comprehensive ground mobility solutions, including rental cars, terminal shuttles, and city connectivity such as Pari Chowk. This initiative aims to ensure smooth and reliable passenger transport ahead of the airport&apos;s operational launch.
+                  Christoph Schnellmann, former CEO of Noida International Airport (NIA), recently announced a partnership with Mann Fleet Partners Limited, led by{" "}
+                  <strong style={{ color: "var(--text-primary)" }}>Robin Singh Mann</strong>, to provide comprehensive ground mobility solutions, including rental cars, terminal shuttles, and city connectivity to locations such as Pari Chowk. This initiative aims to ensure smooth and reliable passenger transport ahead of the airport&apos;s operational launch.
                 </p>
               </div>
 
@@ -410,7 +410,7 @@ export default function FlagshipProjectPage() {
                 Mann Taj Express
               </h2>
               <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-                From Noida International Airport to the Taj Mahal, in complete luxury. The Taj Mahal is not just India&apos;s most iconic monument — it is a UNESCO World Heritage Site and one of the New Seven Wonders of the World.
+                From Noida International Airport to the Taj Mahal, in complete luxury. The Taj Mahal is not just India&apos;s most iconic monument, it is a UNESCO World Heritage Site and one of the New Seven Wonders of the World.
               </p>
               <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.25rem" }}>
                 With Noida International Airport emerging as a major new gateway near the Yamuna Expressway corridor, travellers now have a smoother, faster, and more premium way to experience Agra.
@@ -613,8 +613,8 @@ export default function FlagshipProjectPage() {
             marginBottom: "clamp(2rem, 4vw, 3rem)",
           }}>
             {[
-              { val: "6.5", suffix: "M", label: "Expected number of flyers in the first year", note: "Phase 1 launch" },
-              { val: "20", suffix: "–25%", label: "Compound Annual Growth Rate annually", note: "Projected growth trajectory" },
+              { val: "6.5", suffix: "Million", label: "Expected number of flyers in the first year", note: "Phase 1 launch" },
+              { val: "20", suffix: "–25%", label: "Compound Annual Growth Rate", note: "Projected growth trajectory" },
             ].map(({ val, suffix, label, note }, i) => (
               <div key={i} style={{
                 background: "var(--bg-surface)",
@@ -639,7 +639,7 @@ export default function FlagshipProjectPage() {
                   }}>0</span>
                   <span className="font-serif" style={{
                     fontFamily: "'Instrument Serif', serif",
-                    fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                    fontSize: "clamp(3rem, 7vw, 5.5rem)",
                     color: "var(--accent)",
                     lineHeight: 1,
                   }}>{suffix}</span>
@@ -871,6 +871,34 @@ export default function FlagshipProjectPage() {
         borderTop: "1px solid var(--border-subtle)",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          {/* NIA Inauguration Photos */}
+          <div style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
+            <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
+              NIA Inauguration
+            </span>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "clamp(1rem, 2vw, 1.5rem)" }}>
+              {[
+                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.46%20PM.jpeg",
+                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.43%20PM%20(4).jpeg",
+              ].map((src, i) => (
+                <div key={i} style={{ position: "relative", width: "100%", aspectRatio: "16/9", borderRadius: 16, overflow: "hidden", border: "1px solid var(--border-subtle)" }}>
+                  <Image
+                    src={src}
+                    alt={`NIA Inauguration ${i + 1}`}
+                    fill
+                    style={{
+                      objectFit: "cover",
+                      transform: i === 1 ? "scale(1.4)" : "none",
+                      objectPosition: i === 1 ? "center 40%" : "center"
+                    }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    unoptimized
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div style={{ display: "flex", flexWrap: "wrap", gap: "clamp(3rem, 6vw, 6rem)", alignItems: "center" }}>
 
             {/* Left: Content */}
@@ -892,7 +920,7 @@ export default function FlagshipProjectPage() {
                 Experience seamless travel right from your smartphone. The official Noida International Airport (NIA) application brings your entire journey to your fingertips.
               </p>
               <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
-                Book premium cabs, track terminal shuttles, access exclusive mobility services from Mann Fleet Partners, and stay updated with real-time flight statuses — all in one unified digital experience.
+                Book premium cabs, track terminal shuttles, access exclusive mobility services from Mann Fleet Partners, and stay updated with real-time real-time flight status updates — all in one unified digital experience.
               </p>
 
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -945,29 +973,6 @@ export default function FlagshipProjectPage() {
 
           </div>
 
-          {/* NIA Inauguration Photos */}
-          <div style={{ marginTop: "clamp(3rem, 6vw, 5rem)" }}>
-            <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
-              NIA Inauguration
-            </span>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "clamp(1rem, 2vw, 1.5rem)" }}>
-              {[
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.46%20PM.jpeg",
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.43%20PM%20(4).jpeg",
-              ].map((src, i) => (
-                <div key={i} style={{ position: "relative", width: "100%", aspectRatio: "16/9", borderRadius: 16, overflow: "hidden", border: "1px solid var(--border-subtle)" }}>
-                  <Image
-                    src={src}
-                    alt={`NIA Inauguration ${i + 1}`}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    unoptimized
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
