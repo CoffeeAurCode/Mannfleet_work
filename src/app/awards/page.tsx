@@ -68,7 +68,7 @@ const AWARDS = [
   {
     title: "TV Leaders of Road Transport",
     year: "2022",
-    issuer: "TV 9 Network",
+    issuer: "TV9 Network",
     pdf: "/awards/Award_TV 9 Network.pdf",
     image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_09%20PM.png",
     highlight: false,
@@ -109,7 +109,7 @@ const APPRECIATIONS = [
 const TESTIMONIALS = [
   {
     quote: "Thank you for the excellent support during our recent corporate event at Coca-Cola. The logistics were handled seamlessly, and the team’s professionalism, flexibility, and approachable attitude made the entire experience very smooth. We truly appreciate how everything was managed, including last-minute changes, ensuring everything went as planned.",
-    author: "Coke Logistics Team",
+    author: "Coca-Cola Logistics Team",
   },
   {
     quote: "We sincerely appreciate the excellent service and outstanding support provided by your entire team for our recent vehicle requirements from Delhi to Agra. We are particularly grateful for the promptness and efficiency with which our requests were handled, from the initial quotation to the final invoice and vehicle details. The vehicles were well-maintained, and the drivers were professional and punctual.",
@@ -136,7 +136,7 @@ const TESTIMONIALS = [
     author: "Jorgan Andrews, Chargé d’Affaires, a.i.",
   },
   {
-    quote: "We would like to express our sincere appreciation for the warm hospitality extended to our Guests, Participating Teams, Match Officials and Delegation during the recently concluded competition. The team’s commitment in ensuring discipline within the bubble module, along with the significant and undivided efforts rendered across cities, is highly commendable.",
+    quote: "We would like to express our sincere appreciation for the warm hospitality extended to our guests, participating teams, match officials, and delegation during the recently concluded competition. The team’s commitment to ensuring discipline within the bubble module, along with the significant and undivided efforts rendered across cities, is highly commendable.",
     author: "Datuk Seri Windsor John, General Secretary AFC WOMENS' ASIAN CUP",
   },
   {
