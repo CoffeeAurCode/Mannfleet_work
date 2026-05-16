@@ -36,7 +36,7 @@ const AWARDS = [
   {
     title: "National Tourism Award",
     year: "2016–2017",
-    issuer: "Ministry of Tourism, Govt. of India",
+    issuer: "Ministry of Tourism, Government of India",
     pdf: "/awards/National Tourism Award_2016-17.pdf",
     image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_26%20PM(govenment).png",
     highlight: true,
@@ -44,7 +44,7 @@ const AWARDS = [
   {
     title: "National Tourism Award",
     year: "2017–2018",
-    issuer: "Ministry of Tourism, Govt. of India",
+    issuer: "Ministry of Tourism, Government of India",
     pdf: "/awards/National Tourism Award_2017-18.pdf",
     image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_05%20PM(govenment).png",
     highlight: true,
@@ -52,7 +52,7 @@ const AWARDS = [
   {
     title: "National Tourism Award",
     year: "2018–2019",
-    issuer: "Ministry of Tourism, Govt. of India",
+    issuer: "Ministry of Tourism, Government of India",
     pdf: "/awards/National Tourism Award_2018-19.pdf",
     image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_22%20PM.png",
     highlight: true,

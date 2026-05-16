@@ -1558,7 +1558,7 @@ export default function AboutPage() {
                   fontSize: "0.875rem", lineHeight: 1.7,
                   color: "var(--text-secondary)", margin: 0,
                 }}>
-                  Received the Zee Business Award for Best Private Transport Service Provider (2019) and was named &apos;Leaders of Road Transport&apos; by TV9 Network (2022). Expanded global footprint to UAE, USA, Saudi Arabia, and England.
+                  Received the Zee Business Award for Best Private Transport Service Provider (2019) and was named &apos;Leaders of Road Transport&apos; by TV9 Network (2022). Expanded global footprint to the UAE, the USA, Saudi Arabia, and England.
                 </p>
               </div>
             </div>
@@ -1596,7 +1596,7 @@ export default function AboutPage() {
                   fontSize: "0.875rem", lineHeight: 1.7,
                   color: "var(--text-secondary)", margin: 0,
                 }}>
-                  Mann Fleet Partners Limited — an award-winning, globally recognised mobility powerhouse. Serving the G20 Presidency, VVIP events, and Fortune 500 clients across India, UAE, USA, Saudi Arabia, and England. Handled transportation for the biggest-ever event in India at Jamnagar.
+                  Mann Fleet Partners Limited — an award-winning, globally recognised mobility powerhouse. It serves the G20 Presidency, VVIP events, and Fortune 500 clients across India, the UAE, the USA, Saudi Arabia, and England. Handled transportation for one of India’s biggest-ever events in Jamnagar.
                 </p>
               </div>
             </div>
@@ -1672,7 +1672,7 @@ export default function AboutPage() {
             }}>
               Quality is never an accident — it is always the result of{" "}
               <em style={{ color: "var(--text-secondary)" }}>high intention</em>,{" "}
-              <em style={{ color: "var(--text-secondary)" }}>sincere efforts</em>,{" "}
+              <em style={{ color: "var(--text-secondary)" }}>sincere effort</em>,{" "}
               <em style={{ color: "var(--text-secondary)" }}>intelligent direction</em>{" "}
               and{" "}
               <em style={{ color: "var(--text-secondary)" }}>skilful execution</em>.

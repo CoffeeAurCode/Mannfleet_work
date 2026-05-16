@@ -45,7 +45,7 @@ This Privacy Policy and Terms of Use ("Policy") govern:`,
       {
         label: "2.3 Identity Verification",
         bullets: [
-          "Government ID with authentication from the Govt. portal",
+          "Government ID with authentication from the Government portal",
           "Mobile number confirmation with OTP",
           "Corporate authorization details and employment card",
         ],

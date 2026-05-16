@@ -36,7 +36,7 @@ const SECTIONS: Section[] = [
       { num: "2.2", text: 'For Airport Transfers and Local Sightseeing, all ancillary costs—including parking fees, tolls, and state taxes—shall be billed as extras. Any service exceeding a four-hour duration shall be billed under the "80 km / 8 hours" tariff bracket.' },
       { num: "2.3", text: "For trips beyond city limits, all parking, tolls, and state taxes shall be charged at actuals based on original receipts. Prepaid taxes shall be billed as per the actual paid receipt value." },
       { num: "2.4", text: "Package tours are inclusive of parking, tolls, chauffeur allowances, and state taxes; however, parking charges for airport or railway station pickups remain an additional liability of the client." },
-      { num: "2.5", text: "GST will be applicable, as per Govt. directive" },
+      { num: "2.5", text: "GST will be applicable, as per Government directive" },
       { num: "2.6", text: "Payments made via credit card shall be subject to a facilitation fee equivalent to the actual bank processing charges on the total transaction value. This fee will be added to the final invoice at the time of payment processing." },
       { num: "2.7", text: "All rates are subject to adjustment based on fuel price volatility or regulatory changes, following prior intimation to the client. Please note that a tariff increase will be mandatory if there is an impact of more than 5% on fuel prices relative to the rates at the time of contract execution." },
     ],
