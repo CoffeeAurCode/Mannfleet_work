@@ -102,8 +102,8 @@ const SOCIAL_LINKS = [
   { label: "Instagram", href: "https://www.instagram.com/mannfleetpartners?igsh=MWFzNGdwcGQ4MmZwOQ==", icon: <IgIcon /> },
   { label: "WhatsApp", href: "https://wa.me/919990222999", icon: <WhatsAppIcon /> },
   { label: "Twitter / X", href: "https://share.google/3Ly9Pl00vaDYBs7ly", icon: <TwitterIcon /> },
-  { label: "Facebook", href: "https://www.facebook.com/manntours/", icon: <FacebookIcon /> },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/mann-fleet-partners-limited-406263ba/?isSelfProfile=true", icon: <LinkedinIcon /> },
+  { label: "Facebook", href: "https://www.facebook.com/people/Mann-Fleet-Partners/61574887744774/?ref=1", icon: <FacebookIcon /> },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/107323097/admin/page-posts/published/", icon: <LinkedinIcon /> },
 ];
 
 /* ── Main Footer ───────────────────────────────────────────── */

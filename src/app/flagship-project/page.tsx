@@ -650,23 +650,6 @@ export default function FlagshipProjectPage() {
             ))}
           </div>
 
-          {/* Developer attribution */}
-          <div style={{
-            background: "var(--bg-surface)",
-            border: "1px solid var(--border-subtle)",
-            borderRadius: 14,
-            padding: "1.25rem 2rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "1.5rem",
-          }}>
-            <div style={{ width: 3, height: 36, background: "var(--accent)", borderRadius: 999, flexShrink: 0 }} />
-            <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
-              <strong style={{ color: "var(--text-primary)" }}>Developed by Yamuna International Airport Private Limited (YIAPL)</strong>,
-              a subsidiary of Zurich Airport International AG — one of the world&apos;s most respected airport operators.
-              Our mobility systems are engineered to scale in parallel with this landmark growth trajectory.
-            </p>
-          </div>
         </div>
       </section>
 

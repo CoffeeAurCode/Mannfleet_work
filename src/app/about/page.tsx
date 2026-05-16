@@ -369,6 +369,7 @@ export default function AboutPage() {
   const reelSectionRef = useRef<HTMLElement>(null);
   const reelOverlayRef = useRef<HTMLDivElement>(null);
   const reelQuoteRef = useRef<HTMLDivElement>(null);
+  const partnershipRef = useRef<HTMLDivElement>(null);
 
 
 
@@ -739,6 +740,14 @@ export default function AboutPage() {
         {
           y: 0, opacity: 1, filter: "blur(0px)", duration: 1, ease: "power3.out",
           scrollTrigger: { trigger: reelSectionRef.current, start: "top 72%" },
+        }
+      );
+
+      gsap.fromTo(partnershipRef.current,
+        { y: 30, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.7, ease: "power3.out",
+          scrollTrigger: { trigger: partnershipRef.current, start: "top 85%" },
         }
       );
 
@@ -1208,6 +1217,26 @@ export default function AboutPage() {
               }}>
                 As one of the world&apos;s most admired luxury car, van, and coach rental companies, we have set the gold standard for excellence in the global transport industry.
               </p>
+
+              {/* Strategic Partnership Callout */}
+              <div ref={partnershipRef} style={{
+                marginTop: "2.5rem",
+                background: "var(--bg-surface)",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: 14,
+                padding: "1.25rem 2rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "1.5rem",
+                opacity: 0,
+              }}>
+                <div style={{ width: 3, height: 36, background: "var(--accent)", borderRadius: 999, flexShrink: 0 }} />
+                <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
+                  <strong style={{ color: "var(--text-primary)" }}>Developed by Yamuna International Airport Private Limited (YIAPL)</strong>,
+                  a subsidiary of Zurich Airport International AG — one of the world&apos;s most respected airport operators.
+                  Our mobility systems are engineered to scale in parallel with this landmark growth trajectory.
+                </p>
+              </div>
 
               {/* Accent rule */}
               <div style={{
