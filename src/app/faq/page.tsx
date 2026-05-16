@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const FAQS = [
   {
     q: "What services does Mann Fleet Partners offer?",
-    a: "We provide luxury chauffeur driven transportation across India, including airport transfers, corporate travel, wedding transportation, intercity journeys, group travel, luxury tours, and event transportation.",
+    a: "We provide luxury chauffeur-driven transportation across India, including airport transfers, corporate travel, wedding transportation, intercity journeys, group travel, luxury tours, and event transportation.",
   },
   {
     q: "How do I book a vehicle?",
@@ -15,19 +15,19 @@ const FAQS = [
   },
   {
     q: "Are chauffeurs included with every booking?",
-    a: "Yes. All Mann Fleet Partners bookings include professionally trained chauffeurs known for punctuality, discretion, and service excellence, except self drive vehicle bookings.",
+    a: "Yes. All Mann Fleet Partners bookings include professionally trained chauffeurs known for punctuality, discretion, and service excellence, except self-drive vehicle bookings.",
   },
   {
     q: "Do you offer airport pickup and drop services?",
-    a: "Yes. We provide airport transfers across major Indian cities with real time flight tracking to ensure timely pickups, even in the event of delays.",
+    a: "Yes. We provide airport transfers across major Indian cities with real-time flight tracking to ensure timely pickups, even in the event of delays.",
   },
   {
     q: "What types of vehicles are available?",
-    a: "Our fleet includes luxury sedans, SUVs, Mercedes Benz V Class vehicles, tempo travellers, minibuses, and coaches for both individual and group transportation needs.",
+    a: "Our fleet includes luxury sedans, SUVs, Mercedes-Benz V-Class vehicles, tempo travellers, minibuses, and coaches for both individual and group transportation needs.",
   },
   {
     q: "What is the range of vehicles available at Mann Fleet Partners?",
-    a: "We offer everything from compact sedans and executive SUVs to luxury vans, tempo travellers, minibuses, and full size coaches, depending on your travel requirements and group size.",
+    a: "We offer everything from compact sedans and executive SUVs to luxury vans, tempo travellers, minibuses, and full-size coaches, depending on your travel requirements and group size.",
   },
   {
     q: "Can you arrange transportation for corporate events?",
@@ -46,8 +46,8 @@ const FAQS = [
     a: "Yes. Upon request, we can arrange experienced local tour guides for destinations across India to make your travel experience more seamless and informative.",
   },
   {
-    q: "Do you offer self drive vehicles, spot rentals, or long term leases?",
-    a: "Yes. In addition to chauffeur driven services, Mann Fleet Partners also offers self drive vehicles, flexible spot rentals, and long term leasing solutions for personal, corporate, and operational requirements.",
+    q: "Do you offer self-drive vehicles, spot rentals, or long-term leases?",
+    a: "Yes. In addition to chauffeur-driven services, Mann Fleet Partners also offers self-drive vehicles, flexible spot rentals, and long-term leasing solutions for personal, corporate, and operational requirements.",
   },
   {
     q: "What is included in the Mann Taj Express service?",
@@ -59,11 +59,11 @@ const FAQS = [
   },
   {
     q: "Can I book transportation for large groups?",
-    a: "Yes. We specialise in group transportation and can arrange vehicles for everything from small private groups to large scale events and delegations.",
+    a: "Yes. We specialise in group transportation and can arrange vehicles for everything from small private groups to large-scale events and delegations.",
   },
   {
     q: "How far in advance should I make a booking?",
-    a: "We recommend booking in advance, especially during peak travel seasons and major events. However, subject to availability, we also accommodate last minute requests whenever possible.",
+    a: "We recommend booking in advance, especially during peak travel seasons and major events. However, subject to availability, we also accommodate last-minute requests whenever possible.",
   },
 ];
 

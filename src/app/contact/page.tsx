@@ -274,7 +274,7 @@ export default function ContactPage() {
               lineHeight: 1.1,
               margin: "0 0 0.4rem",
             }}>
-              Call or Email To
+              Contact Our Team
             </h2>
             <p className="font-sans" style={{ fontSize: "0.88rem", color: "var(--text-muted)", margin: 0 }}>
               Reach our sales team directly for bookings and corporate enquiries.
@@ -375,26 +375,7 @@ export default function ContactPage() {
               <ArrowUpRight size={14} />
             </Link>
 
-            <a
-              href="https://play.google.com/store/apps/details?id=com.user.mannfleet"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex", alignItems: "center", gap: "0.6rem",
-                padding: "0.9rem 1.75rem", borderRadius: "9999px",
-                background: "var(--glass-mid)", color: "var(--text-primary)",
-                border: "1px solid var(--border-mid)",
-                fontSize: "0.88rem", fontWeight: 600,
-                textDecoration: "none",
-                transition: "border-color 0.18s ease",
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(200,40,40,0.35)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
-            >
-              <IconLink size={14} />
-              Payment Link
-              <ArrowUpRight size={14} />
-            </a>
+
           </div>
         </section>
 

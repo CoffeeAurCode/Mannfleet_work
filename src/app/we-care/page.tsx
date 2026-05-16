@@ -581,7 +581,7 @@ export default function WeCarePage() {
             }}>
               {[
                 { icon: <IconHeart />, title: "Healthcare", desc: "Improving access to medical care and supporting community health institutions.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.13.jpeg", imagePosition: "left center" },
-                { icon: <IconUsers />, title: "Community Well-being", desc: "Strengthening social fabric and uplifting underserved populations.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14 (1).jpeg", imagePosition: "center center" },
+                { icon: <IconUsers />, title: "Community Well-being", desc: "Strengthening the social fabric and uplifting underserved populations.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.14 (1).jpeg", imagePosition: "center center" },
                 { icon: <IconLeaf />, title: "Sustainable Development", desc: "Investing in initiatives that create lasting, positive environmental and social outcomes.", image: "/We care/WhatsApp Image 2026-05-04 at 10.07.15.jpeg", imagePosition: "center center" },
               ].map((item) => (
                 <div key={item.title} className="anim-item" style={{
@@ -641,7 +641,7 @@ export default function WeCarePage() {
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               {[
                 { org: "Global Social Welfare Organization", fy: "FY 2024–25", desc: "Supporting broad-based social welfare and healthcare outreach programmes." },
-                { org: "Maharaja Agrasen Hospital Charitable Trust", fy: "FY 2025–26", desc: "Enabling access to charitable medical services and community health care." },
+                { org: "Maharaja Agrasen Hospital Charitable Trust", fy: "FY 2025–26", desc: "Enabling access to charitable medical services and community healthcare." },
               ].map((p) => (
                 <div key={p.org} style={{
                   background: "var(--bg-surface)",
@@ -686,7 +686,7 @@ export default function WeCarePage() {
               {[
                 "Livelihood enhancement projects",
                 "Education and skill development",
-                "Women empowerment initiatives",
+                "Women's empowerment initiatives",
                 "Rural development programmes",
               ].map((item) => (
                 <div key={item} style={{ display: "flex", gap: "0.6rem", alignItems: "center", color: "var(--text-secondary)", fontSize: "0.9rem" }}>
@@ -811,7 +811,7 @@ export default function WeCarePage() {
               Transparent by Design
             </h2>
             <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: 540, marginBottom: "2.5rem" }}>
-              All CSR activities are governed through a clear, accountable structure ensuring
+              All CSR activities are governed through a clear, accountable structure, ensuring
               every rupee is deployed with integrity and measurable purpose.
             </p>
 
@@ -1019,8 +1019,7 @@ export default function WeCarePage() {
               margin: "0 0 1rem",
               fontStyle: "italic",
             }}>
-              &ldquo;We measure our success not only by the returns we generate for our shareholders,
-              but by the lives we improve and the communities we strengthen.&rdquo;
+              &ldquo;We measure our success not only by the returns we generate for our shareholders, but also by the lives we improve and the communities we strengthen.&rdquo;
             </p>
             <cite style={{
               fontSize: "0.85rem",
