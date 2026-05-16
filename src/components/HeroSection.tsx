@@ -335,7 +335,7 @@ export default function HeroSection() {
               Our Fleet Brands
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem 1.1rem", alignItems: "center" }}>
-              {["Audi", "BMW", "Mercedes", "Tesla", "Jaguar", "Range Rover"].map((brand) => (
+              {["Audi", "BMW", "Mercedes", "Rolls Royce", "Range Rover"].map((brand) => (
                 <span
                   key={brand}
                   className="font-serif uppercase"
