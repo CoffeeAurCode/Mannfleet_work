@@ -30,12 +30,12 @@ const LEADERS: Leader[] = [
     id: "amrit",
     name: "Amrit Pal Singh Mann",
     title: "Managing Director",
-    email: "amrit@manntours.com",
+    email: "[EMAIL_ADDRESS]",
     photo: "/teams/amrit%20pal.jpeg",
     objectPosition: "top",
     teaser:
-      "Pioneer in shifting the Indian Tourism Industry to premium luxury vehicles since 1986 — driving business expansion and service excellence for four decades.",
-    bio: "Amrit Pal Singh Mann is the Promoter and Managing Director of the Company. He has also passed his first year of Bachelor of Commerce in 1985 from University of Delhi. He has been pioneered in shifting the Indian Tourism Industry from all types of smart to premium luxury vehicles since 1986. He has been a key leader, driving business expansion and service excellence in all tourist transport segments. With extensive experience in managing high-profile events, corporate delegations and provided services to embassies, he has played a crucial role in strengthening our Company's market presence. He is known for his disciplined and client-centric approach, ensuring the highest standards of service delivery. He has been at the forefront of adopting the latest transport technology and luxury vehicles, reinforcing Mann Fleet Partners Limited position as in luxury passenger transport in India. His strategic vision continues to propel our Company's growth. He spearheads the rollout of the entire premier fleet.",
+      "Pioneer in shifting the Indian tourism industry to premium luxury vehicles since 1986 — driving business expansion and service excellence for four decades.",
+    bio: "Amrit Pal Singh Mann is the Promoter and Managing Director of the Company. He has also passed his first year of Bachelor of Commerce in 1985 from University of Delhi. He has been pioneered in shifting the Indian tourism industry from all types of smart to premium luxury vehicles since 1986. He has been a key leader, driving business expansion and service excellence in all tourist transport segments. With extensive experience in managing high-profile events, corporate delegations and provided services to embassies, he has played a crucial role in strengthening our Company's market presence. He is known for his disciplined and client-centric approach, ensuring the highest standards of service delivery. He has been at the forefront of adopting the latest transport technology and luxury vehicles, reinforcing Mann Fleet Partners Limited position as in luxury passenger transport in India. His strategic vision continues to propel our Company's growth. He spearheads the rollout of the entire premier fleet.",
     education: ["Bachelor of Commerce (First Year) — University of Delhi, 1985"],
     accolades: [
       "Pioneer in luxury vehicle transition since 1986",
