@@ -1481,7 +1481,7 @@ export default function AboutPage() {
                   fontSize: "0.875rem", lineHeight: 1.7,
                   color: "var(--text-secondary)", margin: 0,
                 }}>
-                  Appointed as the preferred ground transport provider for foreign embassies including the United States Mission in India. Served sports leagues, cricket leagues, the Kabaddi World Cup, AFC Women&apos;s Cup, and major national sporting events.
+                  Appointed as the preferred ground transport provider for foreign embassies including the United States Mission in India. Served sports leagues, cricket tournaments, the Kabaddi World Cup, AFC Women&apos;s Cup, and major national sporting events.
                 </p>
               </div>
             </div>
@@ -1520,7 +1520,7 @@ export default function AboutPage() {
                   fontSize: "0.875rem", lineHeight: 1.7,
                   color: "var(--text-secondary)", margin: 0,
                 }}>
-                  Awarded the National Tourism Award by the Ministry of Tourism, Government of India for three consecutive years (2016–17, 2017–18, 2018–19) — the highest recognition in India&apos;s tourism industry.
+                  Awarded the National Tourism Award by the Ministry of Tourism, Government of India, for three consecutive years (2016–17, 2017–18, 2018–19) — the highest recognition in India&apos;s tourism industry.
                 </p>
               </div>
             </div>
@@ -1748,273 +1748,273 @@ export default function AboutPage() {
           }}>
             {/* LEFT: Sticky card stack */}
             <div>
-            {/* Card 1 — Four Decades */}
-            <div ref={uspCard1Ref} style={{
-              position: "sticky",
-              top: 80,
-              zIndex: 1,
-              padding: "2.25rem",
-              borderRadius: "1.75rem",
-              marginBottom: "2rem",
-              opacity: 0,
-              background: "var(--bg-surface)",
-              border: "1px solid var(--border-mid)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
-            }}>
-              <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
-                <div style={{
-                  width: 56, height: 56, borderRadius: "16px",
-                  background: "var(--bg-deep)",
-                  border: "1px solid var(--border-subtle)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--accent)", flexShrink: 0,
-                }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
-                    Est. 1986
-                  </span>
-                  <h3 className="font-sans" style={{
-                    fontSize: "1.15rem", fontWeight: 700,
-                    color: "var(--text-primary)", margin: "0 0 0.6rem",
-                  }}>Four Decades of Mastery</h3>
-                  <p className="font-sans" style={{
-                    fontSize: "0.875rem", lineHeight: 1.7,
-                    color: "var(--text-secondary)", margin: 0,
-                  }}>
-                    Over 40 years of uninterrupted service in luxury ground transportation. No other Indian operator matches this depth of institutional knowledge, operational maturity, and client trust built across generations.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2 — Government-Grade Trust */}
-            <div ref={uspCard2Ref} style={{
-              position: "sticky",
-              top: 105,
-              zIndex: 2,
-              padding: "2.25rem",
-              borderRadius: "1.75rem",
-              marginBottom: "2rem",
-              opacity: 0,
-              background: "var(--bg-surface)",
-              border: "1px solid var(--border-mid)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
-            }}>
-              <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
-                <div style={{
-                  width: 56, height: 56, borderRadius: "16px",
-                  background: "var(--bg-deep)",
-                  border: "1px solid var(--border-subtle)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--accent)", flexShrink: 0,
-                }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
-                    Cleared &amp; Certified
-                  </span>
-                  <h3 className="font-sans" style={{
-                    fontSize: "1.15rem", fontWeight: 700,
-                    color: "var(--text-primary)", margin: "0 0 0.6rem",
-                  }}>Government-Grade Trust</h3>
-                  <p className="font-sans" style={{
-                    fontSize: "0.875rem", lineHeight: 1.7,
-                    color: "var(--text-secondary)", margin: 0,
-                  }}>
-                    Security-vetted and trusted by the Ministry of External Affairs, G20 Presidency, and multiple foreign embassies. Background-checked chauffeurs operating under SPG-level protocols for every engagement.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 — Pan-India & Global Reach */}
-            <div ref={uspCard3Ref} style={{
-              position: "sticky",
-              top: 130,
-              zIndex: 3,
-              padding: "2.25rem",
-              borderRadius: "1.75rem",
-              marginBottom: "2rem",
-              opacity: 0,
-              background: "var(--bg-surface)",
-              border: "1px solid var(--border-mid)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
-            }}>
-              <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
-                <div style={{
-                  width: 56, height: 56, borderRadius: "16px",
-                  background: "var(--bg-deep)",
-                  border: "1px solid var(--border-subtle)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--accent)", flexShrink: 0,
-                }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="2" y1="12" x2="22" y2="12" />
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
-                    85+ Cities
-                  </span>
-                  <h3 className="font-sans" style={{
-                    fontSize: "1.15rem", fontWeight: 700,
-                    color: "var(--text-primary)", margin: "0 0 0.6rem",
-                  }}>Pan-India &amp; Global Reach</h3>
-                  <p className="font-sans" style={{
-                    fontSize: "0.875rem", lineHeight: 1.7,
-                    color: "var(--text-secondary)", margin: 0,
-                  }}>
-                    Seamless operations across 85+ Indian cities, with international presence in UAE, USA, Saudi Arabia, and England. One partner, one standard, everywhere your journey takes you.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4 — Award-Winning Excellence */}
-            <div ref={uspCard4Ref} style={{
-              position: "sticky",
-              top: 155,
-              zIndex: 4,
-              padding: "2.25rem",
-              borderRadius: "1.75rem",
-              marginBottom: "2rem",
-              opacity: 0,
-              background: "var(--bg-surface)",
-              border: "1px solid var(--border-mid)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
-            }}>
-              <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
-                <div style={{
-                  width: 56, height: 56, borderRadius: "16px",
-                  background: "var(--bg-deep)",
-                  border: "1px solid var(--border-subtle)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--accent)", flexShrink: 0,
-                }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
-                    3× National Award
-                  </span>
-                  <h3 className="font-sans" style={{
-                    fontSize: "1.15rem", fontWeight: 700,
-                    color: "var(--text-primary)", margin: "0 0 0.6rem",
-                  }}>Award-Winning Excellence</h3>
-                  <p className="font-sans" style={{
-                    fontSize: "0.875rem", lineHeight: 1.7,
-                    color: "var(--text-secondary)", margin: 0,
-                  }}>
-                    Three consecutive National Tourism Awards (2016–19), Zee Business Award for Best Private Transport, and TV9 Network&apos;s &apos;Leaders of Road Transport&apos; recognition. The most decorated fleet company in India.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 5 — Technology-Driven Fleet */}
-            <div ref={uspCard5Ref} style={{
-              position: "sticky",
-              top: 180,
-              zIndex: 5,
-              padding: "2.25rem",
-              borderRadius: "1.75rem",
-              marginBottom: "2rem",
-              opacity: 0,
-              background: "var(--bg-surface)",
-              border: "1px solid var(--border-mid)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
-            }}>
-              <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
-                <div style={{
-                  width: 56, height: 56, borderRadius: "16px",
-                  background: "var(--bg-deep)",
-                  border: "1px solid var(--border-subtle)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--accent)", flexShrink: 0,
-                }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                    <line x1="8" y1="21" x2="16" y2="21" />
-                    <line x1="12" y1="17" x2="12" y2="21" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
-                    2000+ Vehicles
-                  </span>
-                  <h3 className="font-sans" style={{
-                    fontSize: "1.15rem", fontWeight: 700,
-                    color: "var(--text-primary)", margin: "0 0 0.6rem",
-                  }}>Technology-Driven Fleet</h3>
-                  <p className="font-sans" style={{
-                    fontSize: "0.875rem", lineHeight: 1.7,
-                    color: "var(--text-secondary)", margin: 0,
-                  }}>
-                    Real-time GPS tracking, AI-powered dispatch, and a fleet of 2000+ premium vehicles from Mercedes, BMW, Audi, and Toyota. Technology meets luxury at every touchpoint.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* RIGHT: Our Values */}
-          <div style={{ position: "sticky", top: 80 }}>
-            <div style={{ marginBottom: "2rem" }}>
-              <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block" }}>Our Values</span>
-              <h3 className="font-sans" style={{
-                fontSize: "1.5rem", fontWeight: 700,
-                color: "var(--text-primary)", margin: "0 0 0.6rem",
-              }}>The Principles<br /><span style={{ color: "var(--text-secondary)", fontWeight: 400 }}>We Live By</span></h3>
-              <p className="font-sans" style={{ fontSize: "0.875rem", color: "var(--text-muted)", lineHeight: 1.6 }}>
-                At Mann Fleet Partners, every decision is guided by a set of core values that define who we are.
-              </p>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
-              {[
-                { title: "Integrity", desc: "We choose honesty and fairness in every situation, ensuring our actions are guided by strong principles and a clear sense of what is right." },
-                { title: "Reliability", desc: "We build trust by consistently doing what we say, delivering on our commitments with precision and dependability every single time." },
-                { title: "Discipline", desc: "Strong habits and clear structure define how we operate, allowing us to maintain focus, efficiency, and high standards in everything we do." },
-                { title: "Accountability", desc: "We take full ownership of our actions and outcomes, holding ourselves responsible and learning from every situation to continuously improve." },
-                { title: "Consistency", desc: "We show up with the same intent, focus, and standard in every situation, creating a level of reliability that people can depend on without question." },
-                { title: "Willpower", desc: "Through hard work, we stay committed to excellence, pushing through challenges and maintaining our standards even under pressure." },
-              ].map(({ title, desc }) => (
-                <div key={title} className="glass-panel" style={{
-                  padding: "1.1rem 1.4rem",
-                  borderRadius: "1rem",
-                  display: "flex",
-                  gap: "1rem",
-                  alignItems: "flex-start",
-                }}>
+              {/* Card 1 — Four Decades */}
+              <div ref={uspCard1Ref} style={{
+                position: "sticky",
+                top: 80,
+                zIndex: 1,
+                padding: "2.25rem",
+                borderRadius: "1.75rem",
+                marginBottom: "2rem",
+                opacity: 0,
+                background: "var(--bg-surface)",
+                border: "1px solid var(--border-mid)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
+              }}>
+                <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
                   <div style={{
-                    width: 8, height: 8, borderRadius: "50%",
-                    background: "var(--accent)",
-                    flexShrink: 0, marginTop: "0.35rem",
-                  }} />
+                    width: 56, height: 56, borderRadius: "16px",
+                    background: "var(--bg-deep)",
+                    border: "1px solid var(--border-subtle)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "var(--accent)", flexShrink: 0,
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                  </div>
                   <div>
-                    <div className="font-sans" style={{ fontSize: "0.88rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.25rem" }}>{title}</div>
-                    <div className="font-sans" style={{ fontSize: "0.78rem", color: "var(--text-secondary)", lineHeight: 1.55 }}>{desc}</div>
+                    <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
+                      Est. 1986
+                    </span>
+                    <h3 className="font-sans" style={{
+                      fontSize: "1.15rem", fontWeight: 700,
+                      color: "var(--text-primary)", margin: "0 0 0.6rem",
+                    }}>Four Decades of Mastery</h3>
+                    <p className="font-sans" style={{
+                      fontSize: "0.875rem", lineHeight: 1.7,
+                      color: "var(--text-secondary)", margin: 0,
+                    }}>
+                      Over 40 years of uninterrupted service in luxury ground transportation. No other Indian operator matches this depth of institutional knowledge, operational maturity, and client trust built across generations.
+                    </p>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Card 2 — Government-Grade Trust */}
+              <div ref={uspCard2Ref} style={{
+                position: "sticky",
+                top: 105,
+                zIndex: 2,
+                padding: "2.25rem",
+                borderRadius: "1.75rem",
+                marginBottom: "2rem",
+                opacity: 0,
+                background: "var(--bg-surface)",
+                border: "1px solid var(--border-mid)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
+              }}>
+                <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
+                  <div style={{
+                    width: 56, height: 56, borderRadius: "16px",
+                    background: "var(--bg-deep)",
+                    border: "1px solid var(--border-subtle)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "var(--accent)", flexShrink: 0,
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
+                      Cleared &amp; Certified
+                    </span>
+                    <h3 className="font-sans" style={{
+                      fontSize: "1.15rem", fontWeight: 700,
+                      color: "var(--text-primary)", margin: "0 0 0.6rem",
+                    }}>Government-Grade Trust</h3>
+                    <p className="font-sans" style={{
+                      fontSize: "0.875rem", lineHeight: 1.7,
+                      color: "var(--text-secondary)", margin: 0,
+                    }}>
+                      Security-vetted and trusted by the Ministry of External Affairs, G20 Presidency, and multiple foreign embassies. Background-checked chauffeurs operating under SPG-level protocols for every engagement.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 — Pan-India & Global Reach */}
+              <div ref={uspCard3Ref} style={{
+                position: "sticky",
+                top: 130,
+                zIndex: 3,
+                padding: "2.25rem",
+                borderRadius: "1.75rem",
+                marginBottom: "2rem",
+                opacity: 0,
+                background: "var(--bg-surface)",
+                border: "1px solid var(--border-mid)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
+              }}>
+                <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
+                  <div style={{
+                    width: 56, height: 56, borderRadius: "16px",
+                    background: "var(--bg-deep)",
+                    border: "1px solid var(--border-subtle)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "var(--accent)", flexShrink: 0,
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="2" y1="12" x2="22" y2="12" />
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
+                      85+ Cities
+                    </span>
+                    <h3 className="font-sans" style={{
+                      fontSize: "1.15rem", fontWeight: 700,
+                      color: "var(--text-primary)", margin: "0 0 0.6rem",
+                    }}>Pan-India &amp; Global Reach</h3>
+                    <p className="font-sans" style={{
+                      fontSize: "0.875rem", lineHeight: 1.7,
+                      color: "var(--text-secondary)", margin: 0,
+                    }}>
+                      Seamless operations across 85+ Indian cities, with international presence in UAE, USA, Saudi Arabia, and England. One partner, one standard, everywhere your journey takes you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 — Award-Winning Excellence */}
+              <div ref={uspCard4Ref} style={{
+                position: "sticky",
+                top: 155,
+                zIndex: 4,
+                padding: "2.25rem",
+                borderRadius: "1.75rem",
+                marginBottom: "2rem",
+                opacity: 0,
+                background: "var(--bg-surface)",
+                border: "1px solid var(--border-mid)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
+              }}>
+                <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
+                  <div style={{
+                    width: 56, height: 56, borderRadius: "16px",
+                    background: "var(--bg-deep)",
+                    border: "1px solid var(--border-subtle)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "var(--accent)", flexShrink: 0,
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
+                      3× National Award
+                    </span>
+                    <h3 className="font-sans" style={{
+                      fontSize: "1.15rem", fontWeight: 700,
+                      color: "var(--text-primary)", margin: "0 0 0.6rem",
+                    }}>Award-Winning Excellence</h3>
+                    <p className="font-sans" style={{
+                      fontSize: "0.875rem", lineHeight: 1.7,
+                      color: "var(--text-secondary)", margin: 0,
+                    }}>
+                      Three consecutive National Tourism Awards (2016–19), Zee Business Award for Best Private Transport, and TV9 Network&apos;s &apos;Leaders of Road Transport&apos; recognition. The most decorated fleet company in India.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 5 — Technology-Driven Fleet */}
+              <div ref={uspCard5Ref} style={{
+                position: "sticky",
+                top: 180,
+                zIndex: 5,
+                padding: "2.25rem",
+                borderRadius: "1.75rem",
+                marginBottom: "2rem",
+                opacity: 0,
+                background: "var(--bg-surface)",
+                border: "1px solid var(--border-mid)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08)",
+              }}>
+                <div style={{ display: "flex", gap: "1.5rem", alignItems: "flex-start" }}>
+                  <div style={{
+                    width: 56, height: 56, borderRadius: "16px",
+                    background: "var(--bg-deep)",
+                    border: "1px solid var(--border-subtle)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "var(--accent)", flexShrink: 0,
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                      <line x1="8" y1="21" x2="16" y2="21" />
+                      <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.65rem" }}>
+                      2000+ Vehicles
+                    </span>
+                    <h3 className="font-sans" style={{
+                      fontSize: "1.15rem", fontWeight: 700,
+                      color: "var(--text-primary)", margin: "0 0 0.6rem",
+                    }}>Technology-Driven Fleet</h3>
+                    <p className="font-sans" style={{
+                      fontSize: "0.875rem", lineHeight: 1.7,
+                      color: "var(--text-secondary)", margin: 0,
+                    }}>
+                      Real-time GPS tracking, AI-powered dispatch, and a fleet of 2000+ premium vehicles from Mercedes, BMW, Audi, and Toyota. Technology meets luxury at every touchpoint.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* RIGHT: Our Values */}
+            <div style={{ position: "sticky", top: 80 }}>
+              <div style={{ marginBottom: "2rem" }}>
+                <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block" }}>Our Values</span>
+                <h3 className="font-sans" style={{
+                  fontSize: "1.5rem", fontWeight: 700,
+                  color: "var(--text-primary)", margin: "0 0 0.6rem",
+                }}>The Principles<br /><span style={{ color: "var(--text-secondary)", fontWeight: 400 }}>We Live By</span></h3>
+                <p className="font-sans" style={{ fontSize: "0.875rem", color: "var(--text-muted)", lineHeight: 1.6 }}>
+                  At Mann Fleet Partners, every decision is guided by a set of core values that define who we are.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+                {[
+                  { title: "Integrity", desc: "We choose honesty and fairness in every situation, ensuring our actions are guided by strong principles and a clear sense of what is right." },
+                  { title: "Reliability", desc: "We build trust by consistently doing what we say, delivering on our commitments with precision and dependability every single time." },
+                  { title: "Discipline", desc: "Strong habits and clear structure define how we operate, allowing us to maintain focus, efficiency, and high standards in everything we do." },
+                  { title: "Accountability", desc: "We take full ownership of our actions and outcomes, holding ourselves responsible and learning from every situation to continuously improve." },
+                  { title: "Consistency", desc: "We show up with the same intent, focus, and standard in every situation, creating a level of reliability that people can depend on without question." },
+                  { title: "Willpower", desc: "Through hard work, we stay committed to excellence, pushing through challenges and maintaining our standards even under pressure." },
+                ].map(({ title, desc }) => (
+                  <div key={title} className="glass-panel" style={{
+                    padding: "1.1rem 1.4rem",
+                    borderRadius: "1rem",
+                    display: "flex",
+                    gap: "1rem",
+                    alignItems: "flex-start",
+                  }}>
+                    <div style={{
+                      width: 8, height: 8, borderRadius: "50%",
+                      background: "var(--accent)",
+                      flexShrink: 0, marginTop: "0.35rem",
+                    }} />
+                    <div>
+                      <div className="font-sans" style={{ fontSize: "0.88rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.25rem" }}>{title}</div>
+                      <div className="font-sans" style={{ fontSize: "0.78rem", color: "var(--text-secondary)", lineHeight: 1.55 }}>{desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
 
