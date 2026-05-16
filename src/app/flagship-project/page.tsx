@@ -231,7 +231,7 @@ export default function FlagshipProjectPage() {
             lineHeight: 1.65,
             marginBottom: "2.5rem",
           }}>
-            Redefining ground mobility at India&apos;s newest and most ambitious aviation hub — driven by 40+ years of mobility excellence.
+            Redefining ground mobility at India&apos;s newest and most ambitious aviation hub
           </p>
 
           {/* Divider line + meta */}
@@ -872,7 +872,7 @@ export default function FlagshipProjectPage() {
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "clamp(3rem, 6vw, 6rem)", alignItems: "center" }}>
-            
+
             {/* Left: Content */}
             <div style={{ flex: "1 1 400px" }}>
               <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
@@ -889,12 +889,12 @@ export default function FlagshipProjectPage() {
                 The Noida International Airport App
               </h2>
               <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
-                Experience seamless travel right from your smartphone. The official Noida International Airport (NIA) application brings your entire journey to your fingertips. 
+                Experience seamless travel right from your smartphone. The official Noida International Airport (NIA) application brings your entire journey to your fingertips.
               </p>
               <p style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--text-secondary)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
                 Book premium cabs, track terminal shuttles, access exclusive mobility services from Mann Fleet Partners, and stay updated with real-time flight statuses — all in one unified digital experience.
               </p>
-              
+
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{ width: 3, height: 36, background: "var(--accent)", borderRadius: 999 }} />
                 <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1rem, 2vw, 1.2rem)", color: "var(--text-secondary)", fontStyle: "italic" }}>

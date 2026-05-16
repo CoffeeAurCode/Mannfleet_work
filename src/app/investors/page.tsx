@@ -57,7 +57,7 @@ interface PdfCategory {
   docs: PdfDoc[];
 }
 
-const BASE = "/Mann%20Investors%20/";
+const BASE = "/investors/";
 
 const PDF_CATEGORIES: PdfCategory[] = [
   {
@@ -65,7 +65,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     title: "IPO / DRHP",
     icon: "📄",
     docs: [
-      { label: "DRHP — Mann Fleet Partners Limited", file: "DRHP_Mann-Fleet-Partners-Limitedpdf" },
+      { label: "DRHP — Mann Fleet Partners Limited", file: "DRHP_Mann-Fleet-Partners-Limited.pdf" },
       { label: "DRHP Newspaper — Financial Express", file: "DRHP-Newspaper-Publication_Financial-Express.pdf" },
       { label: "DRHP Newspaper — Jansatta", file: "DRHP-Newspaper-Publication_Jansatta.pdf" },
       { label: "DRHP Newspaper — Pratahkiran", file: "DRHP-Newspaper-Publication_Pratahkiran.pdf" },
@@ -112,7 +112,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     docs: [
       { label: "Details of Business", file: "Details-of-Business.pdf" },
       { label: "Details of KMPs", file: "Details-of-KMPs.pdf" },
-      { label: "Contact Details — Grievance Redressal", file: "Contact-Details-for-Grievance-Redressal-handling-of-Investor-Complaints.pdf" },
+      { label: "Contact Details — Grievance Redressal", file: "Details-of-KMPs.pdf" },
     ],
   },
 ];
