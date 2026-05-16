@@ -22,6 +22,7 @@ const SERVICE_DATA: Record<string, {
   stat: string;
   statLabel: string;
   image: string;
+  imageObjectPosition?: string;
 }> = {
   "long-term": {
     title: "Long-Term Rentals",
@@ -38,6 +39,7 @@ const SERVICE_DATA: Record<string, {
     stat: "12+ months",
     statLabel: "minimum contract",
     image: "/Mann car pictures/Mercedes-Benz E-Class/ChatGPT Image Apr 28, 2026, 06_32_56 PM.png",
+    imageObjectPosition: "center 80%",
   },
   "spot": {
     title: "Spot Rentals",
@@ -229,7 +231,7 @@ export default function ServicePage() {
             <img
               src={service.image}
               alt={service.title}
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: service.imageObjectPosition || "center" }}
             />
           </div>
         </section>

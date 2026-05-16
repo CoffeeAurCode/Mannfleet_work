@@ -28,6 +28,7 @@ interface Vehicle {
   category: Category;
   type: VehicleType;
   imageObjectFit?: "cover" | "contain";
+  imageObjectPosition?: string;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -67,12 +68,14 @@ const VEHICLES: Vehicle[] = [
   {
     id: "hycross-sedan", name: "Toyota Innova Hycross", type: "Sedans", category: "PREMIUM PLUS",
     seating: "7–8 Seater Including Pilot", luggage: "690–991 Litres",
+    imageObjectPosition: "center 80%",
     image: ["/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_51_24%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_09_48%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_05_09%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_53_47%20AM.png"],
   },
   // Luxury
   {
     id: "mercedes-e-class", name: "Mercedes-Benz E-Class", type: "Sedans", category: "LUXURY",
     seating: "5 Seater Including Pilot", luggage: "540 Litres",
+    imageObjectPosition: "center 80%",
     image: ["/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_32_23%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_32_56%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_31_52%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_36_12%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_39_28%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_41_21%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_41_47%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_42_37%20PM.png"],
   },
 
@@ -129,6 +132,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "hycross-suv", name: "Toyota Innova Hycross (Hybrid)", type: "SUVs", category: "PREMIUM",
     seating: "7–8 Seater Including Pilot", luggage: "300L (all rows) / 991L (3rd row folded)",
+    imageObjectPosition: "center 80%",
     image: ["/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_51_24%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_05_09%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_09_48%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_53_47%20AM.png"],
   },
   // Premium Plus
@@ -147,6 +151,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "audi-q7", name: "Audi Q7", type: "SUVs", category: "LUXURY",
     seating: "7 Seater Including Pilot", luggage: "295L (all rows) / 770L (3rd row folded)",
+    imageObjectPosition: "center 80%",
     image: ["/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_40_26%20AM.png", "/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_42_43%20AM.png", "/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_38_55%20AM.png", "/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_41_50%20AM.png", "/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_45_24%20AM.png", "/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2001_45_30%20AM.png", "/Mann car pictures/Audi%20Q7%20copy/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2007_31_08%20PM.png"],
   },
   {
@@ -234,6 +239,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sprinter-exec", name: "Mercedes-Benz Sprinter Executive Lounge", type: "Vanity van", category: "LUXURY",
     seating: "7–9 Seater Including Pilot", luggage: "Fits 10–15 large suitcases",
+    imageObjectPosition: "center 80%",
     image: ["/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_37_46%20PM.png", "/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2003_43_57%20PM.png", "/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_56_51%20PM.png", "/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_01_19%20PM.png", "/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_05_12%20PM.png", "/Mann car pictures/merecedes%20benz%20sprinter%209%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_10_58%20PM.png"],
   },
   {
@@ -311,11 +317,13 @@ const VEHICLES: Vehicle[] = [
   {
     id: "lt-hycross-7", name: "Toyota Innova Hycross (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
     seating: "7 Seater Including Pilot", luggage: "300L / 991L (3rd row folded)",
+    imageObjectPosition: "center 80%",
     image: ["/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_51_24%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_09_48%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_05_09%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_53_47%20AM.png"],
   },
   {
     id: "lt-hycross-8", name: "Toyota Innova Hycross (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
     seating: "8 Seater Including Pilot", luggage: "300L / 991L (3rd row folded)",
+    imageObjectPosition: "center 80%",
     image: ["/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_51_24%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_09_48%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_05_09%20AM.png", "/Mann%20car%20pictures/Toyota%20Innova%20Hycross/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_53_47%20AM.png"],
   },
   {
@@ -331,6 +339,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "lt-e-class", name: "Mercedes-Benz E-Class (Monthly Lease)", type: "Long Term Leasing", category: "LONG TERM LEASING",
     seating: "5 Seater Including Pilot", luggage: "540 Litres",
+    imageObjectPosition: "bottom",
     image: ["/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_32_23%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_32_56%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_31_52%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_36_12%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_39_28%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_41_21%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_41_47%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20E-Class/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_42_37%20PM.png"],
   },
   {
@@ -419,7 +428,7 @@ function IconCheck({ size = 13 }: { size?: number }) {
 /* ─────────────────────────────────────────────────────────────
    CAROUSEL
 ───────────────────────────────────────────────────────────── */
-function ImageCarousel({ images, alt, externalHover, objectFit = "cover" }: { images: string[]; alt: string; externalHover?: boolean; objectFit?: "cover" | "contain" }) {
+function ImageCarousel({ images, alt, externalHover, objectFit = "cover", objectPosition }: { images: string[]; alt: string; externalHover?: boolean; objectFit?: "cover" | "contain"; objectPosition?: string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [internalHover, setInternalHover] = useState(false);
   const isHovered = externalHover ?? internalHover;
@@ -452,7 +461,7 @@ function ImageCarousel({ images, alt, externalHover, objectFit = "cover" }: { im
         src={images[currentIndex]}
         alt={`${alt} - Image ${currentIndex + 1}`}
         fill
-        style={{ objectFit: objectFit, transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1)" }}
+        style={{ objectFit: objectFit, objectPosition: objectPosition, transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1)" }}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
         className="card-image"
       />
@@ -576,13 +585,13 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
         {/* Car image */}
         <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
           {Array.isArray(vehicle.image) ? (
-            <ImageCarousel images={vehicle.image} alt={vehicle.name} />
+            <ImageCarousel images={vehicle.image} alt={vehicle.name} objectPosition={vehicle.imageObjectPosition} />
           ) : (
             <Image
               src={vehicle.image}
               alt={vehicle.name}
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover", objectPosition: vehicle.imageObjectPosition }}
               sizes="(max-width: 640px) 100vw, 520px"
             />
           )}
@@ -618,7 +627,7 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
           WebkitBackdropFilter: "blur(20px) saturate(140%)",
         }}>
           <p className="font-sans" style={{
-            fontSize: "0.875rem", fontWeight: 600,
+            fontSize: "1rem", fontWeight: 600,
             color: "var(--text-primary)",
             margin: "0 0 0.5rem",
             letterSpacing: "-0.01em",
@@ -630,12 +639,12 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
           {/* Quick specs */}
           <div style={{ display: "flex", gap: "1rem", marginBottom: "0.8rem" }}>
             {[
-              { icon: <IconUsers size={11} />, val: vehicle.seating },
-              { icon: <IconBriefcase size={11} />, val: vehicle.luggage.split(" / ")[0] },
+              { icon: <IconUsers size={12} />, val: vehicle.seating },
+              { icon: <IconBriefcase size={12} />, val: vehicle.luggage.split(" / ")[0] },
             ].map(({ icon, val }) => (
               <span key={val} className="font-sans" style={{
-                display: "flex", alignItems: "center", gap: "0.28rem",
-                fontSize: "0.68rem", color: "var(--text-50)",
+                display: "flex", alignItems: "center", gap: "0.35rem",
+                fontSize: "0.75rem", color: "var(--text-50)",
               }}>
                 {icon} {val}
               </span>
@@ -674,7 +683,7 @@ function VehicleCard({ vehicle, onSelect }: { vehicle: Vehicle; onSelect: (v: Ve
       style={{ borderRadius: "1rem", overflow: "hidden", cursor: "pointer", position: "relative" }}
     >
       <div style={{ position: "relative", width: "100%", aspectRatio: "4/3" }}>
-        <ImageCarousel images={images} alt={vehicle.name} externalHover={isHovered} objectFit={vehicle.imageObjectFit} />
+        <ImageCarousel images={images} alt={vehicle.name} externalHover={isHovered} objectFit={vehicle.imageObjectFit} objectPosition={vehicle.imageObjectPosition} />
         <div style={{
           position: "absolute", inset: 0,
           background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.42) 100%)",
@@ -696,15 +705,15 @@ function VehicleCard({ vehicle, onSelect }: { vehicle: Vehicle; onSelect: (v: Ve
         WebkitBackdropFilter: "blur(20px) saturate(140%)",
       }}>
         <p className="font-sans" style={{
-          fontSize: "0.875rem", fontWeight: 600, color: "var(--text-primary)",
-          margin: "0 0 0.5rem", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
+          fontSize: "1rem", fontWeight: 600, color: "var(--text-primary)",
+          margin: "0 0 0.6rem", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
         }}>{vehicle.name}</p>
-        <div style={{ display: "flex", gap: "1rem" }}>
-          <span className="font-sans" style={{ display: "flex", alignItems: "center", gap: "0.28rem", fontSize: "0.68rem", color: "var(--text-50)" }}>
-            <IconUsers size={11} /> {vehicle.seating}
+        <div style={{ display: "flex", gap: "1.25rem" }}>
+          <span className="font-sans" style={{ display: "flex", alignItems: "center", gap: "0.35rem", fontSize: "0.75rem", color: "var(--text-50)" }}>
+            <IconUsers size={12} /> {vehicle.seating}
           </span>
-          <span className="font-sans" style={{ display: "flex", alignItems: "center", gap: "0.28rem", fontSize: "0.68rem", color: "var(--text-50)" }}>
-            <IconBriefcase size={11} /> {vehicle.luggage.split(" / ")[0]}
+          <span className="font-sans" style={{ display: "flex", alignItems: "center", gap: "0.35rem", fontSize: "0.75rem", color: "var(--text-50)" }}>
+            <IconBriefcase size={12} /> {vehicle.luggage.split(" / ")[0]}
           </span>
         </div>
       </div>
@@ -776,9 +785,9 @@ function CategorySection({ category, vehicles }: { category: Category; vehicles:
         ref={gridRef}
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))",
-          gap: "1.1rem",
-          marginBottom: "3rem",
+          gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+          gap: "1.25rem",
+          marginBottom: "3.5rem",
         }}
       >
         {vehicles.map((v) => (
