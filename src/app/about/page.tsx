@@ -2193,7 +2193,7 @@ export default function AboutPage() {
                   background: "var(--glass-light)",
                   border: "1px solid var(--border-subtle)",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--accent)",
+                  color: "var(--text-primary)",
                 }}>
                   <IconDiplomacy />
                 </div>

@@ -213,7 +213,8 @@ export default function IndiaMapLeaflet() {
       <div className="india-map" style={{ height: "100%", width: "100%" }}>
         <MapContainer
           center={[22.0, 79.5]}
-          zoom={5}
+          zoom={5.5}
+          zoomSnap={0.5}
           style={{ height: "100%", width: "100%", borderRadius: "1.25rem" }}
           scrollWheelZoom={false}
           maxBounds={INDIA_BOUNDS}

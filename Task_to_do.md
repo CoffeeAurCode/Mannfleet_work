@@ -46,7 +46,18 @@
   - Please provide the car policy PDF file so it can be added.
 
 
-# Some more changes required from client side 
-- front angle should be the first pic (reference pic of the vehicle we are talking about : )
+# Some more changes required from client side — Completed ✅
+
+- **Tempo Traveller front angle first** — Reordered images: direct front (11_18_13), then 3/4 front (11_18_08), then interior shots.
+- **6.5 Million space** — Added space: `"6.5"` + `" Million"` in flagship-project/page.tsx stat card.
+- **Full form of NIA** — Changed `"NIA Inauguration"` → `"Noida International Airport Inauguration"` in flagship-project/page.tsx.
+- **Map zoom** — YES, zooming in is possible. Increased default from `zoom={5}` to `zoom={5.5}` (with `zoomSnap={0.5}`) in IndiaMapLeaflet.tsx.
+- **Hyundai Aura white + front first** — Replaced all 4 exterior (black) images with 5 white images from `Aura white.zip`. Front view is first. Kept all 3 interior images (dashboard, rear seat, trunk).
+- **Toyota Camry Hybrid front first** — Added `toyota camry hybrid front.jpeg` as first image in both Camry Hybrid and Camry Self Drive fleet entries.
+- **Mercedes-Benz Sprinter Executive images** — Replaced all images with the 5 new ones from `merecedes benz sprinter 9 seater 2.zip` (front view first).
+- **Toyota Hyryder added to SUV Economy** — Extracted `Toyota hyryder.zip`, added new entry (`toyota-hyryder`) in fleet/page.tsx SUV ECONOMY section. Front view first.
+- **Globe icon white (Diplomatic Excellence)** — Changed icon colour from `var(--accent)` (red) to `var(--text-primary)` (white in dark mode) in about/page.tsx.
+- **Services 404** — Code already has data for all slugs (conventions-exhibitions, leasing, high-profile-delegation, board-meetings, agm-board-meets, leagues-tournaments, events-weddings, town-hall-meetings, tourism). This is a **Vercel deployment lag** — redeploy/push to fix.
+- **"On-Time Guarantee" pill same colour as Luxury Fleet** — Removed the `#fff` special case for pill index 2 in BentoSection.tsx. All inactive pills now use `var(--map-badge-bg)` consistently.
 
 
