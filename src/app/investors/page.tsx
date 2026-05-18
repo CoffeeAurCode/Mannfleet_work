@@ -57,7 +57,7 @@ interface PdfCategory {
   docs: PdfDoc[];
 }
 
-const BASE = "/Mann%20Investors%20/";
+const BASE = "/Mann%20Investors/";
 
 const PDF_CATEGORIES: PdfCategory[] = [
   {

@@ -41,7 +41,7 @@ const VEHICLES: Vehicle[] = [
     id: "hyundai-aura", name: "Hyundai Aura", type: "Sedans", category: "ECONOMY",
     seating: "5 Seater Including Pilot", luggage: "402 Litres",
     imageObjectFit: "cover",
-    image: ["/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_15_47%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_23_33%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_19_35%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_21_57%20PM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_11%20AM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_16%20AM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_20%20AM.png"],
+    image: ["/Mann car pictures/Hyundai Aura/hyundau aura front.jpeg","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_15_47%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_23_33%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_19_35%20PM.png","/Mann car pictures/Aura/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2006_21_57%20PM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_11%20AM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_16%20AM.png","/Mann%20car%20pictures/Hyundai%20Aura/ChatGPT%20Image%20May%208%2C%202026%2C%2011_31_20%20AM.png"],
   },
 
   // Economy Plus
@@ -56,7 +56,7 @@ const VEHICLES: Vehicle[] = [
     id: "camry-hybrid", name: "Toyota Camry Hybrid", type: "Sedans", category: "PREMIUM",
     seating: "5 Seater Including Pilot", luggage: "524 Litres",
     imageObjectFit: "cover",
-    image: ["/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png","/Mann car pictures/Toyota camry hybrid/WhatsApp Image 2026-05-10 at 13.55.06.jpeg"],
+    image: ["/Mann car pictures/Toyota camry hybrid/toyota camry hybrid front.jpeg","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png","/Mann car pictures/Toyota camry hybrid/WhatsApp Image 2026-05-10 at 13.55.06.jpeg"],
   },
   // Premium Plus
   {
@@ -80,7 +80,7 @@ const VEHICLES: Vehicle[] = [
     id: "bmw-5-series", name: "BMW 5 Series", type: "Sedans", category: "LUXURY",
     seating: "5 Seater Including Pilot", luggage: "500 Litres",
     imageObjectFit: "cover",
-    image: ["/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_52_22%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_49_04%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_46_45%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_48_21%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2002_48_20%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2002_56_01%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_39_45%20AM.png"],
+    image: ["/Mann car pictures/BMW 5 Series/BMW 5 series front.jpeg","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_52_22%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_49_04%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_46_45%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_48_21%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2002_48_20%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2002_56_01%20PM.png","/Mann%20car%20pictures/BMW%205%20Series/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_39_45%20AM.png"],
   },
   // Super Luxury
   {
@@ -146,7 +146,7 @@ const VEHICLES: Vehicle[] = [
     id: "fortuner", name: "Toyota Fortuner", type: "SUVs", category: "PREMIUM PLUS",
     seating: "7 Seater Including Pilot", luggage: "296 Litres (all rows up)",
     imageObjectFit: "cover",
-    image: ["/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2001_03_01%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_47%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_20%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_51%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_29%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_35_18%20PM.png"],
+    image: ["/Mann car pictures/Toyota fortuner/Toyota fortuner front.jpeg","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2001_03_01%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_47%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_20%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_51%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_29%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_35_18%20PM.png"],
   },
   {
     id: "ford-endeavour", name: "Ford Endeavour", type: "SUVs", category: "PREMIUM PLUS",
@@ -177,7 +177,17 @@ const VEHICLES: Vehicle[] = [
   {
     id: "kia-carnival-limousine", name: "Kia Carnival Limousine", type: "SUVs", category: "LUXURY",
     seating: "7 Seater Including Pilot", luggage: "627 Litres",
-    image: "/Mann%20car%20pictures/Kia%20Carens/ChatGPT%20Image%20May%205%2C%202026%2C%2009_23_09%20PM.png",
+    imageObjectFit: "cover",
+    image: [
+      "/Mann car pictures/Kia Carnival Limousine/Kia carnival front.jpeg",
+      "/Mann car pictures/Kia Carnival Limousine/ChatGPT Image May 8, 2026, 11_08_59 AM.png",
+      "/Mann car pictures/Kia Carnival Limousine/ChatGPT Image May 8, 2026, 11_09_03 AM.png",
+      "/Mann car pictures/Kia Carnival Limousine/ChatGPT Image May 8, 2026, 11_09_10 AM.png",
+      "/Mann car pictures/Kia Carnival Limousine/ChatGPT Image May 8, 2026, 11_09_23 AM.png",
+      "/Mann car pictures/Kia Carnival Limousine/ChatGPT Image May 8, 2026, 11_09_32 AM.png",
+      "/Mann car pictures/Kia Carnival Limousine/ChatGPT Image May 8, 2026, 11_09_36 AM.png",
+      "/Mann car pictures/Kia Carnival Limousine/ChatGPT Image May 8, 2026, 11_09_40 AM.png",
+    ],
   },
   // Super Luxury
   {
@@ -311,13 +321,13 @@ const VEHICLES: Vehicle[] = [
     id: "sd-camry", name: "Toyota Camry Hybrid (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "5 Seater Excluding Pilot", luggage: "524 Litres",
     imageObjectFit: "cover",
-    image: ["/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png"],
+    image: ["/Mann car pictures/Toyota camry hybrid/toyota camry hybrid front.jpeg","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_50_45%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_54_11%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2007_57_29%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_02_08%20PM.png","/Mann car pictures/Toyota%20camry%20hybrid/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2008_03_19%20PM.png"],
   },
   {
     id: "sd-fortuner", name: "Toyota Fortuner (Self Drive)", type: "Self Driving", category: "SELF DRIVING",
     seating: "7 Seater Excluding Pilot", luggage: "296L (all rows) / 716L (3rd row folded)",
     imageObjectFit: "cover",
-    image: ["/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2001_03_01%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_47%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_20%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_51%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_29%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_35_18%20PM.png"],
+    image: ["/Mann car pictures/Toyota fortuner/Toyota fortuner front.jpeg","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2001_03_01%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_47%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_20%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_51%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_30_29%20PM.png","/Mann%20car%20pictures/Toyota%20fortuner/ChatGPT%20Image%20May%204%2C%202026%2C%2012_35_18%20PM.png"],
   },
 
   /* ── LONG TERM LEASING ───────────────────────────────────── */
