@@ -613,7 +613,7 @@ export default function FlagshipProjectPage() {
             marginBottom: "clamp(2rem, 4vw, 3rem)",
           }}>
             {[
-              { val: "6.5", suffix: "Million", label: "Expected number of flyers in the first year", note: "Phase 1 launch" },
+              { val: "6.5", suffix: " Million", label: "Expected number of flyers in the first year", note: "Phase 1 launch" },
               { val: "20", suffix: "–25%", label: "Compound Annual Growth Rate", note: "Projected growth trajectory" },
             ].map(({ val, suffix, label, note }, i) => (
               <div key={i} style={{
@@ -857,7 +857,7 @@ export default function FlagshipProjectPage() {
           {/* NIA Inauguration Photos */}
           <div style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
             <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
-              NIA Inauguration
+              Noida International Airport Inauguration
             </span>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "clamp(1rem, 2vw, 1.5rem)" }}>
               {[

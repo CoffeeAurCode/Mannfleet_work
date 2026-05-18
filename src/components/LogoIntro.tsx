@@ -19,6 +19,7 @@ export default function LogoIntro() {
     // Signal content to reveal only after overlay has fully faded out
     setTimeout(() => {
       setShow(false);
+      sessionStorage.setItem("mannfleet_intro_seen", "1");
       window.dispatchEvent(new CustomEvent("intro:done"));
     }, 500);
   };

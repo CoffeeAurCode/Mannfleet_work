@@ -688,8 +688,8 @@ function PillsCard() {
           alignSelf: i % 2 === 0 ? "flex-start" : "flex-end",
           padding: "0.38rem 1rem",
           borderRadius: 9999,
-          background: active === i ? "var(--accent)" : (i === 2 ? "#fff" : "var(--map-badge-bg)"),
-          border: `1px solid ${active === i ? "var(--accent-dark)" : (i === 2 ? "var(--border-mid)" : "var(--border-subtle)")}`,
+          background: active === i ? "var(--accent)" : "var(--map-badge-bg)",
+          border: `1px solid ${active === i ? "var(--accent-dark)" : "var(--border-subtle)"}`,
           fontSize: "0.78rem", fontWeight: 600,
           color: active === i ? "#fff" : "var(--text-primary)",
           boxShadow: active === i
