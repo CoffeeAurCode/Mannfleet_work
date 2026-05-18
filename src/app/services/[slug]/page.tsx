@@ -55,7 +55,7 @@ const SERVICE_DATA: Record<string, {
     ],
     stat: "24/7",
     statLabel: "availability",
-    image: "/Mann car pictures/Mercedes-Benz E-Class/ChatGPT Image Apr 28, 2026, 06_32_23 PM.png",
+    image: "/Mann car pictures/Toyota fortuner/ChatGPT Image May 4, 2026, 12_35_18 PM.png",
   },
   "shuttle": {
     title: "Shuttle Service",
@@ -119,7 +119,7 @@ const SERVICE_DATA: Record<string, {
     ],
     stat: "Pan-India",
     statLabel: "coverage",
-    image: "/Mann car pictures/Mercedes-Benz S-Class/ChatGPT Image Apr 29, 2026, 11_09_09 PM.png",
+    image: "/Mann car pictures/BMW X7/ChatGPT Image Apr 28, 2026, 08_23_47 PM.png",
   },
   "film-shoots-concerts": {
     title: "Film Shoots & Concerts",
@@ -135,7 +135,7 @@ const SERVICE_DATA: Record<string, {
     ],
     stat: "Custom",
     statLabel: "logistics",
-    image: "/Mann car pictures/Rolls royce/ChatGPT Image May 1, 2026, 01_10_24 PM.png",
+    image: "/Mann car pictures/range rover sport/ChatGPT Image May 6, 2026, 03_38_44 PM.png",
   },
   "global-leaders-celebrities": {
     title: "Global Leaders & Celebrities Visit",
@@ -167,7 +167,7 @@ const SERVICE_DATA: Record<string, {
     ],
     stat: "Scale",
     statLabel: "capacity",
-    image: "/Mann car pictures/Volvo 39 seater/ChatGPT Image Apr 28, 2026, 03_50_51 PM.png",
+    image: "/Mann car pictures/Toyota Coaster New Generation/ChatGPT Image May 4, 2026, 12_38_26 PM.png",
   },
   "leasing": {
     title: "Leasing",
@@ -231,7 +231,7 @@ const SERVICE_DATA: Record<string, {
     ],
     stat: "Seamless",
     statLabel: "experience",
-    image: "/Mann car pictures/Mercedes-Benz S-Class/ChatGPT Image Apr 29, 2026, 11_10_15 PM.png",
+    image: "/Mann car pictures/BMW 7 Series/ChatGPT Image Apr 28, 2026, 08_33_02 PM.png",
   },
   "leagues-tournaments": {
     title: "Leagues & Tournaments",
@@ -247,7 +247,7 @@ const SERVICE_DATA: Record<string, {
     ],
     stat: "Team",
     statLabel: "logistics",
-    image: "/Mann car pictures/Volvo 39 seater/ChatGPT Image Apr 28, 2026, 03_29_00 PM.png",
+    image: "/Mann car pictures/Tempo traveller/ChatGPT Image May 15, 2026, 11_18_13 PM.png",
   },
   "events-weddings": {
     title: "Events & Weddings",
@@ -279,7 +279,7 @@ const SERVICE_DATA: Record<string, {
     ],
     stat: "Group",
     statLabel: "transport",
-    image: "/Mann car pictures/Force Urbania/ChatGPT Image Apr 30, 2026, 01_28_40 AM.png",
+    image: "/Mann car pictures/Mercedes-Benz V-Class/ChatGPT Image Apr 26, 2026, 01_04_00 AM.png",
   },
   "tourism": {
     title: "Tourism",
@@ -295,7 +295,8 @@ const SERVICE_DATA: Record<string, {
     ],
     stat: "Scenic",
     statLabel: "routes",
-    image: "/Mann car pictures/Toyota fortuner/ChatGPT Image May 4, 2026, 01_03_01 PM.png",
+    image: "/Taj mahal.jpeg",
+    imageObjectPosition: "center 60%",
   },
 };
 
