@@ -64,14 +64,14 @@ function IconLink({ size = 16 }: { size?: number }) {
 const BRANCH_CONTACTS = [
   {
     name: "Amarjeet Singh Mann",
-    designation: "President Marketing",
+    designation: "President-Marketing",
     phone: "+91-9990222888",
     email: "amarjeet@manntours.com",
     photo: "/teams/PHOTO-2026-04-20-18-02-49.jpg",
   },
   {
     name: "Jagdeep Singh Mann",
-    designation: "President Sales",
+    designation: "President-Sales",
     phone: "+91-9540222888",
     email: "jagdeep@manntours.com",
     photo: "/teams/PHOTO-2026-04-20-18-02-49 2.jpg",
@@ -274,7 +274,7 @@ export default function ContactPage() {
               lineHeight: 1.1,
               margin: "0 0 0.4rem",
             }}>
-              Call or Email To
+              Contact Our Team
             </h2>
             <p className="font-sans" style={{ fontSize: "0.88rem", color: "var(--text-muted)", margin: 0 }}>
               Reach our sales team directly for bookings and corporate enquiries.
@@ -371,30 +371,11 @@ export default function ContactPage() {
               onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(200,40,42,0.38)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(200,40,42,0.28)"; }}
             >
-              Bookings for Cabs &amp; Vehicles
+              Bookings for Cabs and Vehicles
               <ArrowUpRight size={14} />
             </Link>
 
-            <a
-              href="https://play.google.com/store/apps/details?id=com.user.mannfleet"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex", alignItems: "center", gap: "0.6rem",
-                padding: "0.9rem 1.75rem", borderRadius: "9999px",
-                background: "var(--glass-mid)", color: "var(--text-primary)",
-                border: "1px solid var(--border-mid)",
-                fontSize: "0.88rem", fontWeight: 600,
-                textDecoration: "none",
-                transition: "border-color 0.18s ease",
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(200,40,40,0.35)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
-            >
-              <IconLink size={14} />
-              Payment Link
-              <ArrowUpRight size={14} />
-            </a>
+
           </div>
         </section>
 

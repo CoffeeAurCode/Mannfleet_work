@@ -209,7 +209,7 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
           </span>
         </Link>
 
-        {/* Center nav pills */}
+        {/* Center nav pills + Actions */}
         <div className="pill-nav-items" ref={navItemsRef}>
           <ul className="pill-list" role="menubar">
             {NAV_LINKS.map(({ label, href }, i) => (
@@ -234,18 +234,19 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
               </li>
             ))}
           </ul>
-        </div>
 
-        {/* Right actions */}
-        <div className="pill-nav-actions">
-          <button
-            className="pill-theme-btn"
-            onClick={toggle}
-            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-          >
-            {theme === "dark" ? <SunIcon size={14} /> : <MoonIcon size={14} />}
-          </button>
-          <a href="/reservation" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</a>
+          <div className="pill-nav-divider" />
+
+          <div className="pill-nav-actions">
+            <button
+              className="pill-theme-btn"
+              onClick={toggle}
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === "dark" ? <SunIcon size={14} /> : <MoonIcon size={14} />}
+            </button>
+            <a href="/reservation" className="pill-book-btn" style={{ textDecoration: "none" }}>Book Now</a>
+          </div>
         </div>
 
         {/* Hamburger (mobile) */}

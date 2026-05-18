@@ -57,7 +57,7 @@ interface PdfCategory {
   docs: PdfDoc[];
 }
 
-const BASE = "/Mann%20Investors/";
+const BASE = "/Mann%20Investors%20/";
 
 const PDF_CATEGORIES: PdfCategory[] = [
   {
@@ -65,7 +65,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     title: "IPO / DRHP",
     icon: "📄",
     docs: [
-      { label: "DRHP — Mann Fleet Partners Ltd.", file: "DRHP_Mann-Fleet-Partners-Ltd.pdf" },
+      { label: "DRHP — Mann Fleet Partners Limited", file: "DRHP_Mann-Fleet-Partners-Limited.pdf" },
       { label: "DRHP Newspaper — Financial Express", file: "DRHP-Newspaper-Publication_Financial-Express.pdf" },
       { label: "DRHP Newspaper — Jansatta", file: "DRHP-Newspaper-Publication_Jansatta.pdf" },
       { label: "DRHP Newspaper — Pratahkiran", file: "DRHP-Newspaper-Publication_Pratahkiran.pdf" },
@@ -85,7 +85,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     title: "Codes of Conduct",
     icon: "⚖️",
     docs: [
-      { label: "Code of Conduct — Directors & SMP", file: "Code-of-Conduct-for-Directors-and-SMP_Mann.pdf" },
+      { label: "Code of Conduct — Directors and SMP", file: "Code-of-Conduct-for-Directors-and-SMP_Mann.pdf" },
       { label: "Code of Conduct — Prevention of Insider Trading", file: "Code-of-Conduct-for-Prevention-of-Insider-Trading_Mann.pdf" },
     ],
   },
@@ -96,8 +96,8 @@ const PDF_CATEGORIES: PdfCategory[] = [
     docs: [
       { label: "Board Diversity Policy", file: "Board-Diversity-Policy_Mann.pdf" },
       { label: "Whistle-Blower Policy", file: "Whistle-Blower-Policy_Mann.pdf" },
-      { label: "Nomination & Remuneration Policy", file: "Nomination-Remuneration-Policy_Mann.pdf" },
-      { label: "Documents Preservation & Archival Policy", file: "Documents-Preservation-and-Archival-Policy_Mann.pdf" },
+      { label: "Nomination and Remuneration Policy", file: "Nomination-Remuneration-Policy_Mann.pdf" },
+      { label: "Documents Preservation and Archival Policy", file: "Documents-Preservation-and-Archival-Policy_Mann.pdf" },
       { label: "Policy on Related Party Transactions", file: "Policy-on-Materiality-of-Related-Party-Transaction_Mann.pdf" },
       { label: "Policy on Material Subsidiaries", file: "Policy-for-determining-Material-Subsidiaries_Mann.pdf" },
       { label: "Policy on Materiality of Disclosures", file: "Policy-on-Determination-of-Materiality-for-Disclosure-of-Events-Information_Mann.pdf" },
@@ -112,7 +112,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     docs: [
       { label: "Details of Business", file: "Details-of-Business.pdf" },
       { label: "Details of KMPs", file: "Details-of-KMPs.pdf" },
-      { label: "Contact Details — Grievance Redressal", file: "Contact-Details-for-Grievance-Redressal-handling-of-Investor-Complaints.pdf" },
+      { label: "Contact Details — Grievance Redressal", file: "Details-of-KMPs.pdf" },
     ],
   },
 ];
@@ -574,7 +574,7 @@ export default function InvestorsPage() {
             opacity: 0,
           }}
         >
-          Corporate governance, regulatory disclosures, and board information for Mann Fleet Partners Ltd.
+          Corporate governance, regulatory disclosures, and board information for Mann Fleet Partners Limited
         </p>
       </section>
 
@@ -610,7 +610,7 @@ export default function InvestorsPage() {
           margin: "0 auto",
         }}
       >
-        <SectionLabel>Corporate Documents & Disclosures</SectionLabel>
+        <SectionLabel>Corporate Documents and Disclosures</SectionLabel>
 
         <div style={{ marginTop: 32, display: "flex", flexDirection: "column", gap: 48 }}>
           {PDF_CATEGORIES.map(cat => (

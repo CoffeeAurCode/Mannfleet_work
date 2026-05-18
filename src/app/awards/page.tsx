@@ -36,7 +36,7 @@ const AWARDS = [
   {
     title: "National Tourism Award",
     year: "2016–2017",
-    issuer: "Ministry of Tourism, Govt. of India",
+    issuer: "Ministry of Tourism, Government of India",
     pdf: "/awards/National Tourism Award_2016-17.pdf",
     image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_26%20PM(govenment).png",
     highlight: true,
@@ -44,7 +44,7 @@ const AWARDS = [
   {
     title: "National Tourism Award",
     year: "2017–2018",
-    issuer: "Ministry of Tourism, Govt. of India",
+    issuer: "Ministry of Tourism, Government of India",
     pdf: "/awards/National Tourism Award_2017-18.pdf",
     image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_05%20PM(govenment).png",
     highlight: true,
@@ -52,7 +52,7 @@ const AWARDS = [
   {
     title: "National Tourism Award",
     year: "2018–2019",
-    issuer: "Ministry of Tourism, Govt. of India",
+    issuer: "Ministry of Tourism, Government of India",
     pdf: "/awards/National Tourism Award_2018-19.pdf",
     image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_44_22%20PM.png",
     highlight: true,
@@ -68,7 +68,7 @@ const AWARDS = [
   {
     title: "TV Leaders of Road Transport",
     year: "2022",
-    issuer: "TV 9 Network",
+    issuer: "TV9 Network",
     pdf: "/awards/Award_TV 9 Network.pdf",
     image: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_09%20PM.png",
     highlight: false,
@@ -98,7 +98,7 @@ const APPRECIATIONS = [
   { label: "Joe Biden — Vice President, USA", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_53%20PM.png" },
   { label: "US Mission Token of Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_50_56%20PM.png" },
   { label: "IATA Accreditation", file: "/Appreciation/Appreciation Letter_IATA.jpg" },
-  { label: "IATA AGM & World Air Transport Summit 2025", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_50%20PM.png" },
+  { label: "IATA AGM and World Air Transport Summit 2025", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_37_50%20PM.png" },
   { label: "Reliance Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_40%20PM.png" },
   { label: "Pernod Ricard Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_53%20PM.png" },
   { label: "Tamarind Global Appreciation", file: "/Mann%20awards%20images%20edited/ChatGPT%20Image%20May%204%2C%202026%2C%2007_36_59%20PM.png" },
@@ -109,7 +109,7 @@ const APPRECIATIONS = [
 const TESTIMONIALS = [
   {
     quote: "Thank you for the excellent support during our recent corporate event at Coca-Cola. The logistics were handled seamlessly, and the team’s professionalism, flexibility, and approachable attitude made the entire experience very smooth. We truly appreciate how everything was managed, including last-minute changes, ensuring everything went as planned.",
-    author: "Coke Logistics Team",
+    author: "Coca-Cola Logistics Team",
   },
   {
     quote: "We sincerely appreciate the excellent service and outstanding support provided by your entire team for our recent vehicle requirements from Delhi to Agra. We are particularly grateful for the promptness and efficiency with which our requests were handled, from the initial quotation to the final invoice and vehicle details. The vehicles were well-maintained, and the drivers were professional and punctual.",
@@ -129,14 +129,14 @@ const TESTIMONIALS = [
   },
   {
     quote: "My group had a fantastic time on our ‘Discover India Experience’ and the team was exceptional. Everyone enjoyed the ‘Jet on Wheels’ experience and was extremely impressed with the driving skills and overall service. We are looking forward to our return with our next group and to working together again.",
-    author: "Nico & Belinda Moretti",
+    author: "Nico and Belinda Moretti",
   },
   {
     quote: "Mann’s prompt service, well-maintained vehicles, and professional drivers contributed significantly to the smooth and successful execution of the visit. We greatly appreciate Mann’s commitment to excellence and reliability, and the hard work and dedication of the entire team did not go unnoticed.",
     author: "Jorgan Andrews, Chargé d’Affaires, a.i.",
   },
   {
-    quote: "We would like to express our sincere appreciation for the warm hospitality extended to our Guests, Participating Teams, Match Officials and Delegation during the recently concluded competition. The team’s commitment in ensuring discipline within the bubble module, along with the significant and undivided efforts rendered across cities, is highly commendable.",
+    quote: "We would like to express our sincere appreciation for the warm hospitality extended to our guests, participating teams, match officials, and delegation during the recently concluded competition. The team’s commitment to ensuring discipline within the bubble module, along with the significant and undivided efforts rendered across cities, is highly commendable.",
     author: "Datuk Seri Windsor John, General Secretary AFC WOMENS' ASIAN CUP",
   },
   {
@@ -166,7 +166,7 @@ export default function AwardsPage() {
             margin: "0 0 1.25rem",
             letterSpacing: "0.01em",
           }}>
-            Awards &amp;<br />
+            Awards and<br />
             <span className="italic" style={{ color: "var(--text-secondary)" }}>Accolades</span>
           </h1>
           <p className="font-sans" style={{

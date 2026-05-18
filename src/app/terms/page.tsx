@@ -18,7 +18,7 @@ interface Section {
 const SECTIONS: Section[] = [
   {
     num: "1",
-    title: "Scope of Services & Booking Protocols",
+    title: "Scope of Services and Booking Protocols",
     clauses: [
       { num: "1.1", text: 'Mann Fleet Partners Limited (hereinafter referred to as "MFPL") covenants to provide professional transportation services maintained at the highest industry standards.' },
       { num: "1.2", text: "MFPL endeavours that all dispatched vehicles shall be punctual, well-maintained, and sanitary. Chauffeurs shall be appropriately uniformed, briefed on the specific service requirements, and maintain a courteous, professional demeanour at all times." },
@@ -30,20 +30,20 @@ const SECTIONS: Section[] = [
   },
   {
     num: "2",
-    title: "Tariff Structure, Billing & Taxation",
+    title: "Tariff Structure, Billing and Taxation",
     clauses: [
       { num: "2.1", text: "Time and mileage (kilometers) shall be calculated on a 'Garage-to-Garage' basis. Charges will originate from and terminate at the MFPL designated garage located within the specific city where the services are rendered. For multi-city or intercity services, the starting and ending points will be the service origin and destination, respectively" },
       { num: "2.2", text: 'For Airport Transfers and Local Sightseeing, all ancillary costs—including parking fees, tolls, and state taxes—shall be billed as extras. Any service exceeding a four-hour duration shall be billed under the "80 km / 8 hours" tariff bracket.' },
       { num: "2.3", text: "For trips beyond city limits, all parking, tolls, and state taxes shall be charged at actuals based on original receipts. Prepaid taxes shall be billed as per the actual paid receipt value." },
       { num: "2.4", text: "Package tours are inclusive of parking, tolls, chauffeur allowances, and state taxes; however, parking charges for airport or railway station pickups remain an additional liability of the client." },
-      { num: "2.5", text: "GST will be applicable, as per Govt. directive" },
+      { num: "2.5", text: "GST will be applicable, as per Government directive" },
       { num: "2.6", text: "Payments made via credit card shall be subject to a facilitation fee equivalent to the actual bank processing charges on the total transaction value. This fee will be added to the final invoice at the time of payment processing." },
       { num: "2.7", text: "All rates are subject to adjustment based on fuel price volatility or regulatory changes, following prior intimation to the client. Please note that a tariff increase will be mandatory if there is an impact of more than 5% on fuel prices relative to the rates at the time of contract execution." },
     ],
   },
   {
     num: "3",
-    title: "Payment Terms & Credit Policy",
+    title: "Payment Terms and Credit Policy",
     clauses: [
       { num: "3.1", text: "Unless otherwise agreed in writing, all service fees must be settled in full prior to the departure or commencement of services." },
       { num: "3.2", text: "For entities with executed contracts and approved credit lines, payments are due within thirty (30) days from the date of invoice presentation." },
@@ -55,7 +55,7 @@ const SECTIONS: Section[] = [
   },
   {
     num: "4",
-    title: "Amenities, Usage & Conduct",
+    title: "Amenities, Usage and Conduct",
     clauses: [
       { num: "4.1", text: "Standard rates apply for mineral water, beverages, and garlands. Complimentary mineral water is provided only for local services within the Luxury and SUV segments." },
       { num: "4.2", text: "Coaches and vans are provided with 3GB of complimentary Wi-Fi on request; usage exceeding this threshold shall be billed at Rs. 500 per GB. Wi-Fi for cars/SUVs is available only upon specific request." },
@@ -69,7 +69,7 @@ const SECTIONS: Section[] = [
   },
   {
     num: "5",
-    title: "Cancellation & Breakdown Protocols",
+    title: "Cancellation and Breakdown Protocols",
     clauses: [
       {
         num: "5.1",
@@ -87,7 +87,7 @@ const SECTIONS: Section[] = [
   },
   {
     num: "6",
-    title: "Liability, Safety & Compliance",
+    title: "Liability, Safety and Compliance",
     clauses: [
       { num: "6.1", text: "To mitigate driver fatigue and ensure the safety of the client, chauffeurs are mandated to take a 15-minute rest after 2 hours of continuous driving, and a 30-minute rest after 4 hours." },
       { num: "6.2", text: "MFPL assumes no liability for personal belongings left in our vehicles; all items are carried at the sole risk of the client. Specifically, the company disclaims all responsibility for high-value assets, including gold, jewellery, or electronics. If any items are recovered, the client is entirely responsible for all costs associated with their return." },
@@ -116,7 +116,7 @@ const SECTIONS: Section[] = [
           "(i) delay in arrival or completion of service",
           "(ii) non-availability of vehicle or chauffeur",
           "(iii) trip cancellations due to operational constraints",
-          "(iv) traffic congestion, road closures, law & order issues",
+          "(iv) traffic congestion, road closures, law and order issues",
           "(v) vehicle breakdown or technical faults",
         ],
       },
@@ -126,7 +126,7 @@ const SECTIONS: Section[] = [
   },
   {
     num: "7",
-    title: "Grievances, Indemnity & Jurisdiction",
+    title: "Grievances, Indemnity and Jurisdiction",
     clauses: [
       { num: "7.1", text: "All service deficiencies or disputes must be reported immediately at the time of occurrence to allow for real-time resolution. MFPL shall not entertain any claims or complaints raised after the conclusion of the service. Formal written complaints must be filed within 24 hours via email to amrit@manntours.com." },
       {
@@ -172,7 +172,7 @@ export default function TermsPage() {
             Legal
           </p>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, color: "var(--text-primary)", lineHeight: 1.1, margin: "0 0 1rem", letterSpacing: "-0.025em" }}>
-            Terms &amp; Conditions of Service
+            Terms and Conditions of Service
           </h1>
           <p style={{ fontSize: "0.875rem", color: "var(--text-45)", margin: 0 }}>
             Mann Fleet Partners Limited · Effective 2025
@@ -213,7 +213,7 @@ export default function TermsPage() {
 
         {/* Contact */}
         <section style={{ marginTop: "1rem" }}>
-          <h2 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--text-90)", margin: "0 0 1rem" }}>Contact &amp; Grievances</h2>
+          <h2 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--text-90)", margin: "0 0 1rem" }}>Contact and Grievances</h2>
           <div style={{ paddingLeft: "2.4rem", display: "flex", flexDirection: "column", gap: "0.3rem" }}>
             <p style={{ fontSize: "0.9rem", color: "var(--text-55)", margin: 0, lineHeight: 1.8 }}>Mann Fleet Partners Limited</p>
             <p style={{ fontSize: "0.9rem", color: "var(--text-55)", margin: 0, lineHeight: 1.8 }}>Email: <a href="mailto:info@mannfleetpartners.com" style={{ color: "var(--accent)", textDecoration: "none" }}>info@mannfleetpartners.com</a></p>
