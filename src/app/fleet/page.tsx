@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/Navbar";
@@ -671,14 +672,17 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
             ))}
           </div>
 
-          <a
-            href="/reservation"
+          {/* next/link, not <a> — a plain anchor forces a full document load,
+              which re-runs the whole app shell. Client-side nav is instant. */}
+          <Link
+            href={{ pathname: "/reservation", query: { vehicle: vehicle.name, category: vehicle.category } }}
+            prefetch
             className="btn-ghost font-sans"
             style={{ fontSize: "0.68rem", padding: "0.42rem 0.9rem", width: "100%", justifyContent: "center", display: "flex", alignItems: "center", gap: "0.4rem", textDecoration: "none" }}
           >
             Book Now
             <IconArrow size={11} />
-          </a>
+          </Link>
         </div>
       </div>
     </div>,

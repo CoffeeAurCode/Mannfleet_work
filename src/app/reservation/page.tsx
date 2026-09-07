@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { fbTrack } from "@/lib/meta-pixel";
+import { BOOKING_EMAIL, WHATSAPP_NUMBER } from "@/lib/contact";
 
 function ArrowUpRight({ size = 14 }: { size?: number }) {
   return (
@@ -147,9 +148,61 @@ function SectionCard({ badge, title, children }: { badge: string; title: string;
   );
 }
 
+/** Fleet page passes ?category=SUPER LUXURY — match it to a form option. */
+const CATEGORY_TO_PREFERENCE: Record<string, string> = {
+  "ECONOMY": "Economy",
+  "ECONOMY PLUS": "Economy Plus",
+  "PREMIUM": "Premium",
+  "PREMIUM PLUS": "Premium Plus",
+  "LUXURY": "Luxury",
+  "SUPER LUXURY": "Super Luxury",
+  "RANGE ROVER": "Range Rover",
+};
+
+/* ── Query string, without useSearchParams ──────────────────
+   useSearchParams() would force this route behind a Suspense boundary, which
+   drops the whole form out of the prerendered HTML. useSyncExternalStore reads
+   the browser-only value with no hydration mismatch and keeps the page static. */
+const subscribeToSearch = (onChange: () => void) => {
+  window.addEventListener("popstate", onChange);
+  return () => window.removeEventListener("popstate", onChange);
+};
+const getSearch = () => window.location.search;
+const getSearchOnServer = () => "";
+
+type Booking = Record<string, string>;
+
+/** Plain-text body — renders identically in every mail client. */
+function buildMailBody(sections: { heading: string; fields: Booking }[]) {
+  const blocks = sections
+    .map(({ heading, fields }) => {
+      const rows = Object.entries(fields)
+        .filter(([, v]) => v && v.trim())
+        .map(([k, v]) => `  ${k}: ${v.trim()}`);
+      return rows.length ? `${heading}\n${rows.join("\n")}` : "";
+    })
+    .filter(Boolean);
+
+  return [
+    "New reservation request from mannfleetpartners.com",
+    "",
+    blocks.join("\n\n"),
+    "",
+    "—",
+    "Sent from the reservation form on mannfleetpartners.com",
+  ].join("\n");
+}
+
 /* ── Main page ──────────────────────────────────────────────── */
 export default function ReservationPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  // Arrives from the fleet page: /reservation?vehicle=...&category=...
+  const search = useSyncExternalStore(subscribeToSearch, getSearch, getSearchOnServer);
+  const searchParams = useMemo(() => new URLSearchParams(search), [search]);
+  const selectedVehicle = searchParams.get("vehicle") ?? "";
+  const selectedCategory = searchParams.get("category") ?? "";
 
   // Guest Name
   const [title, setTitle] = useState("");
@@ -179,7 +232,11 @@ export default function ReservationPage() {
 
   // Requirements
   const [noOfPersons, setNoOfPersons] = useState("");
-  const [vehiclePreferences, setVehiclePreferences] = useState("");
+  // null = guest hasn't chosen, so fall back to the category of the car they
+  // clicked. An explicit choice (including "No preference") always wins.
+  const [vehiclePreference, setVehiclePreference] = useState<string | null>(null);
+  const vehiclePreferences =
+    vehiclePreference ?? CATEGORY_TO_PREFERENCE[selectedCategory.toUpperCase()] ?? "";
   const [servicesRequired, setServicesRequired] = useState("");
 
   // Auto-calculate days
@@ -194,6 +251,61 @@ export default function ReservationPage() {
     }
   }, [dateOfTravel, endDate]);
 
+  const guestName = [title, firstName, lastName].filter(Boolean).join(" ").trim();
+
+  /** The whole request as plain text — reused for mail, clipboard and WhatsApp. */
+  const summaryText = useCallback(() => {
+    return buildMailBody([
+      {
+        heading: "GUEST",
+        fields: { Name: guestName, Phone: contactNumber, Email: emailAddress },
+      },
+      {
+        heading: "TRIP DURATION",
+        fields: {
+          "Date of travel": dateOfTravel,
+          "End date": endDate,
+          "Number of days": numberOfDays,
+        },
+      },
+      {
+        heading: "PICK-UP",
+        fields: {
+          Time: pickupTime,
+          City: cityName,
+          "Flight details": flightDetails,
+          Airport: airportName,
+          Terminal: terminal,
+          Hotel: hotelName,
+          "Residence address": residenceAddress,
+        },
+      },
+      { heading: "DROP-OFF", fields: { Location: dropoffLocation } },
+      {
+        heading: "REQUIREMENTS",
+        fields: {
+          "No. of persons": noOfPersons,
+          "Vehicle from fleet page": selectedVehicle,
+          "Vehicle preference": vehiclePreferences,
+          "Services required": servicesRequired,
+        },
+      },
+    ]);
+  }, [
+    guestName, contactNumber, emailAddress, dateOfTravel, endDate, numberOfDays,
+    pickupTime, cityName, flightDetails, airportName, terminal, hotelName,
+    residenceAddress, dropoffLocation, noOfPersons, selectedVehicle,
+    vehiclePreferences, servicesRequired,
+  ]);
+
+  /** The same request addressed to the booking inbox. */
+  const mailtoHref = useCallback(() => {
+    const subject = selectedVehicle
+      ? `Reservation request — ${selectedVehicle} — ${guestName || "New guest"}`
+      : `Reservation request — ${guestName || "New guest"}`;
+    return `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(summaryText())}`;
+  }, [selectedVehicle, guestName, summaryText]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Primary conversion. Guest name / phone / email are deliberately left out —
@@ -205,6 +317,13 @@ export default function ReservationPage() {
       number_of_days: numberOfDays || undefined,
       number_of_persons: noOfPersons || undefined,
     });
+
+    // There is no backend — hand the request to the guest's mail client,
+    // addressed to the booking inbox. The success screen below repeats the
+    // link and offers WhatsApp, because this can silently no-op on a device
+    // with no mail app configured.
+    window.location.href = mailtoHref();
+
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -228,32 +347,85 @@ export default function ReservationPage() {
                 fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 400,
                 color: "var(--text-primary)", lineHeight: 1.1, margin: "0 0 0.75rem",
               }}>
-                Reservation<br />
-                <span className="italic" style={{ color: "var(--text-secondary)" }}>Received</span>
+                Almost<br />
+                <span className="italic" style={{ color: "var(--text-secondary)" }}>there</span>
               </h1>
               <p className="font-sans" style={{
-                fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.7, margin: 0, maxWidth: 420,
+                fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.7, margin: 0, maxWidth: 460,
               }}>
-                Thank you, <strong style={{ color: "var(--text-primary)" }}>{firstName || "valued guest"}</strong>. Our team will review your request and get back to you within 2 hours. For urgent assistance, reach us on WhatsApp.
+                Thank you, <strong style={{ color: "var(--text-primary)" }}>{firstName || "valued guest"}</strong>. We&apos;ve opened an email to{" "}
+                <strong style={{ color: "var(--text-primary)" }}>{BOOKING_EMAIL}</strong> with your details filled in —{" "}
+                <strong style={{ color: "var(--text-primary)" }}>press send in your email app to complete the booking.</strong>{" "}
+                Our team replies within 2 hours.
               </p>
             </div>
-            <a
-              href="https://wa.me/919810008008"
-              target="_blank" rel="noopener noreferrer"
-              style={{
-                display: "inline-flex", alignItems: "center", gap: "0.6rem",
-                padding: "0.85rem 1.75rem", borderRadius: "9999px",
-                background: "rgba(37,211,102,0.12)", border: "1px solid rgba(37,211,102,0.35)",
-                color: "#25D366", fontSize: "0.9rem", fontWeight: 600,
-                textDecoration: "none", fontFamily: "'Poppins', sans-serif",
-                transition: "background 0.18s ease",
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(37,211,102,0.20)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(37,211,102,0.12)"; }}
-            >
-              <WhatsAppIcon size={18} />
-              Chat on WhatsApp
-            </a>
+
+            {/* The mailto above can silently no-op (no mail app configured, or a
+                browser that blocks the handoff), so every route stays available. */}
+            <div style={{
+              width: "100%", padding: "1.25rem", borderRadius: "1rem",
+              background: "var(--glass-ultra)", border: "1px solid var(--border-subtle)",
+              display: "flex", flexDirection: "column", gap: "0.9rem", alignItems: "center",
+            }}>
+              <p className="font-sans" style={{ fontSize: "0.82rem", color: "var(--text-55)", margin: 0 }}>
+                Email app didn&apos;t open?
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", justifyContent: "center" }}>
+                <a
+                  href={mailtoHref()}
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                    padding: "0.7rem 1.4rem", borderRadius: "9999px",
+                    background: "var(--accent)", color: "#fff",
+                    fontSize: "0.85rem", fontWeight: 600,
+                    textDecoration: "none", fontFamily: "'Poppins', sans-serif",
+                  }}
+                >
+                  Reopen email draft
+                  <ArrowUpRight size={13} />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard?.writeText(summaryText()).then(
+                      () => setCopied(true),
+                      () => setCopied(false),
+                    );
+                  }}
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                    padding: "0.7rem 1.4rem", borderRadius: "9999px",
+                    background: "transparent", color: "var(--text-primary)",
+                    border: "1px solid var(--border-subtle)",
+                    fontSize: "0.85rem", fontWeight: 600, cursor: "pointer",
+                    fontFamily: "'Poppins', sans-serif",
+                  }}
+                >
+                  {copied ? "Copied \u2713" : "Copy my details"}
+                </button>
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(summaryText())}`}
+                  target="_blank" rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                    padding: "0.7rem 1.4rem", borderRadius: "9999px",
+                    background: "rgba(37,211,102,0.12)", border: "1px solid rgba(37,211,102,0.35)",
+                    color: "#25D366", fontSize: "0.85rem", fontWeight: 600,
+                    textDecoration: "none", fontFamily: "'Poppins', sans-serif",
+                    transition: "background 0.18s ease",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(37,211,102,0.20)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(37,211,102,0.12)"; }}
+                >
+                  <WhatsAppIcon size={16} />
+                  Send on WhatsApp
+                </a>
+              </div>
+              <p className="font-sans" style={{ fontSize: "0.72rem", color: "var(--text-35)", margin: 0, textAlign: "center" }}>
+                Or email us directly at{" "}
+                <a href={`mailto:${BOOKING_EMAIL}`} style={{ color: "var(--text-55)" }}>{BOOKING_EMAIL}</a>
+              </p>
+            </div>
             <Link href="/" style={{ fontSize: "0.82rem", color: "var(--text-muted)", textDecoration: "none", borderBottom: "1px solid var(--border-subtle)" }}>
               Back to home
             </Link>
@@ -283,6 +455,24 @@ export default function ReservationPage() {
           <p className="font-sans" style={{ fontSize: "1rem", color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: 480, margin: 0 }}>
             Complete the form below and our team will confirm your booking within 2 hours. Fields marked <span style={{ color: "var(--accent)" }}>*</span> are required.
           </p>
+
+          {selectedVehicle && (
+            <div style={{
+              marginTop: "1.5rem", display: "inline-flex", alignItems: "center", gap: "0.6rem",
+              padding: "0.6rem 1.1rem", borderRadius: "9999px",
+              background: "var(--glass-ultra)", border: "1px solid var(--border-subtle)",
+            }}>
+              <span className="font-sans" style={{
+                fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em",
+                textTransform: "uppercase", color: "var(--accent)",
+              }}>
+                Selected
+              </span>
+              <span className="font-sans" style={{ fontSize: "0.88rem", fontWeight: 600, color: "var(--text-primary)" }}>
+                {selectedVehicle}
+              </span>
+            </div>
+          )}
         </div>
 
         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
@@ -375,7 +565,7 @@ export default function ReservationPage() {
               <Input type="number" placeholder="e.g. 4" value={noOfPersons} onChange={(e) => setNoOfPersons(e.target.value)} required />
             </Field>
             <Field label="Vehicle Preferences">
-              <Select value={vehiclePreferences} onChange={(e) => setVehiclePreferences(e.target.value)}>
+              <Select value={vehiclePreferences} onChange={(e) => setVehiclePreference(e.target.value)}>
                 <option value="">No preference</option>
                 <option value="Economy">Economy</option>
                 <option value="Economy Plus">Economy Plus</option>
@@ -405,8 +595,9 @@ export default function ReservationPage() {
             display: "flex", alignItems: "center", justifyContent: "space-between",
             flexWrap: "wrap", gap: "1rem", padding: "0.5rem 0",
           }}>
-            <p className="font-sans" style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0 }}>
-              We&apos;ll confirm your booking within 2 hours of submission.
+            <p className="font-sans" style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0, maxWidth: 420 }}>
+              This opens an email to <strong style={{ color: "var(--text-55)" }}>{BOOKING_EMAIL}</strong> with your
+              details filled in — press send there and we&apos;ll confirm within 2 hours.
             </p>
             <button
               type="submit"

@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/app-links";
 
 /* ── Icons ─────────────────────────────────────────────────── */
 function ArrowUpRight({ size = 14 }: { size?: number }) {
@@ -437,7 +438,7 @@ export default function Footer() {
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
                 <a
-                  href="https://play.google.com/store/apps/details?id=com.user.mannfleet"
+                  href={PLAY_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -463,7 +464,7 @@ export default function Footer() {
                   </div>
                 </a>
                 <a
-                  href="https://apps.apple.com/app/mannfleet"
+                  href={APP_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -488,6 +489,16 @@ export default function Footer() {
                     <p style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--text-80)", margin: 0, lineHeight: 1.3 }}>App Store</p>
                   </div>
                 </a>
+
+                {/* On a Mac an App Store link hands off to the desktop store, which
+                    can't install an iPhone-only app — point people at the QR codes. */}
+                <p style={{ fontSize: "0.68rem", color: "var(--text-35)", margin: "0.15rem 0 0", lineHeight: 1.5 }}>
+                  On desktop?{" "}
+                  <Link href="/#app" style={{ color: "var(--text-55)", textDecoration: "underline", textUnderlineOffset: "2px" }}>
+                    Scan the QR code
+                  </Link>{" "}
+                  with your phone.
+                </p>
               </div>
             </div>
 

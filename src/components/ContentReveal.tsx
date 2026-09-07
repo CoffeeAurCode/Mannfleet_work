@@ -1,16 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+import { isIntroDone, isIntroDoneOnServer, subscribeToIntro } from "@/lib/intro";
 
 export default function ContentReveal({ children }: { children: React.ReactNode }) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    // Wait for LogoIntro to signal the overlay is fully gone
-    const handler = () => setVisible(true);
-    window.addEventListener("intro:done", handler);
-    return () => window.removeEventListener("intro:done", handler);
-  }, []);
+  // useSyncExternalStore rather than an effect + event listener: LogoIntro's
+  // effect commits before ours, so a synchronous skip (intro already seen this
+  // session, reduced motion, autoplay blocked) fires `intro:done` before a
+  // plain listener could subscribe. This re-reads the store on subscribe, so
+  // that race cannot leave the page stuck at opacity 0.
+  const visible = useSyncExternalStore(subscribeToIntro, isIntroDone, isIntroDoneOnServer);
 
   return (
     <div

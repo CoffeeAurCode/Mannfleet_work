@@ -289,6 +289,42 @@ export default function HeroSection() {
               <ArrowUpRight size={14} />
             </Link>
 
+            {/* Straight to the reservation form, for guests who already know what they want */}
+            <Link
+              href="/reservation"
+              prefetch
+              style={{
+                fontSize: "0.78rem",
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                padding: "0.82rem 1.8rem",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                textDecoration: "none",
+                borderRadius: 9999,
+                color: "#fff",
+                background: "rgba(255,255,255,0.10)",
+                backdropFilter: "blur(18px) saturate(160%)",
+                WebkitBackdropFilter: "blur(18px) saturate(160%)",
+                border: "1px solid rgba(255,255,255,0.30)",
+                transition: "background 0.2s ease, border-color 0.2s ease, transform 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.20)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.55)";
+                e.currentTarget.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.10)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.30)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              Book Now
+              <ArrowUpRight size={14} />
+            </Link>
 
           </div>
         </div>

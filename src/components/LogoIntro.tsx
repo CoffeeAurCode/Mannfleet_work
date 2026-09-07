@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-
+import { hasSeenIntroThisSession, markIntroDone } from "@/lib/intro";
 
 export default function LogoIntro() {
   const [show, setShow] = useState(true);
@@ -19,8 +18,7 @@ export default function LogoIntro() {
     // Signal content to reveal only after overlay has fully faded out
     setTimeout(() => {
       setShow(false);
-      sessionStorage.setItem("mannfleet_intro_seen", "1");
-      window.dispatchEvent(new CustomEvent("intro:done"));
+      markIntroDone();
     }, 500);
   };
 
@@ -36,9 +34,17 @@ export default function LogoIntro() {
 
   useEffect(() => {
     const skip = () => {
-      window.dispatchEvent(new CustomEvent("intro:done"));
+      handledRef.current = true;
       setShow(false);
+      markIntroDone();
     };
+
+    // Play at most once per session — a reload or a fresh tab of an inner page
+    // (e.g. arriving on /reservation) must not sit through the 15s animation.
+    if (hasSeenIntroThisSession()) {
+      skip();
+      return;
+    }
 
     // Skip if user prefers reduced motion
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -71,6 +77,11 @@ export default function LogoIntro() {
 
   return (
     <div
+      onClick={dismiss}
+      role="button"
+      tabIndex={0}
+      aria-label="Skip intro"
+      onKeyDown={(e) => { if (e.key === "Escape" || e.key === "Enter") dismiss(); }}
       style={{
         position: "fixed",
         inset: 0,
@@ -83,6 +94,7 @@ export default function LogoIntro() {
         transition: "opacity 0.5s ease",
         willChange: "opacity",
         pointerEvents: fading ? "none" : "auto",
+        cursor: "pointer",
       }}
     >
       <video
@@ -100,6 +112,27 @@ export default function LogoIntro() {
           objectFit: "contain",
         }}
       />
+
+      {/* Skip affordance — nobody should be trapped in a 15s animation */}
+      <span
+        className="font-sans"
+        style={{
+          position: "absolute",
+          bottom: "clamp(1.5rem, 5vw, 3rem)",
+          right: "clamp(1.5rem, 5vw, 3rem)",
+          padding: "0.5rem 1.1rem",
+          borderRadius: 9999,
+          border: "1px solid rgba(255,255,255,0.28)",
+          background: "rgba(255,255,255,0.08)",
+          color: "rgba(255,255,255,0.75)",
+          fontSize: "0.72rem",
+          fontWeight: 600,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+        }}
+      >
+        Skip
+      </span>
     </div>
   );
 }
