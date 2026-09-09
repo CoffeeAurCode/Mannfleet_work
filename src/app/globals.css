@@ -644,6 +644,27 @@ body {
   z-index: 10;
 }
 
+/* Short laptop viewports need the hero content and stat cards in normal flow.
+   Keeping the stats absolutely positioned here can cover the lower lines and
+   calls to action before the visitor has a chance to reach them. */
+@media (min-width: 769px) and (max-height: 850px) {
+  .hero-section {
+    min-height: auto !important;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+  }
+
+  .hero-main-content {
+    padding-bottom: 2rem !important;
+  }
+
+  .hero-stats-strip {
+    position: relative;
+    inset: auto;
+    padding-top: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-stats-strip {
     position: relative;

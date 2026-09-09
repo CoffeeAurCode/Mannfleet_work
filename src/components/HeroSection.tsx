@@ -5,6 +5,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
+import { isIntroDone } from "@/lib/intro";
 
 /* ── Icons ───────────────────────────────────────────────── */
 function ArrowUpRight({ size = 16 }: { size?: number }) {
@@ -139,7 +140,7 @@ export default function HeroSection() {
 
     // If intro was already seen this session, animate immediately.
     // Otherwise wait for the intro overlay to finish.
-    if (sessionStorage.getItem("mannfleet_intro_seen")) {
+    if (isIntroDone() || sessionStorage.getItem("mannfleet_intro_seen")) {
       runAnimation();
     } else {
       window.addEventListener("intro:done", runAnimation, { once: true });
@@ -155,7 +156,7 @@ export default function HeroSection() {
     /* Outer wrapper — font-sans (Geist) */
     <section
       ref={sectionRef}
-      className={cn("font-sans relative flex flex-col min-h-screen overflow-hidden")}
+      className={cn("hero-section font-sans relative flex flex-col min-h-screen overflow-hidden")}
     >
       {/* ── Background Video ── */}
       <video
@@ -179,7 +180,7 @@ export default function HeroSection() {
       <Navbar overlay wrapperRef={navRef} initialOpacity={0} />
 
       {/* ── Hero Content ── */}
-      <div className="relative flex-1 flex flex-col justify-center px-6 lg:px-20 pb-4 lg:pb-56 pt-4 lg:pt-6" style={{ zIndex: 10 }}>
+      <div className="hero-main-content relative flex-1 flex flex-col justify-center px-6 lg:px-20 pb-4 lg:pb-56 pt-4 lg:pt-6" style={{ zIndex: 10 }}>
         <div className="max-w-3xl">
 
           {/* Label badge — font-sans, uppercase */}

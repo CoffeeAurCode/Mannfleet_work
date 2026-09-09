@@ -283,6 +283,15 @@ export default function Navbar({ overlay = false, wrapperRef, initialOpacity = 1
               </li>
             ))}
             <li>
+              <Link
+                href="/reservation"
+                className="pill-mobile-link pill-mobile-book-link"
+                onClick={() => setMobileOpen(false)}
+              >
+                Book Now
+              </Link>
+            </li>
+            <li>
               <a
                 href="https://corporate.mannfleetpartners.com/"
                 className="pill-mobile-link pill-mobile-corporate-link"

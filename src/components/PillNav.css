@@ -287,6 +287,16 @@
   color: #ff2020;
 }
 
+.pill-mobile-book-link {
+  background: #ff2020;
+  color: #ffffff;
+  text-align: center;
+}
+
+.pill-mobile-book-link:hover {
+  background: #e01010;
+}
+
 /* Mobile theme toggle row inside mobile menu */
 .pill-mobile-theme-row {
   display: flex;
@@ -299,7 +309,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .pill-nav-items,
   .pill-nav-actions {
     display: none;

@@ -55,6 +55,12 @@ export default function LogoIntro() {
     const vid = videoRef.current;
     if (!vid) return;
 
+    // Do not make the rest of the site depend on the video returning metadata.
+    // Some laptop/browser combinations can leave an autoplaying MP4 in a
+    // loading state forever; without this timer the fixed overlay blocks every
+    // navigation and action on the page.
+    safetyIdRef.current = setTimeout(dismiss, 12_000);
+
     // Attempt play (muted autoplay should succeed in all browsers)
     vid.play().catch(() => {
       // Autoplay blocked — skip intro immediately
@@ -106,6 +112,9 @@ export default function LogoIntro() {
         preload="auto"
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={dismiss}
+        onError={dismiss}
+        onAbort={dismiss}
+        onStalled={dismiss}
         style={{
           width: "100%",
           height: "100%",
