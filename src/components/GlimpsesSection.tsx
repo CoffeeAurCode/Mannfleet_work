@@ -39,7 +39,8 @@ const GLIMPSES: Record<"press" | "coach" | "arrival", Glimpse> = {
     title: "Delegate coach movement",
     caption:
       "Chief Ministers and Union Ministers boarding Mann coaches — one marshalled convoy in place of separate motorcades.",
-    ratio: "3 / 4",
+    // Matches the clip's own 438x560 crop, so nothing is cover-cropped away.
+    ratio: "438 / 560",
   },
   arrival: {
     id: "arrival",
