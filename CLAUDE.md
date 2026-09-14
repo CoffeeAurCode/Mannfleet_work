@@ -64,6 +64,7 @@ src/
     IndiaMapLeaflet.tsx   # Leaflet-based interactive map
     MetaPixel.tsx         # Meta Pixel PageView-on-route-change + contact-link tracking
     AppDownload.tsx       # Home-page app block: store buttons + scannable QR codes
+    GlimpsesSection.tsx   # Home-page press/deployment strip — muted looping video glimpses
     PillNav.css           # Pill nav styles
   lib/
     utils.ts              # cn() — clsx + tailwind-merge
@@ -74,6 +75,7 @@ src/
     app-links.ts          # Verified App Store + Play Store URLs and QR asset paths
 public/
   Maan Logo Animation_01.mp4   # Intro video
+  glimpses/                    # Trimmed 12s muted clips + posters (see Glimpses below)
   Mann car pictures/           # Vehicle catalog images (200+ cars by model)
   cleints/                     # Client photos (marquee)
   teams/                       # Team member photos
@@ -122,7 +124,8 @@ public/
 7. **No mail backend** — the only API route is `/api/chat` (concierge widget, needs `OPENAI_API_KEY`). The reservation form has no server: submitting builds a formatted `mailto:` to `BOOKING_EMAIL` and hands it to the guest's mail client. There is therefore **no automatic thank-you email** — the guest must press send, and the success screen says so and offers reopen / copy / WhatsApp fallbacks because a `mailto:` can silently no-op.
 8. **Booking destination** — every reservation query goes to `BOOKING_EMAIL` in `src/lib/contact.ts` (`support@mannfleetpartners.com`). Import it; don't hard-code the address.
 9. **App & QR codes** — store URLs live in `src/lib/app-links.ts` and are verified live listings (App Store id `6770925992`, Play `com.user.mannfleet`). The QR SVGs in `public/` were generated with the `qrcode` npm package (installed with `--no-save`, then pruned) and decode-verified. Regenerate them only if a store URL changes. They exist because an App Store link clicked on a Mac hands off to the desktop Mac App Store, which cannot install an iPhone-only app.
-10. **Analytics (Meta Pixel):** Base snippet is inlined in `<head>` from `src/lib/meta-pixel.ts` (same pattern as the theme script) so it initialises before hydration; `<noscript>` fallback sits at the top of `<body>`. Because the App Router navigates client-side, `MetaPixel.tsx` re-fires `PageView` on every route change — it uses `useSearchParams`, so it **must stay wrapped in `<Suspense>`** or the production build fails and pages drop out of static rendering. Fire conversions with `fbTrack()` from `@/lib/meta-pixel`; never pass PII (name, phone, email) in event params.
+10. **Glimpses (video loops):** Clips in `public/glimpses/` are pre-trimmed to 12s and stripped of audio with ffmpeg — the repo holds only the trimmed clips, never the raw source footage. Each `<video>` carries `preload="none"` plus a `poster`, so a tile costs only its poster JPEG until it actually plays. `src` is attached up front rather than gated behind the IntersectionObserver: the observer only starts/stops playback on scroll, which keeps the play button working where the observer is throttled (backgrounded tab, hidden pane). A manual pause is sticky — scrolling will not resume it — and `prefers-reduced-motion` skips autoplay entirely.
+11. **Analytics (Meta Pixel):** Base snippet is inlined in `<head>` from `src/lib/meta-pixel.ts` (same pattern as the theme script) so it initialises before hydration; `<noscript>` fallback sits at the top of `<body>`. Because the App Router navigates client-side, `MetaPixel.tsx` re-fires `PageView` on every route change — it uses `useSearchParams`, so it **must stay wrapped in `<Suspense>`** or the production build fails and pages drop out of static rendering. Fire conversions with `fbTrack()` from `@/lib/meta-pixel`; never pass PII (name, phone, email) in event params.
 
 ---
 
@@ -130,7 +133,7 @@ public/
 
 | Route | Content |
 |---|---|
-| `/` | Hero + BentoSection + ServicesSection + PartnersMarquee |
+| `/` | Hero + PartnersMarquee + ServicesSection + BentoSection + GlimpsesSection + AppDownload |
 | `/about` | Brand story, history, leadership |
 | `/fleet` | Full vehicle catalog (200+ cars, organized by model) |
 | `/awards` | Awards & recognition gallery |
@@ -164,6 +167,8 @@ public/
 **ContentReveal:** Wraps page content. Reads the intro store via `useSyncExternalStore`, then fades in. Prevents content flash during intro.
 
 **AppDownload:** Home-page section (`id="app"`, linked from the footer as `/#app`). Store buttons plus a scannable QR code per platform, each on a solid white tile so scanners get contrast in both themes.
+
+**GlimpsesSection:** Home-page section (`id="glimpses"`) showing three short muted video loops — CNBC Awaaz press coverage, delegate coach movement, and a ceremonial arrival. Two-column editorial grid (7fr/5fr) that collapses to one column under 860px; each tile carries a badge, a play/pause control, and a caption. See the Glimpses pattern below.
 
 **IndiaMapLeaflet:** Interactive Leaflet map showing office/service locations across India.
 
