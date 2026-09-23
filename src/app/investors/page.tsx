@@ -103,7 +103,6 @@ const PDF_CATEGORIES: PdfCategory[] = [
       { label: "Financial Statements 2023-24", file: "Financial-Statements_2023-24.pdf" },
       { label: "Financial Statements 2022-23", file: "Financial-Statements_2022-23.pdf" },
       { label: "Financial Statements 2021-22", file: "Financial-Statements_2021-22.pdf" },
-      { label: "Restated Report (as at 31 Dec 2025)", file: "Restated-Report_31-12-2025_Mann.pdf" },
     ],
   },
   {
@@ -113,6 +112,8 @@ const PDF_CATEGORIES: PdfCategory[] = [
     docs: [
       { label: "Board's Report 2024-25", file: "Board-Report_2024-25.pdf" },
       { label: "Board's Report 2023-24", file: "Board-Report_2023-24.pdf" },
+      { label: "Board's Report 2022-23", file: "Board-Report_2022-23.pdf" },
+      { label: "Board's Report 2021-22", file: "Board-Report_2021-22.pdf" },
     ],
   },
   {
@@ -121,6 +122,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     icon: "📚",
     docs: [
       { label: "Annual Report 2024-25", file: "Annual-Report_2024-25.pdf" },
+      { label: "Annual Report 2023-24", file: "Annual-Report_2023-24.pdf" },
       { label: "Annual Report 2022-23", file: "Annual-Report_2022-23.pdf" },
       { label: "Annual Report 2021-22", file: "Annual-Report_2021-22.pdf" },
     ],
@@ -131,7 +133,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     icon: "🗂️",
     docs: [
       { label: "Annual Return 2024-25 (Form MGT-7)", file: "Annual-Return_2024-25_Mann.pdf" },
-      { label: "Annual Return 2023-24 (Form MGT-7A)", file: "Annual-Return_2023-24_Mann.pdf" },
+      { label: "Annual Return 2023-24 (Form MGT-7)", file: "Annual-Return_2023-24_Mann.pdf" },
       { label: "Annual Return 2022-23 (Form MGT-7A)", file: "Annual-Return_2022-23_Mann.pdf" },
       { label: "Annual Return 2021-22 (Form MGT-7A)", file: "Annual-Return_2021-22_Mann.pdf" },
     ],

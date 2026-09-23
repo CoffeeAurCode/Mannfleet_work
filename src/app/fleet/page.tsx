@@ -196,12 +196,12 @@ const VEHICLES: Vehicle[] = [
   {
     id: "gls-450", name: "Mercedes-Benz GLS 400 / 450", type: "SUVs", category: "SUPER LUXURY",
     seating: "7 Seater Including Pilot", luggage: "355L (all rows) / 890L (3rd row folded)",
-    image: ["/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_52%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_43%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_47%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_38%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_31%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_21%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_57_18%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_17%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_27%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_35%20AM.png"],
+    image: ["/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/01.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/02.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/03.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/04.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/05.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/06.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/07.jpg"],
   },
   {
     id: "bmw-x7", name: "BMW X7", type: "SUVs", category: "SUPER LUXURY",
     seating: "7 Seater Including Pilot", luggage: "326 Litres (all rows up)",
-    image: ["/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_57_55%20PM.png", "/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2006_59_28%20PM.png", "/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2007_01_42%20PM.png", "/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_23_47%20PM.png", "/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_24_44%20PM.png", "/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_26_21%20PM.png", "/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_29_34%20PM.png", "/Mann car pictures/BMW%20X7/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2008_34_27%20PM.png"],
+    image: ["/Mann%20car%20pictures/Real/BMW%20X7/01.jpg", "/Mann%20car%20pictures/Real/BMW%20X7/02.jpg", "/Mann%20car%20pictures/Real/BMW%20X7/03.jpg", "/Mann%20car%20pictures/Real/BMW%20X7/04.jpg", "/Mann%20car%20pictures/Real/BMW%20X7/05.jpg", "/Mann%20car%20pictures/Real/BMW%20X7/06.jpg"],
   },
   // Range Rover
   {
@@ -269,7 +269,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "sprinter-washroom", name: "Mercedes Sprinter with Washroom", type: "Vanity van", category: "SUPER LUXURY",
     seating: "8 Seater Including Pilot", luggage: "Dedicated luggage partition + overhead cabinets",
-    image: ["/Mann%20car%20pictures/Mercedes-Benz%20Sprinter/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_24_42%20AM.png", "/Mann%20car%20pictures/Mercedes-Benz%20Sprinter/WhatsApp%20Image%202026-04-25%20at%2015.59.01.jpeg", "/Mann%20car%20pictures/Mercedes-Benz%20Sprinter/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_27_41%20AM.png", "/Mann%20car%20pictures/Mercedes-Benz%20Sprinter/ChatGPT%20Image%20Apr%2026%2C%202026%2C%2012_31_19%20AM.png", "/Mann%20car%20pictures/Mercedes-Benz%20Sprinter/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_47_18%20PM.png"],
+    image: ["/Mann%20car%20pictures/Real/Mercedes%20Sprinter%20Washroom/01.jpg", "/Mann%20car%20pictures/Real/Mercedes%20Sprinter%20Washroom/02.jpg", "/Mann%20car%20pictures/Real/Mercedes%20Sprinter%20Washroom/03.jpg", "/Mann%20car%20pictures/Real/Mercedes%20Sprinter%20Washroom/04.jpg", "/Mann%20car%20pictures/Real/Mercedes%20Sprinter%20Washroom/05.jpg", "/Mann%20car%20pictures/Real/Mercedes%20Sprinter%20Washroom/06.jpg", "/Mann%20car%20pictures/Real/Mercedes%20Sprinter%20Washroom/07.jpg", "/Mann%20car%20pictures/Real/Mercedes%20Sprinter%20Washroom/08.jpg", "/Mann%20car%20pictures/Real/Mercedes%20Sprinter%20Washroom/09.jpg"],
   },
 
 
@@ -372,7 +372,7 @@ const VEHICLES: Vehicle[] = [
   {
     id: "lt-gls", name: "Mercedes-Benz GLS 400 (Monthly Lease)", type: "Long Term Rental", category: "LONG TERM RENTAL",
     seating: "7 Seater Including Pilot", luggage: "355L / 890L (3rd row folded)",
-    image: ["/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_52%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_43%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_47%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_38%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_31%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_21%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_57_18%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_17%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_27%20AM.png", "/Mann%20car%20pictures/GLS%20400/ChatGPT%20Image%20May%204%2C%202026%2C%2011_53_35%20AM.png"],
+    image: ["/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/01.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/02.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/03.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/04.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/05.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/06.jpg", "/Mann%20car%20pictures/Real/Mercedes%20GLS%20450/07.jpg"],
   },
 ];
 

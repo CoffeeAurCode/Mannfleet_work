@@ -53,7 +53,7 @@ const IMAGE_LIBRARY = {
     "/Mann car pictures/Toyota camry hybrid/ChatGPT Image Apr 30, 2026, 07_50_45 PM.png",
     "/Mann car pictures/volvo xc90/ChatGPT Image May 6, 2026, 03_34_31 PM.png",
     "/Mann car pictures/Volvo 39 seater/ChatGPT Image Apr 28, 2026, 03_55_20 PM.png",
-    "/Mann car pictures/Mercedes-Benz Sprinter/ChatGPT Image Apr 29, 2026, 10_47_18 PM.png",
+    "/Mann car pictures/Real/Mercedes Sprinter Washroom/02.jpg",
     "/Mann car pictures/vellfire.jpeg",
     "/Mann car pictures/Volvo jet on wheels.jpeg",
   ],

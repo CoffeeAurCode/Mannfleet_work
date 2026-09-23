@@ -1,12 +1,15 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 
 /* ─────────────────────────────────────────────────────────────
    GlimpsesSection — short muted loops from real deployments
    and press coverage. Clips are trimmed "glimpses" (12s each) and
    stripped of audio; each tile costs only its poster until the clip
-   actually plays, so the home page stays light.
+   actually plays, so the home page stays light. The one exception is
+   the featured BRICS film, which keeps its full length and soundtrack
+   because the spoken testimony is the point of it — it still autoplays
+   muted, and sound is strictly opt-in.
 ───────────────────────────────────────────────────────────────*/
 
 type Glimpse = {
@@ -18,9 +21,11 @@ type Glimpse = {
   caption: string;
   /** CSS aspect-ratio for the tile — matches each clip's own framing. */
   ratio: string;
+  /** Clip carries a soundtrack — shows a mute toggle (still starts muted). */
+  hasAudio?: boolean;
 };
 
-const GLIMPSES: Record<"press" | "coach" | "arrival", Glimpse> = {
+const GLIMPSES: Record<"press" | "coach" | "arrival" | "film", Glimpse> = {
   press: {
     id: "press",
     src: "/glimpses/press-cnbc.mp4",
@@ -52,6 +57,17 @@ const GLIMPSES: Record<"press" | "coach" | "arrival", Glimpse> = {
       "Garlanded forecourt, receiving line, timed drop-offs — the last hundred metres, handled to protocol.",
     ratio: "16 / 10",
   },
+  film: {
+    id: "film",
+    src: "/glimpses/brics-film.mp4",
+    poster: "/glimpses/brics-film.jpg",
+    badge: "BRICS India 2026",
+    title: "When the world arrives",
+    caption:
+      "Parmjeet Mann and the chauffeurs on the ground on what BRICS 2026 duty demands — paper checklists, spotless cars, and every detail accounted for before a delegate steps in.",
+    ratio: "464 / 832",
+    hasAudio: true,
+  },
 };
 
 /* ── Play / pause glyphs ──────────────────────────────────── */
@@ -71,11 +87,46 @@ function PauseGlyph() {
   );
 }
 
+function SoundOnGlyph() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M11 5 6 9H2v6h4l5 4V5z" fill="currentColor" />
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" />
+    </svg>
+  );
+}
+function SoundOffGlyph() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M11 5 6 9H2v6h4l5 4V5z" fill="currentColor" />
+      <line x1="22" y1="9" x2="16" y2="15" />
+      <line x1="16" y1="9" x2="22" y2="15" />
+    </svg>
+  );
+}
+
+const controlStyle: CSSProperties = {
+  width: 38,
+  height: 38,
+  display: "grid",
+  placeItems: "center",
+  borderRadius: "50%",
+  background: "rgba(12,10,8,0.55)",
+  border: "1px solid rgba(255,255,255,0.22)",
+  backdropFilter: "blur(8px)",
+  WebkitBackdropFilter: "blur(8px)",
+  color: "#fff",
+  cursor: "pointer",
+  padding: 0,
+  transition: "background 220ms ease, transform 220ms ease",
+};
+
 /* ── A single glimpse tile ────────────────────────────────── */
-function GlimpseCard({ glimpse }: { glimpse: Glimpse }) {
+function GlimpseCard({ glimpse, feature = false }: { glimpse: Glimpse; feature?: boolean }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(true);
   /** User pressed pause — never auto-resume over that choice. */
   const heldRef = useRef(false);
 
@@ -125,15 +176,20 @@ function GlimpseCard({ glimpse }: { glimpse: Glimpse }) {
     }
   }, []);
 
+  /* Unmuting is an explicit gesture, so it may also start playback. */
+  const toggleSound = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setMuted(video.muted);
+    if (!video.muted && video.paused) {
+      heldRef.current = false;
+      video.play().catch(() => {});
+    }
+  }, []);
+
   return (
-    <figure
-      style={{
-        margin: 0,
-        display: "flex",
-        flexDirection: "column",
-        gap: "0.9rem",
-      }}
-    >
+    <figure className={feature ? "glimpse-figure glimpse-figure--feature" : "glimpse-figure"}>
       <div
         ref={wrapRef}
         className="glimpse-frame"
@@ -155,7 +211,7 @@ function GlimpseCard({ glimpse }: { glimpse: Glimpse }) {
           loop
           playsInline
           preload="none"
-          aria-label={`${glimpse.title} — silent looping clip`}
+          aria-label={glimpse.hasAudio ? `${glimpse.title} — video with sound, starts muted` : `${glimpse.title} — silent looping clip`}
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           style={{
@@ -201,39 +257,49 @@ function GlimpseCard({ glimpse }: { glimpse: Glimpse }) {
           {glimpse.badge}
         </span>
 
-        {/* Play / pause */}
-        <button
-          type="button"
-          onClick={toggle}
-          aria-label={playing ? `Pause ${glimpse.title}` : `Play ${glimpse.title}`}
+        {/* Controls */}
+        <div
+          className="glimpse-controls"
           style={{
             position: "absolute",
             right: "0.85rem",
             bottom: "0.85rem",
-            width: 38,
-            height: 38,
-            display: "grid",
-            placeItems: "center",
-            borderRadius: "50%",
-            background: "rgba(12,10,8,0.55)",
-            border: "1px solid rgba(255,255,255,0.22)",
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)",
-            color: "#fff",
-            cursor: "pointer",
-            padding: 0,
-            transition: "background 220ms ease, transform 220ms ease",
+            display: "flex",
+            gap: "0.5rem",
           }}
         >
-          {playing ? <PauseGlyph /> : <PlayGlyph />}
-        </button>
+          {glimpse.hasAudio && (
+            <button
+              type="button"
+              onClick={toggleSound}
+              aria-label={muted ? `Unmute ${glimpse.title}` : `Mute ${glimpse.title}`}
+              aria-pressed={!muted}
+              style={controlStyle}
+            >
+              {muted ? <SoundOffGlyph /> : <SoundOnGlyph />}
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label={playing ? `Pause ${glimpse.title}` : `Play ${glimpse.title}`}
+            style={controlStyle}
+          >
+            {playing ? <PauseGlyph /> : <PlayGlyph />}
+          </button>
+        </div>
       </div>
 
       <figcaption>
+        {feature && (
+          <span className="glass-badge" style={{ display: "inline-block", marginBottom: "0.9rem" }}>
+            Featured film
+          </span>
+        )}
         <h3
           className="font-serif"
           style={{
-            fontSize: "1.15rem",
+            fontSize: feature ? "clamp(1.5rem, 3vw, 2.1rem)" : "1.15rem",
             fontWeight: 400,
             color: "var(--text-primary)",
             margin: "0 0 0.35rem",
@@ -244,10 +310,11 @@ function GlimpseCard({ glimpse }: { glimpse: Glimpse }) {
         </h3>
         <p
           style={{
-            fontSize: "0.82rem",
+            fontSize: feature ? "0.92rem" : "0.82rem",
             lineHeight: 1.65,
             color: "var(--text-secondary)",
             margin: 0,
+            maxWidth: feature ? "440px" : undefined,
           }}
         >
           {glimpse.caption}
@@ -264,6 +331,7 @@ export default function GlimpsesSection() {
   return (
     <section
       id="glimpses"
+      className="glimpse-section"
       style={{
         position: "relative",
         background: "var(--bg-surface)",
@@ -321,7 +389,8 @@ export default function GlimpsesSection() {
             }}
           >
             Not a showreel — a few seconds each from live summit deployments and
-            national press coverage. Silent by design; tap any clip to hold it.
+            national press coverage. Clips play silently; tap any clip to hold
+            it, and unmute the featured film to hear it.
           </p>
         </div>
 
@@ -370,6 +439,11 @@ export default function GlimpsesSection() {
             </div>
           </div>
         </div>
+
+        {/* ── Featured film — vertical, with sound ── */}
+        <div style={{ marginTop: "clamp(2.5rem, 5vw, 4rem)" }}>
+          <GlimpseCard glimpse={GLIMPSES.film} feature />
+        </div>
       </div>
 
       <style jsx>{`
@@ -384,19 +458,35 @@ export default function GlimpsesSection() {
           flex-direction: column;
           gap: clamp(1.75rem, 3vw, 2.5rem);
         }
+        .glimpse-section :global(.glimpse-figure) {
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.9rem;
+        }
+        .glimpse-section :global(.glimpse-figure--feature) {
+          display: grid;
+          grid-template-columns: minmax(0, 340px) 1fr;
+          align-items: center;
+          gap: clamp(1.5rem, 4vw, 3.5rem);
+        }
         .glimpse-frame :global(video) {
           transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
         }
         .glimpse-frame:hover :global(video) {
           transform: scale(1.03);
         }
-        .glimpse-frame :global(button:hover) {
+        .glimpse-frame :global(.glimpse-controls button:hover) {
           background: var(--accent);
           transform: scale(1.06);
         }
         @media (max-width: 860px) {
           .glimpse-grid {
             grid-template-columns: 1fr;
+          }
+          .glimpse-section :global(.glimpse-figure--feature) {
+            grid-template-columns: minmax(0, 360px);
+            justify-content: center;
           }
         }
         @media (prefers-reduced-motion: reduce) {
