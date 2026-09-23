@@ -760,7 +760,7 @@ export default function FlagshipProjectPage() {
             padding: "clamp(2rem, 5vw, 4rem)",
             position: "relative",
           }}>
-            {/* Center hub */}
+            {/* Center origin */}
             <div style={{
               display: "flex", flexDirection: "column", alignItems: "center",
               marginBottom: "clamp(2rem, 4vw, 3rem)",
@@ -774,7 +774,7 @@ export default function FlagshipProjectPage() {
                 boxShadow: "0 0 0 8px rgba(220,38,38,0.1), 0 0 0 16px rgba(220,38,38,0.05)",
                 marginBottom: "1rem",
               }}>
-                <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 4 }}>Hub</div>
+                <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 4 }}>Origin</div>
                 <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1rem, 2.5vw, 1.5rem)", fontWeight: 400 }}>Noida International Airport</div>
                 <div style={{ fontSize: "0.72rem", opacity: 0.75, marginTop: 2 }}>Gautam Budh Nagar, UP</div>
               </div>
@@ -851,18 +851,14 @@ export default function FlagshipProjectPage() {
             <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", display: "block", marginBottom: 14 }}>
               Noida International Airport Inauguration
             </span>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "clamp(0.75rem, 1.5vw, 1.25rem)" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap: "clamp(0.75rem, 1.5vw, 1.25rem)" }}>
               {[
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.46%20PM.jpeg",
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.43%20PM%20(4).jpeg",
+                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.05%20PM.jpeg",
                 "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.43%20PM%20(1).jpeg",
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.43%20PM%20(2).jpeg",
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.43%20PM%20(3).jpeg",
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.44%20PM%20(1).jpeg",
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.44%20PM%20(2).jpeg",
+                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.44%20PM%20(3).jpeg",
                 "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.46%20PM%20(1).jpeg",
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.47%20PM%20(1).jpeg",
-                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.47%20PM%20(2).jpeg",
+                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.47%20PM%20(10).jpeg",
+                "/photo%20to%20choose%20from/WhatsApp%20Image%202026-05-05%20at%204.31.47%20PM%20(11).jpeg",
               ].map((src, i) => (
                 <div key={i} style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: 14, overflow: "hidden", border: "1px solid var(--border-subtle)" }}>
                   <Image
@@ -870,7 +866,7 @@ export default function FlagshipProjectPage() {
                     alt={`NIA Inauguration ${i + 1}`}
                     fill
                     style={{ objectFit: "cover", objectPosition: "center" }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     unoptimized
                   />
                 </div>
