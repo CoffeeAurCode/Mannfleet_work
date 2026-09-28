@@ -168,7 +168,7 @@ public/
 
 **AppDownload:** Home-page section (`id="app"`, linked from the footer as `/#app`). Store buttons plus a scannable QR code per platform, each on a solid white tile so scanners get contrast in both themes.
 
-**GlimpsesSection:** Home-page section (`id="glimpses"`) showing three short muted video loops — CNBC Awaaz press coverage, delegate coach movement, and a ceremonial arrival. Two-column editorial grid (7fr/5fr) that collapses to one column under 860px; each tile carries a badge, a play/pause control, and a caption. Below the grid, a featured row shows the vertical BRICS 2026 film (with sound, opt-in) beside a larger caption, and stacks under 860px. See the Glimpses pattern below.
+**GlimpsesSection:** Home-page section (`id="glimpses"`) showing two short muted video loops — CNBC Awaaz press coverage and delegate coach movement. Two-column editorial grid (7fr/5fr) that collapses to one column under 860px; each tile carries a badge, a play/pause control, and a caption. Below the grid, a featured row shows the vertical BRICS 2026 film (with sound, opt-in) beside a larger caption, and stacks under 860px. See the Glimpses pattern below.
 
 **IndiaMapLeaflet:** Interactive Leaflet map showing office/service locations across India.
 

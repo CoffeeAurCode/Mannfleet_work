@@ -25,7 +25,7 @@ type Glimpse = {
   hasAudio?: boolean;
 };
 
-const GLIMPSES: Record<"press" | "coach" | "arrival" | "film", Glimpse> = {
+const GLIMPSES: Record<"press" | "coach" | "film", Glimpse> = {
   press: {
     id: "press",
     src: "/glimpses/press-cnbc.mp4",
@@ -46,16 +46,6 @@ const GLIMPSES: Record<"press" | "coach" | "arrival" | "film", Glimpse> = {
       "Chief Ministers and Union Ministers boarding Mann coaches — one marshalled convoy in place of separate motorcades.",
     // Matches the clip's own 438x560 crop, so nothing is cover-cropped away.
     ratio: "438 / 560",
-  },
-  arrival: {
-    id: "arrival",
-    src: "/glimpses/ceremonial-arrival.mp4",
-    poster: "/glimpses/ceremonial-arrival.jpg",
-    badge: "Protocol",
-    title: "Ceremonial arrival",
-    caption:
-      "Garlanded forecourt, receiving line, timed drop-offs — the last hundred metres, handled to protocol.",
-    ratio: "16 / 10",
   },
   film: {
     id: "film",
@@ -398,13 +388,8 @@ export default function GlimpsesSection() {
         <div className="glimpse-grid">
           <div className="glimpse-col">
             <GlimpseCard glimpse={GLIMPSES.press} />
-            <GlimpseCard glimpse={GLIMPSES.arrival} />
-          </div>
 
-          <div className="glimpse-col">
-            <GlimpseCard glimpse={GLIMPSES.coach} />
-
-            {/* Closing note — fills the shorter right column */}
+            {/* Closing note — fills the shorter left column */}
             <div
               className="glass-panel"
               style={{
@@ -437,6 +422,10 @@ export default function GlimpsesSection() {
                 before the delegation does.
               </p>
             </div>
+          </div>
+
+          <div className="glimpse-col">
+            <GlimpseCard glimpse={GLIMPSES.coach} />
           </div>
         </div>
 
