@@ -11,6 +11,7 @@
 **Name:** MANN — Premium Car Rental (package name: `bionova`)
 **Type:** Marketing/showcase website — purely client-side, no backend or database
 **Purpose:** Premium chauffeur & car rental brand site with heavy visual storytelling
+**Live site:** https://www.mannfleetpartners.com (Vercel, deploys from `subhayudas/Mannfleet` `main`; `mannfleet.vercel.app` is the same deployment). Verify client-facing changes here.
 
 ---
 
