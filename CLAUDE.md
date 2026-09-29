@@ -75,7 +75,11 @@ src/
     contact.ts            # BOOKING_EMAIL / GENERAL_EMAIL / WHATSAPP_NUMBER
     app-links.ts          # Verified App Store + Play Store URLs and QR asset paths
 public/
-  investors/                   # Every investor-relations PDF (IPO, policies, reports, returns)
+  investors/                   # Every document PDF, one folder per investors-page tab:
+    ipo/ newspaper-advertisements/ constitutive-documents/ policies/
+    corporate-information/ financial-statements/ board-reports/
+    annual-reports/ annual-returns/ subsidiary-company/ group-company/
+    csr-certificates/          # Linked from /we-care, not an investors tab
   legal/                       # Policies linked outside the investors page
   Maan Logo Animation_01.mp4   # Intro video
   glimpses/                    # Trimmed 12s muted clips + posters (see Glimpses below)
@@ -89,6 +93,7 @@ public/
   app-qr-ios.svg / app-qr-android.svg  # Generated store QR codes (see App & QR codes)
   (logos, SVGs, .mp4 videos)
 notes/                         # Old task lists, client-request notes, explainers — not part of the build
+client-docs-pending/           # Client PDFs not on the site yet + README saying why each is waiting
 ```
 
 ---
@@ -130,11 +135,13 @@ notes/                         # Old task lists, client-request notes, explainer
 9. **App & QR codes** — store URLs live in `src/lib/app-links.ts` and are verified live listings (App Store id `6770925992`, Play `com.user.mannfleet`). The QR SVGs in `public/` were generated with the `qrcode` npm package (installed with `--no-save`, then pruned) and decode-verified. Regenerate them only if a store URL changes. They exist because an App Store link clicked on a Mac hands off to the desktop Mac App Store, which cannot install an iPhone-only app.
 10. **Glimpses (video loops):** Clips in `public/glimpses/` are pre-trimmed to 12s and stripped of audio with ffmpeg — the repo holds only the trimmed clips, never the raw source footage. Each `<video>` carries `preload="none"` plus a `poster`, so a tile costs only its poster JPEG until it actually plays. `src` is attached up front rather than gated behind the IntersectionObserver: the observer only starts/stops playback on scroll, which keeps the play button working where the observer is throttled (backgrounded tab, hidden pane). A manual pause is sticky — scrolling will not resume it — and `prefers-reduced-motion` skips autoplay entirely. The one exception to trim-and-strip is the featured BRICS film (`brics-film.mp4`, full 37s, re-encoded to 30fps with its AAC soundtrack kept): it sets `hasAudio`, still autoplays muted, and exposes an Unmute toggle beside play/pause.
 11. **Client documents:** Everything in `public/` can be downloaded by URL, even when no page links to it. So `public/` holds **only files the site links to**. Never drafts, `.docx`/`.xlsx` working files, or documents the client has withdrawn. Removing a document from a page means deleting its file too; git history keeps the old copy.
-    Client uploads arrive as loose files at the repo root, like `Signed_Board's Report_2025-26_Mann.pdf`. Before listing one:
+    Client uploads arrive as loose files at the repo root, like `Signed_Board's Report_2025-26_Mann.pdf`. Anything that can't go live yet (waiting on client confirmation, unclear where it belongs) goes in `client-docs-pending/` with a row in its README. Before listing one:
     - check it is an ordinary PDF. XFA e-forms (`grep -c /XFA`, e.g. old MCA MGT-7A forms) show only "Please wait…" in browsers, so ask the client for a flattened copy.
     - compare its md5 against `public/` files, because clients often resend documents that are already live.
     - most arrive as scans without a text layer, so render a page or two to confirm what it actually is.
-    Then move it into `public/investors/` with a clean hyphenated name (`Board-Report_2025-26.pdf`), newest year first in its tab, and don't leave the original at the root.
+    Then move it into its tab's folder with a clean hyphenated name (`public/investors/board-reports/Board-Report_2025-26.pdf`). List it newest year first in its tab, with `file:` set to the folder-relative path. Don't leave the original at the root.
+    To **replace** a document, overwrite the file and keep its name, so shared links keep working.
+    `next.config.ts` → `MOVED_INVESTOR_DOCS` redirects the old flat `/investors/<file>.pdf` URLs, from before the per-tab folders, to their new paths. If you move or rename a file that's already live, add a redirect for it too.
 12. **Analytics (Meta Pixel):** Base snippet is inlined in `<head>` from `src/lib/meta-pixel.ts` (same pattern as the theme script) so it initialises before hydration; `<noscript>` fallback sits at the top of `<body>`. Because the App Router navigates client-side, `MetaPixel.tsx` re-fires `PageView` on every route change — it uses `useSearchParams`, so it **must stay wrapped in `<Suspense>`** or the production build fails and pages drop out of static rendering. Fire conversions with `fbTrack()` from `@/lib/meta-pixel`; never pass PII (name, phone, email) in event params.
 
 ---

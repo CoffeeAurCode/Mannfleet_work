@@ -355,8 +355,8 @@ export default function WeCarePage() {
   const [activeCert, setActiveCert] = useState<{ file: string; label: string } | null>(null);
 
   const CSR_CERTIFICATES = [
-    { label: "Utilization Certificate — Global Social (CSR 2024-25)", file: "Utilization-Certificate_CSR_Global-Social_2024-25.pdf" },
-    { label: "Utilization Certificate — Impact Paramedical (CSR 2023-24)", file: "Utilization-Certificate_Impact-Paramedical_2023-24.pdf" },
+    { label: "Utilization Certificate — Global Social (CSR 2024-25)", file: "csr-certificates/Utilization-Certificate_CSR_Global-Social_2024-25.pdf" },
+    { label: "Utilization Certificate — Impact Paramedical (CSR 2023-24)", file: "csr-certificates/Utilization-Certificate_Impact-Paramedical_2023-24.pdf" },
   ];
   const heroRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
