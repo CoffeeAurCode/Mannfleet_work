@@ -124,6 +124,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     title: "Annual Report",
     icon: "📚",
     docs: [
+      { label: "Annual Report 2025-26", file: "Annual-Report_2025-26.pdf" },
       { label: "Annual Report 2024-25", file: "Annual-Report_2024-25.pdf" },
       { label: "Annual Report 2023-24", file: "Annual-Report_2023-24.pdf" },
       { label: "Annual Report 2022-23", file: "Annual-Report_2022-23.pdf" },
