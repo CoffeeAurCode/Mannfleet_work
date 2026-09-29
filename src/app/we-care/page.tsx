@@ -352,7 +352,6 @@ function PdfModal({ file, label, onClose }: { file: string; label: string; onClo
    MAIN PAGE
 ══════════════════════════════════════════════════════════════ */
 export default function WeCarePage() {
-  const [showPdf, setShowPdf] = useState(false);
   const [activeCert, setActiveCert] = useState<{ file: string; label: string } | null>(null);
 
   const CSR_CERTIFICATES = [
@@ -892,63 +891,6 @@ export default function WeCarePage() {
           </div>
         </section>
 
-        {/* ── Policy Documentation ── */}
-        <section style={{ ...sectionWrap, paddingTop: 0 }}>
-          <div style={{
-            ...glassCard,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "2rem",
-            flexWrap: "wrap",
-            padding: "2.5rem",
-            background: "var(--glass-mid)",
-            border: "1px solid var(--accent)",
-          }}>
-            <div style={{ flex: 1, minWidth: 300 }}>
-              <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block", background: "var(--accent)", color: "#fff" }}>
-                Official Documentation
-              </span>
-              <h2 className="font-serif" style={{
-                fontSize: "clamp(1.8rem, 4vw, 2.4rem)",
-                fontWeight: 400,
-                color: "var(--text-primary)",
-                margin: "0 0 0.5rem",
-              }}>
-                Corporate Social Responsibility Policy
-              </h2>
-              <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, margin: 0 }}>
-                This document outlines our commitment to social responsibility, the framework for our initiatives,
-                and the governance structure that ensures transparent and impactful delivery of our CSR goals.
-              </p>
-            </div>
-            <button
-              onClick={() => setShowPdf(true)}
-              className="glass-badge"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.8rem",
-                padding: "1.2rem 2.2rem",
-                background: "var(--accent)",
-                color: "#fff",
-                border: "none",
-                cursor: "pointer",
-                fontWeight: 600,
-                fontSize: "1rem",
-                borderRadius: "14px",
-                boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
-                transition: "transform 0.3s ease, background 0.3s ease",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-4px)")}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
-            >
-              <IconFile />
-              View Policy PDF
-            </button>
-          </div>
-        </section>
-
         {/* ── CSR Utilization Certificates ── */}
         <section style={{ ...sectionWrap, paddingTop: 0 }}>
           <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block" }}>
@@ -1107,14 +1049,6 @@ export default function WeCarePage() {
       </main>
 
       <Footer />
-
-      {showPdf && (
-        <PdfModal
-          file="CSR-Policy_Mann.pdf"
-          label="CSR Policy — Mann Fleet Partners Limited"
-          onClose={() => setShowPdf(false)}
-        />
-      )}
 
       {activeCert && (
         <PdfModal
