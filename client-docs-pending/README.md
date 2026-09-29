@@ -6,8 +6,12 @@ When a file goes live, move it into its tab's folder under `public/investors/` (
 
 | File | Why it's waiting |
 |---|---|
-| `Utilization-Certificate_Maharaja-Agrasen-Hospital_2025-26.pdf` | The client asked for it to be removed from We Care on 23 Sept 2026, then resent it on 30 Sept. It's byte-identical to the removed copy. Confirm with the client before re-adding. |
+| _(none)_ | |
 
 ## Asked for, not received yet
 
 - Consolidated Financial Statements 2025-26 (Financial Statements tab)
+
+## Decided: not going on the site
+
+- Maharaja Agrasen Hospital utilisation certificate (FY 2025-26). The client resent it on 30 Sept 2026 and confirmed it should stay removed from We Care. The file is in git history if that ever changes.
