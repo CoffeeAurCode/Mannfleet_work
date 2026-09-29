@@ -77,6 +77,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
       { label: "Succession Planning Policy", file: "Policy-on-Succession-Planning-of-Board-and-Senior-Management_Mann.pdf" },
       { label: "Familiarisation Programme — Independent Directors", file: "Familiarisation-Programme-for-Independent-Directors_Mann.pdf" },
       { label: "Prevention of Sexual Harassment at Workplace", file: "Prevention-of-Sexual-Harassment-at-Workplace_Mann.pdf" },
+      { label: "Corporate Social Responsibility (CSR) Policy", file: "CSR-Policy_Mann.pdf" },
     ],
   },
   {
