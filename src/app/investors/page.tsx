@@ -99,6 +99,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     title: "Financial Statements",
     icon: "📈",
     docs: [
+      { label: "Standalone Financial Statements 2025-26 (Audited)", file: "Financial-Statements_2025-26_Standalone_Audited.pdf" },
       { label: "Financial Statements 2024-25 (Audited)", file: "Financial-Statements_2024-25_Audited.pdf" },
       { label: "Financial Statements 2023-24", file: "Financial-Statements_2023-24.pdf" },
       { label: "Financial Statements 2022-23", file: "Financial-Statements_2022-23.pdf" },
@@ -110,6 +111,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     title: "Board Report",
     icon: "📝",
     docs: [
+      { label: "Board's Report 2025-26", file: "Board-Report_2025-26.pdf" },
       { label: "Board's Report 2024-25", file: "Board-Report_2024-25.pdf" },
       { label: "Board's Report 2023-24", file: "Board-Report_2023-24.pdf" },
       { label: "Board's Report 2022-23", file: "Board-Report_2022-23.pdf" },
