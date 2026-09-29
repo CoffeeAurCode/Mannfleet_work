@@ -1,3 +1,11 @@
+# MANN — Mann Fleet Partners website
+
+**Live site:** https://www.mannfleetpartners.com
+
+Deployed on Vercel from `subhayudas/Mannfleet` (`main`). https://mannfleet.vercel.app serves the same deployment. Check changes on the main domain above before confirming them to the client.
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
