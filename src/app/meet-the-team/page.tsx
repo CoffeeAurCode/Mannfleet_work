@@ -1204,12 +1204,15 @@ function SectionHeader({
   labelRef,
   divRef,
   label,
+  abbr,
   heading,
   sub,
 }: {
   labelRef: React.RefObject<HTMLDivElement | null>;
   divRef: React.RefObject<HTMLDivElement | null>;
   label: string;
+  /** Acronym shown after the label, exempt from its uppercase so a plural stays "KMPs", not "KMPS". */
+  abbr?: string;
   heading: string;
   sub?: string;
 }) {
@@ -1217,6 +1220,7 @@ function SectionHeader({
     <div ref={labelRef} style={{ marginBottom: 14 }}>
       <p style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 10 }}>
         {label}
+        {abbr && <span style={{ textTransform: "none" }}> ({abbr})</span>}
       </p>
       <div ref={divRef} style={{ height: 1, background: "var(--border-subtle)", marginBottom: 48 }} />
       <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(1.8rem, 5vw, 3rem)", fontWeight: 400, color: "var(--text-primary)", marginBottom: 12, lineHeight: 1.15 }}>
@@ -1445,7 +1449,8 @@ export default function MeetTheTeamPage() {
           labelRef={kmpLabelRef}
           divRef={kmpDivRef}
           label="Key Managerial Personnel"
-          heading="Key Managerial Personnel"
+          abbr="KMPs"
+          heading="Key Managerial Personnel (KMPs)"
           sub="The professionals responsible for financial strategy, compliance, and regulatory governance."
         />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 28, marginTop: 52 }}>
@@ -1463,7 +1468,8 @@ export default function MeetTheTeamPage() {
         <SectionHeader
           labelRef={salesLabelRef}
           divRef={salesDivRef}
-          label="Senior Managerial Personnel (SMPs)"
+          label="Senior Managerial Personnel"
+          abbr="SMPs"
           heading="Sales and Marketing"
           sub="The driving force behind our client relationships, partnerships, and revenue growth."
         />

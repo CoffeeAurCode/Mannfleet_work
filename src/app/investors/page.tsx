@@ -101,6 +101,7 @@ const PDF_CATEGORIES: PdfCategory[] = [
     icon: "📈",
     docs: [
       { label: "Standalone Financial Statements 2025-26 (Audited)", file: "financial-statements/Financial-Statements_2025-26_Standalone_Audited.pdf" },
+      { label: "Consolidated Financial Statements 2025-26 (Audited)", file: "financial-statements/Financial-Statements_2025-26_Consolidated_Audited.pdf" },
       { label: "Financial Statements 2024-25 (Audited)", file: "financial-statements/Financial-Statements_2024-25_Audited.pdf" },
       { label: "Financial Statements 2023-24", file: "financial-statements/Financial-Statements_2023-24.pdf" },
       { label: "Financial Statements 2022-23", file: "financial-statements/Financial-Statements_2022-23.pdf" },
