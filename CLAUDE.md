@@ -12,6 +12,7 @@
 **Type:** Marketing/showcase website — purely client-side, no backend or database
 **Purpose:** Premium chauffeur & car rental brand site with heavy visual storytelling
 **Live site:** https://www.mannfleetpartners.com (Vercel, deploys from `subhayudas/Mannfleet` `main`; `mannfleet.vercel.app` is the same deployment). Verify client-facing changes here.
+**Git workflow:** `origin` is the fork `CoffeeAurCode/Mannfleet_work`; `upstream` is `subhayudas/Mannfleet`. Branch from `upstream/main` after a `git fetch upstream`, because the fork's `main` lags behind. Then open the PR against `subhayudas/Mannfleet` for Subhayu to merge. Before saying a document is or isn't live, check the live URL, not local `main`.
 
 ---
 
@@ -139,6 +140,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
     - check it is an ordinary PDF. XFA e-forms (`grep -c /XFA`, e.g. old MCA MGT-7A forms) show only "Please wait…" in browsers, so ask the client for a flattened copy.
     - compare its md5 against `public/` files, because clients often resend documents that are already live.
     - most arrive as scans without a text layer, so render a page or two to confirm what it actually is.
+    - before removing anything, match the client's wording to the exact item on the page. "CSR receipt" means the handwritten donation receipt image, while a "utilization certificate" is the PDF in the Utilization Certificates list. Mixing these up once removed the wrong document.
     Then move it into its tab's folder with a clean hyphenated name (`public/investors/board-reports/Board-Report_2025-26.pdf`). List it newest year first in its tab, with `file:` set to the folder-relative path. Don't leave the original at the root.
     To **replace** a document, overwrite the file and keep its name, so shared links keep working.
     `next.config.ts` → `MOVED_INVESTOR_DOCS` redirects the old flat `/investors/<file>.pdf` URLs, from before the per-tab folders, to their new paths. If you move or rename a file that's already live, add a redirect for it too.
