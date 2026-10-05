@@ -355,6 +355,7 @@ export default function WeCarePage() {
   const [activeCert, setActiveCert] = useState<{ file: string; label: string } | null>(null);
 
   const CSR_CERTIFICATES = [
+    { label: "Utilization Certificate — Maharaja Agrasen Hospital Charitable Trust (CSR 2025-26)", file: "csr-certificates/Utilization-Certificate_Maharaja-Agrasen-Hospital_2025-26.pdf" },
     { label: "Utilization Certificate — Global Social (CSR 2024-25)", file: "csr-certificates/Utilization-Certificate_CSR_Global-Social_2024-25.pdf" },
     { label: "Utilization Certificate — Impact Paramedical (CSR 2023-24)", file: "csr-certificates/Utilization-Certificate_Impact-Paramedical_2023-24.pdf" },
   ];
@@ -671,13 +672,6 @@ export default function WeCarePage() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div style={{ marginTop: "1.25rem", display: "flex", justifyContent: "center" }}>
-              <div style={{ borderRadius: 12, overflow: "hidden", border: "1px solid var(--border-subtle)", maxWidth: 480, width: "100%" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/We care/WhatsApp Image 2026-05-13 at 17.01.27.jpeg" alt="Hospital Donation Receipt" style={{ width: "100%", display: "block", objectFit: "contain" }} />
-              </div>
             </div>
           </AccordionItem>
 
