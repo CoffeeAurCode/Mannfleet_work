@@ -61,6 +61,7 @@ src/
     BentoSection.tsx      # USP bento grid with video cards
     ServicesSection.tsx   # 4-service carousel with GSAP marquee ticker
     LogoIntro.tsx         # Fullscreen 1s logo splash (/mann-intro-logo.webp)
+    ChatWidget.tsx        # "MANN Concierge" chat bubble + panel, mounted in layout.tsx
     ContentReveal.tsx     # Fades in content after intro:done event fires
     IndiaMap.tsx          # Static map component
     IndiaMapLeaflet.tsx   # Leaflet-based interactive map
@@ -75,6 +76,7 @@ src/
     intro.ts              # LogoIntro/ContentReveal shared state (see Intro gate below)
     contact.ts            # BOOKING_EMAIL / GENERAL_EMAIL / WHATSAPP_NUMBER
     app-links.ts          # Verified App Store + Play Store URLs and QR asset paths
+    chatbot-knowledge.ts  # Concierge SYSTEM_PROMPT + site facts the bot answers from
 public/
   investors/                   # Every document PDF, one folder per investors-page tab:
     ipo/ newspaper-advertisements/ constitutive-documents/ policies/
@@ -126,7 +128,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 
 1. **All components are `"use client"`** — no server components in use yet (beyond the root layout and pages as server shells).
 2. **Intro gate:** `LogoIntro` shows a fullscreen logo splash for **1 second, fade included** (client request, Oct 2026), **at most once per browser session** — `src/lib/intro.ts` records `sessionStorage['mannfleet_intro_seen']`, so reloads and inner-page loads skip straight to content. It is also click/Esc-skippable.
-   `markIntroDone()` sets a module-level flag *and* dispatches `intro:done`. Consumers must check the flag, not just the event: `LogoIntro`'s effect commits before its siblings', so a synchronous skip (already seen, reduced motion, autoplay blocked) fires the event before a plain listener can subscribe. `ContentReveal` uses `useSyncExternalStore` for exactly this reason; `HeroSection` and `ChatWidget` read the sessionStorage key directly.
+   `markIntroDone()` sets a module-level flag *and* dispatches `intro:done`. Consumers must check the flag, not just the event: `LogoIntro`'s effect commits before its siblings', so a synchronous skip (already seen, reduced motion) fires the event before a plain listener can subscribe. `ContentReveal` uses `useSyncExternalStore` for exactly this reason; `HeroSection` and `ChatWidget` read the sessionStorage key directly.
 3. **Theme:** Inline `<script>` in `<head>` applies `.dark` before hydration to prevent flash. `ThemeProvider` then manages runtime toggling.
 4. **Animation:** GSAP is used directly (no ScrollTrigger plugin imported — verify before adding scroll animations). All GSAP code lives inside `useEffect` with proper cleanup.
 5. **Path alias:** `@/*` → `src/*`
@@ -184,6 +186,8 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 **ServicesSection:** 4 services — Long-Term, Spot, Self-Drive, Event. GSAP horizontal ticker marquee. Row-based layout with images.
 
 **LogoIntro:** Shows `/mann-intro-logo.webp` on black for 1s on first load. It used to play the 7.7s `Maan Logo Animation_01.mp4`, but that clip opens on black and only completes the logo at ~6s, so a 1s cut showed nothing; the still is that clip's final frame (the mp4 is in git history). The 1s clock starts when the image loads, with a 2.5s fallback so a failed load never blocks the site. Respects `prefers-reduced-motion`. Fires `intro:done` event when done.
+
+**ChatWidget:** Floating "Concierge" button that opens the "MANN Concierge" chat panel, streaming from `/api/chat`. To rename the bot, change all of these: the FAB label, `aria-label`s and header title in `ChatWidget.tsx`, `SYSTEM_PROMPT` in `src/lib/chatbot-knowledge.ts`, and the "concierge" wording in the fallback messages in `src/app/api/chat/route.ts`.
 
 **ContentReveal:** Wraps page content. Reads the intro store via `useSyncExternalStore`, then fades in. Prevents content flash during intro.
 
