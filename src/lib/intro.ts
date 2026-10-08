@@ -3,8 +3,8 @@
 /**
  * Shared state for the fullscreen logo intro.
  *
- * The intro is a ~15s video, so it must play at most once per browser session.
- * Two consumers need to agree on that: LogoIntro (which plays and dismisses it)
+ * The intro is a one-second logo splash that shows at most once per browser
+ * session. Two consumers need to agree on that: LogoIntro (which plays and dismisses it)
  * and ContentReveal (which un-hides the page once it is gone).
  *
  * The `intro:done` event alone is not enough — LogoIntro's effect commits before

@@ -60,7 +60,7 @@ src/
     PartnersMarquee.tsx   # Auto-scroll client marquee, canvas grain overlay
     BentoSection.tsx      # USP bento grid with video cards
     ServicesSection.tsx   # 4-service carousel with GSAP marquee ticker
-    LogoIntro.tsx         # Fullscreen intro video overlay (/Maan Logo Animation_01.mp4)
+    LogoIntro.tsx         # Fullscreen 1s logo splash (/mann-intro-logo.webp)
     ContentReveal.tsx     # Fades in content after intro:done event fires
     IndiaMap.tsx          # Static map component
     IndiaMapLeaflet.tsx   # Leaflet-based interactive map
@@ -82,7 +82,7 @@ public/
     annual-reports/ annual-returns/ subsidiary-company/ group-company/
     csr-certificates/          # Linked from /we-care, not an investors tab
   legal/                       # Policies linked outside the investors page
-  Maan Logo Animation_01.mp4   # Intro video
+  mann-intro-logo.webp         # Intro splash — final frame of the old logo animation, cropped
   glimpses/                    # Trimmed 12s muted clips + posters (see Glimpses below)
   Mann car pictures/           # Vehicle catalog images (200+ cars by model)
   cleints/                     # Client photos (marquee)
@@ -125,7 +125,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 ## Key Architectural Patterns
 
 1. **All components are `"use client"`** — no server components in use yet (beyond the root layout and pages as server shells).
-2. **Intro gate:** `LogoIntro` renders a fullscreen video overlay (~15s) and plays it **at most once per browser session** — `src/lib/intro.ts` records `sessionStorage['mannfleet_intro_seen']`, so reloads and inner-page loads skip straight to content. It is also click/Esc-skippable.
+2. **Intro gate:** `LogoIntro` shows a fullscreen logo splash for **1 second, fade included** (client request, Oct 2026), **at most once per browser session** — `src/lib/intro.ts` records `sessionStorage['mannfleet_intro_seen']`, so reloads and inner-page loads skip straight to content. It is also click/Esc-skippable.
    `markIntroDone()` sets a module-level flag *and* dispatches `intro:done`. Consumers must check the flag, not just the event: `LogoIntro`'s effect commits before its siblings', so a synchronous skip (already seen, reduced motion, autoplay blocked) fires the event before a plain listener can subscribe. `ContentReveal` uses `useSyncExternalStore` for exactly this reason; `HeroSection` and `ChatWidget` read the sessionStorage key directly.
 3. **Theme:** Inline `<script>` in `<head>` applies `.dark` before hydration to prevent flash. `ThemeProvider` then manages runtime toggling.
 4. **Animation:** GSAP is used directly (no ScrollTrigger plugin imported — verify before adding scroll animations). All GSAP code lives inside `useEffect` with proper cleanup.
@@ -165,7 +165,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 | `/privacy` | Privacy policy |
 | `/terms` | Terms and conditions |
 | `/services` | Services overview; `/services/[slug]` plus five dedicated service pages (events-weddings, film-shoots-concerts, global-leaders-celebrities, pan-india-mobility, tourism) |
-| `/faq` | Frequently asked questions |
+| `/faq` | Frequently asked questions, plus an "Ask Us" box (`#ask-a-question`) that opens WhatsApp with the visitor's question prefilled — a `wa.me` link, no backend |
 
 ---
 
@@ -183,7 +183,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 
 **ServicesSection:** 4 services — Long-Term, Spot, Self-Drive, Event. GSAP horizontal ticker marquee. Row-based layout with images.
 
-**LogoIntro:** Plays `/Maan Logo Animation_01.mp4` fullscreen on first load. Respects `prefers-reduced-motion`. Has autoplay fallback. Fires `intro:done` event when done.
+**LogoIntro:** Shows `/mann-intro-logo.webp` on black for 1s on first load. It used to play the 7.7s `Maan Logo Animation_01.mp4`, but that clip opens on black and only completes the logo at ~6s, so a 1s cut showed nothing; the still is that clip's final frame (the mp4 is in git history). The 1s clock starts when the image loads, with a 2.5s fallback so a failed load never blocks the site. Respects `prefers-reduced-motion`. Fires `intro:done` event when done.
 
 **ContentReveal:** Wraps page content. Reads the intro store via `useSyncExternalStore`, then fades in. Prevents content flash during intro.
 

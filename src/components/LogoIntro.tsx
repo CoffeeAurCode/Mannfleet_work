@@ -3,33 +3,37 @@
 import { useEffect, useRef, useState } from "react";
 import { hasSeenIntroThisSession, markIntroDone } from "@/lib/intro";
 
+// The client wants the opening logo on screen for one second, fade included.
+const VISIBLE_MS = 1000;
+const FADE_MS = 250;
+// If the logo image never loads, don't hold the site behind a black screen.
+const LOAD_TIMEOUT_MS = 2500;
+
 export default function LogoIntro() {
   const [show, setShow] = useState(true);
   const [fading, setFading] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
   const handledRef = useRef(false);
-  const safetyIdRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const dismiss = () => {
     if (handledRef.current) return;
     handledRef.current = true;
-    if (safetyIdRef.current) clearTimeout(safetyIdRef.current);
+    if (timerRef.current) clearTimeout(timerRef.current);
     setFading(true);
     // Signal content to reveal only after overlay has fully faded out
     setTimeout(() => {
       setShow(false);
       markIntroDone();
-    }, 500);
+    }, FADE_MS);
   };
 
-  // Called as a React prop so it fires even if metadata was already loaded
-  const handleLoadedMetadata = () => {
-    const vid = videoRef.current;
-    if (!vid || handledRef.current) return;
-    const duration = isFinite(vid.duration) && vid.duration > 0 ? vid.duration : 15;
-    // Safety fallback: only fires if onEnded never fires
-    if (safetyIdRef.current) clearTimeout(safetyIdRef.current);
-    safetyIdRef.current = setTimeout(dismiss, duration * 1000 + 2000);
+  // Start the one-second clock only once the logo is actually painted, so a
+  // slow connection doesn't spend the whole second on an empty black screen.
+  const startClock = () => {
+    if (handledRef.current) return;
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(dismiss, VISIBLE_MS - FADE_MS);
   };
 
   useEffect(() => {
@@ -40,7 +44,7 @@ export default function LogoIntro() {
     };
 
     // Play at most once per session — a reload or a fresh tab of an inner page
-    // (e.g. arriving on /reservation) must not sit through the 15s animation.
+    // (e.g. arriving on /reservation) skips straight to content.
     if (hasSeenIntroThisSession()) {
       skip();
       return;
@@ -52,29 +56,15 @@ export default function LogoIntro() {
       return;
     }
 
-    const vid = videoRef.current;
-    if (!vid) return;
+    timerRef.current = setTimeout(dismiss, LOAD_TIMEOUT_MS);
 
-    // Do not make the rest of the site depend on the video returning metadata.
-    // Some laptop/browser combinations can leave an autoplaying MP4 in a
-    // loading state forever; without this timer the fixed overlay blocks every
-    // navigation and action on the page.
-    safetyIdRef.current = setTimeout(dismiss, 12_000);
-
-    // Attempt play (muted autoplay should succeed in all browsers)
-    vid.play().catch(() => {
-      // Autoplay blocked — skip intro immediately
-      skip();
-    });
-
-    // If metadata was already loaded before this effect ran (preload="auto"
-    // can do this), handleLoadedMetadata won't fire again — set safety now.
-    if (vid.readyState >= 1) {
-      handleLoadedMetadata();
+    // A cached image can finish loading before hydration attaches onLoad.
+    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+      startClock();
     }
 
     return () => {
-      if (safetyIdRef.current) clearTimeout(safetyIdRef.current);
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -97,51 +87,28 @@ export default function LogoIntro() {
         alignItems: "center",
         justifyContent: "center",
         opacity: fading ? 0 : 1,
-        transition: "opacity 0.5s ease",
+        transition: `opacity ${FADE_MS}ms ease`,
         willChange: "opacity",
         pointerEvents: fading ? "none" : "auto",
         cursor: "pointer",
       }}
     >
-      <video
-        ref={videoRef}
-        src="/Maan Logo Animation_01.mp4"
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        onLoadedMetadata={handleLoadedMetadata}
-        onEnded={dismiss}
+      {/* Final frame of the old logo animation, cropped to the logo. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        ref={imgRef}
+        src="/mann-intro-logo.webp"
+        alt="Mann Fleet Partners"
+        width={1200}
+        height={440}
+        fetchPriority="high"
+        onLoad={startClock}
         onError={dismiss}
-        onAbort={dismiss}
-        onStalled={dismiss}
         style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "contain",
+          width: "min(62.5vw, 1200px)",
+          height: "auto",
         }}
       />
-
-      {/* Skip affordance — nobody should be trapped in a 15s animation */}
-      <span
-        className="font-sans"
-        style={{
-          position: "absolute",
-          bottom: "clamp(1.5rem, 5vw, 3rem)",
-          right: "clamp(1.5rem, 5vw, 3rem)",
-          padding: "0.5rem 1.1rem",
-          borderRadius: 9999,
-          border: "1px solid rgba(255,255,255,0.28)",
-          background: "rgba(255,255,255,0.08)",
-          color: "rgba(255,255,255,0.75)",
-          fontSize: "0.72rem",
-          fontWeight: 600,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-        }}
-      >
-        Skip
-      </span>
     </div>
   );
 }
