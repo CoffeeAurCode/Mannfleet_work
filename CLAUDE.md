@@ -12,6 +12,7 @@
 **Type:** Marketing/showcase website — purely client-side, no backend or database
 **Purpose:** Premium chauffeur & car rental brand site with heavy visual storytelling
 **Live site:** https://www.mannfleetpartners.com (Vercel, deploys from `subhayudas/Mannfleet` `main`; `mannfleet.vercel.app` is the same deployment). Verify client-facing changes here.
+**Git workflow:** `origin` is the fork `CoffeeAurCode/Mannfleet_work`; `upstream` is `subhayudas/Mannfleet`. Branch from `upstream/main` after a `git fetch upstream`, because the fork's `main` lags behind. Then open the PR against `subhayudas/Mannfleet` for Subhayu to merge. Before saying a document is or isn't live, check the live URL, not local `main`.
 
 ---
 
@@ -60,6 +61,7 @@ src/
     BentoSection.tsx      # USP bento grid with video cards
     ServicesSection.tsx   # 4-service carousel with GSAP marquee ticker
     LogoIntro.tsx         # Fullscreen 1s logo splash (/mann-intro-logo.webp)
+    ChatWidget.tsx        # "MANN Concierge" chat bubble + panel, mounted in layout.tsx
     ContentReveal.tsx     # Fades in content after intro:done event fires
     IndiaMap.tsx          # Static map component
     IndiaMapLeaflet.tsx   # Leaflet-based interactive map
@@ -74,6 +76,7 @@ src/
     intro.ts              # LogoIntro/ContentReveal shared state (see Intro gate below)
     contact.ts            # BOOKING_EMAIL / GENERAL_EMAIL / WHATSAPP_NUMBER
     app-links.ts          # Verified App Store + Play Store URLs and QR asset paths
+    chatbot-knowledge.ts  # Concierge SYSTEM_PROMPT + site facts the bot answers from
 public/
   investors/                   # Every document PDF, one folder per investors-page tab:
     ipo/ newspaper-advertisements/ constitutive-documents/ policies/
@@ -125,7 +128,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 
 1. **All components are `"use client"`** — no server components in use yet (beyond the root layout and pages as server shells).
 2. **Intro gate:** `LogoIntro` shows a fullscreen logo splash for **1 second, fade included** (client request, Oct 2026), **at most once per browser session** — `src/lib/intro.ts` records `sessionStorage['mannfleet_intro_seen']`, so reloads and inner-page loads skip straight to content. It is also click/Esc-skippable.
-   `markIntroDone()` sets a module-level flag *and* dispatches `intro:done`. Consumers must check the flag, not just the event: `LogoIntro`'s effect commits before its siblings', so a synchronous skip (already seen, reduced motion, autoplay blocked) fires the event before a plain listener can subscribe. `ContentReveal` uses `useSyncExternalStore` for exactly this reason; `HeroSection` and `ChatWidget` read the sessionStorage key directly.
+   `markIntroDone()` sets a module-level flag *and* dispatches `intro:done`. Consumers must check the flag, not just the event: `LogoIntro`'s effect commits before its siblings', so a synchronous skip (already seen, reduced motion) fires the event before a plain listener can subscribe. `ContentReveal` uses `useSyncExternalStore` for exactly this reason; `HeroSection` and `ChatWidget` read the sessionStorage key directly.
 3. **Theme:** Inline `<script>` in `<head>` applies `.dark` before hydration to prevent flash. `ThemeProvider` then manages runtime toggling.
 4. **Animation:** GSAP is used directly (no ScrollTrigger plugin imported — verify before adding scroll animations). All GSAP code lives inside `useEffect` with proper cleanup.
 5. **Path alias:** `@/*` → `src/*`
@@ -139,8 +142,11 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
     - check it is an ordinary PDF. XFA e-forms (`grep -c /XFA`, e.g. old MCA MGT-7A forms) show only "Please wait…" in browsers, so ask the client for a flattened copy.
     - compare its md5 against `public/` files, because clients often resend documents that are already live.
     - most arrive as scans without a text layer, so render a page or two to confirm what it actually is.
+    - before removing anything, match the client's wording to the exact item on the page. "CSR receipt" means the handwritten donation receipt image, while a "utilization certificate" is the PDF in the Utilization Certificates list. Mixing these up once removed the wrong document.
     Then move it into its tab's folder with a clean hyphenated name (`public/investors/board-reports/Board-Report_2025-26.pdf`). List it newest year first in its tab, with `file:` set to the folder-relative path. Don't leave the original at the root.
     To **replace** a document, overwrite the file and keep its name, so shared links keep working.
+    To confirm a document is live after the merge, wait for the Vercel production deployment of the merge commit to show `success` (`gh api repos/subhayudas/Mannfleet/deployments`, about 1–2 min). Then download the live URL and compare its md5 with the client's file; a 200 alone could be the old copy.
+    The investors page builds its links client-side from `PDF_CATEGORIES`, so the file paths are in a `/_next/static/chunks/*.js` bundle, not in the page HTML. Grep the chunks, not the HTML.
     `next.config.ts` → `MOVED_INVESTOR_DOCS` redirects the old flat `/investors/<file>.pdf` URLs, from before the per-tab folders, to their new paths. If you move or rename a file that's already live, add a redirect for it too.
 12. **Analytics (Meta Pixel):** Base snippet is inlined in `<head>` from `src/lib/meta-pixel.ts` (same pattern as the theme script) so it initialises before hydration; `<noscript>` fallback sits at the top of `<body>`. Because the App Router navigates client-side, `MetaPixel.tsx` re-fires `PageView` on every route change — it uses `useSearchParams`, so it **must stay wrapped in `<Suspense>`** or the production build fails and pages drop out of static rendering. Fire conversions with `fbTrack()` from `@/lib/meta-pixel`; never pass PII (name, phone, email) in event params.
 
@@ -182,6 +188,8 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 **ServicesSection:** 4 services — Long-Term, Spot, Self-Drive, Event. GSAP horizontal ticker marquee. Row-based layout with images.
 
 **LogoIntro:** Shows `/mann-intro-logo.webp` on black for 1s on first load. It used to play the 7.7s `Maan Logo Animation_01.mp4`, but that clip opens on black and only completes the logo at ~6s, so a 1s cut showed nothing; the still is that clip's final frame (the mp4 is in git history). The 1s clock starts when the image loads, with a 2.5s fallback so a failed load never blocks the site. Respects `prefers-reduced-motion`. Fires `intro:done` event when done.
+
+**ChatWidget:** Floating "Concierge" button that opens the "MANN Concierge" chat panel, streaming from `/api/chat`. To rename the bot, change all of these: the FAB label, `aria-label`s and header title in `ChatWidget.tsx`, `SYSTEM_PROMPT` in `src/lib/chatbot-knowledge.ts`, and the "concierge" wording in the fallback messages in `src/app/api/chat/route.ts`.
 
 **ContentReveal:** Wraps page content. Reads the intro store via `useSyncExternalStore`, then fades in. Prevents content flash during intro.
 
