@@ -8,6 +8,7 @@ From the 8 Oct request list. Nothing to build until they reply:
 
 ## Done
 
+- 9 Oct (urgent, due 11am): Annual Report 2025-26 replaced with the client's full 116-page version, up from 71 pages (PR #27). Live copy md5-verified against the client's file and confirmed with them on WhatsApp.
 - 8 Oct: Intro logo cut to 1 second, and an "Ask Us" box on `/faq` that sends the question to WhatsApp (PR #26, verified live).
 - 5 Oct: Maharaja Agrasen Hospital utilisation certificate restored on We Care and the 13-3-24 donation receipt removed (PR #24). The client's "remove the CSR receipt" had been misread as "remove the certificate".
 - Sept 30: Consolidated Financials 2025-26 added, Annual Report 2025-26 replaced (PR #23).
