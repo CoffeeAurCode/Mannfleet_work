@@ -3,16 +3,20 @@
 import { useEffect, useRef, useState } from "react";
 import { hasSeenIntroThisSession, markIntroDone } from "@/lib/intro";
 
-// The client wants the opening logo on screen for one second, fade included.
-const VISIBLE_MS = 1000;
 const FADE_MS = 250;
-// If the logo image never loads, don't hold the site behind a black screen.
+// If the clip can't autoplay (iOS Low Power Mode, data saver), show its final
+// frame as a still for this long instead.
+const STILL_MS = 1000;
+// If the clip never starts, don't hold the site behind a black screen.
 const LOAD_TIMEOUT_MS = 2500;
+// Hard ceiling once it is playing, in case playback stalls mid-clip.
+const MAX_MS = 4000;
 
 export default function LogoIntro() {
   const [show, setShow] = useState(true);
   const [fading, setFading] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const [still, setStill] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const handledRef = useRef(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -28,12 +32,15 @@ export default function LogoIntro() {
     }, FADE_MS);
   };
 
-  // Start the one-second clock only once the logo is actually painted, so a
-  // slow connection doesn't spend the whole second on an empty black screen.
-  const startClock = () => {
+  const restartTimer = (ms: number) => {
     if (handledRef.current) return;
     if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(dismiss, VISIBLE_MS - FADE_MS);
+    timerRef.current = setTimeout(dismiss, ms);
+  };
+
+  const showStill = () => {
+    setStill(true);
+    restartTimer(STILL_MS - FADE_MS);
   };
 
   useEffect(() => {
@@ -56,12 +63,11 @@ export default function LogoIntro() {
       return;
     }
 
-    timerRef.current = setTimeout(dismiss, LOAD_TIMEOUT_MS);
+    restartTimer(LOAD_TIMEOUT_MS);
 
-    // A cached image can finish loading before hydration attaches onLoad.
-    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
-      startClock();
-    }
+    // Call play() ourselves rather than rely on the autoPlay attribute alone,
+    // so a blocked autoplay is caught and falls back to the still.
+    videoRef.current?.play().catch(showStill);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -70,6 +76,8 @@ export default function LogoIntro() {
   }, []);
 
   if (!show) return null;
+
+  const mediaStyle = { width: "min(80vw, 1080px)", height: "auto" } as const;
 
   return (
     <div
@@ -93,22 +101,35 @@ export default function LogoIntro() {
         cursor: "pointer",
       }}
     >
-      {/* Final frame of the old logo animation, cropped to the logo. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        ref={imgRef}
-        src="/mann-intro-logo.webp"
-        alt="Mann Fleet Partners"
-        width={1200}
-        height={440}
-        fetchPriority="high"
-        onLoad={startClock}
-        onError={dismiss}
-        style={{
-          width: "min(62.5vw, 1200px)",
-          height: "auto",
-        }}
-      />
+      {still ? (
+        // Final frame of the clip, so the fallback looks like the clip's end.
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src="/mann-intro-logo.webp"
+          alt="Mann Fleet Partners"
+          width={1080}
+          height={540}
+          onError={dismiss}
+          style={mediaStyle}
+        />
+      ) : (
+        // The client's 1.6s logo animation, cropped to the logo and stripped of
+        // audio. It ends on the full logo, which holds while the overlay fades.
+        <video
+          ref={videoRef}
+          src="/mann-intro-logo.mp4"
+          aria-label="Mann Fleet Partners"
+          width={1080}
+          height={540}
+          muted
+          playsInline
+          preload="auto"
+          onPlaying={() => restartTimer(MAX_MS)}
+          onEnded={dismiss}
+          onError={showStill}
+          style={mediaStyle}
+        />
+      )}
     </div>
   );
 }
