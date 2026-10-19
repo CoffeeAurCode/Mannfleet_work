@@ -1,3 +1,10 @@
+## 19 Oct 2026 — "Website changes" Google Doc
+
+Sent as a Google Doc plus Subhayu's forward of the client's "Integration of the financial system in our website" email thread.
+1. **Add these company names** (25-row table pasted as an image). Ten already had logos in the home-page marquee. All 25 now run as a names row under the logos (PR pending). Casing was normalised and billing locations like "(Karnataka)" dropped. "J S Summits, Ministry of External Affairs" and "Ministry of External Affairs" are kept as two entries, as the client listed them.
+2. **Payment gateway possibilities** — answer the client; no code yet. Their Mann Tours site has `manntours.com/Atompay/` (Atom / NTT DATA, cards) and `manntours.com/RazorPay/`, each a PHP form (amount, name, email, mobile, address) that redirects to the gateway, which emails the customer a receipt. A merchant account belongs to one legal entity, so Mann Fleet Partners Limited needs its own gateway account, then we add a `/pay` page plus server routes. Questions to ask: which gateway (Atom, Razorpay, or both), whether MFPL already has a merchant ID, and what customers pay for (a booking advance or an invoice amount they type in).
+3. **Car images** — client will send; same as "Vehicle pictures" below.
+
 ## Waiting on the client (asked on WhatsApp, 11 Oct 2026)
 
 The 11 Oct message reported everything from PRs #28, #30 and #31 together and asked three things. It replaced our 10 Oct WhatsApp, which was deleted. Their 10 Oct reply had answered our 8 Oct questions by number without quoting them, and point 1 never arrived.

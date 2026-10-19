@@ -184,7 +184,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 
 **Footer:** Video background. CTA banner with dot-grid + gradient. Logo, address, phone, email. Quick links. Social icons: Instagram, WhatsApp, Twitter, Facebook, LinkedIn.
 
-**PartnersMarquee:** 17 client photos in auto-scrolling marquee. Canvas draws animated noise grain over it. Pauses on hover. Glass-morphism card styling.
+**PartnersMarquee:** "Our Clients" — 21 client logos in an auto-scrolling marquee, plus a second row of 25 client names (`CLIENT_NAMES`, the client's Oct 2026 list) scrolling the other way. Canvas draws animated noise grain over it. Both rows pause on hover. The names row has a screen-reader `<ul>` (the moving copy is `aria-hidden`), and under `prefers-reduced-motion` it stops and wraps into a centred list. Add a new client by name to `CLIENT_NAMES`; add a logo only when the client sends one.
 
 **BentoSection:** Grid of USP cards. Chauffeur card shows live-updating ETA. Other cards have video backgrounds.
 
