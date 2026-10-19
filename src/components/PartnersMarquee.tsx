@@ -111,6 +111,38 @@ const PARTNERS = [
 
 const TRACK = [...PARTNERS, ...PARTNERS];
 
+/* Client list sent by MANN (Oct 2026), shown by name beneath the logos.
+   Casing normalised and billing locations, e.g. "(Karnataka)", dropped. */
+const CLIENT_NAMES = [
+  "Adani Enterprises Limited",
+  "Adobe Systems India Private Limited",
+  "Bosch Rexroth India Private Limited",
+  "Embassy of the United Arab Emirates",
+  "GE Vernova T&D India Limited",
+  "International Air Transport Association (India) Private Limited",
+  "IPSTAR (India) Private Limited",
+  "J S Summits, Ministry of External Affairs",
+  "JCB India Limited",
+  "Kotak Mahindra Bank Limited",
+  "LG Electronics India Limited",
+  "Lok Sabha Secretariat",
+  "Ministry of External Affairs",
+  "Mylan Laboratories Limited",
+  "Nagarro Software Private Limited",
+  "Nestlé India Limited",
+  "Noida International Airport Private Limited",
+  "Oil and Natural Gas Corporation Limited",
+  "Parliament of India",
+  "Pernod Ricard India Private Limited",
+  "Reliance Industries Limited",
+  "Samsung Electronics Co. Ltd.",
+  "SpiceJet Limited",
+  "Standard Chartered Bank",
+  "Sun TV Network Limited",
+];
+
+const NAMES_TRACK = [...CLIENT_NAMES, ...CLIENT_NAMES];
+
 /* ─────────────────────────────────────────────────────────────
    Section
 ───────────────────────────────────────────────────────────── */
@@ -136,7 +168,7 @@ export default function PartnersMarquee() {
         </p>
         <h2
           className="text-2xl sm:text-3xl font-semibold"
-          style={{ color: "#ffffff" }}
+          style={{ color: "var(--text-primary)" }}
         >
           Our Clients
         </h2>
@@ -238,6 +270,38 @@ export default function PartnersMarquee() {
         </div>
       </div>
 
+      {/* ── Client names — runs the opposite way to the logos ── */}
+      <ul className="sr-only">
+        {CLIENT_NAMES.map((name) => (
+          <li key={name}>{name}</li>
+        ))}
+      </ul>
+      <div className="relative z-10 mt-6" style={{ overflow: "hidden" }} aria-hidden="true">
+        <div className="partners-marquee-track partners-names-track">
+          {NAMES_TRACK.map((name, i) => (
+            <span
+              key={i}
+              className={i >= CLIENT_NAMES.length ? "partners-name-dup" : undefined}
+              style={{
+                flexShrink: 0,
+                margin: "0 0.5rem",
+                padding: "0.55rem 1.2rem",
+                borderRadius: 9999,
+                background: "var(--glass-partner-bg)",
+                border: "1px solid rgba(180,160,130,0.30)",
+                color: "var(--text-secondary)",
+                fontSize: "0.85rem",
+                fontWeight: 500,
+                letterSpacing: "0.01em",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {name}
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* ── Keyframes ── */}
       <style>{`
         @keyframes partners-scroll {
@@ -253,6 +317,24 @@ export default function PartnersMarquee() {
         }
         .partners-marquee-track:hover {
           animation-play-state: paused;
+        }
+        .partners-names-track {
+          animation-duration: 90s;
+          animation-direction: reverse;
+        }
+        /* No scrolling: wrap the names once, centred, instead */
+        @media (prefers-reduced-motion: reduce) {
+          .partners-names-track {
+            animation: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 0.75rem;
+            width: auto;
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+          }
+          .partners-name-dup { display: none; }
         }
       `}</style>
     </section>
