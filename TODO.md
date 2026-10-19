@@ -1,7 +1,7 @@
 ## 19 Oct 2026 — "Website changes" Google Doc
 
 Sent as a Google Doc plus Subhayu's forward of the client's "Integration of the financial system in our website" email thread.
-1. **Add these company names** (25-row table pasted as an image). Ten already had logos in the home-page marquee. All 25 now run as a names row under the logos (PR pending). Casing was normalised and billing locations like "(Karnataka)" dropped. "J S Summits, Ministry of External Affairs" and "Ministry of External Affairs" are kept as two entries, as the client listed them.
+1. **Add these company names** (25-row table pasted as an image). Ten already had logos in the home-page marquee. All 25 now run as a names row under the logos (PR #33, live 19 Oct, checked in real Chrome in dark and light mode). Casing was normalised and billing locations like "(Karnataka)" dropped. "J S Summits, Ministry of External Affairs" and "Ministry of External Affairs" are kept as two entries, as the client listed them.
 2. **Payment gateway possibilities** — answer the client; no code yet. Their Mann Tours site has `manntours.com/Atompay/` (Atom / NTT DATA, cards) and `manntours.com/RazorPay/`, each a PHP form (amount, name, email, mobile, address) that redirects to the gateway, which emails the customer a receipt. A merchant account belongs to one legal entity, so Mann Fleet Partners Limited needs its own gateway account, then we add a `/pay` page plus server routes. Questions to ask: which gateway (Atom, Razorpay, or both), whether MFPL already has a merchant ID, and what customers pay for (a booking advance or an invoice amount they type in).
 3. **Car images** — client will send; same as "Vehicle pictures" below.
 
@@ -14,6 +14,8 @@ The 11 Oct message reported everything from PRs #28, #30 and #31 together and as
 - **Vehicle pictures:** they said "sending more". The first batch shipped in PR #28; add the rest when they arrive.
 
 ## Done
+
+- 19 Oct: Client names live (PR #33). On the live home page: 25 names, no broken logos, no console errors or failed requests, no horizontal overflow; the "Our Clients" heading now reads in light mode. Deployment of merge commit `882893e` reported `success`.
 
 - 11 Oct: WhatsApp sent to the client reporting PRs #28, #30 and #31, with the three questions above. Live site re-checked after #31 first: all 14 routes clean, QR codes load before the panel opens (headless and real Chrome).
 - 11 Oct: Thorough live check after PR #30. All 14 routes load with no console errors, failed requests or broken images. Every `public/teams` file md5-matches the repo, and the pages serve the new photos. The intro plays. The nav doesn't overflow at 1440/1280/1200/1181px, and the hamburger shows at 1180px. Both QR codes decode to the right store URLs. One fix shipped from it (PR #31): on the home page the QR tiles stayed blank for ~1.5s after opening, while the hero video was still downloading, so the panel is now always rendered (hidden) and the codes load with the page. The 483 asset paths referenced in pages all exist, so the GLE/GLS 404s in `notes/cars-needing-photos.md` are long fixed.
