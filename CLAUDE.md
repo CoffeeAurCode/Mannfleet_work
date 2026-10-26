@@ -9,7 +9,7 @@
 ## Project Identity
 
 **Name:** MANN — Premium Car Rental (package name: `bionova`)
-**Type:** Marketing/showcase website — purely client-side, no backend or database
+**Type:** Marketing/showcase website — no database; two small API routes (chat, reservation email)
 **Purpose:** Premium chauffeur & car rental brand site with heavy visual storytelling
 **Live site:** https://www.mannfleetpartners.com (Vercel, deploys from `subhayudas/Mannfleet` `main`; `mannfleet.vercel.app` is the same deployment). Verify client-facing changes here.
 **Git workflow:** `origin` is the fork `CoffeeAurCode/Mannfleet_work`; `upstream` is `subhayudas/Mannfleet`. Branch from `upstream/main` after a `git fetch upstream`, because the fork's `main` lags behind. Then open the PR against `subhayudas/Mannfleet` for Subhayu to merge. Before saying a document is or isn't live, check the live URL, not local `main`.
@@ -32,7 +32,7 @@
 | Fonts | Geist (variable, @fontsource), Instrument Serif (Google Fonts), Poppins |
 | Dev server | `npm run dev` → localhost:3000 (uses `--webpack` flag) |
 
-No database, no ORM, no auth. The only API route is `/api/chat`.
+No database, no ORM, no auth. API routes: `/api/chat` and `/api/reservation`.
 
 ---
 
@@ -136,7 +136,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 4. **Animation:** GSAP is used directly (no ScrollTrigger plugin imported — verify before adding scroll animations). All GSAP code lives inside `useEffect` with proper cleanup.
 5. **Path alias:** `@/*` → `src/*`
 6. **Images:** Remote images from `unsplash.com` are allowed in next.config.ts. All local assets live in `public/`.
-7. **No mail backend** — the only API route is `/api/chat` (concierge widget, needs `OPENAI_API_KEY`). The reservation form has no server: submitting builds a formatted `mailto:` to `BOOKING_EMAIL` and hands it to the guest's mail client. There is therefore **no automatic thank-you email** — the guest must press send, and the success screen says so and offers reopen / copy / WhatsApp fallbacks because a `mailto:` can silently no-op.
+7. **Reservation emails** — the form POSTs to `/api/reservation` ([route.ts](src/app/api/reservation/route.ts)), which validates the fields and sends two emails through `src/lib/mailer.ts` (Resend REST API, no SDK): the full booking to `BOOKING_EMAIL` (Reply-To = the guest) and a confirmation to the guest's own address (Reply-To = `BOOKING_EMAIL`). It needs `RESEND_API_KEY` and `RESERVATION_FROM` (e.g. `MANN <bookings@mannfleetpartners.com>`, on a domain verified in Resend) in the Vercel env vars; without them the route returns 503. If the support email fails, the route errors and the success screen falls back to the old `mailto:` / copy / WhatsApp options, so a booking is never lost. If only the guest confirmation fails, the booking still counts as delivered and the screen says no confirmation copy could be sent. The other API route is `/api/chat` (concierge widget, needs `OPENAI_API_KEY`).
 8. **Booking destination** — every reservation query goes to `BOOKING_EMAIL` in `src/lib/contact.ts` (`support@mannfleetpartners.com`). Import it; don't hard-code the address.
 9. **App & QR codes** — store URLs live in `src/lib/app-links.ts` and are verified live listings (App Store id `6770925992`, Play `com.user.mannfleet`). The QR SVGs in `public/` were generated with the `qrcode` npm package (installed with `--no-save`, then pruned) and decode-verified. Regenerate them only if a store URL changes. They exist because an App Store link clicked on a Mac hands off to the desktop Mac App Store, which cannot install an iPhone-only app.
 10. **Glimpses (video loops):** Clips in `public/glimpses/` are pre-trimmed to 12s and stripped of audio with ffmpeg — the repo holds only the trimmed clips, never the raw source footage. Each `<video>` carries `preload="none"` plus a `poster`, so a tile costs only its poster JPEG until it actually plays. `src` is attached up front rather than gated behind the IntersectionObserver: the observer only starts/stops playback on scroll, which keeps the play button working where the observer is throttled (backgrounded tab, hidden pane). A manual pause is sticky — scrolling will not resume it — and `prefers-reduced-motion` skips autoplay entirely. The one exception to trim-and-strip is the featured BRICS film (`brics-film.mp4`, full 37s, re-encoded to 30fps with its AAC soundtrack kept): it sets `hasAudio`, still autoplays muted, and exposes an Unmute toggle beside play/pause.
@@ -168,7 +168,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 | `/flagship-project` | Showcase projects |
 | `/we-care` | CSR / social responsibility content |
 | `/contact` | Contact info + IndiaMap |
-| `/reservation` | Booking UI (frontend only) |
+| `/reservation` | Booking form; submits to `/api/reservation`, which emails support and the guest |
 | `/privacy` | Privacy policy |
 | `/terms` | Terms and conditions |
 | `/services` | Services overview; `/services/[slug]` plus five dedicated service pages (events-weddings, film-shoots-concerts, global-leaders-celebrities, pan-india-mobility, tourism) |

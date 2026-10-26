@@ -196,6 +196,10 @@ function buildMailBody(sections: { heading: string; fields: Booking }[]) {
 /* ── Main page ──────────────────────────────────────────────── */
 export default function ReservationPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  // Did /api/reservation accept the booking? false → show the manual fallbacks.
+  const [delivered, setDelivered] = useState(false);
+  const [confirmationSent, setConfirmationSent] = useState(false);
   const [copied, setCopied] = useState(false);
 
   // Arrives from the fleet page: /reservation?vehicle=...&category=...
@@ -306,8 +310,9 @@ export default function ReservationPage() {
     return `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(summaryText())}`;
   }, [selectedVehicle, guestName, summaryText]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending) return;
     // Primary conversion. Guest name / phone / email are deliberately left out —
     // Meta requires PII to be hashed via advanced matching, not sent as params.
     fbTrack("Lead", {
@@ -318,11 +323,29 @@ export default function ReservationPage() {
       number_of_persons: noOfPersons || undefined,
     });
 
-    // There is no backend — hand the request to the guest's mail client,
-    // addressed to the booking inbox. The success screen below repeats the
-    // link and offers WhatsApp, because this can silently no-op on a device
-    // with no mail app configured.
-    window.location.href = mailtoHref();
+    // The server emails the booking to BOOKING_EMAIL and a confirmation to the
+    // guest. If that fails (offline, mail provider down) the success screen
+    // falls back to the mailto / copy / WhatsApp routes so the booking is
+    // never lost.
+    setSending(true);
+    try {
+      const res = await fetch("/api/reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          guestName, contactNumber, emailAddress, dateOfTravel, endDate, numberOfDays,
+          pickupTime, cityName, flightDetails, airportName, terminal, hotelName,
+          residenceAddress, dropoffLocation, noOfPersons, selectedVehicle,
+          vehiclePreferences, servicesRequired,
+        }),
+      });
+      const data = res.ok ? await res.json().catch(() => null) : null;
+      setDelivered(Boolean(data?.ok));
+      setConfirmationSent(Boolean(data?.confirmationSent));
+    } catch {
+      setDelivered(false);
+    }
+    setSending(false);
 
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -347,28 +370,54 @@ export default function ReservationPage() {
                 fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 400,
                 color: "var(--text-primary)", lineHeight: 1.1, margin: "0 0 0.75rem",
               }}>
-                Almost<br />
-                <span className="italic" style={{ color: "var(--text-secondary)" }}>there</span>
+                {delivered ? <>Request<br /></> : <>Almost<br /></>}
+                <span className="italic" style={{ color: "var(--text-secondary)" }}>{delivered ? "received" : "there"}</span>
               </h1>
               <p className="font-sans" style={{
                 fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.7, margin: 0, maxWidth: 460,
               }}>
-                Thank you, <strong style={{ color: "var(--text-primary)" }}>{firstName || "valued guest"}</strong>. We&apos;ve opened an email to{" "}
-                <strong style={{ color: "var(--text-primary)" }}>{BOOKING_EMAIL}</strong> with your details filled in —{" "}
-                <strong style={{ color: "var(--text-primary)" }}>press send in your email app to complete the booking.</strong>{" "}
-                Our team replies within 2 hours.
+                {delivered ? (
+                  <>
+                    Thank you, <strong style={{ color: "var(--text-primary)" }}>{firstName || "valued guest"}</strong>. Your reservation
+                    request has reached our team, who will confirm it within 2 hours.{" "}
+                    {confirmationSent ? (
+                      <>A confirmation has been emailed to{" "}
+                        <strong style={{ color: "var(--text-primary)" }}>{emailAddress}</strong>.</>
+                    ) : (
+                      <>We couldn&apos;t email a confirmation copy to{" "}
+                        <strong style={{ color: "var(--text-primary)" }}>{emailAddress}</strong>, but your request is safe with us.</>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    Thank you, <strong style={{ color: "var(--text-primary)" }}>{firstName || "valued guest"}</strong>. We couldn&apos;t send
+                    your request automatically.{" "}
+                    <strong style={{ color: "var(--text-primary)" }}>Please send it to {BOOKING_EMAIL} using one of the options below</strong>{" "}
+                    and our team will reply within 2 hours.
+                  </>
+                )}
               </p>
             </div>
 
-            {/* The mailto above can silently no-op (no mail app configured, or a
-                browser that blocks the handoff), so every route stays available. */}
+            {delivered ? (
+              <p className="font-sans" style={{ fontSize: "0.72rem", color: "var(--text-35)", margin: 0, textAlign: "center" }}>
+                Need to change something? Email{" "}
+                <a href={`mailto:${BOOKING_EMAIL}`} style={{ color: "var(--text-55)" }}>{BOOKING_EMAIL}</a>{" "}
+                or{" "}
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-55)" }}>
+                  message us on WhatsApp
+                </a>.
+              </p>
+            ) : (
+            /* Automatic sending failed, so every manual route stays available
+                (a mailto can also silently no-op without a mail app). */
             <div style={{
               width: "100%", padding: "1.25rem", borderRadius: "1rem",
               background: "var(--glass-ultra)", border: "1px solid var(--border-subtle)",
               display: "flex", flexDirection: "column", gap: "0.9rem", alignItems: "center",
             }}>
               <p className="font-sans" style={{ fontSize: "0.82rem", color: "var(--text-55)", margin: 0 }}>
-                Email app didn&apos;t open?
+                Send your request another way
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", justifyContent: "center" }}>
                 <a
@@ -426,6 +475,7 @@ export default function ReservationPage() {
                 <a href={`mailto:${BOOKING_EMAIL}`} style={{ color: "var(--text-55)" }}>{BOOKING_EMAIL}</a>
               </p>
             </div>
+            )}
             <Link href="/" style={{ fontSize: "0.82rem", color: "var(--text-muted)", textDecoration: "none", borderBottom: "1px solid var(--border-subtle)" }}>
               Back to home
             </Link>
@@ -596,23 +646,25 @@ export default function ReservationPage() {
             flexWrap: "wrap", gap: "1rem", padding: "0.5rem 0",
           }}>
             <p className="font-sans" style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0, maxWidth: 420 }}>
-              This opens an email to <strong style={{ color: "var(--text-55)" }}>{BOOKING_EMAIL}</strong> with your
-              details filled in — press send there and we&apos;ll confirm within 2 hours.
+              Your request goes straight to our team at <strong style={{ color: "var(--text-55)" }}>{BOOKING_EMAIL}</strong>,
+              and we&apos;ll email you a confirmation at the address above.
             </p>
             <button
               type="submit"
+              disabled={sending}
               style={{
+                opacity: sending ? 0.7 : 1,
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
                 padding: "0.85rem 2rem", borderRadius: "9999px",
                 background: "var(--accent)", color: "#ffffff", border: "none",
                 fontSize: "0.9rem", fontWeight: 600, fontFamily: "'Poppins', sans-serif",
-                cursor: "pointer", boxShadow: "0 4px 20px rgba(200,40,42,0.30)",
+                cursor: sending ? "wait" : "pointer", boxShadow: "0 4px 20px rgba(200,40,42,0.30)",
                 transition: "transform 0.15s ease, box-shadow 0.15s ease",
               }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(200,40,42,0.40)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(200,40,42,0.30)"; }}
             >
-              Submit Reservation
+              {sending ? "Sending…" : "Submit Reservation"}
               <ArrowUpRight size={14} />
             </button>
           </div>
