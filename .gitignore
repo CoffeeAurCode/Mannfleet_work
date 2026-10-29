@@ -42,3 +42,8 @@ next-env.d.ts
 
 # source PDF dump — not for deployment
 /new pdfs/
+
+# local-only notes: secrets and working docs, never committed
+/notes/Resend_api.md
+/notes/FILES_BY_TYPE.md
+/notes/Razorpay-payment-integration.pdf
