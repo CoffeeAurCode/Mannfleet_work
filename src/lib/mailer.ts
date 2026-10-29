@@ -5,7 +5,7 @@
  */
 
 type Email = {
-  to: string;
+  to: string | string[];
   subject: string;
   text: string;
   html: string;
@@ -31,7 +31,7 @@ export async function sendEmail({ to, subject, text, html, replyTo }: Email) {
       },
       body: JSON.stringify({
         from,
-        to: [to],
+        to: Array.isArray(to) ? to : [to],
         subject,
         text,
         html,

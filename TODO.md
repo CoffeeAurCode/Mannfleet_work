@@ -1,3 +1,9 @@
+## 28 Oct 2026 — reservation emails (WhatsApp)
+
+1. **Bookings → support@**, **guest gets a confirmation** in the format of their own "Reservation Confirmation Details" mail, and the booking details ("auto fetched": date of travel, end date, city, airport, hotel, residence, drop-off) **also go to info@**. Built: one booking email to support@ + info@, and the guest copy in their table format. Sent from `noreply@mannfleetpartners.com` via Resend. Their second sample (vehicle no., driver name/mobile) is sent after a car is allotted, so the website can't send it.
+2. **"Airport Name" → "Airport Name / Residence"**, and a **Vehicle Type** field under Vehicle Preferences (Sedan, SUV / MUV, Tempo Traveller, Coach / Bus, Vanity Van; pre-filled from the fleet card's type). Built.
+- **Waiting on:** `RESEND_API_KEY` and `RESERVATION_FROM` set in Vercel (Production), then a redeploy. Until then the live form shows the manual fallback.
+
 ## 19 Oct 2026 — "Website changes" Google Doc
 
 Sent as a Google Doc plus Subhayu's forward of the client's "Integration of the financial system in our website" email thread.

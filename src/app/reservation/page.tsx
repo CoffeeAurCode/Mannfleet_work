@@ -159,6 +159,16 @@ const CATEGORY_TO_PREFERENCE: Record<string, string> = {
   "RANGE ROVER": "Range Rover",
 };
 
+const VEHICLE_TYPES = ["Sedan", "SUV / MUV", "Tempo Traveller", "Coach / Bus", "Vanity Van"];
+
+/** Fleet page passes ?type=SUVs — match it to a Vehicle Type option. */
+const FLEET_TYPE_TO_VEHICLE_TYPE: Record<string, string> = {
+  "Sedans": "Sedan",
+  "SUVs": "SUV / MUV",
+  "Coaches": "Coach / Bus",
+  "Vanity van": "Vanity Van",
+};
+
 /* ── Query string, without useSearchParams ──────────────────
    useSearchParams() would force this route behind a Suspense boundary, which
    drops the whole form out of the prerendered HTML. useSyncExternalStore reads
@@ -200,6 +210,7 @@ export default function ReservationPage() {
   // Did /api/reservation accept the booking? false → show the manual fallbacks.
   const [delivered, setDelivered] = useState(false);
   const [confirmationSent, setConfirmationSent] = useState(false);
+  const [requestRef, setRequestRef] = useState("");
   const [copied, setCopied] = useState(false);
 
   // Arrives from the fleet page: /reservation?vehicle=...&category=...
@@ -207,6 +218,7 @@ export default function ReservationPage() {
   const searchParams = useMemo(() => new URLSearchParams(search), [search]);
   const selectedVehicle = searchParams.get("vehicle") ?? "";
   const selectedCategory = searchParams.get("category") ?? "";
+  const selectedType = searchParams.get("type") ?? "";
 
   // Guest Name
   const [title, setTitle] = useState("");
@@ -241,6 +253,9 @@ export default function ReservationPage() {
   const [vehiclePreference, setVehiclePreference] = useState<string | null>(null);
   const vehiclePreferences =
     vehiclePreference ?? CATEGORY_TO_PREFERENCE[selectedCategory.toUpperCase()] ?? "";
+  // Same fallback as the preference: the type of the car they clicked.
+  const [vehicleTypeChoice, setVehicleTypeChoice] = useState<string | null>(null);
+  const vehicleType = vehicleTypeChoice ?? FLEET_TYPE_TO_VEHICLE_TYPE[selectedType] ?? "";
   const [servicesRequired, setServicesRequired] = useState("");
 
   // Auto-calculate days
@@ -278,7 +293,7 @@ export default function ReservationPage() {
           Time: pickupTime,
           City: cityName,
           "Flight details": flightDetails,
-          Airport: airportName,
+          "Airport / Residence": airportName,
           Terminal: terminal,
           Hotel: hotelName,
           "Residence address": residenceAddress,
@@ -291,6 +306,7 @@ export default function ReservationPage() {
           "No. of persons": noOfPersons,
           "Vehicle from fleet page": selectedVehicle,
           "Vehicle preference": vehiclePreferences,
+          "Vehicle type": vehicleType,
           "Services required": servicesRequired,
         },
       },
@@ -299,7 +315,7 @@ export default function ReservationPage() {
     guestName, contactNumber, emailAddress, dateOfTravel, endDate, numberOfDays,
     pickupTime, cityName, flightDetails, airportName, terminal, hotelName,
     residenceAddress, dropoffLocation, noOfPersons, selectedVehicle,
-    vehiclePreferences, servicesRequired,
+    vehiclePreferences, vehicleType, servicesRequired,
   ]);
 
   /** The same request addressed to the booking inbox. */
@@ -336,11 +352,12 @@ export default function ReservationPage() {
           guestName, contactNumber, emailAddress, dateOfTravel, endDate, numberOfDays,
           pickupTime, cityName, flightDetails, airportName, terminal, hotelName,
           residenceAddress, dropoffLocation, noOfPersons, selectedVehicle,
-          vehiclePreferences, servicesRequired,
+          vehiclePreferences, vehicleType, servicesRequired,
         }),
       });
       const data = res.ok ? await res.json().catch(() => null) : null;
       setDelivered(Boolean(data?.ok));
+      setRequestRef(typeof data?.ref === "string" ? data.ref : "");
       setConfirmationSent(Boolean(data?.confirmationSent));
     } catch {
       setDelivered(false);
@@ -380,6 +397,10 @@ export default function ReservationPage() {
                   <>
                     Thank you, <strong style={{ color: "var(--text-primary)" }}>{firstName || "valued guest"}</strong>. Your reservation
                     request has reached our team, who will confirm it within 2 hours.{" "}
+                    {requestRef && (
+                      <>Your request number is{" "}
+                        <strong style={{ color: "var(--text-primary)" }}>{requestRef}</strong>.{" "}</>
+                    )}
                     {confirmationSent ? (
                       <>A confirmation has been emailed to{" "}
                         <strong style={{ color: "var(--text-primary)" }}>{emailAddress}</strong>.</>
@@ -584,7 +605,7 @@ export default function ReservationPage() {
             <Field label="City Name" required>
               <Input placeholder="e.g. New Delhi" value={cityName} onChange={(e) => setCityName(e.target.value)} required />
             </Field>
-            <Field label="Airport Name">
+            <Field label="Airport Name / Residence">
               <Input placeholder="e.g. Indira Gandhi International Airport" value={airportName} onChange={(e) => setAirportName(e.target.value)} />
             </Field>
             <Field label="Terminal">
@@ -626,6 +647,12 @@ export default function ReservationPage() {
                 <option value="Range Rover">Range Rover</option>
                 <option value="Self Drive">Self Drive</option>
                 <option value="Tempo Traveller">Tempo Traveller</option>
+              </Select>
+            </Field>
+            <Field label="Vehicle Type">
+              <Select value={vehicleType} onChange={(e) => setVehicleTypeChoice(e.target.value)}>
+                <option value="">No preference</option>
+                {VEHICLE_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
               </Select>
             </Field>
             <div style={{ gridColumn: "1 / -1" }}>
