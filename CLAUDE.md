@@ -99,6 +99,7 @@ public/
   app-qr-ios.svg / app-qr-android.svg  # Generated store QR codes (see App & QR codes)
   (logos, SVGs, .mp4 videos)
 notes/                         # Old task lists, client-request notes, explainers — not part of the build
+                               # Resend_api.md (the Resend key), FILES_BY_TYPE.md and the gateway PDF are gitignored here
 client-docs-pending/           # Client PDFs not on the site yet + README saying why each is waiting
 ```
 
