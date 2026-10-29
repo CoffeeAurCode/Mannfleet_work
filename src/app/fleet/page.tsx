@@ -681,7 +681,7 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
           {/* next/link, not <a> — a plain anchor forces a full document load,
               which re-runs the whole app shell. Client-side nav is instant. */}
           <Link
-            href={{ pathname: "/reservation", query: { vehicle: vehicle.name, category: vehicle.category } }}
+            href={{ pathname: "/reservation", query: { vehicle: vehicle.name, category: vehicle.category, type: vehicle.type } }}
             prefetch
             className="btn-ghost font-sans"
             style={{ fontSize: "0.68rem", padding: "0.42rem 0.9rem", width: "100%", justifyContent: "center", display: "flex", alignItems: "center", gap: "0.4rem", textDecoration: "none" }}
