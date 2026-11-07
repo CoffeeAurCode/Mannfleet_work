@@ -13,7 +13,7 @@ Their reply "1) yes 2) yes 3) sending" answers the three questions from 5 Nov, i
    - BMW 7 Series (DL 1NA 4024): 3. IMG_8491 was in the folder twice; used once.
    - GLS 450 (HR55BA4444): 4, ahead of the older real GLS photos already on both GLS cards.
    - Portrait shots crop to 4:3 on cards and 16:9 in the modal, so fronts sit at `center 70%` (plate and grille in frame) and rears at `center 60%`.
-- Checked on a local production build in headless Chrome: every fleet tab renders, with no console errors, failed requests or broken images.
+- Live 7 Nov (PR #41).
 - **Still no real photos for:** Tempo Traveller (they named it in point 3 of our ask), and the other cars that show only renders.
 
 ## 31 Oct 2026 — booking email fixes (WhatsApp + marked-up email printout)
@@ -67,6 +67,7 @@ The 11 Oct message reported everything from PRs #28, #30 and #31 together and as
 
 ## Done
 
+- 7 Nov: Real photos for 8 more cars, and the orange Jet on Wheels as its cover, live (PR #41). Deployment of merge commit `fa1f373` reported `success`. On the live site, all 39 new photos md5-match the repo. In headless Chrome, all 21 cards for these cars across the 5 tabs show the new cover, and every gallery slide loads. All 19 routes return 200, with no console errors, failed requests or broken images.
 - 5 Nov: Real fleet photos live (PR #40). Deployment of merge commit `47baf42` reported `success`. On the live site, all 28 new photos md5-match the repo, and the dropped duplicate (`invicto-black-front-3.jpeg`) returns 404. Every gallery slide of the Aura, both Invictos, Jet on Wheels and Volvo Coach (Luxury) was viewed in headless Chrome. All 19 routes return 200, with no console errors, failed requests or broken images. No nav overflow at 1440/1280/1200/1181px.
 - 31 Oct: Booking email fixes live (PR #39). Bookings go to info@ only; inclusive day count; "Reporting Address"; Vehicle Type lists the cars in the chosen segment; WhatsApp 9810008008 for booking queries. Deployment of merge commit `58f92b2` reported `success`. On the live site, 20 form checks passed, plus the full flow (fleet card → Book Now → fill → submit, with the `/api/reservation` call intercepted so no email was sent). The page posted 2 days, the reporting address and the clicked car. All 15 routes return 200, no console errors.
 - 19 Oct: Client names live (PR #33). On the live home page: 25 names, no broken logos, no console errors or failed requests, no horizontal overflow; the "Our Clients" heading now reads in light mode. Deployment of merge commit `882893e` reported `success`.
