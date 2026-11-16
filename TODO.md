@@ -1,3 +1,29 @@
+## 16 Nov 2026 — third batch of photos on the Drive
+
+The client added 17 folders to the same Drive folder (`1qdNcyGTYRgfdjoGq1p1SuHD4KSHL2L9W`). The folders already used on 5 and 7 Nov were unchanged. Most new photos are professionally retouched: replaced skies and brighter colours. Built: 103 photos (sRGB JPEG, ≤1600px, no EXIF): 93 new shots, plus 10 retouched versions that replace live raw photos. All were placed by number plate. On the cards below they lead the gallery, with the renders kept after them.
+- Toyota Camry Hybrid (DL 1NA 4149, silver): 7, on both Camry cards. Its rear shot was also in the "cruiser hyryder" folder.
+- Toyota Urban Cruiser Hyryder (HR55BC1228): 7.
+- Range Rover (HR55BB9999, LWB with rear screens): 11, on the "Range Rover (Vogue / Autobiography / LWB)" card. That card used to show the black **Range Rover Sport** renders, which are a different car, so they were taken off it and stay only on the Sport card.
+- Rolls-Royce Ghost (HR55AY9999): 5 WhatsApp screenshots. Skipped `10.03.24`, a near-copy of `10.03.06`.
+- Mercedes-Benz V-Class (HR55AU0999, black): 8.
+- Toyota Vellfire (HR55AU3333): 8. The dashboard and captain-seat shots (IMG_9257, IMG_9259) were in "volvo without washroom", but they're the Vellfire's interior from the same shoot.
+- Tempo Traveller (HR55AM8452): 7. This answers the 7 Nov "still no real photos" note.
+- Toyota Hiace (DL 1VC 4241): 10.
+- Force Urbania (DL 1VC 4204): 7, on **both** Urbania cards (Modified 9/12 seater and standard 13/17 seater), the same way the renders were shared.
+- Toyota Coaster (DL 1VC 4387): 7.
+- Audi Q7 (HR55AN1111): 3. Skipped the screenshot, a blurrier second front of the same car.
+- Mercedes-Benz Sprinter (HR55AU0567, silver): the 6 retouched shots from "mercedes benz sprinter", followed by 6 older raw photos of the same van. Those raw photos used to be on the **Sprinter with Washroom** card (`Real/Mercedes Sprinter Washroom/01–09.jpg`). The client now files this van as the plain Sprinter, and its rear shot shows a luggage area, not a washroom. So the 6 non-duplicate raw photos moved to `Mercedes-Benz Sprinter 12 seater/sprinter-silver-*.jpg`. 01, 05 and 06 were dropped as older copies of the retouched front, rear-row and recliner shots. The chat widget's fleet image pointed at `02.jpg` and now points at its new path. Skipped the folder's screenshot, a second front.
+- Mercedes Sprinter with Washroom: now the client's black van with blue seats ("sprinter with washroom" folder), 3 photos. The card had no renders, so it shows just these 3.
+- Sprinter Executive Lounge (HR55AU1294): the folder's one screenshot leads the card, at `center 100%` so the plate shows.
+- Jet on Wheels and Volvo Coach (Luxury): "volvo jet" (UP16 JT3973) and "volvo without washroom" (DL 1PD 8981) hold retouched versions of the raw photos already live. Each retouched shot replaces its raw original in the same slot. They're saved as `*-v2.jpeg` with the raw file deleted, because `next/image` caches optimized images by URL and could keep serving the old picture under a reused name. New: a luggage-bay shot on Jet on Wheels, and a freezer and luggage-bay shot on the Volvo Coach. IMG_9289 was the same frame as IMG_9288, so it was used once. The retouched Jet front frames the bus larger, so the cover now sits at `center 80%` (logos, grille and plate) instead of `center 55%`. The TOURIST header no longer fits on the card.
+- Wide side shots (Camry, Hyryder) use `contain` in their slot so the car isn't cut off. Portrait fronts and rears whose plate fell out of the 16:9 modal moved to `center 85%` / `center 80%`.
+- Checked on a local production build in headless Chrome: 18 cards across all 5 tabs show the new covers. Every image on those cards (215) loads through `/_next/image`, with no console errors or failed requests.
+- **Ask the client:**
+  1. The silver Sprinter (HR55AU0567) was on the "Sprinter with Washroom" card. We moved it to the plain Sprinter card, going by your folder names, and put the black van with blue seats on the washroom card. Is that right?
+  2. The grey Urbania (DL 1VC 4204) is on both Urbania cards (9/12 seater modified and 13/17 seater). Should it be on just one of them?
+  3. The "5 series" folder has a BMW X7 photo (HR55BA0222), which is already on the X7 card. Can you send BMW 5 Series photos?
+  4. Real photos still needed for: Ertiga, Kia Carens, Ford Endeavour, BMW X5, Volvo XC90, Mercedes GLE, Range Rover Sport, Kia Carnival, Volvo Coach with Washroom, and the BMW 5 Series (the last three show studio images).
+
 ## 7 Nov 2026 — reply to the 5 Nov photo questions, plus more photos (WhatsApp)
 
 Their reply "1) yes 2) yes 3) sending" answers the three questions from 5 Nov, in order. They also said "I have added new files onto the drive, please add them to the website by tonight".
