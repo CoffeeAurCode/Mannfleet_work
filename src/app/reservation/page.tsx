@@ -167,7 +167,7 @@ const CATEGORY_TO_PREFERENCE: Record<string, string> = {
 const SEGMENT_VEHICLES: Record<string, string[]> = {
   "Economy": [
     "Maruti Suzuki Dzire", "Hyundai Aura", "Hyundai Accent", "Hyundai Grand i10 Nios",
-    "Maruti Suzuki Ertiga", "Kia Carens", "Toyota Urban Cruiser Hyryder", "Tempo Traveller",
+    "Maruti Suzuki Ertiga", "Kia Carens", "Toyota Urban Cruiser Hyryder", "Tempo Traveller", "Bharat Benz Coach",
   ],
   "Economy Plus": ["Honda City", "Toyota Innova Crysta"],
   "Premium": [

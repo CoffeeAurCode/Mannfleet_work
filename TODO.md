@@ -1,3 +1,15 @@
+## 18 Nov 2026 — About page + rotating vehicle gallery (WhatsApp)
+
+- **About hero:** "Founded 1986" now sits above "Our Story" (the old "Est. 1986" line below it is gone) and a "Scroll down" cue sits at the bottom. This is our reading of "Our story — scroll down. Should be written above — founded 1986".
+- **Timeline:** added 2010 (IPL teams, Commonwealth Games) and 2011 (Formula 1, Champions League, Kabaddi World Cup, US Presidential visits). The national awards were already there as the 2016–2019 card.
+- **Case studies:** new `#case-studies` section on /about with 6 cards (G20, US Presidential visits, Formula 1, sporting mega-events, Jamnagar, Noida airport). Every fact comes from the existing Major Events / Awards tables; nothing new was invented.
+- **Rotating gallery** for Urbania (both cards), Volvo (both coach cards), Sprinter (all 3 cards), Coaster, Hiace, Bharat Benz and Jet on Wheels. It is built from each vehicle's photos; there are no real 3D models. The client asked not to label it as 3D.
+- **Ask the client:**
+  1. There is no 6-seater Sprinter card (cards are 11/14, 7–9 and 8-seat washroom). Is one missing?
+  2. Bharat Benz Coach was off the site since 13 May; we restored it under Economy coaches with 27/35/41/45 seats. Right?
+  3. 2010 and 2011 wording: please check the event lists. "Champions League" is kept exactly as they wrote it.
+  4. For true 3D (turn-around models), send GLB/3D files; we can swap them in.
+
 ## 16 Nov 2026 — third batch of photos on the Drive
 
 The client added 17 folders to the same Drive folder (`1qdNcyGTYRgfdjoGq1p1SuHD4KSHL2L9W`). The folders already used on 5 and 7 Nov were unchanged. Most new photos are professionally retouched: replaced skies and brighter colours. Built: 103 photos (sRGB JPEG, ≤1600px, no EXIF): 93 new shots, plus 10 retouched versions that replace live raw photos. All were placed by number plate. On the cards below they lead the gallery, with the renders kept after them.

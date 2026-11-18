@@ -273,6 +273,100 @@ function CertModal({ entry, onClose }: { entry: CertEntry; onClose: () => void }
 }
 
 /* ══════════════════════════════════════════════════════════════
+   TIMELINE — "Four Decades, One Vision"
+══════════════════════════════════════════════════════════════ */
+interface Milestone { badge: string; title: string; body: string; accent?: boolean; tags?: string[] }
+
+const TIMELINE: Milestone[] = [
+  {
+    badge: "1986", title: "Founded", accent: true,
+    body: "Established in 1986, laying the foundation for India's premier ground transportation service.",
+  },
+  {
+    badge: "1992", title: "Formally Incorporated",
+    body: "Mann Tourist Transport Service Private Limited incorporated on August 7, 1992 — a pivotal moment that scaled our operations nationally. Formerly known as Mann Tourist Transport, today operating as Mann Fleet Partners Limited.",
+  },
+  {
+    badge: "2005 onwards", title: "National Footprint",
+    body: "Expanded operations across 80 cities in India, establishing a full-service network for corporate and diplomatic clients. Became the trusted transport partner for Fortune 500 companies and government institutions.",
+  },
+  {
+    badge: "2008 onwards", title: "Diplomatic and Government Mandates", accent: true,
+    body: "Appointed as the preferred ground transport provider for foreign embassies including the United States Mission in India. Served sports leagues, cricket tournaments, the Kabaddi World Cup, AFC Women's Cup, and major national sporting events.",
+  },
+  {
+    badge: "2010", title: "IPL Teams & the Commonwealth Games",
+    body: "Provided transport for IPL teams and the Commonwealth Games.",
+    tags: ["IPL teams", "Commonwealth Games"],
+  },
+  {
+    badge: "2011", title: "Formula 1, Champions League & Major Events", accent: true,
+    body: "Provided transport at the Formula 1 Grand Prix (a letter of appreciation from Formula One World Travel), the Champions League and the Kabaddi World Cup in Punjab — the start of a long list of major national and international events.",
+    tags: ["Formula 1", "Champions League", "Kabaddi World Cup", "US Presidential visits"],
+  },
+  {
+    badge: "2016 – 2019", title: "Triple National Tourism Award",
+    body: "Awarded the National Tourism Award by the Ministry of Tourism, Government of India, for three consecutive years (2016–17, 2017–18, 2018–19) — the highest recognition in India's tourism industry.",
+    tags: ["2016–17", "2017–18", "2018–19"],
+  },
+  {
+    badge: "2019 onwards", title: "Industry and Media Recognition", accent: true,
+    body: "Received the Zee Business Award for Best Private Transport Service Provider (2019) and was named 'Leaders of Road Transport' by TV9 Network (2022). Expanded global footprint to the UAE, the USA, Saudi Arabia, and England.",
+  },
+  {
+    badge: "Today", title: "Global Powerhouse",
+    body: "Mann Fleet Partners Limited — an award-winning, globally recognised mobility powerhouse. It serves the G20 Presidency, VVIP events, and Fortune 500 clients across India, the UAE, the USA, Saudi Arabia, and England. Handled transportation for one of India's biggest-ever events in Jamnagar.",
+  },
+];
+
+/* ══════════════════════════════════════════════════════════════
+   CASE STUDIES — every fact below is already published elsewhere
+   on this site (Major Events table, Key Awards, Track Record).
+══════════════════════════════════════════════════════════════ */
+interface CaseStudy {
+  year: string; tag: string; title: string; client: string;
+  delivered: string; recognition?: string; href?: string; cta?: string;
+}
+
+const CASE_STUDIES: CaseStudy[] = [
+  {
+    year: "2023", tag: "Government", title: "G20 Summit, North & East India",
+    client: "Ministry of External Affairs · G20 Secretariat",
+    delivered: "Appointed Official Transport Management Company for the G20 Summit (North and East India), and provided transport support during the 3rd Tourism Working Group Meeting.",
+    recognition: "Appreciation from the G20 Secretariat, Ministry of External Affairs, Government of India.",
+  },
+  {
+    year: "2010 →", tag: "Diplomatic", title: "US Presidential Visits",
+    client: "Embassy of the United States of America",
+    delivered: "Ground transport for the President of the United States during his November 2010 visit, and for Vice President Joseph R. Biden, Jr. in 2013. A trusted partner for presidential visits since 2011.",
+    recognition: "Letters of appreciation from the US Embassy.",
+  },
+  {
+    year: "2011", tag: "Motorsport", title: "Formula 1 Grand Prix",
+    client: "Formula One World Travel",
+    delivered: "Provided transport services at the Grand Prix.",
+    recognition: "Letter of appreciation from Formula One World Travel.",
+  },
+  {
+    year: "2010 – 2025", tag: "Sport", title: "Sporting Mega-Events",
+    client: "IPL teams · Commonwealth Games · Kabaddi World Cup · DP World India Championship",
+    delivered: "Transport for IPL teams and the Commonwealth Games (2010), the Kabaddi World Cup in Punjab (2011), premium support to teams in a leading international cricket league (2016), and the DP World India Championship (2025).",
+  },
+  {
+    year: "2008", tag: "Weddings & Events", title: "Jamnagar",
+    client: "Reliance Industries Limited · YPO",
+    delivered: "Transport for the Young Presidents' Organisation (YPO) meet at Jamnagar, Gujarat — and later, transportation for one of India's biggest-ever events in the same city.",
+    recognition: "Letter of appreciation from Reliance Industries Limited.",
+  },
+  {
+    year: "2026", tag: "Aviation", title: "Noida International Airport, Jewar",
+    client: "Noida International Airport, Jewar",
+    delivered: "Selected as mobility transport partner — passenger transport, employee transportation and inter-terminal shuttle services.",
+    href: "/flagship-project", cta: "See the flagship project",
+  },
+];
+
+/* ══════════════════════════════════════════════════════════════
    MAIN PAGE
 ══════════════════════════════════════════════════════════════ */
 export default function AboutPage() {
@@ -285,6 +379,9 @@ export default function AboutPage() {
   const heroLine2Ref = useRef<HTMLSpanElement>(null);
   const heroLine3Ref = useRef<HTMLSpanElement>(null);
   const heroYearRef = useRef<HTMLDivElement>(null);
+  const heroScrollRef = useRef<HTMLButtonElement>(null);
+  const heroScrollArrowRef = useRef<HTMLSpanElement>(null);
+  const caseSectionRef = useRef<HTMLElement>(null);
   const heroSublineRef = useRef<HTMLParagraphElement>(null);
 
   /* ── What We Are refs ── */
@@ -300,20 +397,6 @@ export default function AboutPage() {
   const timelineLineRef = useRef<HTMLDivElement>(null);
   const timelineCarRef = useRef<HTMLDivElement>(null);
   const timelineInnerRef = useRef<HTMLDivElement>(null);
-  const timelineCard1Ref = useRef<HTMLDivElement>(null);
-  const timelineCard2Ref = useRef<HTMLDivElement>(null);
-  const timelineCard3Ref = useRef<HTMLDivElement>(null);
-  const timelineCard4Ref = useRef<HTMLDivElement>(null);
-  const timelineCard5Ref = useRef<HTMLDivElement>(null);
-  const timelineCard6Ref = useRef<HTMLDivElement>(null);
-  const timelineCard7Ref = useRef<HTMLDivElement>(null);
-  const dot1Ref = useRef<HTMLDivElement>(null);
-  const dot2Ref = useRef<HTMLDivElement>(null);
-  const dot3Ref = useRef<HTMLDivElement>(null);
-  const dot4Ref = useRef<HTMLDivElement>(null);
-  const dot5Ref = useRef<HTMLDivElement>(null);
-  const dot6Ref = useRef<HTMLDivElement>(null);
-  const dot7Ref = useRef<HTMLDivElement>(null);
 
   /* ── What We Do refs ── */
   const wdoSectionRef = useRef<HTMLElement>(null);
@@ -383,15 +466,15 @@ export default function AboutPage() {
         { y: 40, opacity: 0, filter: "blur(8px)" },
         { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.7 }
       );
+      tl.fromTo(heroYearRef.current,
+        { y: 24, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6 },
+        "-=0.4"
+      );
       tl.fromTo(
         [heroLine1Ref.current, heroLine2Ref.current, heroLine3Ref.current],
         { y: 70, opacity: 0, filter: "blur(12px)" },
         { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.8, stagger: 0.14 },
-        "-=0.4"
-      );
-      tl.fromTo(heroYearRef.current,
-        { x: -40, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.6 },
         "-=0.4"
       );
       tl.fromTo(heroSublineRef.current,
@@ -399,6 +482,26 @@ export default function AboutPage() {
         { y: 0, opacity: 1, duration: 0.55 },
         "-=0.35"
       );
+      tl.fromTo(heroScrollRef.current,
+        { y: 16, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6 },
+        "-=0.2"
+      );
+      gsap.to(heroScrollArrowRef.current, {
+        y: 7, duration: 0.9, ease: "sine.inOut", repeat: -1, yoyo: true,
+      });
+
+      /* ────────────────────────────────────────────────
+         CASE STUDIES
+      ──────────────────────────────────────────────── */
+      gsap.fromTo(".case-card",
+        { y: 50, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.7, stagger: 0.12, ease: "power3.out",
+          scrollTrigger: { trigger: caseSectionRef.current, start: "top 70%", once: true },
+        }
+      );
+
       /* ────────────────────────────────────────────────
          WHAT WE ARE — scroll-triggered
       ──────────────────────────────────────────────── */
@@ -472,16 +575,10 @@ export default function AboutPage() {
       });
 
       const isMobile = window.innerWidth <= 768;
-      const timelineItems = [
-        { card: timelineCard1Ref.current, dot: dot1Ref.current, x: isMobile ? -24 : -90 },
-        { card: timelineCard2Ref.current, dot: dot2Ref.current, x: isMobile ? -24 : 90 },
-        { card: timelineCard3Ref.current, dot: dot3Ref.current, x: isMobile ? -24 : -90 },
-        { card: timelineCard4Ref.current, dot: dot4Ref.current, x: isMobile ? -24 : 90 },
-        { card: timelineCard5Ref.current, dot: dot5Ref.current, x: isMobile ? -24 : -90 },
-        { card: timelineCard6Ref.current, dot: dot6Ref.current, x: isMobile ? -24 : 90 },
-        { card: timelineCard7Ref.current, dot: dot7Ref.current, x: isMobile ? -24 : -90 },
-      ];
-      timelineItems.forEach(({ card, dot, x }) => {
+      const tlCards = gsap.utils.toArray<HTMLElement>(".timeline-card");
+      tlCards.forEach((card, i) => {
+        const dot = card.parentElement?.querySelector<HTMLElement>(".timeline-dot");
+        const x = isMobile ? -24 : i % 2 === 0 ? -90 : 90;
         gsap.fromTo(card,
           { x, opacity: 0 },
           {
@@ -489,13 +586,15 @@ export default function AboutPage() {
             scrollTrigger: { trigger: card, start: "top 82%" },
           }
         );
-        gsap.fromTo(dot,
-          { scale: 0, opacity: 0 },
-          {
-            scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)",
-            scrollTrigger: { trigger: card, start: "top 82%" },
-          }
-        );
+        if (dot) {
+          gsap.fromTo(dot,
+            { scale: 0, opacity: 0 },
+            {
+              scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)",
+              scrollTrigger: { trigger: card, start: "top 82%" },
+            }
+          );
+        }
       });
 
       /* ────────────────────────────────────────────────
@@ -845,7 +944,7 @@ export default function AboutPage() {
             backdropFilter: "blur(12px)",
             WebkitBackdropFilter: "blur(12px)",
             border: "1px solid rgba(255,255,255,0.12)",
-            marginBottom: "2rem",
+            marginBottom: "1.5rem",
             opacity: 0,
           }}>
             <span style={{
@@ -863,6 +962,25 @@ export default function AboutPage() {
             }}>
               Mann Fleet Partners Limited
             </span>
+          </div>
+
+          {/* Founded — written above the headline */}
+          <div ref={heroYearRef} style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.75rem",
+            marginBottom: "1.75rem",
+            opacity: 0,
+          }}>
+            <div style={{ width: 32, height: 1, background: "rgba(255,255,255,0.20)" }} />
+            <span className="font-sans" style={{
+              fontSize: "0.78rem",
+              fontWeight: 700,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.62)",
+            }}>Founded 1986</span>
+            <div style={{ width: 32, height: 1, background: "rgba(255,255,255,0.20)" }} />
           </div>
 
           {/* Headline */}
@@ -891,25 +1009,6 @@ export default function AboutPage() {
             }}>of Excellence</span>
           </h1>
 
-          {/* Year */}
-          <div ref={heroYearRef} style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.75rem",
-            marginTop: "2.5rem",
-            opacity: 0,
-          }}>
-            <div style={{ width: 32, height: 1, background: "rgba(255,255,255,0.20)" }} />
-            <span className="font-sans" style={{
-              fontSize: "0.72rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.42)",
-            }}>Est. 1986</span>
-            <div style={{ width: 32, height: 1, background: "rgba(255,255,255,0.20)" }} />
-          </div>
-
           {/* Subline */}
           <p ref={heroSublineRef} className="font-sans" style={{
             marginTop: "1.25rem",
@@ -923,12 +1022,39 @@ export default function AboutPage() {
           </p>
         </div>
 
+        {/* Scroll down cue */}
+        <button
+          ref={heroScrollRef}
+          type="button"
+          onClick={() => document.getElementById("about-intro")?.scrollIntoView({ behavior: "smooth" })}
+          aria-label="Scroll down"
+          className="font-sans"
+          style={{
+            position: "absolute", left: "50%", bottom: "2rem", transform: "translateX(-50%)",
+            zIndex: 10, opacity: 0,
+            display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem",
+            background: "none", border: "none", cursor: "pointer",
+            color: "rgba(255,255,255,0.62)",
+            fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase",
+          }}
+        >
+          Scroll down
+          <span ref={heroScrollArrowRef} style={{
+            width: 36, height: 36, borderRadius: "50%",
+            border: "1px solid rgba(255,255,255,0.28)",
+            background: "rgba(255,255,255,0.06)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}>
+            <ArrowDown size={16} />
+          </span>
+        </button>
+
       </section>
 
       {/* ══════════════════════════════════════════════
           3. WHAT WE DO (moved here from section 4)
       ══════════════════════════════════════════════ */}
-      <section ref={wdoSectionRef} style={{
+      <section id="about-intro" ref={wdoSectionRef} style={{
         background: "var(--bg-base)",
         padding: "clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 6vw, 6rem)",
         overflow: "hidden",
@@ -1330,279 +1456,125 @@ export default function AboutPage() {
               </svg>
             </div>
 
-            {/* Milestone 1 — LEFT */}
-            <div className="timeline-card-left" style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              paddingRight: "calc(50% + 2.5rem)",
-              marginBottom: "3.5rem",
-              position: "relative",
-            }}>
-              <div ref={dot1Ref} className="timeline-dot" style={{
-                position: "absolute",
-                right: "calc(50% - 7px)",
-                top: "1.2rem",
-                width: 14, height: 14,
-                borderRadius: "50%",
-                background: "var(--accent)",
-                border: "2px solid var(--bg-surface)",
-                boxShadow: "0 0 0 3px rgba(200,40,40,0.18)",
-                scale: 0,
-              }} />
-              <div ref={timelineCard1Ref} className="glass-panel" style={{
-                padding: "1.5rem 1.75rem",
-                borderRadius: "1.25rem",
-                maxWidth: 380,
-                opacity: 0,
-              }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>1986</span>
-                <h3 className="font-serif" style={{
-                  fontSize: "1.4rem", fontWeight: 400,
-                  color: "var(--text-primary)", margin: "0 0 0.6rem",
-                }}>Founded</h3>
-                <p className="font-sans" style={{
-                  fontSize: "0.875rem", lineHeight: 1.7,
-                  color: "var(--text-secondary)", margin: 0,
+            {TIMELINE.map((m, i) => {
+              const left = i % 2 === 0;
+              return (
+                <div key={m.badge + m.title} className={left ? "timeline-card-left" : "timeline-card-right"} style={{
+                  display: "flex",
+                  justifyContent: left ? "flex-end" : "flex-start",
+                  ...(left ? { paddingRight: "calc(50% + 2.5rem)" } : { paddingLeft: "calc(50% + 2.5rem)" }),
+                  marginBottom: i === TIMELINE.length - 1 ? 0 : "3.5rem",
+                  position: "relative",
                 }}>
-                  Established in 1986, laying the foundation for India&apos;s premier ground transportation service.
-                </p>
-              </div>
-            </div>
-
-            {/* Milestone 2 — RIGHT */}
-            <div className="timeline-card-right" style={{
-              display: "flex",
-              justifyContent: "flex-start",
-              paddingLeft: "calc(50% + 2.5rem)",
-              marginBottom: "3.5rem",
-              position: "relative",
-            }}>
-              <div ref={dot2Ref} className="timeline-dot" style={{
-                position: "absolute",
-                left: "calc(50% - 7px)",
-                top: "1.2rem",
-                width: 14, height: 14,
-                borderRadius: "50%",
-                background: "var(--text-primary)",
-                border: "2px solid var(--bg-surface)",
-                scale: 0,
-              }} />
-              <div ref={timelineCard2Ref} className="glass-panel" style={{
-                padding: "1.5rem 1.75rem",
-                borderRadius: "1.25rem",
-                maxWidth: 380,
-                opacity: 0,
-              }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>1992</span>
-                <h3 className="font-serif" style={{
-                  fontSize: "1.4rem", fontWeight: 400,
-                  color: "var(--text-primary)", margin: "0 0 0.6rem",
-                }}>Formally Incorporated</h3>
-                <p className="font-sans" style={{
-                  fontSize: "0.875rem", lineHeight: 1.7,
-                  color: "var(--text-secondary)", margin: 0,
-                }}>
-                  Mann Tourist Transport Service Private Limited incorporated on August 7, 1992 — a pivotal moment that scaled our operations nationally. Formerly known as Mann Tourist Transport, today operating as Mann Fleet Partners Limited.
-                </p>
-              </div>
-            </div>
-
-            {/* Milestone 3 — LEFT */}
-            <div className="timeline-card-left" style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              paddingRight: "calc(50% + 2.5rem)",
-              marginBottom: "3.5rem",
-              position: "relative",
-            }}>
-              <div ref={dot3Ref} className="timeline-dot" style={{
-                position: "absolute",
-                right: "calc(50% - 7px)",
-                top: "1.2rem",
-                width: 14, height: 14,
-                borderRadius: "50%",
-                background: "var(--text-primary)",
-                border: "2px solid var(--bg-surface)",
-                scale: 0,
-              }} />
-              <div ref={timelineCard3Ref} className="glass-panel" style={{
-                padding: "1.5rem 1.75rem",
-                borderRadius: "1.25rem",
-                maxWidth: 380,
-                opacity: 0,
-              }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2005 onwards</span>
-                <h3 className="font-serif" style={{
-                  fontSize: "1.4rem", fontWeight: 400,
-                  color: "var(--text-primary)", margin: "0 0 0.6rem",
-                }}>National Footprint</h3>
-                <p className="font-sans" style={{
-                  fontSize: "0.875rem", lineHeight: 1.7,
-                  color: "var(--text-secondary)", margin: 0,
-                }}>
-                  Expanded operations across 80 cities in India, establishing a full-service network for corporate and diplomatic clients. Became the trusted transport partner for Fortune 500 companies and government institutions.
-                </p>
-              </div>
-            </div>
-
-            {/* Milestone 4 — RIGHT */}
-            <div className="timeline-card-right" style={{
-              display: "flex",
-              justifyContent: "flex-start",
-              paddingLeft: "calc(50% + 2.5rem)",
-              marginBottom: "3.5rem",
-              position: "relative",
-            }}>
-              <div ref={dot4Ref} className="timeline-dot" style={{
-                position: "absolute",
-                left: "calc(50% - 7px)",
-                top: "1.2rem",
-                width: 14, height: 14,
-                borderRadius: "50%",
-                background: "var(--accent)",
-                border: "2px solid var(--bg-surface)",
-                boxShadow: "0 0 0 3px rgba(200,40,40,0.18)",
-                scale: 0,
-              }} />
-              <div ref={timelineCard4Ref} className="glass-panel" style={{
-                padding: "1.5rem 1.75rem",
-                borderRadius: "1.25rem",
-                maxWidth: 380,
-                opacity: 0,
-              }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2008 onwards</span>
-                <h3 className="font-serif" style={{
-                  fontSize: "1.4rem", fontWeight: 400,
-                  color: "var(--text-primary)", margin: "0 0 0.6rem",
-                }}>Diplomatic and Government Mandates</h3>
-                <p className="font-sans" style={{
-                  fontSize: "0.875rem", lineHeight: 1.7,
-                  color: "var(--text-secondary)", margin: 0,
-                }}>
-                  Appointed as the preferred ground transport provider for foreign embassies including the United States Mission in India. Served sports leagues, cricket tournaments, the Kabaddi World Cup, AFC Women&apos;s Cup, and major national sporting events.
-                </p>
-              </div>
-            </div>
-
-            {/* Milestone 5 — LEFT */}
-            <div className="timeline-card-left" style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              paddingRight: "calc(50% + 2.5rem)",
-              marginBottom: "3.5rem",
-              position: "relative",
-            }}>
-              <div ref={dot5Ref} className="timeline-dot" style={{
-                position: "absolute",
-                right: "calc(50% - 7px)",
-                top: "1.2rem",
-                width: 14, height: 14,
-                borderRadius: "50%",
-                background: "var(--accent)",
-                border: "2px solid var(--bg-surface)",
-                boxShadow: "0 0 0 3px rgba(200,40,40,0.18)",
-                scale: 0,
-              }} />
-              <div ref={timelineCard5Ref} className="glass-panel" style={{
-                padding: "1.5rem 1.75rem",
-                borderRadius: "1.25rem",
-                maxWidth: 380,
-                opacity: 0,
-              }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2016 onwards</span>
-                <h3 className="font-serif" style={{
-                  fontSize: "1.4rem", fontWeight: 400,
-                  color: "var(--text-primary)", margin: "0 0 0.6rem",
-                }}>Triple National Tourism Award</h3>
-                <p className="font-sans" style={{
-                  fontSize: "0.875rem", lineHeight: 1.7,
-                  color: "var(--text-secondary)", margin: 0,
-                }}>
-                  Awarded the National Tourism Award by the Ministry of Tourism, Government of India, for three consecutive years (2016–17, 2017–18, 2018–19) — the highest recognition in India&apos;s tourism industry.
-                </p>
-              </div>
-            </div>
-
-            {/* Milestone 6 — RIGHT */}
-            <div className="timeline-card-right" style={{
-              display: "flex",
-              justifyContent: "flex-start",
-              paddingLeft: "calc(50% + 2.5rem)",
-              marginBottom: "3.5rem",
-              position: "relative",
-            }}>
-              <div ref={dot6Ref} className="timeline-dot" style={{
-                position: "absolute",
-                left: "calc(50% - 7px)",
-                top: "1.2rem",
-                width: 14, height: 14,
-                borderRadius: "50%",
-                background: "var(--text-primary)",
-                border: "2px solid var(--bg-surface)",
-                scale: 0,
-              }} />
-              <div ref={timelineCard6Ref} className="glass-panel" style={{
-                padding: "1.5rem 1.75rem",
-                borderRadius: "1.25rem",
-                maxWidth: 380,
-                opacity: 0,
-              }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>2019 onwards</span>
-                <h3 className="font-serif" style={{
-                  fontSize: "1.4rem", fontWeight: 400,
-                  color: "var(--text-primary)", margin: "0 0 0.6rem",
-                }}>Industry and Media Recognition</h3>
-                <p className="font-sans" style={{
-                  fontSize: "0.875rem", lineHeight: 1.7,
-                  color: "var(--text-secondary)", margin: 0,
-                }}>
-                  Received the Zee Business Award for Best Private Transport Service Provider (2019) and was named &apos;Leaders of Road Transport&apos; by TV9 Network (2022). Expanded global footprint to the UAE, the USA, Saudi Arabia, and England.
-                </p>
-              </div>
-            </div>
-
-            {/* Milestone 7 — LEFT */}
-            <div className="timeline-card-left" style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              paddingRight: "calc(50% + 2.5rem)",
-              position: "relative",
-            }}>
-              <div ref={dot7Ref} className="timeline-dot" style={{
-                position: "absolute",
-                right: "calc(50% - 7px)",
-                top: "1.2rem",
-                width: 14, height: 14,
-                borderRadius: "50%",
-                background: "var(--accent)",
-                border: "2px solid var(--bg-surface)",
-                boxShadow: "0 0 0 3px rgba(200,40,40,0.18)",
-                scale: 0,
-              }} />
-              <div ref={timelineCard7Ref} className="glass-panel" style={{
-                padding: "1.5rem 1.75rem",
-                borderRadius: "1.25rem",
-                maxWidth: 380,
-                opacity: 0,
-              }}>
-                <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>Today</span>
-                <h3 className="font-serif" style={{
-                  fontSize: "1.4rem", fontWeight: 400,
-                  color: "var(--text-primary)", margin: "0 0 0.6rem",
-                }}>Global Powerhouse</h3>
-                <p className="font-sans" style={{
-                  fontSize: "0.875rem", lineHeight: 1.7,
-                  color: "var(--text-secondary)", margin: 0,
-                }}>
-                  Mann Fleet Partners Limited — an award-winning, globally recognised mobility powerhouse. It serves the G20 Presidency, VVIP events, and Fortune 500 clients across India, the UAE, the USA, Saudi Arabia, and England. Handled transportation for one of India’s biggest-ever events in Jamnagar.
-                </p>
-              </div>
-            </div>
+                  <div className="timeline-dot" style={{
+                    position: "absolute",
+                    ...(left ? { right: "calc(50% - 7px)" } : { left: "calc(50% - 7px)" }),
+                    top: "1.2rem",
+                    width: 14, height: 14,
+                    borderRadius: "50%",
+                    background: m.accent ? "var(--accent)" : "var(--text-primary)",
+                    border: "2px solid var(--bg-surface)",
+                    ...(m.accent ? { boxShadow: "0 0 0 3px rgba(200,40,40,0.18)" } : {}),
+                    scale: 0,
+                  }} />
+                  <div className="timeline-card glass-panel" style={{
+                    padding: "1.5rem 1.75rem",
+                    borderRadius: "1.25rem",
+                    maxWidth: 380,
+                    opacity: 0,
+                  }}>
+                    <span className="glass-badge" style={{ marginBottom: "0.8rem", display: "inline-block" }}>{m.badge}</span>
+                    <h3 className="font-serif" style={{
+                      fontSize: "1.4rem", fontWeight: 400,
+                      color: "var(--text-primary)", margin: "0 0 0.6rem",
+                    }}>{m.title}</h3>
+                    <p className="font-sans" style={{
+                      fontSize: "0.875rem", lineHeight: 1.7,
+                      color: "var(--text-secondary)", margin: 0,
+                    }}>{m.body}</p>
+                    {m.tags && (
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginTop: "1rem" }}>
+                        {m.tags.map((t) => (
+                          <span key={t} className="glass-badge" style={{ fontSize: "0.65rem" }}>{t}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════
+            {/* ══════════════════════════════════════════════
+          CASE STUDIES
+      ══════════════════════════════════════════════ */}
+      <section id="case-studies" ref={caseSectionRef} style={{
+        background: "var(--bg-base)",
+        padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 6rem)",
+        borderTop: "1px solid var(--border-subtle)",
+      }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+          <div style={{ maxWidth: 700, marginBottom: "3rem" }}>
+            <span className="glass-badge" style={{ marginBottom: "1rem", display: "inline-block" }}>Case Studies</span>
+            <h2 className="font-serif" style={{
+              fontSize: "clamp(2.2rem, 5vw, 3.6rem)", fontWeight: 400, lineHeight: 1.1,
+              color: "var(--text-primary)", margin: "0 0 1.25rem",
+            }}>
+              Moments We <span className="italic" style={{ color: "var(--text-secondary)" }}>Moved</span>
+            </h2>
+            <p className="font-sans" style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--text-secondary)", margin: 0 }}>
+              From heads of state to Formula 1 weekends, a few of the engagements where precision mattered most.
+            </p>
+          </div>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
+            gap: "1.25rem",
+          }}>
+            {CASE_STUDIES.map((c, i) => (
+              <article key={c.title} className="case-card glass-card" style={{
+                padding: "2rem", borderRadius: "1.5rem",
+                display: "flex", flexDirection: "column", gap: "1rem",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.75rem" }}>
+                  <span className="font-serif" style={{ fontSize: "2.4rem", lineHeight: 1, color: "var(--text-muted)" }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", justifyContent: "flex-end" }}>
+                    <span className="glass-badge" style={{ fontSize: "0.65rem" }}>{c.tag}</span>
+                    <span className="glass-badge" style={{ fontSize: "0.65rem" }}>{c.year}</span>
+                  </div>
+                </div>
+                <h3 className="font-sans" style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>{c.title}</h3>
+                <p className="font-sans" style={{
+                  fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase",
+                  color: "var(--accent)", margin: 0,
+                }}>{c.client}</p>
+                <p className="font-sans" style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "var(--text-secondary)", margin: 0 }}>{c.delivered}</p>
+                {c.recognition && (
+                  <div style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", marginTop: "auto", paddingTop: "0.5rem" }}>
+                    <div style={{ width: 3, alignSelf: "stretch", minHeight: 28, background: "var(--accent)", borderRadius: 999, flexShrink: 0 }} />
+                    <p className="font-sans" style={{ fontSize: "0.8rem", lineHeight: 1.6, color: "var(--text-primary)", margin: 0 }}>{c.recognition}</p>
+                  </div>
+                )}
+                {c.href && (
+                  <a href={c.href} className="font-sans" style={{
+                    marginTop: "auto", display: "inline-flex", alignItems: "center", gap: "0.35rem",
+                    fontSize: "0.78rem", fontWeight: 600, color: "var(--accent)", textDecoration: "none",
+                  }}>
+                    {c.cta} <ArrowUpRight />
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+{/* ══════════════════════════════════════════════
           MOTTO BANNER
       ══════════════════════════════════════════════ */}
       <section style={{

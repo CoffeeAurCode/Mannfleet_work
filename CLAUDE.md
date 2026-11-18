@@ -69,6 +69,7 @@ src/
     IndiaMapLeaflet.tsx   # Leaflet-based interactive map
     MetaPixel.tsx         # Meta Pixel PageView-on-route-change + contact-link tracking
     AppDownload.tsx       # Home-page app block: store buttons + scannable QR codes
+    Vehicle3DViewer.tsx   # Fleet modal gallery as a draggable CSS-3D orbit of photos (see Fleet photos)
     GlimpsesSection.tsx   # Home-page press/deployment strip — muted looping video glimpses
     PillNav.css           # Pill nav styles
   lib/
@@ -161,7 +162,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 | Route | Content |
 |---|---|
 | `/` | Hero + PartnersMarquee + ServicesSection + BentoSection + GlimpsesSection + AppDownload |
-| `/about` | Brand story, history, leadership |
+| `/about` | Hero ("Founded 1986" above "Our Story", Scroll down cue), timeline (`TIMELINE` array, 1986 → Today incl. 2010 IPL/Commonwealth Games and 2011 Formula 1/Champions League), `#case-studies` (`CASE_STUDIES` array — only facts already published elsewhere on the site), history table, awards |
 | `/fleet` | Full vehicle catalog (200+ cars, organized by model) |
 | `/awards` | Awards & recognition gallery |
 | `/meet-the-team` | Team member profiles |
@@ -208,6 +209,8 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 **Team photos:** `public/teams/`, used by Meet the Team, the contact-page cards (`BRANCH_CONTACTS`) and the chat avatars. Every photo except Ashwani Kumar's (a tight B/W face crop) is cut out and placed on one warm studio-grey backdrop (radial `#ECE6DC` → `#C8BFB2`). The cutouts used rembg's `isnet-general-use` model in a scratch venv; `birefnet-portrait` ran out of memory on this machine. After cutting out, keep only the largest mask region (drops stray background bits) and tighten the soft mask edge (removes a halo of the old background colour). Give a new member photo the same treatment so the set stays uniform, and overwrite files in place so all three uses stay in sync.
 
 **Fleet photos:** vehicles live in the `VEHICLES` array in [fleet/page.tsx](src/app/fleet/page.tsx). `image[0]` is the card cover. Cards crop to 4:3 and the modal to 16:9 (`cover` unless `imageObjectFit: "contain"`). Most existing photos are AI studio renders on a grey tiled backdrop. Real client photos (WhatsApp JPEGs, outdoors) go in `public/Mann car pictures/<Model>/` with clean hyphenated names, like `Invicto/invicto-black-front-1.jpeg`. A model listed under several types (e.g. Invicto under Sedans and SUVs) has a separate image array per entry, so update every one. Real photos go first in a gallery, with the AI renders after them. Convert them to sRGB JPEG (≤1600px, q82) without EXIF, because the iPhone HEICs carry GPS. On a `contain` card (Aura, Volvo Coach), set `imageIndexObjectFits: ["cover", …]` for the real photos so they fill the frame while the renders stay uncropped. Lead a gallery with a landscape shot (most phone photos are 3:4 portrait). Portraits get cropped, so give fronts `center 70%` and rears `center 60%` in `imageIndexObjectPositions`, and set `"center"` explicitly on cards that have their own `imageObjectPosition`, since an `undefined` slot falls back to it. The client's Drive folder names are often wrong, so place each photo by its number plate (and the shoot location for interiors), not by its folder. Fleet cards render through `next/image`, which caches optimized images by URL. So to swap a fleet photo for a better version (e.g. the client's retouched shots), save it under a new name (`*-v2.jpeg`), point the gallery at it and delete the old file. Overwriting in place could leave the old picture cached. A super-wide side shot (over 2:1) gets `"contain"` in `imageIndexObjectFits` so the car isn't cut off on the 4:3 card. Download a Drive folder with `gdown` (`download_folder(..., skip_download=True)` lists files with their IDs; same-name duplicates are common).
+
+**Orbit gallery (client request 18 Nov: 3D view for Urbania, Volvo, Sprinter, Coaster, Hiace, Bharat Benz, Jet on Wheels):** vehicles with `view3d: true` open their modal with `Vehicle3DViewer` instead of the flat carousel. It is a CSS-3D ring of the vehicle's own photos (max 10; drag, swipe, arrows, ← →, auto-turns until touched), not a WebGL model — we have no 3D model files. The client asked that the UI never say "3D view", so there is no badge, tab or label for it; keep it that way. If they send GLB models, swap the viewer for model-viewer/three. Bharat Benz Coach was restored (removed 13 May as "Standard AC Coaches"); its seating line is the old card's.
 
 **Fleet → reservation:** the vehicle modal's Book Now is a `next/link` (never a plain `<a>` — that forces a full document load and re-runs the app shell) carrying `?vehicle=&category=`. The reservation page reads those with `useSyncExternalStore` over `window.location.search` rather than `useSearchParams`, which would force the route behind a Suspense boundary and drop the whole form out of the prerendered HTML.
 
