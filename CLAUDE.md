@@ -167,7 +167,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 | `/meet-the-team` | Team member profiles |
 | `/investors` | Investor-relations document library — tabbed PDF lists (IPO, policies, financial statements, board/annual reports, annual returns, group companies) from `PDF_CATEGORIES` |
 | `/flagship-project` | Showcase projects |
-| `/we-care` | CSR / social responsibility content |
+| `/we-care` | CSR / social responsibility content, ending with a "Health Check-up Camp" photo gallery (`HEALTH_CAMP_PHOTOS`, `#health-camp`, files in `public/We care/health-camp-*.jpg`) |
 | `/contact` | Contact info + IndiaMap |
 | `/reservation` | Booking form; submits to `/api/reservation`, which emails info@ and the guest. No. of Days counts both ends (31 Oct → 1 Nov = 2). Vehicle Type lists the cars in the chosen Vehicle Preference (segment) from `SEGMENT_VEHICLES`, pre-selecting the fleet card's car via `?vehicle=&category=`; keep that map in step with the fleet page's names |
 | `/privacy` | Privacy policy |

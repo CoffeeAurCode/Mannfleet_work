@@ -351,6 +351,13 @@ function PdfModal({ file, label, onClose }: { file: string; label: string; onClo
 /* ══════════════════════════════════════════════════════════════
    MAIN PAGE
 ══════════════════════════════════════════════════════════════ */
+const HEALTH_CAMP_PHOTOS = [
+  { src: "/We care/health-camp-bp-check-1.jpg", alt: "A nurse checking a woman's blood pressure at a community health camp", caption: "Blood pressure screening" },
+  { src: "/We care/health-camp-bp-check-2.jpg", alt: "A nurse measuring blood pressure at the health camp registration table", caption: "Blood pressure screening" },
+  { src: "/We care/health-camp-blood-test-1.jpg", alt: "A phlebotomist collecting a blood sample at a community health camp", caption: "Blood sample collection" },
+  { src: "/We care/health-camp-blood-test-2.jpg", alt: "Medical staff drawing blood while visitors wait at the health camp", caption: "Blood sample collection" },
+];
+
 export default function WeCarePage() {
   const [activeCert, setActiveCert] = useState<{ file: string; label: string } | null>(null);
 
@@ -946,6 +953,48 @@ export default function WeCarePage() {
                   </span>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Health Camp Gallery ── */}
+        <section style={{ ...sectionWrap, paddingTop: 0 }} id="health-camp">
+          <span className="glass-badge" style={{ marginBottom: "0.75rem", display: "inline-block" }}>
+            CSR in Action
+          </span>
+          <h2 className="font-serif" style={{
+            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+            fontWeight: 400,
+            color: "var(--text-primary)",
+            margin: "0 0 0.5rem",
+          }}>
+            Health Check-up Camp
+          </h2>
+          <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: 540, marginBottom: "2rem" }}>
+            Moments from a community health camp, with blood pressure screening and
+            blood sample collection by trained medical staff.
+          </p>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "1.25rem",
+          }}>
+            {HEALTH_CAMP_PHOTOS.map((photo) => (
+              <figure key={photo.src} style={{ ...glassCard, padding: 0, overflow: "hidden", margin: 0 }}>
+                <div style={{ position: "relative", aspectRatio: "3 / 4", width: "100%" }}>
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 300px"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <figcaption style={{ padding: "0.9rem 1.1rem", fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>
+                  {photo.caption}
+                </figcaption>
+              </figure>
             ))}
           </div>
         </section>
