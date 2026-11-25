@@ -9,7 +9,7 @@
 ## Project Identity
 
 **Name:** MANN — Premium Car Rental (package name: `bionova`)
-**Type:** Marketing/showcase website — no database; two small API routes (chat, reservation email)
+**Type:** Marketing/showcase website — no database; three small API routes (chat, reservation email, staff WhatsApp send)
 **Purpose:** Premium chauffeur & car rental brand site with heavy visual storytelling
 **Live site:** https://www.mannfleetpartners.com (Vercel, deploys from `subhayudas/Mannfleet` `main`; `mannfleet.vercel.app` is the same deployment). Verify client-facing changes here.
 **Git workflow:** `origin` is the fork `CoffeeAurCode/Mannfleet_work`; `upstream` is `subhayudas/Mannfleet`. Branch from `upstream/main` after a `git fetch upstream`, because the fork's `main` lags behind. Then open the PR against `subhayudas/Mannfleet` for Subhayu to merge. Before saying a document is or isn't live, check the live URL, not local `main`.
@@ -32,7 +32,7 @@
 | Fonts | Geist (variable, @fontsource), Instrument Serif (Google Fonts), Poppins |
 | Dev server | `npm run dev` → localhost:3000 (uses `--webpack` flag) |
 
-No database, no ORM, no auth. API routes: `/api/chat` and `/api/reservation`.
+No database, no ORM, no user accounts. API routes: `/api/chat`, `/api/reservation` and `/api/staff/vehicle-details` (password-protected, see Staff WhatsApp send below).
 
 ---
 
@@ -69,7 +69,9 @@ src/
     IndiaMapLeaflet.tsx   # Leaflet-based interactive map
     MetaPixel.tsx         # Meta Pixel PageView-on-route-change + contact-link tracking
     AppDownload.tsx       # Home-page app block: store buttons + scannable QR codes
+    Vehicle3DViewer.tsx   # Fleet modal gallery as a draggable CSS-3D orbit of photos (see Fleet photos)
     GlimpsesSection.tsx   # Home-page press/deployment strip — muted looping video glimpses
+    StaffVehicleDetails.tsx # /staff/vehicle-details form + preview (see Staff WhatsApp send)
     PillNav.css           # Pill nav styles
   lib/
     utils.ts              # cn() — clsx + tailwind-merge
@@ -79,6 +81,8 @@ src/
     contact.ts            # BOOKING_EMAIL (info@) / SUPPORT_EMAIL (support@) / WHATSAPP_NUMBER
     app-links.ts          # Verified App Store + Play Store URLs and QR asset paths
     chatbot-knowledge.ts  # Concierge SYSTEM_PROMPT + site facts the bot answers from
+    omni.ts               # Smartflo Omni WhatsApp template send (OMNI_ACCESS_TOKEN)
+    vehicle-details.ts    # vdetails/revisedvd field order, phone normalising, preview text
 public/
   investors/                   # Every document PDF, one folder per investors-page tab:
     ipo/ newspaper-advertisements/ constitutive-documents/ policies/
@@ -153,6 +157,7 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
     The investors page builds its links client-side from `PDF_CATEGORIES`, so the file paths are in a `/_next/static/chunks/*.js` bundle, not in the page HTML. Grep the chunks, not the HTML.
     `next.config.ts` → `MOVED_INVESTOR_DOCS` redirects the old flat `/investors/<file>.pdf` URLs, from before the per-tab folders, to their new paths. If you move or rename a file that's already live, add a redirect for it too.
 12. **Analytics (Meta Pixel):** Base snippet is inlined in `<head>` from `src/lib/meta-pixel.ts` (same pattern as the theme script) so it initialises before hydration; `<noscript>` fallback sits at the top of `<body>`. Because the App Router navigates client-side, `MetaPixel.tsx` re-fires `PageView` on every route change — it uses `useSearchParams`, so it **must stay wrapped in `<Suspense>`** or the production build fails and pages drop out of static rendering. Fire conversions with `fbTrack()` from `@/lib/meta-pixel`; never pass PII (name, phone, email) in event params.
+13. **Staff WhatsApp send (vehicle details):** once ops allot a car and chauffeur, they open `/staff/vehicle-details` (not linked anywhere, `noindex`, no chat bubble), fill in the booking and press Send. `/api/staff/vehicle-details` checks the password in the `x-staff-key` header against `STAFF_PASSWORD` (timing-safe; a per-instance lockout after 8 misses only slows guessing, so keep the password long) and sends through `src/lib/omni.ts`. That calls Tata Tele Business **Smartflo Omni**, the client's WhatsApp Business API provider: `POST https://wb.omni.tatatelebusiness.com/whatsapp-cloud/messages`, header `Authorization: <token>` (raw, no `Bearer`). The token is `OMNI_ACCESS_TOKEN`, from omni.tatatelebusiness.com → Settings → Channels → WhatsApp → Details → View Access Token. API reference and OpenAPI spec: help.omni.tatatelebusiness.com/api-reference. It sends the client's **existing approved templates, unchanged** (client: "the template should not be changed"): `vdetails` for a first send and `revisedvd` for a change, language `en`. Both take the same 15 body values, listed in template order in `DETAILS_FIELDS` in `src/lib/vehicle-details.ts`. Their header, helpline line, footer and "Call us" button are fixed text. Don't reorder `DETAILS_FIELDS`, because the order is the template's {{1}}…{{15}}. Empty optional values go out as "-", because WhatsApp rejects blank values, newlines and runs of more than four spaces. Messages come from the number connected in Omni, **+91 74288 27400**. Sending from 9810008008 would need the client to connect that number in Omni. Delivery and read status show in Omni → Reports and Campaign → Live Feed. Every send is a real, billed WhatsApp, so test only with your own number. `GET https://wb.omni.tatatelebusiness.com/templates/template?name=vdetails&language=en` (same header) confirms a template is still approved.
 
 ---
 
@@ -161,18 +166,19 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 | Route | Content |
 |---|---|
 | `/` | Hero + PartnersMarquee + ServicesSection + BentoSection + GlimpsesSection + AppDownload |
-| `/about` | Brand story, history, leadership |
+| `/about` | Hero ("Founded 1986" above "Our Story", Scroll down cue), timeline (`TIMELINE` array, 1986 → Today incl. 2010 IPL/Commonwealth Games and 2011 Formula 1/Champions League), `#case-studies` (`CASE_STUDIES` array — only facts already published elsewhere on the site), history table, awards |
 | `/fleet` | Full vehicle catalog (200+ cars, organized by model) |
 | `/awards` | Awards & recognition gallery |
 | `/meet-the-team` | Team member profiles |
 | `/investors` | Investor-relations document library — tabbed PDF lists (IPO, policies, financial statements, board/annual reports, annual returns, group companies) from `PDF_CATEGORIES` |
 | `/flagship-project` | Showcase projects |
-| `/we-care` | CSR / social responsibility content |
+| `/we-care` | CSR / social responsibility content, ending with a "Health Check-up Camp" photo gallery (`HEALTH_CAMP_PHOTOS`, `#health-camp`, files in `public/We care/health-camp-*.jpg`) |
 | `/contact` | Contact info + IndiaMap |
 | `/reservation` | Booking form; submits to `/api/reservation`, which emails info@ and the guest. No. of Days counts both ends (31 Oct → 1 Nov = 2). Vehicle Type lists the cars in the chosen Vehicle Preference (segment) from `SEGMENT_VEHICLES`, pre-selecting the fleet card's car via `?vehicle=&category=`; keep that map in step with the fleet page's names |
 | `/privacy` | Privacy policy |
 | `/terms` | Terms and conditions |
 | `/services` | Services overview; `/services/[slug]` plus five dedicated service pages (events-weddings, film-shoots-concerts, global-leaders-celebrities, pan-india-mobility, tourism) |
+| `/staff/vehicle-details` | Staff-only (password, `noindex`, unlinked): send a customer the approved vehicle-details WhatsApp (`vdetails` / `revisedvd`) through Omni once a car is allotted. See pattern 13 |
 | `/faq` | Frequently asked questions, plus an "Ask Us" box (`#ask-a-question`) that opens WhatsApp with the visitor's question prefilled — a `wa.me` link, no backend |
 
 ---
@@ -208,6 +214,8 @@ client-docs-pending/           # Client PDFs not on the site yet + README saying
 **Team photos:** `public/teams/`, used by Meet the Team, the contact-page cards (`BRANCH_CONTACTS`) and the chat avatars. Every photo except Ashwani Kumar's (a tight B/W face crop) is cut out and placed on one warm studio-grey backdrop (radial `#ECE6DC` → `#C8BFB2`). The cutouts used rembg's `isnet-general-use` model in a scratch venv; `birefnet-portrait` ran out of memory on this machine. After cutting out, keep only the largest mask region (drops stray background bits) and tighten the soft mask edge (removes a halo of the old background colour). Give a new member photo the same treatment so the set stays uniform, and overwrite files in place so all three uses stay in sync.
 
 **Fleet photos:** vehicles live in the `VEHICLES` array in [fleet/page.tsx](src/app/fleet/page.tsx). `image[0]` is the card cover. Cards crop to 4:3 and the modal to 16:9 (`cover` unless `imageObjectFit: "contain"`). Most existing photos are AI studio renders on a grey tiled backdrop. Real client photos (WhatsApp JPEGs, outdoors) go in `public/Mann car pictures/<Model>/` with clean hyphenated names, like `Invicto/invicto-black-front-1.jpeg`. A model listed under several types (e.g. Invicto under Sedans and SUVs) has a separate image array per entry, so update every one. Real photos go first in a gallery, with the AI renders after them. Convert them to sRGB JPEG (≤1600px, q82) without EXIF, because the iPhone HEICs carry GPS. On a `contain` card (Aura, Volvo Coach), set `imageIndexObjectFits: ["cover", …]` for the real photos so they fill the frame while the renders stay uncropped. Lead a gallery with a landscape shot (most phone photos are 3:4 portrait). Portraits get cropped, so give fronts `center 70%` and rears `center 60%` in `imageIndexObjectPositions`, and set `"center"` explicitly on cards that have their own `imageObjectPosition`, since an `undefined` slot falls back to it. The client's Drive folder names are often wrong, so place each photo by its number plate (and the shoot location for interiors), not by its folder. Fleet cards render through `next/image`, which caches optimized images by URL. So to swap a fleet photo for a better version (e.g. the client's retouched shots), save it under a new name (`*-v2.jpeg`), point the gallery at it and delete the old file. Overwriting in place could leave the old picture cached. A super-wide side shot (over 2:1) gets `"contain"` in `imageIndexObjectFits` so the car isn't cut off on the 4:3 card. Download a Drive folder with `gdown` (`download_folder(..., skip_download=True)` lists files with their IDs; same-name duplicates are common).
+
+**Orbit gallery (client request 18 Nov: 3D view for Urbania, Volvo, Sprinter, Coaster, Hiace, Bharat Benz, Jet on Wheels):** vehicles with `view3d: true` open their modal with `Vehicle3DViewer` instead of the flat carousel. It is a CSS-3D ring of the vehicle's own photos (max 10; drag, swipe, arrows, ← →, auto-turns until touched), not a WebGL model — we have no 3D model files. The client asked that the UI never say "3D view", so there is no badge, tab or label for it; keep it that way. If they send GLB models, swap the viewer for model-viewer/three. Bharat Benz Coach was restored (removed 13 May as "Standard AC Coaches"); its seating line is the old card's.
 
 **Fleet → reservation:** the vehicle modal's Book Now is a `next/link` (never a plain `<a>` — that forces a full document load and re-runs the app shell) carrying `?vehicle=&category=`. The reservation page reads those with `useSyncExternalStore` over `window.location.search` rather than `useSearchParams`, which would force the route behind a Suspense boundary and drop the whole form out of the prerendered HTML.
 

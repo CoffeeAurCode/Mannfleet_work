@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { fbTrack } from "@/lib/meta-pixel";
+import Vehicle3DViewer from "@/components/Vehicle3DViewer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +35,8 @@ interface Vehicle {
   imageIndexObjectPositions?: (string | undefined)[];
   /** Per-image fit override, by index — lets real photos fill the frame on a card whose renders use "contain". */
   imageIndexObjectFits?: ("cover" | "contain" | undefined)[];
+  /** Shows the modal gallery as a draggable orbit of the vehicle's photos instead of a flat carousel. */
+  view3d?: boolean;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -250,14 +253,14 @@ const VEHICLES: Vehicle[] = [
   },
   // Premium
   {
-    id: "urbania-mod", name: "Force Urbania (Modified)", type: "Vanity van", category: "PREMIUM",
+    id: "urbania-mod", name: "Force Urbania (Modified)", type: "Vanity van", category: "PREMIUM", view3d: true,
     seating: "9 / 12 Seater Including Pilot", luggage: "Very limited boot; last row removable for bags",
     imageObjectFit: "cover",
     imageIndexObjectPositions: [undefined, "center 85%", "center 80%", undefined, undefined, undefined, "center 60%"],
     image: ["/Mann car pictures/Force Urbania/urbania-grey-front-three-quarter.jpeg", "/Mann car pictures/Force Urbania/urbania-grey-front.jpeg", "/Mann car pictures/Force Urbania/urbania-grey-rear.jpeg", "/Mann car pictures/Force Urbania/urbania-grey-cabin.jpeg", "/Mann car pictures/Force Urbania/urbania-grey-aisle.jpeg", "/Mann car pictures/Force Urbania/urbania-grey-cabin-front.jpeg", "/Mann car pictures/Force Urbania/urbania-grey-boot.jpeg", "/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_24_25%20AM.png", "/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_18_13%20AM.png", "/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_22_35%20AM.png", "/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_28_40%20AM.png", "/Mann car pictures/Force%20Urbania/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_29_12%20AM.png"],
   },
   {
-    id: "urbania-std", name: "Force Urbania", type: "Vanity van", category: "PREMIUM",
+    id: "urbania-std", name: "Force Urbania", type: "Vanity van", category: "PREMIUM", view3d: true,
     seating: "13 / 17 Seater Including Pilot", luggage: "Dedicated compartment — fits 8–12 medium suitcases",
     imageObjectFit: "cover",
     imageIndexObjectPositions: [undefined, "center 85%", "center 80%", undefined, undefined, undefined, "center 60%"],
@@ -265,13 +268,13 @@ const VEHICLES: Vehicle[] = [
   },
   // Premium Plus
   {
-    id: "toyota-coaster", name: "Toyota Coaster", type: "Vanity van", category: "PREMIUM PLUS",
+    id: "toyota-coaster", name: "Toyota Coaster", type: "Vanity van", category: "PREMIUM PLUS", view3d: true,
     seating: "18 Seater Including Pilot", luggage: "410 Litres",
     imageIndexObjectPositions: [undefined, "center 70%", "center 60%"],
     image: ["/Mann car pictures/Toyota Coaster New Generation/coaster-white-side.jpeg", "/Mann car pictures/Toyota Coaster New Generation/coaster-white-front.jpeg", "/Mann car pictures/Toyota Coaster New Generation/coaster-white-rear-door-open.jpeg", "/Mann car pictures/Toyota Coaster New Generation/coaster-white-aisle.jpeg", "/Mann car pictures/Toyota Coaster New Generation/coaster-white-seats.jpeg", "/Mann car pictures/Toyota Coaster New Generation/coaster-white-cabin-front.jpeg", "/Mann car pictures/Toyota Coaster New Generation/coaster-white-dashboard.jpeg", "/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_53%20PM.png", "/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_46%20PM.png", "/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_05%20PM.png", "/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_40%20PM.png", "/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_38_26%20PM.png", "/Mann%20car%20pictures/Toyota%20Coaster%20New%20Generation/ChatGPT%20Image%20May%204%2C%202026%2C%2012_41_07%20PM.png"],
   },
   {
-    id: "toyota-hiace", name: "Toyota Hiace", type: "Vanity van", category: "PREMIUM PLUS",
+    id: "toyota-hiace", name: "Toyota Hiace", type: "Vanity van", category: "PREMIUM PLUS", view3d: true,
     seating: "9 Seater Including Pilot", luggage: "Fits 10–12 large check-in suitcases",
     imageObjectFit: "cover",
     imageIndexObjectPositions: [undefined, "center 85%", undefined, "center 60%", undefined, undefined, undefined, undefined, undefined, "center 60%"],
@@ -279,13 +282,13 @@ const VEHICLES: Vehicle[] = [
   },
   // Luxury
   {
-    id: "sprinter", name: "Mercedes-Benz Sprinter", type: "Vanity van", category: "LUXURY",
+    id: "sprinter", name: "Mercedes-Benz Sprinter", type: "Vanity van", category: "LUXURY", view3d: true,
     seating: "11 / 14 Seater Including Pilot", luggage: "Fits 8–10 large suitcases comfortably",
     imageIndexObjectPositions: [undefined, "center 70%"],
     image: ["/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-side.jpeg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-front.jpeg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-rear-row.jpeg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-seats.jpeg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-recliner.jpeg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-rear-bench.jpeg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-cabin-rear-1.jpg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-cabin-front-1.jpg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-cabin-front-2.jpg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-captain-seats.jpg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-cabin-rear-2.jpg", "/Mann car pictures/Mercedes-Benz Sprinter 12 seater/sprinter-silver-cabin-front-3.jpg", "/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_30_46%20AM.png", "/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2011_55_17%20PM.png", "/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_03_01%20AM.png", "/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_03_31%20AM.png", "/Mann%20car%20pictures/Mercedes-Benz%20Sprinter%2012%20seater/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_10_11%20AM.png"],
   },
   {
-    id: "sprinter-exec", name: "Mercedes-Benz Sprinter Executive Lounge", type: "Vanity van", category: "LUXURY",
+    id: "sprinter-exec", name: "Mercedes-Benz Sprinter Executive Lounge", type: "Vanity van", category: "LUXURY", view3d: true,
     seating: "7–9 Seater Including Pilot", luggage: "Fits 10–15 large suitcases",
     imageObjectPosition: "center 80%",
     imageIndexObjectPositions: ["center 100%"],
@@ -299,7 +302,7 @@ const VEHICLES: Vehicle[] = [
   },
   // Super Luxury
   {
-    id: "sprinter-washroom", name: "Mercedes Sprinter with Washroom", type: "Vanity van", category: "SUPER LUXURY",
+    id: "sprinter-washroom", name: "Mercedes Sprinter with Washroom", type: "Vanity van", category: "SUPER LUXURY", view3d: true,
     seating: "8 Seater Including Pilot", luggage: "Dedicated luggage partition + overhead cabinets",
     imageIndexObjectPositions: ["center 70%"],
     image: ["/Mann car pictures/Real/Mercedes Sprinter Washroom/sprinter-washroom-black-front-three-quarter.jpeg", "/Mann car pictures/Real/Mercedes Sprinter Washroom/sprinter-washroom-black-cabin.jpeg", "/Mann car pictures/Real/Mercedes Sprinter Washroom/sprinter-washroom-black-aisle.jpeg"],
@@ -315,23 +318,29 @@ const VEHICLES: Vehicle[] = [
   },
 
   /* ── COACHES ─────────────────────────────────────────────── */
+  {
+    id: "bharat-benz", name: "Bharat Benz Coach", type: "Coaches", category: "ECONOMY", view3d: true,
+    seating: "27 / 35 / 41 / 45 Seater Including Pilot", luggage: "Fits 20–30 large suitcases",
+    imageIndexObjectPositions: [undefined, undefined, undefined, undefined, undefined, undefined, "center 80%"],
+    image: ["/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_49_03%20AM.png", "/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_00_28%20AM.png", "/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_03_17%20AM.png", "/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2001_08_42%20AM.png", "/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_20_30%20AM.png", "/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_24_44%20AM.png", "/Mann car pictures/Bharat%20Benz/ChatGPT%20Image%20Apr%2030%2C%202026%2C%2012_46_26%20AM.png"],
+  },
   // Luxury
   {
-    id: "volvo-luxury", name: "Volvo Coach (Luxury)", type: "Coaches", category: "LUXURY",
+    id: "volvo-luxury", name: "Volvo Coach (Luxury)", type: "Coaches", category: "LUXURY", view3d: true,
     seating: "41/45 Seater (12m) and 49/53 Seater (13.5m) Including Pilot", luggage: "Fits 35–40 and 50–55 large suitcases resp.",
     imageObjectFit: "contain",
     imageIndexObjectFits: ["cover", "cover", "cover", "cover", "cover", "cover", "cover", "cover", "cover", "cover", "cover"],
     image: ["/Mann car pictures/Volvo 49 seater/volvo-49-seater-side-v2.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-front-v2.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-aisle-1.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-seats.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-rear-row.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-aisle-2.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-aisle-3-v2.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-fridge.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-freezer.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-luggage-bay.jpeg", "/Mann car pictures/Volvo 49 seater/volvo-49-seater-driver-cabin-v2.jpeg", "/Mann car pictures/Volvo%2039%20seater/PHOTO-2026-05-15-23-07-59.jpg", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_29_00%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_50_51%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_35_35%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_38_30%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2003_55_20%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_16_06%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_45_09%20PM.png", "/Mann car pictures/Volvo%2039%20seater/ChatGPT%20Image%20Apr%2028%2C%202026%2C%2004_59_59%20PM.png"],
   },
   {
-    id: "volvo-washroom", name: "Volvo Coach with Washroom", type: "Coaches", category: "LUXURY",
+    id: "volvo-washroom", name: "Volvo Coach with Washroom", type: "Coaches", category: "LUXURY", view3d: true,
     seating: "41 / 45 Seater Including Pilot", luggage: "Fits 40–50 large suitcases",
     imageObjectFit: "cover",
     image: ["/Mann%20car%20pictures/Volvo/PHOTO-2026-05-15-23-02-25.jpg", "/Mann%20car%20pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_27_10%20PM.png", "/Mann%20car%20pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_24_50%20PM.png", "/Mann%20car%20pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_29_22%20PM.png", "/Mann%20car%20pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_31_42%20PM.png", "/Mann%20car%20pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_33_26%20PM.png", "/Mann%20car%20pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_34_19%20PM.png", "/Mann%20car%20pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_37_47%20PM.png", "/Mann%20car%20pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_37_58%20PM.png", "/Mann%20car%20pictures/Volvo/ChatGPT%20Image%20Apr%2029%2C%202026%2C%2010_43_10%20PM.png"],
   },
   // Super Luxury
   {
-    id: "jet-on-wheels", name: '"Jet on Wheels" (Volvo 13.5m)', type: "Coaches", category: "SUPER LUXURY",
+    id: "jet-on-wheels", name: '"Jet on Wheels" (Volvo 13.5m)', type: "Coaches", category: "SUPER LUXURY", view3d: true,
     seating: "23 Full Recliners Including Pilot", luggage: "Fits 40–50 large suitcases",
     imageObjectFit: "cover",
     imageIndexObjectPositions: ["center 80%"],
@@ -653,7 +662,9 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
 
         {/* Car image */}
         <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", background: vehicle.imageObjectFit === "contain" ? "var(--bg-base)" : undefined }}>
-          {Array.isArray(vehicle.image) ? (
+          {vehicle.view3d ? (
+            <Vehicle3DViewer images={Array.isArray(vehicle.image) ? vehicle.image : [vehicle.image]} alt={vehicle.name} objectFit={vehicle.imageObjectFit === "contain" ? "cover" : vehicle.imageObjectFit} objectPosition={vehicle.imageObjectPosition} indexObjectPositions={vehicle.imageIndexObjectPositions} indexObjectFits={vehicle.imageIndexObjectFits} />
+          ) : Array.isArray(vehicle.image) ? (
             <ImageCarousel images={vehicle.image} alt={vehicle.name} objectFit={vehicle.imageObjectFit} objectPosition={vehicle.imageObjectPosition} indexObjectPositions={vehicle.imageIndexObjectPositions} indexObjectFits={vehicle.imageIndexObjectFits} />
           ) : (
             <Image
@@ -664,12 +675,14 @@ function VehicleModal({ vehicle, onClose }: { vehicle: Vehicle; onClose: () => v
               sizes="(max-width: 640px) 100vw, 520px"
             />
           )}
-          <div style={{
-            position: "absolute", inset: 0,
-            background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.42) 100%)",
-            pointerEvents: "none",
-          }} />
-          <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem" }}>
+          {!vehicle.view3d && (
+            <div style={{
+              position: "absolute", inset: 0,
+              background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.42) 100%)",
+              pointerEvents: "none",
+            }} />
+          )}
+          <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem", zIndex: 6 }}>
             <span style={{
               display: "inline-block",
               padding: "0.25rem 0.85rem",

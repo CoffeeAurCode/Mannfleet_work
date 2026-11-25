@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 
 type Role = "user" | "assistant";
@@ -135,6 +135,7 @@ export default function ChatWidget() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const abortRef = useRef<AbortController | null>(null);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -247,6 +248,8 @@ export default function ChatWidget() {
   }
 
   if (!mounted) return null;
+  // The staff tools are internal; the public concierge would only get in the way.
+  if (pathname?.startsWith("/staff")) return null;
 
   return (
     <>

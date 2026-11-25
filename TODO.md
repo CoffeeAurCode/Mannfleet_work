@@ -1,3 +1,27 @@
+## 25 Nov 2026 — vehicle-details WhatsApp after a booking (WhatsApp, via Subhayu)
+
+The client forwarded their booking-confirmation message (the "UPDATED vehicle detail… Thanks & Regards, Chittaranjan" sample, for a 3 Aug 2026 GLS shoot booking). Their messages said: "After the booking is confirmed this kind of message should go". Then "bookings- 9810008008, this is the number". Then the Tata Tele Business Omni login: "Please give to app developer for whatsapp integration… the template should not be changed". Subhayu: "Kal chahiye inko ye", meaning they need it the next day.
+- **What their Omni account already has** (checked 25 Nov, read-only): WhatsApp Business API live and Meta-verified, quality High. It sends from **+91 74288 27400**, not 9810008008. There's an API key "MannBackend" (22 Oct) and 7 approved templates. `vdetails` and `revisedvd` (8 Dec 2025) are the WhatsApp form of the client's sample: the same fields plus Job No, Bill To, Booked By, helpline and a "Call us" button. Their staff have sent `vdetails` by hand as dashboard campaigns since June 2026, last on 2 Nov. Our reading is that "the template should not be changed" means these approved templates. A new template in the sample's exact wording was drafted but never submitted.
+- **Built:** `/staff/vehicle-details`, a password-protected staff page. Staff fill in the allotted booking, pick Vehicle details (`vdetails`) or Revised (`revisedvd`), and press Send. It goes to the customer through Omni's API, with the approved text unchanged. See CLAUDE.md pattern 13.
+- Tested 25 Nov: one real `vdetails` send to Pranav's number, which Omni accepted.
+- **Before it goes live:** in Vercel, set `OMNI_ACCESS_TOKEN` and `STAFF_PASSWORD` (Production), then redeploy. Give the staff password and the page URL to Mann's ops team privately.
+- **Ask the client:**
+  1. Messages come from +91 74288 27400, the number on their Omni account. To send from 9810008008 instead, they need Tata to connect it to their Omni/WhatsApp Business account. Is 74288 27400 fine for now?
+  2. Who on their team will use the staff page? We'll share the link and password with them.
+  3. The Omni login was shared over WhatsApp. They should change that password.
+
+## 18 Nov 2026 — About page + rotating vehicle gallery (WhatsApp)
+
+- **About hero:** "Founded 1986" now sits above "Our Story" (the old "Est. 1986" line below it is gone) and a "Scroll down" cue sits at the bottom. This is our reading of "Our story — scroll down. Should be written above — founded 1986".
+- **Timeline:** added 2010 (IPL teams, Commonwealth Games) and 2011 (Formula 1, Champions League, Kabaddi World Cup, US Presidential visits). The national awards were already there as the 2016–2019 card.
+- **Case studies:** new `#case-studies` section on /about with 6 cards (G20, US Presidential visits, Formula 1, sporting mega-events, Jamnagar, Noida airport). Every fact comes from the existing Major Events / Awards tables; nothing new was invented.
+- **Rotating gallery** for Urbania (both cards), Volvo (both coach cards), Sprinter (all 3 cards), Coaster, Hiace, Bharat Benz and Jet on Wheels. It is built from each vehicle's photos; there are no real 3D models. The client asked not to label it as 3D.
+- **Ask the client:**
+  1. There is no 6-seater Sprinter card (cards are 11/14, 7–9 and 8-seat washroom). Is one missing?
+  2. Bharat Benz Coach was off the site since 13 May; we restored it under Economy coaches with 27/35/41/45 seats. Right?
+  3. 2010 and 2011 wording: please check the event lists. "Champions League" is kept exactly as they wrote it.
+  4. For true 3D (turn-around models), send GLB/3D files; we can swap them in.
+
 ## 16 Nov 2026 — third batch of photos on the Drive
 
 The client added 17 folders to the same Drive folder (`1qdNcyGTYRgfdjoGq1p1SuHD4KSHL2L9W`). The folders already used on 5 and 7 Nov were unchanged. Most new photos are professionally retouched: replaced skies and brighter colours. Built: 103 photos (sRGB JPEG, ≤1600px, no EXIF): 93 new shots, plus 10 retouched versions that replace live raw photos. All were placed by number plate. On the cards below they lead the gallery, with the renders kept after them.
