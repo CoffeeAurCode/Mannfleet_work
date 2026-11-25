@@ -3,8 +3,14 @@
 The client forwarded their booking-confirmation message (the "UPDATED vehicle detail… Thanks & Regards, Chittaranjan" sample, for a 3 Aug 2026 GLS shoot booking). Their messages said: "After the booking is confirmed this kind of message should go". Then "bookings- 9810008008, this is the number". Then the Tata Tele Business Omni login: "Please give to app developer for whatsapp integration… the template should not be changed". Subhayu: "Kal chahiye inko ye", meaning they need it the next day.
 - **What their Omni account already has** (checked 25 Nov, read-only): WhatsApp Business API live and Meta-verified, quality High. It sends from **+91 74288 27400**, not 9810008008. There's an API key "MannBackend" (22 Oct) and 7 approved templates. `vdetails` and `revisedvd` (8 Dec 2025) are the WhatsApp form of the client's sample: the same fields plus Job No, Bill To, Booked By, helpline and a "Call us" button. Their staff have sent `vdetails` by hand as dashboard campaigns since June 2026, last on 2 Nov. Our reading is that "the template should not be changed" means these approved templates. A new template in the sample's exact wording was drafted but never submitted.
 - **Built:** `/staff/vehicle-details`, a password-protected staff page. Staff fill in the allotted booking, pick Vehicle details (`vdetails`) or Revised (`revisedvd`), and press Send. It goes to the customer through Omni's API, with the approved text unchanged. See CLAUDE.md pattern 13.
-- Tested 25 Nov: one real `vdetails` send to Pranav's number, which Omni accepted.
-- **Before it goes live:** in Vercel, set `OMNI_ACCESS_TOKEN` and `STAFF_PASSWORD` (Production), then redeploy. Give the staff password and the page URL to Mann's ops team privately.
+- Tested 25 Nov: one real `vdetails` send to Pranav's number from the local page. Omni's Live Feed shows it Delivered.
+- **Live 25 Nov (PR #43).** The first production deployment of merge commit `0fb7001` (08:47 UTC) didn't serve: at 08:49 the old `177ccf7` deployment was redeployed, probably the env-var redeploy done on the wrong row, so the staff page returned 404. After `0fb7001` was redeployed (09:03), the live site checked out:
+  - `/staff/vehicle-details` returns 200 and is `noindex, nofollow`.
+  - The production `STAFF_PASSWORD` unlocks it. A wrong password, including the local test one, gets 401, and missing fields or a bad number get 400.
+  - All 20 routes return 200, with no console errors or failed requests. The chat bubble shows on public pages and is hidden on /staff.
+  - Not yet checked on production: a real send, which would prove `OMNI_ACCESS_TOKEN` there.
+  - **If a merge doesn't show up live,** check Vercel for a rollback: while one is active, new deployments are not assigned to the domain.
+- **Vercel:** `OMNI_ACCESS_TOKEN` and `STAFF_PASSWORD` set (Production) on 25 Nov. Give the staff password and the page URL to Mann's ops team privately.
 - **Ask the client:**
   1. Messages come from +91 74288 27400, the number on their Omni account. To send from 9810008008 instead, they need Tata to connect it to their Omni/WhatsApp Business account. Is 74288 27400 fine for now?
   2. Who on their team will use the staff page? We'll share the link and password with them.
