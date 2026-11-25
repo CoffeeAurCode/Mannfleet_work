@@ -1,3 +1,15 @@
+## 25 Nov 2026 — vehicle-details WhatsApp after a booking (WhatsApp, via Subhayu)
+
+The client forwarded their booking-confirmation message (the "UPDATED vehicle detail… Thanks & Regards, Chittaranjan" sample, for a 3 Aug 2026 GLS shoot booking). Their messages said: "After the booking is confirmed this kind of message should go". Then "bookings- 9810008008, this is the number". Then the Tata Tele Business Omni login: "Please give to app developer for whatsapp integration… the template should not be changed". Subhayu: "Kal chahiye inko ye", meaning they need it the next day.
+- **What their Omni account already has** (checked 25 Nov, read-only): WhatsApp Business API live and Meta-verified, quality High. It sends from **+91 74288 27400**, not 9810008008. There's an API key "MannBackend" (22 Oct) and 7 approved templates. `vdetails` and `revisedvd` (8 Dec 2025) are the WhatsApp form of the client's sample: the same fields plus Job No, Bill To, Booked By, helpline and a "Call us" button. Their staff have sent `vdetails` by hand as dashboard campaigns since June 2026, last on 2 Nov. Our reading is that "the template should not be changed" means these approved templates. A new template in the sample's exact wording was drafted but never submitted.
+- **Built:** `/staff/vehicle-details`, a password-protected staff page. Staff fill in the allotted booking, pick Vehicle details (`vdetails`) or Revised (`revisedvd`), and press Send. It goes to the customer through Omni's API, with the approved text unchanged. See CLAUDE.md pattern 13.
+- Tested 25 Nov: one real `vdetails` send to Pranav's number, which Omni accepted.
+- **Before it goes live:** in Vercel, set `OMNI_ACCESS_TOKEN` and `STAFF_PASSWORD` (Production), then redeploy. Give the staff password and the page URL to Mann's ops team privately.
+- **Ask the client:**
+  1. Messages come from +91 74288 27400, the number on their Omni account. To send from 9810008008 instead, they need Tata to connect it to their Omni/WhatsApp Business account. Is 74288 27400 fine for now?
+  2. Who on their team will use the staff page? We'll share the link and password with them.
+  3. The Omni login was shared over WhatsApp. They should change that password.
+
 ## 18 Nov 2026 — About page + rotating vehicle gallery (WhatsApp)
 
 - **About hero:** "Founded 1986" now sits above "Our Story" (the old "Est. 1986" line below it is gone) and a "Scroll down" cue sits at the bottom. This is our reading of "Our story — scroll down. Should be written above — founded 1986".
